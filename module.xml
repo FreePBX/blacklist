@@ -1,0 +1,12 @@
+<module>
+	<rawname>blacklist</rawname>
+	<name>Blacklist</name>
+	<version>1.0.3</version>
+	<type>setup</type>
+	<category>Basic</category>
+	<menuitems>
+		<blacklist>Blacklist</blacklist>
+	</menuitems>
+	<location>release/blacklist-1.0.3.tgz</location>
+	<info>http://freepbx.org/wiki/AsteriskBlacklist</info>
+</module>

@@ -7,6 +7,6 @@
 	<menuitems>
 		<blacklist>Blacklist</blacklist>
 	</menuitems>
-	<location>release/blacklist-1.0.3.tgz</location>
+	<location>release/2.2/blacklist-1.0.3.tgz</location>
 	<info>http://freepbx.org/wiki/AsteriskBlacklist</info>
 </module>

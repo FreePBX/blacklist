@@ -202,19 +202,25 @@ function blacklist_hookGet_config($engine) {
         switch($engine) {
                 case "asterisk":
               	// Code from modules/core/functions.inc.php core_get_config inbound routes
-                    $exten = $item['extension'];
-                    $cidnum = $item['cidnum'];
-                    $channel = $item['channel'];
+			$didlist = core_did_list();
+			if (is_array($didlist)) {
+				foreach ($didlist as $item) {
+					$did = core_did_get($item['extension'],$item['cidnum'],$item['channel']);
+                    			$exten = $item['extension'];
+                    			$cidnum = $item['cidnum'];
+                    			$channel = $item['channel'];
 
-                    $exten = (empty($exten)?"s":$exten);
-                    $exten = $exten.(empty($cidnum)?"":"/".$cidnum); //if a CID num is defined, add it
+                    			$exten = (empty($exten)?"s":$exten);
+                    			$exten = $exten.(empty($cidnum)?"":"/".$cidnum); //if a CID num is defined, add it
 
-                    if (empty($channel))
-                    	$context = "ext-did";
-                    else
-                    	$context = "macro-from-zaptel-{$channel}";
+                    			if (empty($channel))
+                    				$context = "ext-did";
+                    			else
+                    				$context = "macro-from-zaptel-{$channel}";
 
-                    $ext->splice($context, $exten, 1, new ext_gosub('1', 's', 'app-blacklist-check'));
+                    			$ext->splice($context, $exten, 1, new ext_gosub('1', 's', 'app-blacklist-check'));
+				}
+			} // else no DID's defined. Not even a catchall.
                 break;
         }
 }

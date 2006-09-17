@@ -1,13 +1,13 @@
 <module>
 	<rawname>blacklist</rawname>
 	<name>Blacklist</name>
-	<version>1.0.5</version>
+	<version>1.0.6</version>
 	<type>setup</type>
 	<category>Basic</category>
 	<menuitems>
 		<blacklist>Blacklist</blacklist>
 	</menuitems>
-	<location>release/2.2/blacklist-1.0.5.tgz</location>
+	<location>release/2.2/blacklist-1.0.6.tgz</location>
 	<info>http://freepbx.org/wiki/AsteriskBlacklist</info>
-	<md5sum>cf4af8ceee357679ec44d42a893e3f4f</md5sum>
+	<md5sum>7a32ba77181ddff7f46fdb2dba12ef9e</md5sum>
 </module>

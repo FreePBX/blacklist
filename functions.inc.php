@@ -83,15 +83,15 @@ function blacklist_get_config($engine) {
 
 		      $id = "app-blacklist-check";
 		      $c = "s";
-                      $ext->add($id, $c, '', new ext_lookupblacklist());
+                      $ext->add($id, $c, '', new ext_lookupblacklist(''));
                       $ext->add($id, $c, '', new ext_gotoif('$["${LOOKUPBLSTATUS}"="FOUND"]', 'blacklisted'));
-                      $ext->add($id, $c, '', new ext_return());
-                      $ext->add($id, $c, 'blacklisted', new ext_answer());
+                      $ext->add($id, $c, '', new ext_return(''));
+                      $ext->add($id, $c, 'blacklisted', new ext_answer(''));
                       $ext->add($id, $c, '', new ext_wait(1));
-                      $ext->add($id, $c, '', new ext_zapateller());
-                      $ext->add($id, $c, '', new ext_zapateller());
+                      $ext->add($id, $c, '', new ext_zapateller(''));
+                      $ext->add($id, $c, '', new ext_zapateller(''));
                       $ext->add($id, $c, '', new ext_playback('ss-noservice'));
-                      $ext->add($id, $c, '', new ext_hangup());
+                      $ext->add($id, $c, '', new ext_hangup(''));
 
 		      $modulename = 'blacklist';
 

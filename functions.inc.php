@@ -1,78 +1,8 @@
 <?php /* $Id */
 
-if( !class_exists( extension ) ) {
+if( !class_exists('extension') ) {
 	require('extensions.class.php');
 }
-
-// These should probably be moved to extensions.class.php //
-// They have been, but I'll leave them here for those that just see the new
-// Blacklist module and don't do a SVN update of core.
-// They can be removed prior to 2.2-rc1
-
-if( !class_exists( ext_return ) ) {
-	class ext_return extends extension {
-	        function output() {
-	                return "Return";
-	        }
-	}
-}
-if( !class_exists( ext_lookupblacklist ) ) {
-	class ext_lookupblacklist extends extension {
-	        function output() {
-	                return "LookupBlacklist(".$this->data.")";
-	        }
-	}
-}
-if( !class_exists( ext_zapateller ) ) {
-	class ext_zapateller extends extension {
-	        function output() {
-	                return "Zapateller";
-	        }
-	}
-}
-if( !class_exists( ext_gosub ) ) {
-	class ext_gosub extends extension {
-	        var $pri;
-	        var $ext;
-	        var $context;
-
-	        function ext_gosub($pri, $ext = false, $context = false) {
-	                if ($context !== false && $ext === false) {
-	                        trigger_error(E_ERROR, "\$ext is required when passing \$context in ext_gosub::ext_gosub()");
-	                }
-
-	                $this->pri = $pri;
-	                $this->ext = $ext;
-	                $this->context = $context;
-	        }
-
-	        function incrementContents($value) {
-	                $this->pri += $value;
-	        }
-
-	        function output() {
-	                return 'Gosub('.($this->context ? $this->context.',' : '').($this->ext ? $this->ext.',' : '').$this->pri.')' ;
-	        }
-	}
-}
-if( !class_exists( ext_db_put ) ) {
-        class ext_db_put extends extension {
-                var $family;
-                var $key;
-                var $value;
-
-                function ext_db_put($family, $key, $value) {
-                        $this->family = $family;
-                        $this->key = $key;
-                        $this->value = $value;
-                }
-
-                function output() {
-                        return 'Set(DB('.$this->family.'/'.$this->key.')='.$this->value.')';
-                }
-        }
-}
-
 function blacklist_get_config($engine) {
         global $ext;
         switch($engine) {
@@ -135,7 +65,7 @@ function blacklist_blacklist_add($fc) {
        	$ext->add($id, $c, '', new ext_Playback('digits/1'));
        	$ext->add($id, $c, 'end', new ext_noop('Waiting for input'));
 	$c = "1";
-	$ext->add($id, $c, '', new ext_db_put('blacklist', '${blacknr}', 1));
+	$ext->add($id, $c, '', new ext_set('DB(blacklist/${blacknr})', 1));
        	$ext->add($id, $c, '', new ext_Playback('num-was-successfully'));
        	$ext->add($id, $c, '', new ext_Playback('added'));
        	$ext->add($id, $c, '', new ext_wait(1));
@@ -190,7 +120,7 @@ function blacklist_blacklist_last($fc) {
        	$ext->add($id, $c, '', new ext_hangup);
        	$ext->add($id, $c, 'end', new ext_noop('Waiting for input'));
 	$c = "1";
-       	$ext->add($id, $c, '', new ext_db_put('blacklist', '${lastcaller}', 1));
+       	$ext->add($id, $c, '', new ext_set('DB(blacklist/${lastcaller})', 1));
        	$ext->add($id, $c, '', new ext_Playback('num-was-successfully'));
        	$ext->add($id, $c, '', new ext_Playback('added'));
        	$ext->add($id, $c, '', new ext_wait(1));
@@ -239,7 +169,7 @@ function blacklist_list() {
 			}
 		}
 
-		if (is_array($numbers))
+		if (isset($numbers) && is_array($numbers))
 			natcasesort($numbers);
 
 		return $numbers;

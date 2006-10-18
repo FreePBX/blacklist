@@ -172,7 +172,7 @@ function blacklist_list() {
 		if (isset($numbers) && is_array($numbers))
 			natcasesort($numbers);
 
-		return $numbers;
+		return isset($numbers)?$numbers:null;
         } else {
                 fatal("Cannot connect to Asterisk Manager with ".$amp_conf["AMPMGRUSER"]."/".$amp_conf["AMPMGRPASS"]);
         }

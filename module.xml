@@ -10,7 +10,7 @@
 	<changelog>
 	*1.1* First 2.2 release. Fix minor warnings.
 	</changelog>
-	<location>release/2.2/blacklist-1.0.6.tgz</location>
+	<location>release/2.2/blacklist-1.1.tgz</location>
 	<info>http://freepbx.org/wiki/AsteriskBlacklist</info>
-	<md5sum>7a32ba77181ddff7f46fdb2dba12ef9e</md5sum>
+	<md5sum>45f5c5e97680120c7c4e4cc9377f99fb</md5sum>
 </module>

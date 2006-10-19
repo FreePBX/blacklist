@@ -3,7 +3,7 @@
 	<name>Blacklist</name>
 	<version>1.0.6</version>
 	<type>setup</type>
-	<category>CID/Number Management</category>
+	<category>CID &amp; Number Management</category>
 	<menuitems>
 		<blacklist>Blacklist</blacklist>
 	</menuitems>

@@ -156,11 +156,10 @@ function blacklist_hookGet_config($engine) {
 }
 
 function blacklist_list() {
-	require_once('common/php-asmanager.php');
 	global $amp_conf;
+	global $astman;
 
-        $astman = new AGI_AsteriskManager();
-        if ($res = $astman->connect("127.0.0.1", $amp_conf["AMPMGRUSER"] , $amp_conf["AMPMGRPASS"])) {
+        if ($astman) {
 		$list = $astman->database_show();
 		foreach ($list as $k => $v)	{
 			if (substr($k, 1, 9) == 'blacklist')
@@ -179,30 +178,29 @@ function blacklist_list() {
 }
 
 function blacklist_del($number){
-	require_once('common/php-asmanager.php');
 	global $amp_conf;
+	global $astman;
 
-	$astman = new AGI_AsteriskManager();
-        if ($res = $astman->connect("127.0.0.1", $amp_conf["AMPMGRUSER"] , $amp_conf["AMPMGRPASS"])) {
-                $astman->database_del("blacklist",$number);
-        } else {
-                fatal("Cannot connect to Asterisk Manager with ".$amp_conf["AMPMGRUSER"]."/".$amp_conf["AMPMGRPASS"]);
-        }
+	if ($astman) {
+		$astman->database_del("blacklist",$number);
+	} else {
+		fatal("Cannot connect to Asterisk Manager with ".$amp_conf["AMPMGRUSER"]."/".$amp_conf["AMPMGRPASS"]);
+	}
 }
 
 function blacklist_add($post){
-	require_once('common/php-asmanager.php');
 	global $amp_conf;
+	global $astman;
 
 	if(!blacklist_chk($post))
 		return false;
+
 	extract($post);
-        $astman = new AGI_AsteriskManager();
-        if ($res = $astman->connect("127.0.0.1", $amp_conf["AMPMGRUSER"] , $amp_conf["AMPMGRPASS"])) {
-                $astman->database_put("blacklist",$number, '1');
-        } else {
-                fatal("Cannot connect to Asterisk Manager with ".$amp_conf["AMPMGRUSER"]."/".$amp_conf["AMPMGRPASS"]);
-        }
+	if ($astman) {
+		$astman->database_put("blacklist",$number, '1');
+	} else {
+		fatal("Cannot connect to Asterisk Manager with ".$amp_conf["AMPMGRUSER"]."/".$amp_conf["AMPMGRPASS"]);
+	}
 }
 
 

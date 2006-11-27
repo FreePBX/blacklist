@@ -25,13 +25,16 @@ if(isset($_REQUEST['action'])) {
 	switch ($action) {
 		case "add":
 			blacklist_add($_POST);
+			redirect_standard();
 		break;
 		case "delete":
 			blacklist_del($number);
+			redirect_standard();
 		break;
                 case "edit":
                         blacklist_del($editnumber);
 			blacklist_add($_POST);
+			redirect_standard('editnumber');
                 break;
 
 

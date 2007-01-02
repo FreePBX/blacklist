@@ -1,0 +1,52 @@
+# Hebrew version for BlackList FreePBX Module.
+# Copyright (C) 2006
+# This file is distributed under the same license as the PACKAGE package.
+# Shimi <shimi@shimi.net>, 2006.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FreePBX 2.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-10-17 17:20+0300\n"
+"PO-Revision-Date: 2006-10-17 17:30+0300\n"
+"Last-Translator: Shimi <shimi@shimi.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: page.blacklist.php:51
+msgid "Blacklist entry"
+msgstr "רשומת רשימה שחורה"
+
+#: page.blacklist.php:51
+msgid "deleted"
+msgstr "נמחקה"
+
+#: page.blacklist.php:59
+msgid "Blacklist entries"
+msgstr "רשומות רשימה שחורה"
+
+#: page.blacklist.php:63
+msgid "Number"
+msgstr "מספר"
+
+#: page.blacklist.php:75
+msgid "Delete"
+msgstr "מחק"
+
+#: page.blacklist.php:77
+msgid "Edit"
+msgstr "ערוך"
+
+#: page.blacklist.php:93
+msgid "Add or replace entry"
+msgstr "הוסף או החלף רשומה"
+
+#: page.blacklist.php:96
+msgid "Number:"
+msgstr "מספר:"
+
+#: page.blacklist.php:97
+msgid "Enter the number you want to block"
+msgstr "הכנס את המספר שברצונך לחסום"

@@ -1,16 +1,17 @@
 <module>
 	<rawname>blacklist</rawname>
 	<name>Blacklist</name>
-	<version>1.1</version>
+	<version>1.1.1</version>
 	<type>setup</type>
 	<category>CID &amp; Number Management</category>
 	<menuitems>
 		<blacklist>Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+	*1.1.1* Add he_IL translation
 	*1.1* First 2.2 release. Fix minor warnings.
 	</changelog>
-	<location>release/2.2/blacklist-1.1.tgz</location>
+	<location>release/2.2/blacklist-1.1.1.tgz</location>
 	<info>http://freepbx.org/wiki/AsteriskBlacklist</info>
-	<md5sum>45f5c5e97680120c7c4e4cc9377f99fb</md5sum>
+	<md5sum>cfe46100e687174564fb8fd3c3437c6d</md5sum>
 </module>

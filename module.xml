@@ -1,13 +1,14 @@
 <module>
 	<rawname>blacklist</rawname>
 	<name>Blacklist</name>
-	<version>1.1.1</version>
+	<version>1.1.2</version>
 	<type>setup</type>
 	<category>CID &amp; Number Management</category>
 	<menuitems>
 		<blacklist>Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+	*1.1.2* #1638 remove duplicate of zapateller instruction
 	*1.1.1* Add he_IL translation
 	*1.1* First 2.2 release. Fix minor warnings.
 	</changelog>

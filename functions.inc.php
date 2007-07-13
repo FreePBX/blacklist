@@ -53,22 +53,22 @@ function blacklist_blacklist_add($fc) {
 
 	$id = "app-blacklist-add";
 	$c = "s";
-       	$ext->add($id, $c, '', new ext_answer);
-       	$ext->add($id, $c, '', new ext_wait(1));
-       	$ext->add($id, $c, '', new ext_Playback('enter-num-blacklist'));
-       	$ext->add($id, $c, '', new ext_digittimeout(5));
-       	$ext->add($id, $c, '', new ext_responsetimeout(60));
-       	$ext->add($id, $c, '', new ext_read('blacknr', 'then-press-pound'));
-       	$ext->add($id, $c, '', new ext_saydigits('${blacknr}'));
-       	$ext->add($id, $c, '', new ext_Playback('if-correct-press'));
-       	$ext->add($id, $c, '', new ext_Playback('digits/1'));
-       	$ext->add($id, $c, 'end', new ext_noop('Waiting for input'));
+	$ext->add($id, $c, '', new ext_answer);
+	$ext->add($id, $c, '', new ext_wait(1));
+	$ext->add($id, $c, '', new ext_Playback('enter-num-blacklist'));
+	$ext->add($id, $c, '', new ext_digittimeout(5));
+	$ext->add($id, $c, '', new ext_responsetimeout(60));
+	$ext->add($id, $c, '', new ext_read('blacknr', 'then-press-pound'));
+	$ext->add($id, $c, '', new ext_saydigits('${blacknr}'));
+	$ext->add($id, $c, '', new ext_Playback('if-correct-press&digits/1'));
+	$ext->add($id, $c, '', new ext_noop('Waiting for input'));
+	$ext->add($id, $c, 'end', new ext_waitexten(60));
+	$ext->add($id, $c, '', new ext_Playback('sorry-youre-having-problems&goodbye'));
 	$c = "1";
 	$ext->add($id, $c, '', new ext_set('DB(blacklist/${blacknr})', 1));
-       	$ext->add($id, $c, '', new ext_Playback('num-was-successfully'));
-       	$ext->add($id, $c, '', new ext_Playback('added'));
-       	$ext->add($id, $c, '', new ext_wait(1));
-       	$ext->add($id, $c, '', new ext_hangup);
+	$ext->add($id, $c, '', new ext_Playback('num-was-successfully&added'));
+	$ext->add($id, $c, '', new ext_wait(1));
+	$ext->add($id, $c, '', new ext_hangup);
 }
 
 function blacklist_blacklist_remove($fc) {
@@ -78,22 +78,22 @@ function blacklist_blacklist_remove($fc) {
 
 	$id = "app-blacklist-remove";
 	$c = "s";
-       	$ext->add($id, $c, '', new ext_answer);
-       	$ext->add($id, $c, '', new ext_wait(1));
-       	$ext->add($id, $c, '', new ext_Playback('entr-num-rmv-blklist'));
-       	$ext->add($id, $c, '', new ext_digittimeout(5));
-       	$ext->add($id, $c, '', new ext_responsetimeout(60));
-       	$ext->add($id, $c, '', new ext_read('blacknr', 'then-press-pound'));
-       	$ext->add($id, $c, '', new ext_saydigits('${blacknr}'));
-       	$ext->add($id, $c, '', new ext_Playback('if-correct-press'));
-       	$ext->add($id, $c, '', new ext_Playback('digits/1'));
-       	$ext->add($id, $c, 'end', new ext_noop('Waiting for input'));
+	$ext->add($id, $c, '', new ext_answer);
+	$ext->add($id, $c, '', new ext_wait(1));
+	$ext->add($id, $c, '', new ext_Playback('entr-num-rmv-blklist'));
+	$ext->add($id, $c, '', new ext_digittimeout(5));
+	$ext->add($id, $c, '', new ext_responsetimeout(60));
+	$ext->add($id, $c, '', new ext_read('blacknr', 'then-press-pound'));
+	$ext->add($id, $c, '', new ext_saydigits('${blacknr}'));
+	$ext->add($id, $c, '', new ext_Playback('if-correct-press&digits/1'));
+	$ext->add($id, $c, '', new ext_noop('Waiting for input'));
+	$ext->add($id, $c, 'end', new ext_waitexten(60));
+	$ext->add($id, $c, '', new ext_Playback('sorry-youre-having-problems&goodbye'));
 	$c = "1";
-       	$ext->add($id, $c, '', new ext_dbdel('blacklist/${blacknr}'));
-       	$ext->add($id, $c, '', new ext_Playback('num-was-successfully'));
-       	$ext->add($id, $c, '', new ext_Playback('removed'));
-       	$ext->add($id, $c, '', new ext_wait(1));
-       	$ext->add($id, $c, '', new ext_hangup);
+ 	$ext->add($id, $c, '', new ext_dbdel('blacklist/${blacknr}'));
+ 	$ext->add($id, $c, '', new ext_Playback('num-was-successfully&removed'));
+ 	$ext->add($id, $c, '', new ext_wait(1));
+ 	$ext->add($id, $c, '', new ext_hangup);
 }
 
 function blacklist_blacklist_last($fc) {
@@ -103,27 +103,27 @@ function blacklist_blacklist_last($fc) {
 
 	$id = "app-blacklist-last";
 	$c = "s";
-       	$ext->add($id, $c, '', new ext_answer);
-       	$ext->add($id, $c, '', new ext_wait(1));
-       	$ext->add($id, $c, '', new ext_setvar('lastcaller', '${DB(CALLTRACE/${CALLERID(number)})}'));
-       	$ext->add($id, $c, '', new ext_gotoif('$[ $[ "${lastcaller}" = "" ] | $[ "${lastcaller}" = "unknown" ] ]', 'noinfo'));
-       	$ext->add($id, $c, '', new ext_playback('privacy-to-blacklist-last-caller'));
-       	$ext->add($id, $c, '', new ext_playback('telephone-number'));
-       	$ext->add($id, $c, '', new ext_saydigits('${lastcaller}'));
-       	$ext->add($id, $c, '', new ext_setvar('TIMEOUT(digit)', '3'));
-       	$ext->add($id, $c, '', new ext_setvar('TIMEOUT(response)', '7'));
-       	$ext->add($id, $c, '', new ext_playback('if-correct-press'));
-       	$ext->add($id, $c, '', new ext_playback('digits/1'));
-       	$ext->add($id, $c, '', new ext_goto('end'));
-       	$ext->add($id, $c, 'noinfo', new ext_playback('unidentified-no-callback'));
-       	$ext->add($id, $c, '', new ext_hangup);
-       	$ext->add($id, $c, 'end', new ext_noop('Waiting for input'));
+	$ext->add($id, $c, '', new ext_answer);
+	$ext->add($id, $c, '', new ext_wait(1));
+	$ext->add($id, $c, '', new ext_setvar('lastcaller', '${DB(CALLTRACE/${CALLERID(number)})}'));
+	$ext->add($id, $c, '', new ext_gotoif('$[ $[ "${lastcaller}" = "" ] | $[ "${lastcaller}" = "unknown" ] ]', 'noinfo'));
+ 	$ext->add($id, $c, '', new ext_playback('privacy-to-blacklist-last-caller&telephone-number'));
+	$ext->add($id, $c, '', new ext_saydigits('${lastcaller}'));
+	$ext->add($id, $c, '', new ext_setvar('TIMEOUT(digit)', '3'));
+	$ext->add($id, $c, '', new ext_setvar('TIMEOUT(response)', '7'));
+	$ext->add($id, $c, '', new ext_Playback('if-correct-press&digits/1'));
+	$ext->add($id, $c, '', new ext_goto('end'));
+	$ext->add($id, $c, 'noinfo', new ext_playback('unidentified-no-callback'));
+	$ext->add($id, $c, '', new ext_hangup);
+	$ext->add($id, $c, '', new ext_noop('Waiting for input'));
+	$ext->add($id, $c, 'end', new ext_waitexten(60));
+	$ext->add($id, $c, '', new ext_Playback('sorry-youre-having-problems&goodbye'));
 	$c = "1";
-       	$ext->add($id, $c, '', new ext_set('DB(blacklist/${lastcaller})', 1));
-       	$ext->add($id, $c, '', new ext_Playback('num-was-successfully'));
-       	$ext->add($id, $c, '', new ext_Playback('added'));
-       	$ext->add($id, $c, '', new ext_wait(1));
-       	$ext->add($id, $c, '', new ext_hangup);
+	$ext->add($id, $c, '', new ext_set('DB(blacklist/${lastcaller})', 1));
+	$ext->add($id, $c, '', new ext_Playback('num-was-successfully'));
+	$ext->add($id, $c, '', new ext_Playback('added'));
+	$ext->add($id, $c, '', new ext_wait(1));
+	$ext->add($id, $c, '', new ext_hangup);
 }
 
 function blacklist_hookGet_config($engine) {

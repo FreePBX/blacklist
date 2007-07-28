@@ -15,7 +15,7 @@
 		*1.1.1* Add he_IL translation
 		*1.1* First 2.2 release. Fix minor warnings.
 	</changelog>
-	<location>release/2.3/blacklist-1.1.3.1.tgz</location>
+	<location>release/2.3/blacklist-1.1.3.2.tgz</location>
 	<info>http://freepbx.org/wiki/AsteriskBlacklist</info>
-	<md5sum>14a0ffa4f35eda69f2472eeb30587ffb</md5sum>
+	<md5sum>5f5589d7c8fbefae2a6c8a19582b399b</md5sum>
 </module>

@@ -105,16 +105,32 @@ if (is_array($numbers)) {
 		<td colspan="2"><br><h6><input name="submit" type="submit" value="<?php echo _("Submit Changes")?>"></h6></td>
 	</tr>
 	</table>
-
 <script language="javascript">
 <!--
 
 var theForm = document.edit;
 theForm.number.focus();
 
+function isDialDigitsPlus(s)
+{
+	var i;
+
+	if (isEmpty(s)) {
+		return false;
+	}
+
+	for (i = 0; i < s.length; i++) {
+		var c = s.charAt(i);
+
+		if (!isDialDigitChar(c) && (c != "+")) return false;
+	}
+	return true;
+}
+
+
 function edit_onsubmit() {
 	defaultEmptyOK = false;
-        if (!isInteger(theForm.number.value))
+        if (!isDialDigitsPlus(theForm.number.value))
                 return warnInvalid(theForm.number, "Please enter a valid Number");
 	return true;
 }

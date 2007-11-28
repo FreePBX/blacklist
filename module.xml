@@ -1,13 +1,14 @@
 <module>
 	<rawname>blacklist</rawname>
 	<name>Blacklist</name>
-	<version>1.1.3.6</version>
+	<version>1.1.4</version>
 	<type>setup</type>
 	<category>Inbound Call Control</category>
 	<menuitems>
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*1.1.4* #2416 Enable Asterisk 1.6+ support
 		*1.1.3.6* #2455 allow + and other valid dial digits
 		*1.1.3.5* changed categories
 		*1.1.3.4* bump for rc1

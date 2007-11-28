@@ -5,6 +5,7 @@ if( !class_exists('extension') ) {
 }
 function blacklist_get_config($engine) {
         global $ext;
+        global $version;
         switch($engine) {
                 case "asterisk":
 
@@ -13,8 +14,12 @@ function blacklist_get_config($engine) {
 
 		      $id = "app-blacklist-check";
 		      $c = "s";
-                      $ext->add($id, $c, '', new ext_lookupblacklist(''));
-                      $ext->add($id, $c, '', new ext_gotoif('$["${LOOKUPBLSTATUS}"="FOUND"]', 'blacklisted'));
+                      if (version_compare($version, "1.6", "ge")) {
+                             $ext->add($id, $c, '', new ext_gotoif('$["${BLACKLIST()}"="1"]', 'blacklisted'));
+                      } else {
+                             $ext->add($id, $c, '', new ext_lookupblacklist(''));
+                             $ext->add($id, $c, '', new ext_gotoif('$["${LOOKUPBLSTATUS}"="FOUND"]', 'blacklisted'));
+                      }
                       $ext->add($id, $c, '', new ext_return(''));
                       $ext->add($id, $c, 'blacklisted', new ext_answer(''));
                       $ext->add($id, $c, '', new ext_wait(1));

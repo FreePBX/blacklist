@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-01-23 17:47+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Francesco Romano\n"
+"Language-Team: Italian <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: page.blacklist.php:54
+msgid "Blacklist entry"
+msgstr "Voce Blacklist"
+
+#: page.blacklist.php:54
+msgid "deleted"
+msgstr "eliminata"
+
+#: page.blacklist.php:62
+msgid "Blacklist entries"
+msgstr "Voci in Blacklist"
+
+#: page.blacklist.php:66
+msgid "Number"
+msgstr "Numero"
+
+#: page.blacklist.php:78
+msgid "Delete"
+msgstr "Elimina"
+
+#: page.blacklist.php:80
+msgid "Edit"
+msgstr "Modifica"
+
+#: page.blacklist.php:96
+msgid "Add or replace entry"
+msgstr "Aggiungi o sostituisci voce"
+
+#: page.blacklist.php:99
+msgid "Number:"
+msgstr "Numero:"
+
+#: page.blacklist.php:100
+msgid "Enter the number you want to block"
+msgstr "Inserire il numero da bloccare"
+
+msgid "Submit Changes"
+msgstr "Applica"

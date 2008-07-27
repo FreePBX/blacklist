@@ -139,19 +139,14 @@ function blacklist_hookGet_config($engine) {
 			$didlist = core_did_list();
 			if (is_array($didlist)) {
 				foreach ($didlist as $item) {
-					$did = core_did_get($item['extension'],$item['cidnum'],$item['channel']);
+					$did = core_did_get($item['extension'],$item['cidnum']);
                     			$exten = $item['extension'];
                     			$cidnum = $item['cidnum'];
-                    			$channel = $item['channel'];
 
                     			$exten = (empty($exten)?"s":$exten);
                     			$exten = $exten.(empty($cidnum)?"":"/".$cidnum); //if a CID num is defined, add it
 
-                    			if (empty($channel))
-                    				$context = "ext-did";
-                    			else
-                    				$context = "macro-from-zaptel-{$channel}";
-
+                    			$context = "ext-did";
                     			$ext->splice($context, $exten, 1, new ext_gosub('1', 's', 'app-blacklist-check'));
 				}
 			} // else no DID's defined. Not even a catchall.

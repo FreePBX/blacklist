@@ -1,13 +1,14 @@
 <module>
 	<rawname>blacklist</rawname>
 	<name>Blacklist</name>
-	<version>2.4.0.1</version>
+	<version>2.5.0</version>
 	<type>setup</type>
 	<category>Inbound Call Control</category>
 	<menuitems>
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*2.5.0* #2956 no need to try and splice from-zaptel macros anymore
 		*2.4.0.1* #2843 Russian Translation
 		*2.4.0* minor fixes, it translations, bumped for 2.4
 		*1.1.4* #2416 Enable Asterisk 1.6+ support

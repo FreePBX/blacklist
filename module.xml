@@ -23,6 +23,6 @@
 		*1.1.1* Add he_IL translation
 		*1.1* First 2.2 release. Fix minor warnings.
 	</changelog>
-	<location>release/2.4/blacklist-2.4.0.1.tgz</location>
-	<md5sum>ee6de778121ec89b0f81dcbb61a1a369</md5sum>
+	<location>release/2.5/blacklist-2.5.0.tgz</location>
+	<md5sum>89c5bf195e839b49c1fc57127df7e2c9</md5sum>
 </module>

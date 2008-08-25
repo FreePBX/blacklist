@@ -132,26 +132,35 @@ function blacklist_blacklist_last($fc) {
 }
 
 function blacklist_hookGet_config($engine) {
-        global $ext;
-        switch($engine) {
-                case "asterisk":
-              	// Code from modules/core/functions.inc.php core_get_config inbound routes
+	global $ext;
+	switch($engine) {
+		case "asterisk":
+			// Code from modules/core/functions.inc.php core_get_config inbound routes
 			$didlist = core_did_list();
 			if (is_array($didlist)) {
 				foreach ($didlist as $item) {
-					$did = core_did_get($item['extension'],$item['cidnum']);
-                    			$exten = $item['extension'];
-                    			$cidnum = $item['cidnum'];
 
-                    			$exten = (empty($exten)?"s":$exten);
-                    			$exten = $exten.(empty($cidnum)?"":"/".$cidnum); //if a CID num is defined, add it
+					$exten = trim($item['extension']);
+					$cidnum = trim($item['cidnum']);
+						
+					if ($cidnum != '' && $exten == '') {
+						$exten = '_.';
+						$pricid = ($item['pricid']) ? true:false;
+					} else if (($cidnum != '' && $exten != '') || ($cidnum == '' && $exten == '')) {
+						$pricid = true;
+					} else {
+						$pricid = false;
+					}
+					$context = ($pricid) ? "ext-did-0001":"ext-did-0002";
 
-                    			$context = "ext-did";
-                    			$ext->splice($context, $exten, 1, new ext_gosub('1', 's', 'app-blacklist-check'));
+					$exten = (empty($exten)?"s":$exten);
+					$exten = $exten.(empty($cidnum)?"":"/".$cidnum); //if a CID num is defined, add it
+
+					$ext->splice($context, $exten, 1, new ext_gosub('1', 's', 'app-blacklist-check'));
 				}
 			} // else no DID's defined. Not even a catchall.
-                break;
-        }
+			break;
+	}
 }
 
 function blacklist_list() {

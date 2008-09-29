@@ -1,21 +1,26 @@
 <?php
-$blacklistnum = _("Blacklist a number");
+// For translations
+if (false) {
+_("Blacklist a number");
+_("Remove a number from the blacklist");
+_("Blacklist the last caller");
+_("Blacklist");
+}
+
 $fcc = new featurecode('blacklist', 'blacklist_add');
-$fcc->setDescription($blacklistnum);
+$fcc->setDescription('Blacklist a number');
 $fcc->setDefault('*30');
 $fcc->update();
 unset($fcc);
 
-$blacklistremove = _("Remove a number from the blacklist");
 $fcc = new featurecode('blacklist', 'blacklist_remove');
-$fcc->setDescription($blacklistremove);
+$fcc->setDescription('Remove a number from the blacklist');
 $fcc->setDefault('*31');
 $fcc->update();
 unset($fcc);
 
-$blacklistlast = _("Blacklist the last caller");
 $fcc = new featurecode('blacklist', 'blacklist_last');
-$fcc->setDescription($blacklistlast);
+$fcc->setDescription('Blacklist the last caller');
 $fcc->setDefault('*32');
 $fcc->update();
 unset($fcc);

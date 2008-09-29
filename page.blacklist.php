@@ -10,6 +10,11 @@
 //but WITHOUT ANY WARRANTY; without even the implied warranty of
 //MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //GNU General Public License for more details.
+//
+// For localization
+_("Blacklist a number");
+_("Remove a number from the blacklist");
+_("Blacklist the last caller");
 
 isset($_REQUEST['action'])?$action = $_REQUEST['action']:$action='';
 

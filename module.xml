@@ -1,13 +1,14 @@
 <module>
 	<rawname>blacklist</rawname>
 	<name>Blacklist</name>
-	<version>2.5.0.2</version>
+	<version>2.5.0.3</version>
 	<type>setup</type>
 	<category>Inbound Call Control</category>
 	<menuitems>
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*2.5.0.3* #3345, translations
 		*2.5.0.2* Swedish Translations
 		*2.5.0.1* #3100, #3101 changes to work with new inbound route changes and fixes previous bug
 		*2.5.0* #2956 no need to try and splice from-zaptel macros anymore
@@ -25,6 +26,9 @@
 		*1.1.1* Add he_IL translation
 		*1.1* First 2.2 release. Fix minor warnings.
 	</changelog>
-	<location>release/2.5/blacklist-2.5.0.2.tgz</location>
-	<md5sum>3d1b36c0438fb7a514afd8aa1a6fc481</md5sum>
+	<depends>
+		<module>core ge 2.5.1.2</module>
+	</depends>
+	<location>release/2.5/blacklist-2.5.0.3.tgz</location>
+	<md5sum>605c5c2d522cdc52ce800ebc4654b6c2</md5sum>
 </module>

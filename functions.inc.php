@@ -144,7 +144,7 @@ function blacklist_hookGet_config($engine) {
 					$cidnum = trim($item['cidnum']);
 						
 					if ($cidnum != '' && $exten == '') {
-						$exten = '_.';
+						$exten = 's';
 						$pricid = ($item['pricid']) ? true:false;
 					} else if (($cidnum != '' && $exten != '') || ($cidnum == '' && $exten == '')) {
 						$pricid = true;

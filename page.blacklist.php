@@ -63,7 +63,7 @@ if (is_array($numbers)) {
 	</tr>
 
 	<tr>
-		<td><b><?php _("Number") ?></b></td>
+		<td><b><?php echo _("Number") ?></b></td>
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 	</tr>

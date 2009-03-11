@@ -1,52 +1,49 @@
-# translation of blacklist.po to
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: blacklist\n"
+"Project-Id-Version: FreePBX - módulo blacklist module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-17 11:09+0200\n"
-"PO-Revision-Date: 2008-10-26 21:43+0100\n"
-"Last-Translator: \n"
-"Language-Team:  <es@li.org>\n"
+"PO-Revision-Date: 2009-01-22 01:08+0100\n"
+"Last-Translator: Juan Asensio Sánchez <okelet@gmail.com>\n"
+"Language-Team: Juan Asensio Sánchez <okelet@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: install.php:2
 msgid "Blacklist a number"
-msgstr "A&ntilde;adir un n&uacute;mero a la lista negra"
+msgstr "Añadir un número a la lista negra"
 
 #: install.php:9
 msgid "Remove a number from the blacklist"
-msgstr "Borrar un n&uacute;mero de la lista negra"
+msgstr "Eliminar un número de la lista negra"
 
 #: install.php:16
 msgid "Blacklist the last caller"
-msgstr "Añadir a la lista el &uacute;ltimo n&uacute;mero"
+msgstr "Añadir a la lista negra el último número llamado"
 
 #: page.blacklist.php:54
 msgid "Blacklist entry"
-msgstr "Entrada de la lista negra"
+msgstr "Elemento de la lista negra"
 
 #: page.blacklist.php:54
 msgid "deleted"
-msgstr "borrado"
+msgstr "eliminada"
 
 #: page.blacklist.php:62
 msgid "Blacklist entries"
-msgstr "entradas de la lista negra"
+msgstr "Elementos de la lista negra"
 
 #: page.blacklist.php:66
 msgid "Number"
-msgstr "N&uacute;mero"
+msgstr "Número"
 
 #: page.blacklist.php:78
 msgid "Delete"
-msgstr "Borrar"
+msgstr "Eliminar"
 
 #: page.blacklist.php:80
 msgid "Edit"
@@ -54,15 +51,15 @@ msgstr "Editar"
 
 #: page.blacklist.php:96
 msgid "Add or replace entry"
-msgstr "A&ntilde;adir o remplazar entrada"
+msgstr "Añadir o modificar elemento"
 
 #: page.blacklist.php:99
 msgid "Number:"
-msgstr "N&uacute;mero:"
+msgstr "Número:"
 
 #: page.blacklist.php:100
 msgid "Enter the number you want to block"
-msgstr "Introduce el n&uacute;mero que deseas bloquear"
+msgstr "Introduzca el número que desea bloquear"
 
 #: page.blacklist.php:105
 msgid "Submit Changes"

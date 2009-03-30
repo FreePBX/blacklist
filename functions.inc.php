@@ -31,10 +31,15 @@ function blacklist_get_config($engine) {
 
 		      $id = "app-blacklist-check";
 		      $c = "s";
+		      // LookupBlackList doesn't seem to match empty astdb entry for "blacklist/", so we 
+		      // need to check for the setting and if set, send to the blacklisted area
+                      $ext->add($id, $c, '', new ext_gotoif('$["${CALLERID(number)}" = ""]','check-blocked','checked'));
+                      $ext->add($id, $c, 'check-blocked', new ext_gotoif('$["${DB(blacklist/blocked)}" = "1"]','blacklisted'));
+
                       if (version_compare($version, "1.6", "ge")) {
-                             $ext->add($id, $c, '', new ext_gotoif('$["${BLACKLIST()}"="1"]', 'blacklisted'));
+                             $ext->add($id, $c, 'check', new ext_gotoif('$["${BLACKLIST()}"="1"]', 'blacklisted'));
                       } else {
-                             $ext->add($id, $c, '', new ext_lookupblacklist(''));
+                             $ext->add($id, $c, 'check', new ext_lookupblacklist(''));
                              $ext->add($id, $c, '', new ext_gotoif('$["${LOOKUPBLSTATUS}"="FOUND"]', 'blacklisted'));
                       }
                       $ext->add($id, $c, '', new ext_return(''));
@@ -223,6 +228,13 @@ function blacklist_add($post){
 	extract($post);
 	if ($astman) {
 		$astman->database_put("blacklist",$number, '1');
+		// Remove filtering for blocked/unknown cid
+		$astman->database_del("blacklist","blocked");
+		// Add it back if it's checked
+		if($post['blocked'] == "1")  {
+			$astman->database_put("blacklist","blocked", "1");
+			needreload();
+		}
 	} else {
 		fatal("Cannot connect to Asterisk Manager with ".$amp_conf["AMPMGRUSER"]."/".$amp_conf["AMPMGRPASS"]);
 	}

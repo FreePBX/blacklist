@@ -75,15 +75,20 @@ if (is_array($numbers)) {
 
 <?php
 // Why should I specify type=setup ???
-
+	$filter_blocked = false;
 	foreach ($numbers as $num)	{
-		print('<tr>');
-		printf('<td>%s</td>', $num);
-		printf('<td><a href="%s?type=setup&display=%s&number=%s&action=delete">%s</a></td>', 
-			$_SERVER['PHP_SELF'], urlencode($dispnum), urlencode($num), _("Delete"));
-		printf('<td><a href="#" onClick="theForm.number.value = \'%s\'; theForm.editnumber.value = \'%s\' ; theForm.action.value = \'edit\' ; ">%s</a></td>',
-			$num, $num, _("Edit"));
-		print('</tr>');
+		if($num == "blocked")  { // Don't display the blocked/unknown CID as an item, but keep track of it for displaying the checkbox later
+			$filter_blocked = true;
+		}
+		else  {
+		
+			print('<tr>');
+			printf('<td>%s</td>', $num);
+			printf('<td><a href="%s?type=setup&display=%s&number=%s&action=delete">%s</a></td>', 
+				$_SERVER['PHP_SELF'], urlencode($dispnum), urlencode($num), _("Delete"));
+			printf('<td><a href="#" onClick="theForm.number.value = \'%s\'; theForm.editnumber.value = \'%s\' ; theForm.action.value = \'edit\' ; ">%s</a></td>',$num, $num, _("Edit"));
+			print('</tr>');
+		}
 	}
 
 	print('</table>');
@@ -104,6 +109,11 @@ if (is_array($numbers)) {
                 <td><a href="#" class="info"><?php echo _("Number:")?>
                 <span><?php echo _("Enter the number you want to block")?></span></a></td>
                 <td><input type="text" name="number"></td>
+        </tr>
+        <tr>
+                <td><a href="#" class="info"><?php echo _("Block Unknown/Blocked Caller ID:")?>
+                <span><?php echo _("Check here to catch Unknown/Blocked Caller ID")?></span></a></td>
+                <td><input type="checkbox" name="blocked" value="1" <? echo ($filter_blocked === true?" checked":"");?></td>
         </tr>
 
 	<tr>
@@ -135,7 +145,7 @@ function isDialDigitsPlus(s)
 
 function edit_onsubmit() {
 	defaultEmptyOK = false;
-        if (!isDialDigitsPlus(theForm.number.value))
+        if (theForm.number.value && !isDialDigitsPlus(theForm.number.value))
                 return warnInvalid(theForm.number, "Please enter a valid Number");
 	return true;
 }

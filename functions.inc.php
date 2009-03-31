@@ -33,7 +33,7 @@ function blacklist_get_config($engine) {
 		      $c = "s";
 		      // LookupBlackList doesn't seem to match empty astdb entry for "blacklist/", so we 
 		      // need to check for the setting and if set, send to the blacklisted area
-                      $ext->add($id, $c, '', new ext_gotoif('$["${CALLERID(number)}" = ""]','check-blocked','checked'));
+                      $ext->add($id, $c, '', new ext_gotoif('$["${CALLERID(number)}" = ""]','check-blocked','check'));
                       $ext->add($id, $c, 'check-blocked', new ext_gotoif('$["${DB(blacklist/blocked)}" = "1"]','blacklisted'));
 
                       if (version_compare($version, "1.6", "ge")) {

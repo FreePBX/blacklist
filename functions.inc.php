@@ -33,6 +33,8 @@ function blacklist_get_config($engine) {
 		      $c = "s";
 		      // LookupBlackList doesn't seem to match empty astdb entry for "blacklist/", so we 
 		      // need to check for the setting and if set, send to the blacklisted area
+		      // The gotoif below is not a typo.  For some reason, we've seen the CID number set to Unknown
+                      $ext->add($id, $c, '', new ext_gotoif('$["${CALLERID(number)}" = "Unknown"]','check-blocked'));
                       $ext->add($id, $c, '', new ext_gotoif('$["${CALLERID(number)}" = ""]','check-blocked','check'));
                       $ext->add($id, $c, 'check-blocked', new ext_gotoif('$["${DB(blacklist/blocked)}" = "1"]','blacklisted'));
 

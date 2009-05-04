@@ -21,59 +21,65 @@ if( !class_exists('extension') ) {
 	require('extensions.class.php');
 }
 function blacklist_get_config($engine) {
-        global $ext;
-        global $version;
-        switch($engine) {
-                case "asterisk":
+	global $ext;
+	global $version;
+	global $astman;
+	switch($engine) {
+		case "asterisk":
 
-		      $id = "app-blacklist";
-		      $ext->addInclude('from-internal-additional', $id); // Add the include from from-internal
+			$id = "app-blacklist";
+			$ext->addInclude('from-internal-additional', $id); // Add the include from from-internal
 
-		      $id = "app-blacklist-check";
-		      $c = "s";
-		      // LookupBlackList doesn't seem to match empty astdb entry for "blacklist/", so we 
-		      // need to check for the setting and if set, send to the blacklisted area
-		      // The gotoif below is not a typo.  For some reason, we've seen the CID number set to Unknown or Unavailable
-                      $ext->add($id, $c, '', new ext_gotoif('$["${CALLERID(number)}" = "Unknown"]','check-blocked'));
-                      $ext->add($id, $c, '', new ext_gotoif('$["${CALLERID(number)}" = "Unavailable"]','check-blocked'));
-                      $ext->add($id, $c, '', new ext_gotoif('$["foo${CALLERID(number)}" = "foo"]','check-blocked','check'));
-                      $ext->add($id, $c, 'check-blocked', new ext_gotoif('$["${DB(blacklist/blocked)}" = "1"]','blacklisted'));
+			$id = "app-blacklist-check";
+			$c = "s";
+			// LookupBlackList doesn't seem to match empty astdb entry for "blacklist/", so we 
+			// need to check for the setting and if set, send to the blacklisted area
+			// The gotoif below is not a typo.  For some reason, we've seen the CID number set to Unknown or Unavailable
+			// don't generate the dialplan if they are not using the function
+			//
+			if ($astman->database_get("blacklist","blocked") == '1') {
+				$ext->add($id, $c, '', new ext_gotoif('$["${CALLERID(number)}" = "Unknown"]','check-blocked'));
+				$ext->add($id, $c, '', new ext_gotoif('$["${CALLERID(number)}" = "Unavailable"]','check-blocked'));
+				$ext->add($id, $c, '', new ext_gotoif('$["foo${CALLERID(number)}" = "foo"]','check-blocked','check'));
+				$ext->add($id, $c, 'check-blocked', new ext_gotoif('$["${DB(blacklist/blocked)}" = "1"]','blacklisted'));
+			}
 
-                      if (version_compare($version, "1.6", "ge")) {
-                             $ext->add($id, $c, 'check', new ext_gotoif('$["${BLACKLIST()}"="1"]', 'blacklisted'));
-                      } else {
-                             $ext->add($id, $c, 'check', new ext_lookupblacklist(''));
-                             $ext->add($id, $c, '', new ext_gotoif('$["${LOOKUPBLSTATUS}"="FOUND"]', 'blacklisted'));
-                      }
-                      $ext->add($id, $c, '', new ext_return(''));
-                      $ext->add($id, $c, 'blacklisted', new ext_answer(''));
-                      $ext->add($id, $c, '', new ext_wait(1));
-                      $ext->add($id, $c, '', new ext_zapateller(''));
-                      $ext->add($id, $c, '', new ext_playback('ss-noservice'));
-                      $ext->add($id, $c, '', new ext_hangup(''));
+			if (version_compare($version, "1.6", "ge")) {
+				$ext->add($id, $c, 'check', new ext_gotoif('$["${BLACKLIST()}"="1"]', 'blacklisted'));
+			} else {
+				$ext->add($id, $c, 'check', new ext_lookupblacklist(''));
+				$ext->add($id, $c, '', new ext_gotoif('$["${LOOKUPBLSTATUS}"="FOUND"]', 'blacklisted'));
+			}
+			$ext->add($id, $c, '', new ext_return(''));
+			$ext->add($id, $c, 'blacklisted', new ext_answer(''));
+			$ext->add($id, $c, '', new ext_wait(1));
+			$ext->add($id, $c, '', new ext_zapateller(''));
+			$ext->add($id, $c, '', new ext_playback('ss-noservice'));
+			$ext->add($id, $c, '', new ext_hangup(''));
 
-		      $modulename = 'blacklist';
+			$modulename = 'blacklist';
 
-                        if (is_array($featurelist = featurecodes_getModuleFeatures($modulename))) {
-                                foreach($featurelist as $item) {
-                                        $featurename = $item['featurename'];
-                                        $fname = $modulename.'_'.$featurename;
-                                        if (function_exists($fname)) {
-                                                $fcc = new featurecode($modulename, $featurename);
-                                                $fc = $fcc->getCodeActive();
-                                                unset($fcc);
+			if (is_array($featurelist = featurecodes_getModuleFeatures($modulename))) {
+				foreach($featurelist as $item) {
+					$featurename = $item['featurename'];
+					$fname = $modulename.'_'.$featurename;
+					if (function_exists($fname)) {
+						$fcc = new featurecode($modulename, $featurename);
+						$fc = $fcc->getCodeActive();
+						unset($fcc);
 
-                                                if ($fc != '')
-                                                        $fname($fc);
-                                        } else {
-                                                $ext->add('from-internal-additional', 'debug', '', new ext_noop($modulename.": No func $fname"));
-                                                var_dump($item);
-                                        }
-                                }
-                        }
+						if ($fc != '') {
+							$fname($fc);
+						}
+					} else {
+						$ext->add('from-internal-additional', 'debug', '', new ext_noop($modulename.": No func $fname"));
+						var_dump($item);
+					}
+				}
+			}
 
-                      break;
-        }
+			break;
+	}
 }
 
 function blacklist_blacklist_add($fc) {

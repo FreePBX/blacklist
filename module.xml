@@ -1,14 +1,16 @@
 <module>
 	<rawname>blacklist</rawname>
 	<name>Blacklist</name>
-	<version>2.5.0.4</version>
+	<version>2.6.0.0</version>
 	<type>setup</type>
 	<category>Inbound Call Control</category>
 	<menuitems>
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
-		*2.5.0.4* Added support for Unknown/Blocked CID
+		*2.6.0.0* Added support for Unknown/Blocked CID
+		*2.5.0.5* #3557 and localization updates
+		*2.5.0.4* localization updates
 		*2.5.0.3* #3345, translations
 		*2.5.0.2* Swedish Translations
 		*2.5.0.1* #3100, #3101 changes to work with new inbound route changes and fixes previous bug

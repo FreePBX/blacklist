@@ -50,6 +50,7 @@ function blacklist_get_config($engine) {
 				$ext->add($id, $c, 'check', new ext_lookupblacklist(''));
 				$ext->add($id, $c, '', new ext_gotoif('$["${LOOKUPBLSTATUS}"="FOUND"]', 'blacklisted'));
 			}
+      $ext->add($id, $c, '', new ext_setvar('CALLED_BLACKLIST','1'));
 			$ext->add($id, $c, '', new ext_return(''));
 			$ext->add($id, $c, 'blacklisted', new ext_answer(''));
 			$ext->add($id, $c, '', new ext_wait(1));

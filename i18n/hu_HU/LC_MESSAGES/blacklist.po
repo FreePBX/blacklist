@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-17 11:09+0200\n"
+"POT-Creation-Date: 2010-02-27 17:34+0100\n"
 "PO-Revision-Date: 2008-02-06 20:54+0100\n"
 "Last-Translator: Lónyai Gergely <alephlg@gmail.com>\n"
 "Language-Team: Magyar <support@freepbx.hu>\n"
@@ -13,58 +13,53 @@ msgstr ""
 "X-Poedit-Country: HUNGARY\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: install.php:2
+msgid "Blacklist"
+msgstr ""
+
+msgid "Inbound Call Control"
+msgstr ""
+
 msgid "Blacklist a number"
 msgstr ""
 
-#: install.php:9
 msgid "Remove a number from the blacklist"
 msgstr ""
 
-#: install.php:16
 msgid "Blacklist the last caller"
 msgstr ""
 
-#: page.blacklist.php:54
 msgid "Blacklist entry"
 msgstr "Feketelistás bejegyzés"
 
-#: page.blacklist.php:54
 msgid "deleted"
 msgstr "törölt"
 
-#: page.blacklist.php:62
 msgid "Blacklist entries"
 msgstr "Feketelistás bejegyzések"
 
-#: page.blacklist.php:66
 msgid "Number"
 msgstr "Szám"
 
-#: page.blacklist.php:78
 msgid "Delete"
 msgstr "Törlés"
 
-#: page.blacklist.php:80
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: page.blacklist.php:96
 msgid "Add or replace entry"
 msgstr "Bejegyzés hozzáadása, vagy lecserélése"
 
-#: page.blacklist.php:99
 msgid "Number:"
 msgstr "Szám:"
 
-#: page.blacklist.php:100
 msgid "Enter the number you want to block"
 msgstr "Add meg a blokkolandó telefonszámot"
 
-#: page.blacklist.php:105
-msgid "Submit Changes"
+msgid "Block Unknown/Blocked Caller ID:"
 msgstr ""
 
-#: module.xml
-msgid "Blacklist"
+msgid "Check here to catch Unknown/Blocked Caller ID"
+msgstr ""
+
+msgid "Submit Changes"
 msgstr ""

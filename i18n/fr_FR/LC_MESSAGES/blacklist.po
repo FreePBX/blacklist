@@ -15,12 +15,11 @@
 #
 # Copyright (C) 2009 Séverine GUTIERREZ, severine@medialsace.fr
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-17 11:09+0200\n"
+"POT-Creation-Date: 2010-02-27 17:34+0100\n"
 "PO-Revision-Date: 2009-04-15 21:41+0100\n"
 "Last-Translator: Séverine GUTIERREZ <severine@medialsace.fr>\n"
 "Language-Team: Français <LL@li.org>\n"
@@ -28,58 +27,53 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: install.php:2
+msgid "Blacklist"
+msgstr "Blacklist"
+
+msgid "Inbound Call Control"
+msgstr ""
+
 msgid "Blacklist a number"
 msgstr "Blacklister un numéro"
 
-#: install.php:9
 msgid "Remove a number from the blacklist"
 msgstr "Retirer un numéro de la blacklist"
 
-#: install.php:16
 msgid "Blacklist the last caller"
 msgstr "Blacklister le dernier appelant"
 
-#: page.blacklist.php:54
 msgid "Blacklist entry"
 msgstr "Entrée de la Blacklist"
 
-#: page.blacklist.php:54
 msgid "deleted"
 msgstr "supprimé"
 
-#: page.blacklist.php:62
 msgid "Blacklist entries"
 msgstr "Entrées de la Blacklist"
 
-#: page.blacklist.php:66
 msgid "Number"
 msgstr "Numéro"
 
-#: page.blacklist.php:78
 msgid "Delete"
 msgstr "Supprimer"
 
-#: page.blacklist.php:80
 msgid "Edit"
 msgstr "Editer"
 
-#: page.blacklist.php:96
 msgid "Add or replace entry"
 msgstr "Ajouter ou remplacer une entrée"
 
-#: page.blacklist.php:99
 msgid "Number:"
 msgstr "Numéro:"
 
-#: page.blacklist.php:100
 msgid "Enter the number you want to block"
 msgstr "Entrez le numéro à bloquer"
 
-#: page.blacklist.php:105
+msgid "Block Unknown/Blocked Caller ID:"
+msgstr ""
+
+msgid "Check here to catch Unknown/Blocked Caller ID"
+msgstr ""
+
 msgid "Submit Changes"
 msgstr "Appliquer les modifications"
-
-#: module.xml
-msgid "Blacklist"
-msgstr "Blacklist"

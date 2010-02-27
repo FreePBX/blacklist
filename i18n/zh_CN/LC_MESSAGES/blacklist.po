@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-17 11:09+0200\n"
+"POT-Creation-Date: 2010-02-27 17:34+0100\n"
 "PO-Revision-Date: 2009-01-31 17:11+0800\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -18,59 +18,53 @@ msgstr ""
 "X-Poedit-Country: CHINA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: install.php:2
-msgid "Blacklist a number"
-msgstr "屏蔽一个号码"
-
-#: install.php:9
-msgid "Remove a number from the blacklist"
-msgstr "从黑名单内移除一个号码"
-
-#: install.php:16
-msgid "Blacklist the last caller"
-msgstr "屏蔽最近通话的主叫"
-
-#: page.blacklist.php:54
-msgid "Blacklist entry"
-msgstr "黑名单项目"
-
-#: page.blacklist.php:54
-msgid "deleted"
-msgstr "已删除"
-
-#: page.blacklist.php:62
-msgid "Blacklist entries"
-msgstr "黑名单项目"
-
-#: page.blacklist.php:66
-msgid "Number"
-msgstr "号码"
-
-#: page.blacklist.php:78
-msgid "Delete"
-msgstr "删除"
-
-#: page.blacklist.php:80
-msgid "Edit"
-msgstr "编辑"
-
-#: page.blacklist.php:96
-msgid "Add or replace entry"
-msgstr "添加或取代项目"
-
-#: page.blacklist.php:99
-msgid "Number:"
-msgstr "号码："
-
-#: page.blacklist.php:100
-msgid "Enter the number you want to block"
-msgstr "输入你想要屏蔽的号码"
-
-#: page.blacklist.php:105
-msgid "Submit Changes"
-msgstr "提交更改"
-
-#: module.xml
 msgid "Blacklist"
 msgstr "黑名单"
 
+msgid "Inbound Call Control"
+msgstr ""
+
+msgid "Blacklist a number"
+msgstr "屏蔽一个号码"
+
+msgid "Remove a number from the blacklist"
+msgstr "从黑名单内移除一个号码"
+
+msgid "Blacklist the last caller"
+msgstr "屏蔽最近通话的主叫"
+
+msgid "Blacklist entry"
+msgstr "黑名单项目"
+
+msgid "deleted"
+msgstr "已删除"
+
+msgid "Blacklist entries"
+msgstr "黑名单项目"
+
+msgid "Number"
+msgstr "号码"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Edit"
+msgstr "编辑"
+
+msgid "Add or replace entry"
+msgstr "添加或取代项目"
+
+msgid "Number:"
+msgstr "号码："
+
+msgid "Enter the number you want to block"
+msgstr "输入你想要屏蔽的号码"
+
+msgid "Block Unknown/Blocked Caller ID:"
+msgstr ""
+
+msgid "Check here to catch Unknown/Blocked Caller ID"
+msgstr ""
+
+msgid "Submit Changes"
+msgstr "提交更改"

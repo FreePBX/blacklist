@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 13:44+0100\n"
+"POT-Creation-Date: 2010-02-27 17:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,71 +28,53 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: blacklist/blacklist.i18n.php:5 blacklist/blacklist.i18n.php:9
-#: blacklist/install.php:24
 msgid "Blacklist"
 msgstr ""
 
-#: blacklist/blacklist.i18n.php:7
 msgid "Inbound Call Control"
 msgstr ""
 
-#: blacklist/install.php:21
 msgid "Blacklist a number"
 msgstr ""
 
-#: blacklist/install.php:22
 msgid "Remove a number from the blacklist"
 msgstr ""
 
-#: blacklist/install.php:23
 msgid "Blacklist the last caller"
 msgstr ""
 
-#: blacklist/page.blacklist.php:59
 msgid "Blacklist entry"
 msgstr ""
 
-#: blacklist/page.blacklist.php:59
 msgid "deleted"
 msgstr ""
 
-#: blacklist/page.blacklist.php:67
 msgid "Blacklist entries"
 msgstr ""
 
-#: blacklist/page.blacklist.php:71
 msgid "Number"
 msgstr ""
 
-#: blacklist/page.blacklist.php:88
 msgid "Delete"
 msgstr ""
 
-#: blacklist/page.blacklist.php:89
 msgid "Edit"
 msgstr ""
 
-#: blacklist/page.blacklist.php:106
 msgid "Add or replace entry"
 msgstr ""
 
-#: blacklist/page.blacklist.php:109
 msgid "Number:"
 msgstr ""
 
-#: blacklist/page.blacklist.php:110
 msgid "Enter the number you want to block"
 msgstr ""
 
-#: blacklist/page.blacklist.php:114
 msgid "Block Unknown/Blocked Caller ID:"
 msgstr ""
 
-#: blacklist/page.blacklist.php:115
 msgid "Check here to catch Unknown/Blocked Caller ID"
 msgstr ""
 
-#: blacklist/page.blacklist.php:120
 msgid "Submit Changes"
 msgstr ""

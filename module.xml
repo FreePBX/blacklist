@@ -1,7 +1,7 @@
 <module>
 	<rawname>blacklist</rawname>
 	<name>Blacklist</name>
-	<version>2.6.0.2</version>
+	<version>2.7.0.0</version>
 	<publisher>FreePBX</publisher>
 	<license>GPLv2+</license>
 	<type>setup</type>
@@ -10,6 +10,7 @@
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*2.7.0.0* localizations
 		*2.6.0.2* #3430
 		*2.6.0.1* Added publisher/lic
 		*2.6.0.0* Added support for Unknown/Blocked CID
@@ -36,6 +37,6 @@
 	<depends>
 		<module>core ge 2.5.1.2</module>
 	</depends>
-	<location>release/2.6/blacklist-2.6.0.2.tgz</location>
-	<md5sum>1d57fa83c07b06eff3829811cf36d6f6</md5sum>
+	<location>release/2.7/blacklist-2.7.0.0.tgz</location>
+	<md5sum>3cc018a34a038b30656540334c77cd27</md5sum>
 </module>

@@ -92,7 +92,8 @@ function blacklist_blacklist_add($fc) {
 	$c = "s";
 	$ext->add($id, $c, '', new ext_answer);
 	$ext->add($id, $c, '', new ext_wait(1));
-	$ext->add($id, $c, '', new ext_playback('enter-num-blacklist'));
+	$ext->add($id, $c, '', new ext_set('NumLoops', 0));
+	$ext->add($id, $c, 'start', new ext_playback('enter-num-blacklist'));
 	$ext->add($id, $c, '', new ext_digittimeout(5));
 	$ext->add($id, $c, '', new ext_responsetimeout(60));
 	$ext->add($id, $c, '', new ext_read('blacknr', 'then-press-pound'));
@@ -102,10 +103,20 @@ function blacklist_blacklist_add($fc) {
 	$ext->add($id, $c, 'end', new ext_waitexten(60));
 	$ext->add($id, $c, '', new ext_playback('sorry-youre-having-problems&goodbye'));
 	$c = "1";
+	$ext->add($id, $c, '', new ext_gotoif('$[ "${blacknr}" != ""]','','app-blacklist-add-invalid,s,1'));
 	$ext->add($id, $c, '', new ext_set('DB(blacklist/${blacknr})', 1));
 	$ext->add($id, $c, '', new ext_playback('num-was-successfully&added'));
 	$ext->add($id, $c, '', new ext_wait(1));
 	$ext->add($id, $c, '', new ext_hangup);
+
+	$id = "app-blacklist-add-invalid";
+	$c = "s";
+	$ext->add($id, $c, '', new ext_set('NumLoops','$[${NumLoops} + 1]'));
+	$ext->add($id, $c, '', new ext_playback('pm-invalid-option'));
+	$ext->add($id, $c, '', new ext_gotoif('$[${NumLoops} < 3]','app-blacklist-add,s,start'));
+	$ext->add($id, $c, '', new ext_playback('goodbye'));
+	$ext->add($id, $c, '', new ext_hangup);
+
 }
 
 function blacklist_blacklist_remove($fc) {

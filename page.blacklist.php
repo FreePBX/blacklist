@@ -113,7 +113,7 @@ if (is_array($numbers)) {
         <tr>
                 <td><a href="#" class="info"><?php echo _("Block Unknown/Blocked Caller ID:")?>
                 <span><?php echo _("Check here to catch Unknown/Blocked Caller ID")?></span></a></td>
-                <td><input type="checkbox" name="blocked" value="1" <? echo ($filter_blocked === true?" checked":"");?></td>
+                <td><input type="checkbox" name="blocked" value="1" <? echo ($filter_blocked === true?" checked=1":"");?></td>
         </tr>
 
 	<tr>

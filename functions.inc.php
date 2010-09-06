@@ -18,7 +18,7 @@
 //
 
 if( !class_exists('extension') ) {
-	require('extensions.class.php');
+	require('libraries/extensions.class.php');
 }
 function blacklist_get_config($engine) {
 	global $ext;

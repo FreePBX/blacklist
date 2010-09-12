@@ -17,6 +17,18 @@
 //Copyright (C) 2006 Magnus Ullberg (magnus@ullberg.us)
 //
 
+$fcc = new featurecode('blacklist', 'blacklist_add');
+$fcc->delete();
+unset($fcc);
+
+$fcc = new featurecode('blacklist', 'blacklist_remove');
+$fcc->delete();
+unset($fcc);
+
+$fcc = new featurecode('blacklist', 'blacklist_last');
+$fcc->delete();
+unset($fcc);
+
 sql('DELETE FROM featurecodes WHERE modulename="blacklist"');
 
 needreload();

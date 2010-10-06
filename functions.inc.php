@@ -15,6 +15,7 @@
 //    along with FreePBX.  If not, see <http://www.gnu.org/licenses/>.
 //
 //  Copyright (C) 2006 Magnus Ullberg (magnus@ullberg.us)
+//  Portions Copyright (C) 2010 Mikael Carlsson (mickecamino@gmail.com)
 //
 
 if( !class_exists('extension') ) {
@@ -24,6 +25,7 @@ function blacklist_get_config($engine) {
 	global $ext;
 	global $version;
 	global $astman;
+
 	switch($engine) {
 		case "asterisk":
 
@@ -43,14 +45,14 @@ function blacklist_get_config($engine) {
 				$ext->add($id, $c, '', new ext_gotoif('$["foo${CALLERID(number)}" = "foo"]','check-blocked','check'));
 				$ext->add($id, $c, 'check-blocked', new ext_gotoif('$["${DB(blacklist/blocked)}" = "1"]','blacklisted'));
 			}
-
+			
 			if (version_compare($version, "1.6", "ge")) {
 				$ext->add($id, $c, 'check', new ext_gotoif('$["${BLACKLIST()}"="1"]', 'blacklisted'));
 			} else {
 				$ext->add($id, $c, 'check', new ext_lookupblacklist(''));
 				$ext->add($id, $c, '', new ext_gotoif('$["${LOOKUPBLSTATUS}"="FOUND"]', 'blacklisted'));
 			}
-      $ext->add($id, $c, '', new ext_setvar('CALLED_BLACKLIST','1'));
+    			$ext->add($id, $c, '', new ext_setvar('CALLED_BLACKLIST','1'));
 			$ext->add($id, $c, '', new ext_return(''));
 			$ext->add($id, $c, 'blacklisted', new ext_answer(''));
 			$ext->add($id, $c, '', new ext_wait(1));
@@ -210,19 +212,27 @@ function blacklist_list() {
 	global $amp_conf;
 	global $astman;
 
+$engineinfo = engine_getinfo();
+$astver =  $engineinfo['version'];
         if ($astman) {
-		$list = $astman->database_show();
-		foreach ($list as $k => $v)	{
-			if (substr($k, 1, 9) == 'blacklist')
-			{
-				$numbers[substr($k, 11)] = substr($k, 11);
+		$list = $astman->database_show('blacklist');
+		if(version_compare($astver, "1.6", "ge")) {
+		    foreach ($list as $k => $v) {
+			$numbers = substr($k, 11);
+			$blacklisted[] = array('number' => $numbers, 'description' => $v);
 			}
-		}
-
-		if (isset($numbers) && is_array($numbers))
-			natcasesort($numbers);
-
-		return isset($numbers)?$numbers:null;
+		    if (isset($blacklisted) && is_array($blacklisted))
+			// Why this sorting? When used it does not yield the result I want
+			//    natsort($blacklisted);
+		    return isset($blacklisted)?$blacklisted:null;
+		} else {
+		    foreach ($list as $k => $v) {
+			$numbers[substr($k, 11)] = substr($k, 11);
+			}
+			if (isset($numbers) && is_array($numbers))
+			    natcasesort($numbers);
+			return isset($numbers)?$numbers:null;
+			}
         } else {
                 fatal("Cannot connect to Asterisk Manager with ".$amp_conf["AMPMGRUSER"]."/".$amp_conf["AMPMGRPASS"]);
         }
@@ -231,7 +241,6 @@ function blacklist_list() {
 function blacklist_del($number){
 	global $amp_conf;
 	global $astman;
-
 	if ($astman) {
 		$astman->database_del("blacklist",$number);
 	} else {
@@ -243,12 +252,20 @@ function blacklist_add($post){
 	global $amp_conf;
 	global $astman;
 
+$engineinfo = engine_getinfo();
+$astver =  $engineinfo['version'];
+
 	if(!blacklist_chk($post))
 		return false;
 
 	extract($post);
 	if ($astman) {
-		$astman->database_put("blacklist",$number, '1');
+		if (version_compare($astver, "1.6", "ge")) {
+		$post['description']==""?$post['description'] = '1':$post['description'];
+		$astman->database_put("blacklist",$post['number'], '"'.$post['description'].'"');
+		    } else {
+		    	    $astman->database_put("blacklist",$number, '1');
+		    	    }
 		// Remove filtering for blocked/unknown cid
 		$astman->database_del("blacklist","blocked");
 		// Add it back if it's checked

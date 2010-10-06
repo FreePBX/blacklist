@@ -14,16 +14,24 @@
 //    You should have received a copy of the GNU General Public License
 //    along with FreePBX.  If not, see <http://www.gnu.org/licenses/>.
 //
-//Copyright (C) 2006 Magnus Ullberg (magnus@ullberg.us)
+//    Copyright (C) 2006 Magnus Ullberg (magnus@ullberg.us)
+//    Portions Copyright (C) 2010 Mikael Carlsson (mickecamino@gmail.com)
 //
-isset($_REQUEST['action'])?$action = $_REQUEST['action']:$action='';
 
+$engineinfo = engine_getinfo();
+$astver =  $engineinfo['version'];
+
+isset($_REQUEST['action'])?$action = $_REQUEST['action']:$action='';
 isset($_REQUEST['number'])?$number = $_REQUEST['number']:$number='';
+
+if(version_compare($astver, "1,6", "ge")) {
+    isset($_REQUEST['description'])?$description = $_REQUEST['description']:$description='';
+    }
 
 isset($_REQUEST['editnumber'])?$editnumber = $_REQUEST['editnumber']:$editnumber='';
 
 $dispnum = "blacklist"; //used for switch on config.php
-
+    
 //if submitting form, update database
 
 if(isset($_REQUEST['action'])) {
@@ -41,8 +49,6 @@ if(isset($_REQUEST['action'])) {
 			blacklist_add($_POST);
 			redirect_standard('editnumber');
                 break;
-
-
 	}
 }
 
@@ -68,9 +74,17 @@ if (is_array($numbers)) {
 	</tr>
 
 	<tr>
-		<td><b><?php echo _("Number") ?></b></td>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
+		
+	<?php
+	if(version_compare($astver, "1,6", "ge")) {
+	    echo "<td><b>"._("Number")."</b></td>";
+	    echo "<td><b>"._("Description")."</b></td>";
+		} else {
+		echo "<td><b>"._("Number")."</b></td>";
+		echo "<td>&nbsp;</td>";
+	    }
+?>		
+		<td>&nbsp;</td>		
 	</tr>
 
 <?php
@@ -82,34 +96,58 @@ if (is_array($numbers)) {
 		}
 		else  {
 		
+    	    	    if(version_compare($astver, "1,6", "ge")) {
+			print('<tr>');
+			printf('<td>%s</td>', $num['number']);
+    			printf('<td>%s</td>', $num['description']);
+			printf('<td><a href="%s?type=setup&display=%s&number=%s&action=delete">%s</a></td>', 
+				$_SERVER['PHP_SELF'], urlencode($dispnum), urlencode($num['number']), _("Delete"));
+			printf('<td><a href="#" onClick="theForm.number.value = \'%s\'; 
+				theForm.editnumber.value = \'%s\' ;
+				theForm.description.value = \'%s\'; 
+				theForm.editdescription.value = \'%s\' ; 
+				theForm.action.value = \'edit\' ; ">%s</a></td>',$num['number'], $num['number'], $num['description'], $num['description'], _("Edit"));
+			print('</tr>');
+			
+			} else {
 			print('<tr>');
 			printf('<td>%s</td>', $num);
+    			    printf('<td>%s</td>', $description);
 			printf('<td><a href="%s?type=setup&display=%s&number=%s&action=delete">%s</a></td>', 
 				$_SERVER['PHP_SELF'], urlencode($dispnum), urlencode($num), _("Delete"));
 			printf('<td><a href="#" onClick="theForm.number.value = \'%s\'; theForm.editnumber.value = \'%s\' ; theForm.action.value = \'edit\' ; ">%s</a></td>',$num, $num, _("Edit"));
 			print('</tr>');
+			}
 		}
 	}
-
 	print('</table>');
 }
-
 ?>
-
 
 <form autocomplete="off" name="edit" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return edit_onsubmit();">
 	<input type="hidden" name="display" value="<?php echo $dispnum?>">
 	<input type="hidden" name="action" value="add">
 	<input type="hidden" name="editnumber" value="">
 
+	<?php if(version_compare($astver, "1,6", "ge")) {
+    	    echo "<input type=\"hidden\" name=\"editdescripton\" value=\"\">";
+	    }?>
 	<table>
 	<tr><td colspan="2"><h5><?php echo _("Add or replace entry") ?><hr></h5></td></tr>
 
         <tr>
-                <td><a href="#" class="info"><?php echo _("Number:")?>
-                <span><?php echo _("Enter the number you want to block")?></span></a></td>
+		<td><a href="#" class="info"><?php echo _("Number:")?>
+		<span><?php echo _("Enter the number you want to block")?></span></a></td>
                 <td><input type="text" name="number"></td>
         </tr>
+        <?php if(version_compare($astver, "1,6", "ge")) {
+    		echo "<tr>";
+                echo "<td><a href=\"#\" class=\"info\">"._("Description:");
+                echo "<span>"._("Enter a description for the number you want to block")."</span></a></td>";
+                echo "<td><input type=\"text\" name=\"description\"></td>";
+        echo "</tr>";        
+	    }?>
+
         <tr>
                 <td><a href="#" class="info"><?php echo _("Block Unknown/Blocked Caller ID:")?>
                 <span><?php echo _("Check here to catch Unknown/Blocked Caller ID")?></span></a></td>

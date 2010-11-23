@@ -27,12 +27,14 @@ _("Blacklist");
 $fcc = new featurecode('blacklist', 'blacklist_add');
 $fcc->setDescription('Blacklist a number');
 $fcc->setDefault('*30');
+$fcc->setProvideDest();
 $fcc->update();
 unset($fcc);
 
 $fcc = new featurecode('blacklist', 'blacklist_remove');
 $fcc->setDescription('Remove a number from the blacklist');
 $fcc->setDefault('*31');
+$fcc->setProvideDest();
 $fcc->update();
 unset($fcc);
 

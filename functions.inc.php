@@ -18,9 +18,7 @@
 //  Portions Copyright (C) 2010 Mikael Carlsson (mickecamino@gmail.com)
 //
 
-if( !class_exists('extension') ) {
-	require('libraries/extensions.class.php');
-}
+
 function blacklist_get_config($engine) {
 	global $ext;
 	global $version;

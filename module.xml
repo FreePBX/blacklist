@@ -1,7 +1,7 @@
 <module>
 	<rawname>blacklist</rawname>
 	<name>Blacklist</name>
-	<version>2.7.0.1</version>
+	<version>2.7.0.2</version>
 	<publisher>FreePBX</publisher>
 	<license>GPLv2+</license>
 	<type>setup</type>
@@ -10,6 +10,7 @@
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*2.7.0.2* #4726
 		*2.7.0.1* #4266, #4186
 		*2.7.0.0* localizations
 		*2.6.0.2* #3430
@@ -38,6 +39,6 @@
 	<depends>
 		<module>core ge 2.5.1.2</module>
 	</depends>
-	<location>release/2.8/blacklist-2.7.0.1.tgz</location>
-	<md5sum>900f46269b69987434ae2a05ce26ab8c</md5sum>
+	<location>release/2.8/blacklist-2.7.0.2.tgz</location>
+	<md5sum>1115707d9f8904445f23f8134f1dd93c</md5sum>
 </module>

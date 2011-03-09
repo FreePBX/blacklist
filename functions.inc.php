@@ -210,11 +210,10 @@ function blacklist_list() {
 	global $amp_conf;
 	global $astman;
 
-$engineinfo = engine_getinfo();
-$astver =  $engineinfo['version'];
+$ast_ge_16 =  version_compare($amp_conf['ASTVERSION'], "1.6", "ge");
         if ($astman) {
 		$list = $astman->database_show('blacklist');
-		if(version_compare($astver, "1.6", "ge")) {
+		if($ast_ge_16) {
 		    foreach ($list as $k => $v) {
 			$numbers = substr($k, 11);
 			$blacklisted[] = array('number' => $numbers, 'description' => $v);
@@ -250,15 +249,14 @@ function blacklist_add($post){
 	global $amp_conf;
 	global $astman;
 
-$engineinfo = engine_getinfo();
-$astver =  $engineinfo['version'];
+$ast_ge_16 =  version_compare($amp_conf['ASTVERSION'], "1.6", "ge");
 
 	if(!blacklist_chk($post))
 		return false;
 
 	extract($post);
 	if ($astman) {
-		if (version_compare($astver, "1.6", "ge")) {
+		if ($ast_ge_16) {
 		$post['description']==""?$post['description'] = '1':$post['description'];
 		$astman->database_put("blacklist",$post['number'], '"'.$post['description'].'"');
 		    } else {

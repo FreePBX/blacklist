@@ -18,13 +18,12 @@
 //    Portions Copyright (C) 2010 Mikael Carlsson (mickecamino@gmail.com)
 //
 
-$engineinfo = engine_getinfo();
-$astver =  $engineinfo['version'];
+$ast_ge_16 = version_compare($amp_conf['ASTVERSION'], "1.6", "ge");
 
 isset($_REQUEST['action'])?$action = $_REQUEST['action']:$action='';
 isset($_REQUEST['number'])?$number = $_REQUEST['number']:$number='';
 
-if(version_compare($astver, "1,6", "ge")) {
+if($ast_ge_16) {
     isset($_REQUEST['description'])?$description = $_REQUEST['description']:$description='';
     }
 
@@ -44,8 +43,8 @@ if(isset($_REQUEST['action'])) {
 			blacklist_del($number);
 			redirect_standard();
 		break;
-                case "edit":
-                        blacklist_del($editnumber);
+    case "edit":
+      blacklist_del($editnumber);
 			blacklist_add($_POST);
 			redirect_standard('editnumber');
                 break;
@@ -76,7 +75,7 @@ if (is_array($numbers)) {
 	<tr>
 		
 	<?php
-	if(version_compare($astver, "1,6", "ge")) {
+	if($ast_ge_16) {
 	    echo "<td><b>"._("Number")."</b></td>";
 	    echo "<td><b>"._("Description")."</b></td>";
 		} else {
@@ -96,12 +95,12 @@ if (is_array($numbers)) {
 		}
 		else  {
 		
-    	    	    if(version_compare($astver, "1,6", "ge")) {
+    if($ast_ge_16) {
 			print('<tr>');
 			printf('<td>%s</td>', $num['number']);
-    			printf('<td>%s</td>', $num['description']);
+ 			printf('<td>%s</td>', $num['description']);
 			printf('<td><a href="%s?type=setup&display=%s&number=%s&action=delete">%s</a></td>', 
-				$_SERVER['PHP_SELF'], urlencode($dispnum), urlencode($num['number']), _("Delete"));
+			 $_SERVER['PHP_SELF'], urlencode($dispnum), urlencode($num['number']), _("Delete"));
 			printf('<td><a href="#" onClick="theForm.number.value = \'%s\'; 
 				theForm.editnumber.value = \'%s\' ;
 				theForm.description.value = \'%s\'; 
@@ -112,9 +111,8 @@ if (is_array($numbers)) {
 			} else {
 			print('<tr>');
 			printf('<td>%s</td>', $num);
-    			    printf('<td>%s</td>', $description);
 			printf('<td><a href="%s?type=setup&display=%s&number=%s&action=delete">%s</a></td>', 
-				$_SERVER['PHP_SELF'], urlencode($dispnum), urlencode($num), _("Delete"));
+			 $_SERVER['PHP_SELF'], urlencode($dispnum), urlencode($num), _("Delete"));
 			printf('<td><a href="#" onClick="theForm.number.value = \'%s\'; theForm.editnumber.value = \'%s\' ; theForm.action.value = \'edit\' ; ">%s</a></td>',$num, $num, _("Edit"));
 			print('</tr>');
 			}
@@ -129,7 +127,7 @@ if (is_array($numbers)) {
 	<input type="hidden" name="action" value="add">
 	<input type="hidden" name="editnumber" value="">
 
-	<?php if(version_compare($astver, "1,6", "ge")) {
+	<?php if($ast_ge_16) {
     	    echo "<input type=\"hidden\" name=\"editdescripton\" value=\"\">";
 	    }?>
 	<table>
@@ -140,7 +138,7 @@ if (is_array($numbers)) {
 		<span><?php echo _("Enter the number you want to block")?></span></a></td>
                 <td><input type="text" name="number"></td>
         </tr>
-        <?php if(version_compare($astver, "1,6", "ge")) {
+        <?php if($ast_ge_16) {
     		echo "<tr>";
                 echo "<td><a href=\"#\" class=\"info\">"._("Description:");
                 echo "<span>"._("Enter a description for the number you want to block")."</span></a></td>";

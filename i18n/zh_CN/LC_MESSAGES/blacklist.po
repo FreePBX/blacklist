@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 17:34+0100\n"
+"POT-Creation-Date: 2011-07-10 10:28+0200\n"
 "PO-Revision-Date: 2009-01-31 17:11+0800\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -42,6 +42,12 @@ msgstr "已删除"
 msgid "Blacklist entries"
 msgstr "黑名单项目"
 
+msgid "Number/CallerID"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
 msgid "Number"
 msgstr "号码"
 
@@ -54,11 +60,17 @@ msgstr "编辑"
 msgid "Add or replace entry"
 msgstr "添加或取代项目"
 
-msgid "Number:"
-msgstr "号码："
+msgid "Number/CallerID:"
+msgstr ""
 
-msgid "Enter the number you want to block"
-msgstr "输入你想要屏蔽的号码"
+msgid "Enter the number/CallerID you want to block"
+msgstr ""
+
+msgid "Description:"
+msgstr ""
+
+msgid "Enter a description for the number you want to block"
+msgstr ""
 
 msgid "Block Unknown/Blocked Caller ID:"
 msgstr ""

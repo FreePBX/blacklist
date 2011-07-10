@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 17:34+0100\n"
+"POT-Creation-Date: 2011-07-10 10:28+0200\n"
 "PO-Revision-Date: 2009-04-15 21:41+0100\n"
 "Last-Translator: Séverine GUTIERREZ <severine@medialsace.fr>\n"
 "Language-Team: Français <LL@li.org>\n"
@@ -51,6 +51,12 @@ msgstr "supprimé"
 msgid "Blacklist entries"
 msgstr "Entrées de la Blacklist"
 
+msgid "Number/CallerID"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
 msgid "Number"
 msgstr "Numéro"
 
@@ -63,11 +69,17 @@ msgstr "Editer"
 msgid "Add or replace entry"
 msgstr "Ajouter ou remplacer une entrée"
 
-msgid "Number:"
-msgstr "Numéro:"
+msgid "Number/CallerID:"
+msgstr ""
 
-msgid "Enter the number you want to block"
-msgstr "Entrez le numéro à bloquer"
+msgid "Enter the number/CallerID you want to block"
+msgstr ""
+
+msgid "Description:"
+msgstr ""
+
+msgid "Enter a description for the number you want to block"
+msgstr ""
 
 msgid "Block Unknown/Blocked Caller ID:"
 msgstr ""

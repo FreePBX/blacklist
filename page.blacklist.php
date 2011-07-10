@@ -76,7 +76,7 @@ if (is_array($numbers)) {
 		
 	<?php
 	if($ast_ge_16) {
-	    echo "<td><b>"._("Number")."</b></td>";
+	    echo "<td><b>"._("Number/CallerID")."</b></td>";
 	    echo "<td><b>"._("Description")."</b></td>";
 		} else {
 		echo "<td><b>"._("Number")."</b></td>";
@@ -134,8 +134,8 @@ if (is_array($numbers)) {
 	<tr><td colspan="2"><h5><?php echo _("Add or replace entry") ?><hr></h5></td></tr>
 
         <tr>
-		<td><a href="#" class="info"><?php echo _("Number:")?>
-		<span><?php echo _("Enter the number you want to block")?></span></a></td>
+    	        <td><a href="#" class="info"><?php echo _("Number/CallerID:")?>
+    		<span><?php echo _("Enter the number/CallerID you want to block")?></span></a></td>
                 <td><input type="text" name="number"></td>
         </tr>
         <?php if($ast_ge_16) {
@@ -173,7 +173,7 @@ function isDialDigitsPlus(s)
 	for (i = 0; i < s.length; i++) {
 		var c = s.charAt(i);
 
-		if (!isDialDigitChar(c) && (c != "+")) return false;
+		if (!isCallerIDChar(c) && (c != "+")) return false;
 	}
 	return true;
 }

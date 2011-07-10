@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 17:34+0100\n"
+"POT-Creation-Date: 2011-07-10 10:28+0200\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -41,6 +41,12 @@ msgstr "удалено"
 msgid "Blacklist entries"
 msgstr "Записи в Черном списке"
 
+msgid "Number/CallerID"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
 msgid "Number"
 msgstr "Номер"
 
@@ -53,11 +59,17 @@ msgstr "Редактировать"
 msgid "Add or replace entry"
 msgstr "Добавить или заменить запись"
 
-msgid "Number:"
-msgstr "Номер:"
+msgid "Number/CallerID:"
+msgstr ""
 
-msgid "Enter the number you want to block"
-msgstr "Введите номер, который хотите заблокировать"
+msgid "Enter the number/CallerID you want to block"
+msgstr ""
+
+msgid "Description:"
+msgstr ""
+
+msgid "Enter a description for the number you want to block"
+msgstr ""
 
 msgid "Block Unknown/Blocked Caller ID:"
 msgstr ""

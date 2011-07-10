@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 17:34+0100\n"
+"POT-Creation-Date: 2011-07-10 10:28+0200\n"
 "PO-Revision-Date: 2006-10-17 17:30+0300\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
@@ -38,6 +38,12 @@ msgstr "נמחקה"
 msgid "Blacklist entries"
 msgstr "רשומות רשימה שחורה"
 
+msgid "Number/CallerID"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
 msgid "Number"
 msgstr "מספר"
 
@@ -50,11 +56,17 @@ msgstr "ערוך"
 msgid "Add or replace entry"
 msgstr "הוסף או החלף רשומה"
 
-msgid "Number:"
-msgstr "מספר:"
+msgid "Number/CallerID:"
+msgstr ""
 
-msgid "Enter the number you want to block"
-msgstr "הכנס את המספר שברצונך לחסום"
+msgid "Enter the number/CallerID you want to block"
+msgstr ""
+
+msgid "Description:"
+msgstr ""
+
+msgid "Enter a description for the number you want to block"
+msgstr ""
 
 msgid "Block Unknown/Blocked Caller ID:"
 msgstr ""

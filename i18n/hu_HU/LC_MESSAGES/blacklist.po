@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 17:34+0100\n"
+"POT-Creation-Date: 2011-07-10 10:28+0200\n"
 "PO-Revision-Date: 2008-02-06 20:54+0100\n"
 "Last-Translator: Lónyai Gergely <alephlg@gmail.com>\n"
 "Language-Team: Magyar <support@freepbx.hu>\n"
@@ -37,6 +37,12 @@ msgstr "törölt"
 msgid "Blacklist entries"
 msgstr "Feketelistás bejegyzések"
 
+msgid "Number/CallerID"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
 msgid "Number"
 msgstr "Szám"
 
@@ -49,11 +55,17 @@ msgstr "Szerkesztés"
 msgid "Add or replace entry"
 msgstr "Bejegyzés hozzáadása, vagy lecserélése"
 
-msgid "Number:"
-msgstr "Szám:"
+msgid "Number/CallerID:"
+msgstr ""
 
-msgid "Enter the number you want to block"
-msgstr "Add meg a blokkolandó telefonszámot"
+msgid "Enter the number/CallerID you want to block"
+msgstr ""
+
+msgid "Description:"
+msgstr ""
+
+msgid "Enter a description for the number you want to block"
+msgstr ""
 
 msgid "Block Unknown/Blocked Caller ID:"
 msgstr ""

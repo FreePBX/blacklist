@@ -5,8 +5,7 @@
 	<version>2.9.0.1</version>
 	<publisher>FreePBX</publisher>
 	<license>GPLv2+</license>
-	<type>setup</type>
-	<category>Inbound Call Control</category>
+	<category>Apps</category>
 	<menuitems>
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>

@@ -52,14 +52,7 @@ if(isset($_REQUEST['action'])) {
 }
 
 $numbers = blacklist_list();
-?>
-</div>
 
-<!-- NO rnav in this module -->
-
-
-<div class="content">
-<?php
 if ($action == 'delete') 
 	echo '<h3>'._("Blacklist entry").' '.$itemid.' '._("deleted").'!</h3>';
 

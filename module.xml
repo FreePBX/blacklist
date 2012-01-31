@@ -43,6 +43,6 @@
 	<depends>
 		<module>core ge 2.5.1.2</module>
 	</depends>
-	<location>release/2.10/blacklist-2.10.0.0.tgz</location>
-	<md5sum>76682f4caaad2e59a286bfc3aa4f1bb6</md5sum>
+	<location>release/2.10/blacklist-2.10.0.1.tgz</location>
+	<md5sum>286315aa90eb989758b05354a91d0d0f</md5sum>
 </module>

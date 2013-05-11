@@ -25,8 +25,8 @@ isset($_REQUEST['action'])?$action = $_REQUEST['action']:$action='';
 isset($_REQUEST['number'])?$number = $_REQUEST['number']:$number='';
 
 if($ast_ge_16) {
-    isset($_REQUEST['description'])?$description = $_REQUEST['description']:$description='';
-    }
+	isset($_REQUEST['description'])?$description = $_REQUEST['description']:$description='';
+}
 
 isset($_REQUEST['editnumber'])?$editnumber = $_REQUEST['editnumber']:$editnumber='';
 
@@ -52,6 +52,45 @@ if(isset($_REQUEST['action'])) {
 	}
 }
 
+?>
+<form autocomplete="off" name="edit" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return edit_onsubmit();">
+	<input type="hidden" name="display" value="<?php echo $dispnum?>">
+	<input type="hidden" name="action" value="add">
+	<input type="hidden" name="editnumber" value="">
+
+	<?php if($ast_ge_16) {
+    	    echo "<input type=\"hidden\" name=\"editdescripton\" value=\"\">";
+	    }?>
+	<table>
+	<tr><td colspan="2"><h5><?php echo _("Add or replace entry") ?><hr></h5></td></tr>
+
+        <tr>
+    	        <td><a href="#" class="info"><?php echo _("Number/CallerID:")?>
+    		<span><?php echo _("Enter the number/CallerID you want to block")?></span></a></td>
+                <td><input type="text" name="number"></td>
+        </tr>
+        <?php if($ast_ge_16) {
+    		echo "<tr>";
+                echo "<td><a href=\"#\" class=\"info\">"._("Description:");
+                echo "<span>"._("Enter a description for the number you want to block")."</span></a></td>";
+                echo "<td><input type=\"text\" name=\"description\"></td>";
+        echo "</tr>";        
+	    }?>
+
+        <tr>
+                <td><a href="#" class="info"><?php echo _("Block Unknown/Blocked Caller ID:")?>
+                <span><?php echo _("Check here to catch Unknown/Blocked Caller ID")?></span></a></td>
+                <td><input type="checkbox" name="blocked" value="1" <?php echo ($filter_blocked === true?" checked=1":"");?></td>
+        </tr>
+	</table>
+	<?php echo $module_hook->hookHtml;?>
+	<table>
+		<tr>
+			<td colspan="2"><br><h6><input name="submit" type="submit" value="<?php echo _("Submit Changes")?>"></h6></td>
+		</tr>
+	</table>
+</form>
+<?php
 $numbers = blacklist_list();
 
 if ($action == 'delete') 
@@ -60,7 +99,6 @@ if ($action == 'delete')
 if (is_array($numbers)) {
 
 ?>
-
 <table cellpadding="5">
         <tr>
 		<td colspan="4"><h5><?php echo _("Blacklist entries") ?><hr></h5></td>
@@ -116,73 +154,32 @@ if (is_array($numbers)) {
 }
 ?>
 
-<form autocomplete="off" name="edit" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return edit_onsubmit();">
-	<input type="hidden" name="display" value="<?php echo $dispnum?>">
-	<input type="hidden" name="action" value="add">
-	<input type="hidden" name="editnumber" value="">
-
-	<?php if($ast_ge_16) {
-    	    echo "<input type=\"hidden\" name=\"editdescripton\" value=\"\">";
-	    }?>
-	<table>
-	<tr><td colspan="2"><h5><?php echo _("Add or replace entry") ?><hr></h5></td></tr>
-
-        <tr>
-    	        <td><a href="#" class="info"><?php echo _("Number/CallerID:")?>
-    		<span><?php echo _("Enter the number/CallerID you want to block")?></span></a></td>
-                <td><input type="text" name="number"></td>
-        </tr>
-        <?php if($ast_ge_16) {
-    		echo "<tr>";
-                echo "<td><a href=\"#\" class=\"info\">"._("Description:");
-                echo "<span>"._("Enter a description for the number you want to block")."</span></a></td>";
-                echo "<td><input type=\"text\" name=\"description\"></td>";
-        echo "</tr>";        
-	    }?>
-
-        <tr>
-                <td><a href="#" class="info"><?php echo _("Block Unknown/Blocked Caller ID:")?>
-                <span><?php echo _("Check here to catch Unknown/Blocked Caller ID")?></span></a></td>
-                <td><input type="checkbox" name="blocked" value="1" <?php echo ($filter_blocked === true?" checked=1":"");?></td>
-        </tr>
-
-	<tr>
-		<td colspan="2"><br><h6><input name="submit" type="submit" value="<?php echo _("Submit Changes")?>"></h6></td>
-	</tr>
-	</table>
+<!--TODO: This should be jquery!-->
 <script language="javascript">
-<!--
+	var theForm = document.edit;
+	theForm.number.focus();
 
-var theForm = document.edit;
-theForm.number.focus();
+	function isDialDigitsPlus(s)
+	{
+		var i;
 
-function isDialDigitsPlus(s)
-{
-	var i;
+		if (isEmpty(s)) {
+			return false;
+		}
 
-	if (isEmpty(s)) {
-		return false;
+		for (i = 0; i < s.length; i++) {
+			var c = s.charAt(i);
+
+			if (!isCallerIDChar(c) && (c != "+")) return false;
+		}
+		return true;
 	}
 
-	for (i = 0; i < s.length; i++) {
-		var c = s.charAt(i);
 
-		if (!isCallerIDChar(c) && (c != "+")) return false;
+	function edit_onsubmit() {
+		defaultEmptyOK = false;
+	        if (theForm.number.value && !isDialDigitsPlus(theForm.number.value))
+	                return warnInvalid(theForm.number, "Please enter a valid Number");
+		return true;
 	}
-	return true;
-}
-
-
-function edit_onsubmit() {
-	defaultEmptyOK = false;
-        if (theForm.number.value && !isDialDigitsPlus(theForm.number.value))
-                return warnInvalid(theForm.number, "Please enter a valid Number");
-	return true;
-}
-
-
--->
 </script>
-
-
-</form>

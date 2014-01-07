@@ -33,7 +33,7 @@ function blacklist_get_config($engine) {
 
 			$id = "app-blacklist-check";
 			$c = "s";
-			// LookupBlackList doesn't seem to match empty astdb entry for "blacklist/", so we 
+			// LookupBlackList doesn't seem to match empty astdb entry for "blacklist/", so we
 			// need to check for the setting and if set, send to the blacklisted area
 			// The gotoif below is not a typo.  For some reason, we've seen the CID number set to Unknown or Unavailable
 			// don't generate the dialplan if they are not using the function
@@ -44,7 +44,7 @@ function blacklist_get_config($engine) {
 				$ext->add($id, $c, '', new ext_gotoif('$["foo${CALLERID(number)}" = "foo"]','check-blocked','check'));
 				$ext->add($id, $c, 'check-blocked', new ext_gotoif('$["${DB(blacklist/blocked)}" = "1"]','blacklisted'));
 			}
-			
+
 			if (version_compare($version, "1.6", "ge")) {
 				$ext->add($id, $c, 'check', new ext_gotoif('$["${BLACKLIST()}"="1"]', 'blacklisted'));
 			} else {
@@ -186,7 +186,7 @@ function blacklist_hookGet_config($engine) {
 
 					$exten = trim($item['extension']);
 					$cidnum = trim($item['cidnum']);
-						
+
 					if ($cidnum != '' && $exten == '') {
 						$exten = 's';
 						$pricid = ($item['pricid']) ? true:false;
@@ -197,7 +197,12 @@ function blacklist_hookGet_config($engine) {
 					}
 					$context = ($pricid) ? "ext-did-0001":"ext-did-0002";
 
-					$exten = (empty($exten)?"s":$exten);
+                    if (function_exists("empty_freepbx")) {
+                        $exten = empty_freepbx($exten)?"s":$exten;
+                    } else {
+                        $exten = (empty($exten)?"s":$exten);
+                    }
+
 					$exten = $exten.(empty($cidnum)?"":"/".$cidnum); //if a CID num is defined, add it
 
 					$ext->splice($context, $exten, 1, new ext_gosub('1', 's', 'app-blacklist-check'));

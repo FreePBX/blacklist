@@ -30,6 +30,7 @@ function blacklist_get_config($engine) {
 
 			$id = "app-blacklist";
 			$ext->addInclude('from-internal-additional', $id); // Add the include from from-internal
+			$ext->add($id, $c, '', new ext_macro('user-callerid'));
 
 			$id = "app-blacklist-check";
 			$c = "s";

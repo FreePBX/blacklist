@@ -31,7 +31,7 @@ if($ast_ge_16) {
 isset($_REQUEST['editnumber'])?$editnumber = $_REQUEST['editnumber']:$editnumber='';
 
 $dispnum = "blacklist"; //used for switch on config.php
-    
+
 //if submitting form, update database
 
 if(isset($_REQUEST['action'])) {
@@ -53,7 +53,7 @@ if(isset($_REQUEST['action'])) {
 }
 
 ?>
-<form autocomplete="off" name="edit" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return edit_onsubmit();">
+<form autocomplete="off" name="edit" action="" method="post" onsubmit="return edit_onsubmit();">
 	<input type="hidden" name="display" value="<?php echo $dispnum?>">
 	<input type="hidden" name="action" value="add">
 	<input type="hidden" name="editnumber" value="">
@@ -74,7 +74,7 @@ if(isset($_REQUEST['action'])) {
                 echo "<td><a href=\"#\" class=\"info\">"._("Description:");
                 echo "<span>"._("Enter a description for the number you want to block")."</span></a></td>";
                 echo "<td><input type=\"text\" name=\"description\"></td>";
-        echo "</tr>";        
+        echo "</tr>";
 	    }?>
 
         <tr>
@@ -93,7 +93,7 @@ if(isset($_REQUEST['action'])) {
 <?php
 $numbers = blacklist_list();
 
-if ($action == 'delete') 
+if ($action == 'delete')
 	echo '<h3>'._("Blacklist entry").' '.$itemid.' '._("deleted").'!</h3>';
 
 if (is_array($numbers)) {
@@ -105,7 +105,7 @@ if (is_array($numbers)) {
 	</tr>
 
 	<tr>
-		
+
 	<?php
 	if($ast_ge_16) {
 	    echo "<td><b>"._("Number/CallerID")."</b></td>";
@@ -114,8 +114,8 @@ if (is_array($numbers)) {
 		echo "<td><b>"._("Number")."</b></td>";
 		echo "<td>&nbsp;</td>";
 	    }
-?>		
-		<td>&nbsp;</td>		
+?>
+		<td>&nbsp;</td>
 	</tr>
 
 <?php
@@ -126,25 +126,25 @@ if (is_array($numbers)) {
 			$filter_blocked = true;
 		}
 		else  {
-		
+
     if($ast_ge_16) {
 			print('<tr>');
 			printf('<td>%s</td>', $num['number']);
  			printf('<td>%s</td>', $num['description']);
-			printf('<td><a href="%s?type=setup&display=%s&number=%s&action=delete">%s</a></td>', 
-			 $_SERVER['PHP_SELF'], urlencode($dispnum), urlencode($num['number']), _("Delete"));
-			printf('<td><a href="#" onClick="theForm.number.value = \'%s\'; 
+			printf('<td><a href="%s?type=setup&display=%s&number=%s&action=delete">%s</a></td>',
+			 "", urlencode($dispnum), urlencode($num['number']), _("Delete"));
+			printf('<td><a href="#" onClick="theForm.number.value = \'%s\';
 				theForm.editnumber.value = \'%s\' ;
-				theForm.description.value = \'%s\'; 
-				theForm.editdescription.value = \'%s\' ; 
+				theForm.description.value = \'%s\';
+				theForm.editdescription.value = \'%s\' ;
 				theForm.action.value = \'edit\' ; ">%s</a></td>',$num['number'], $num['number'], $num['description'], $num['description'], _("Edit"));
 			print('</tr>');
-			
+
 			} else {
 			print('<tr>');
 			printf('<td>%s</td>', $num);
-			printf('<td><a href="%s?type=setup&display=%s&number=%s&action=delete">%s</a></td>', 
-			 $_SERVER['PHP_SELF'], urlencode($dispnum), urlencode($num), _("Delete"));
+			printf('<td><a href="%s?type=setup&display=%s&number=%s&action=delete">%s</a></td>',
+			 "", urlencode($dispnum), urlencode($num), _("Delete"));
 			printf('<td><a href="#" onClick="theForm.number.value = \'%s\'; theForm.editnumber.value = \'%s\' ; theForm.action.value = \'edit\' ; ">%s</a></td>',$num, $num, _("Edit"));
 			print('</tr>');
 			}

@@ -1,23 +1,9 @@
 <?php /* $Id */
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
-//This file is part of FreePBX.
-//
-//    FreePBX is free software: you can redistribute it and/or modify
-//    it under the terms of the GNU General Public License as published by
-//    the Free Software Foundation, either version 2 of the License, or
-//    (at your option) any later version.
-//
-//    FreePBX is distributed in the hope that it will be useful,
-//    but WITHOUT ANY WARRANTY; without even the implied warranty of
-//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//    GNU General Public License for more details.
-//
-//    You should have received a copy of the GNU General Public License
-//    along with FreePBX.  If not, see <http://www.gnu.org/licenses/>.
-//
+//	License for all code of this FreePBX module can be found in the license file inside the module directory
 //  Copyright (C) 2006 Magnus Ullberg (magnus@ullberg.us)
 //  Portions Copyright (C) 2010 Mikael Carlsson (mickecamino@gmail.com)
-//
+//	Copyright 2013 Schmooze Com Inc.
 
 
 function blacklist_get_config($engine) {
@@ -29,11 +15,11 @@ function blacklist_get_config($engine) {
 		case "asterisk":
 
 			$id = "app-blacklist";
+			$c = "s";
 			$ext->addInclude('from-internal-additional', $id); // Add the include from from-internal
 			$ext->add($id, $c, '', new ext_macro('user-callerid'));
 
 			$id = "app-blacklist-check";
-			$c = "s";
 			// LookupBlackList doesn't seem to match empty astdb entry for "blacklist/", so we
 			// need to check for the setting and if set, send to the blacklisted area
 			// The gotoif below is not a typo.  For some reason, we've seen the CID number set to Unknown or Unavailable
@@ -287,4 +273,3 @@ function blacklist_chk($post){
 	return true;
 }
 
-?>

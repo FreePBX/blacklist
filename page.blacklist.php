@@ -54,7 +54,7 @@ if(isset($_REQUEST['action'])) {
 						unlink($path);
 						echo '<div class="alert alert-success" role="alert">'._('Sucessfully imported all entries').'</div>';
 					} else {
-						echo '<div class="alert alert-danger" role="alert">'._('Could not file file after upload').'</div>';
+						echo '<div class="alert alert-danger" role="alert">'._('Could not find file after upload').'</div>';
 					}
 				} else {
 					echo '<div class="alert alert-danger" role="alert">'._('The file must be in CSV format!').'</div>';

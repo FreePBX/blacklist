@@ -30,6 +30,52 @@ if(isset($_REQUEST['action'])) {
 			blacklist_del($number);
 			redirect_standard();
 		break;
+		case "import":
+			if ($_FILES["file"]["error"] > 0) {
+				echo '<div class="alert alert-danger" role="alert">'._('There was an error uploading the file').'</div>';
+			} else {
+				if(pathinfo($_FILES["blacklistfile"]["name"],PATHINFO_EXTENSION) == "csv") {
+					$path = sys_get_temp_dir() . "/" . $_FILES["blacklistfile"]["name"];
+					move_uploaded_file($_FILES["blacklistfile"]["tmp_name"], $path);
+					if(file_exists($path)) {
+						ini_set('auto_detect_line_endings',TRUE);
+						$handle = fopen($path,'r');
+						set_time_limit(0);
+						while ( ($data = fgetcsv($handle) ) !== FALSE ) {
+							if($data[0] == "number" && $data[1] == "description") {
+								continue;
+							}
+							blacklist_add(array(
+								"number" => $data[0],
+								"description" => $data[1],
+								"blocked" => 0
+							));
+						}
+						unlink($path);
+						echo '<div class="alert alert-success" role="alert">'._('Sucessfully imported all entries').'</div>';
+					} else {
+						echo '<div class="alert alert-danger" role="alert">'._('Could not file file after upload').'</div>';
+					}
+				} else {
+					echo '<div class="alert alert-danger" role="alert">'._('The file must be in CSV format!').'</div>';
+				}
+			}
+		break;
+		case "export":
+			$list = blacklist_list();
+			if(!empty($list)) {
+				header('Content-Type: text/csv; charset=utf-8');
+				header('Content-Disposition: attachment; filename=blacklist.csv');
+				$output = fopen('php://output', 'w');
+				fputcsv($output, array('number', 'description'));
+				foreach($list as $l) {
+					fputcsv($output, $l);
+				}
+			} else {
+				header("HTTP/1.0 404 Not Found");
+				echo _("No Entries to export");
+			}
+			die();
     case "edit":
       blacklist_del($editnumber);
 			blacklist_add($_POST);
@@ -40,7 +86,6 @@ if(isset($_REQUEST['action'])) {
 
 ?>
 <form autocomplete="off" name="edit" action="" method="post" onsubmit="return edit_onsubmit();">
-	<input type="hidden" name="display" value="<?php echo $dispnum?>">
 	<input type="hidden" name="action" value="add">
 	<input type="hidden" name="editnumber" value="">
 
@@ -72,12 +117,32 @@ if(isset($_REQUEST['action'])) {
 	<?php echo $module_hook->hookHtml;?>
 	<table>
 		<tr>
-			<td colspan="2"><br><h6><input name="submit" type="submit" value="<?php echo _("Submit Changes")?>"></h6></td>
+			<td colspan="2"><input name="submit" type="submit" value="<?php echo _("Submit Changes")?>"></td>
 		</tr>
 	</table>
 </form>
 <?php
 $numbers = blacklist_list();
+?>
+<form method="post" enctype="multipart/form-data">
+	<input type="hidden" name="action" value="import">
+	<table>
+		<tr><td colspan="2"><h5><?php echo _("Actions") ?><hr></h5></td></tr>
+		<?php if(!empty($numbers)) { ?>
+		<tr>
+			<td colspan="2"><a href="?display=blacklist&amp;action=export&amp;quietmode=1"><?php echo _('Export to CSV')?></a></td>
+		</tr>
+		<?php } ?>
+		<tr>
+			<td><a href="#" class="info"><?php echo _('Import from CSV')?><span><?php echo _("Import blacklist entries from a CSV file. Where the first column is the number and the second is the description")?></span></a></td>
+			<td><input type="file" name="blacklistfile" id="blacklistfile"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input name="submit" type="submit" value="<?php echo _("Import Entries")?>"></td>
+		</tr>
+	</table>
+</form>
+<?php
 
 if ($action == 'delete')
 	echo '<h3>'._("Blacklist entry").' '.$itemid.' '._("deleted").'!</h3>';

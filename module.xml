@@ -2,7 +2,7 @@
 	<rawname>blacklist</rawname>
 	<repo>standard</repo>
 	<name>Blacklist</name>
-	<version>2.11.0.5</version>
+	<version>12.0.1</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,12 +11,13 @@
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*12.0.1* FREEPBX-7944 Added basic import and export abilities
 		*2.11.0.5* #6923 language not being set.
 		*2.11.0.4* Update license file
 		*2.11.0.3* #7039 use empty_freepbx if available
 		*2.11.0.2* #6515
 		*2.11.0.1* Add htmlhook
-		*2.10.0.1* #5478 
+		*2.10.0.1* #5478
 		*2.10.0.0* new version changes
 		*2.9.0.1* #4922
 		*2.9.0.0* #4531, #2418, #4651, #4653
@@ -50,7 +51,7 @@
 		<module>core ge 2.5.1.2</module>
 	</depends>
 	<supported>
-		<version>2.10</version>
+		<version>12.0</version>
 	</supported>
 	<location>release/2.11/blacklist-2.11.0.2.tgz</location>
 	<md5sum>946bc59e73f980049e5e153c883b8b51</md5sum>

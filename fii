@@ -1,0 +1,556 @@
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..<.+@.@.......... ...PW.........r.3~.........
+..:.........
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 0
+E..<..@.@..:... .....P..2.V.W.....8.. .........
+..&...:.....
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.,@.@.......... ...PW...2.V............
+..:...&.
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 1160
+E....-@.@.......... ...PW...2.V......g.....
+..:...&.POST /admin/config.php?display=blacklist&action=import HTTP/1.1
+Host: 192.168.0.32
+Connection: keep-alive
+Content-Length: 44
+Pragma: no-cache
+Cache-Control: no-cache
+Origin: http://192.168.0.32
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary393BRj5O8WyjbE7B
+Accept: */*
+Referer: http://192.168.0.32/admin/config.php?display=blacklist
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8
+Cookie: guielToggle=%7B%22userman%23userman%22%3Atrue%7D; bannerMessages=%5B%22af074d8acd9959a845d2f32531259e95835e426b%22%2C%22888924f37346ec1c720bdeed75d68d10a12f72f7%22%2C%22dc8a7e2a93776e17810439ea342ffcd5196f58ef%22%2C%222f14630d41a82bbff7efbe94d0e659af55e8ef42%22%2C%226b4ccc9d1dd273b4ef5067a493f4a4e741defb73%22%5D; PHPSESSID=jvikhdcoqqc6id721s7bnclci2; __utmt=1; __utma=112067780.1414241376.1416839860.1419011671.1419020868.60; __utmb=112067780.29.10.1419020868; __utmc=112067780; __utmz=112067780.1416839860.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+
+------WebKitFormBoundary393BRj5O8WyjbE7B--
+
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 0
+E..4p.@.@.I/... .....P..2.V.W..W...........
+..&...:.
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p.@.@.C.... .....P..2.V.W..W....	......
+..*<..:.HTTP/1.1 200 OK
+Date: Fri, 19 Dec 2014 21:44:01 GMT
+Server: Apache/2.2.15 (CentOS)
+X-Powered-By: PHP/5.3.28
+Last-Modified: Fri, 19 Dec 2014 21:44:01 GMT
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Set-Cookie: bannerMessages=%5B%22af074d8acd9959a845d2f32531259e95835e426b%22%2C%22888924f37346ec1c720bdeed75d68d10a12f72f7%22%2C%22dc8a7e2a93776e17810439ea342ffcd5196f58ef%22%2C%222f14630d41a82bbff7efbe94d0e659af55e8ef42%22%2C%226b4ccc9d1dd273b4ef5067a493f4a4e741defb73%22%5D
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=utf-8
+
+25c5
+<!DOCTYPE html><html><head><title>FreePBX Administration</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8"><meta name="robots" content="noindex" /><link rel="shortcut icon" href="images/favicon.ico"><link href="assets/less/cache/lessphp_46dd43de316fbb53b6459103aa37235a97258ae1.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]><script src="assets/js/html5shiv.js"></script><![endif]--><!--[if (gte IE 6)&(lte IE 8)]><script type="text/javascript" src="assets/js/selectivizr.js"></script><![endif]--><script type="text/javascript" src="assets/js/modernizr.js"></script><script type="text/javascript" src="assets/js/browser-support.js"></script><script>var firsttypeofselector = true</script><link href="assets/less/buttons/cache/lessphp_4d0a37caeae29a69
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p.@.@.C.... .....P..2.\9W..W....]i.....
+..*<..:.976ddf4693043b1f715a039e.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="assets/js/jquery-1.11.1.min.js"></script><script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.js"></script><script type="text/javascript" src="assets/js/class.js"></script><script type='text/javascript'>
+	var fpbx = Class.extend({
+		params: {},
+		init: function() {
+			var self = this;
+			var path = window.location.pathname.toString().split('/');
+
+			path[path.length - 1] = 'ajax.php';
+			if (typeof(window.location.origin) == 'undefined') {
+				// Oh look, IE. Hur Dur, I'm a bwowsah.
+				window.location.origin = window.location.protocol+'//'+window.location.host;
+				if (window.location.port.length != 0) {
+					window.location.origin = window.location.origin+':'+window.location.port;
+				}
+			}
+			this.ajaxurl = window.location.origin + path.join('/');
+			if (window.location.search.length) {
+				var params = window.location.search.split(/\?|&/);
+				// NOT using jquery here. This is a bit more annoying, yes, but it means we
+				// can move it out of the way later. Note we break compat with IE8 and below
+				// here.
+				params.forEach(function(v) {
+					if (res = v.match(/(.+)=(.+)/)) {
+						self.params[res[1]] = res[2];
+					}
+				});
+			}
+		}
+	});
+	window.FreePBX = new fpbx();
+</script><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+<meta name="apple-mobile-we
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p.@.@.C.... .....P..2.a.W..W...........
+..*<..:.b-app-capable" content="yes" />
+<link rel="apple-touch-icon" href="assets/images/badge.png" />
+<link rel="apple-touch-icon-precomposed" href="assets/images/badge.png" /></head><body><div id="page"><noscript><div class="attention">WARNING: Javascript is disabled in your browser. The FreePBX administration interface requires Javascript to run properly. Please enable javascript or switch to another  browser that supports it.</div></noscript><div class="freepbx-navbar">
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle navbar-left collapsed" data-toggle="collapse" data-target="#fpbx-menu-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">
+					<img src="images/tango.png" alt="FreePBX" title="FreePBX" id="MENU_BRAND_IMAGE_TANGO_LEFT" data-BRAND_IMAGE_FREEPBX_LINK_LEFT="http://www.freepbx.org" />
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="fpbx-menu-collapse">
+				<ul class="nav navbar-nav navbar-left">
+					<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin</a>
+			<ul class="dropdown-menu" role="menu"><li><a href="config.php?display=ampusers">Administrators</a></li><li><a href="config.php?di
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p.@.@.C.... .....P..2.g.W..W...........
+..*<..:.splay=astmodules">Asterisk Modules</a></li><li><a href="config.php?display=phonebook">Asterisk Phonebook</a></li><li><a href="config.php?display=blacklist">Blacklist</a></li><li><a href="config.php?display=superfecta">CID Superfecta</a></li><li><a href="config.php?display=certman">Certificate Management</a></li><li><a href="config.php?display=contactmanager">Contact Manager</a></li><li><a href="config.php?display=dundicheck">DUNDi Lookup</a></li><li><a href="config.php?display=digiumaddons">Digium Addons</a></li><li><a href="config.php?display=featurecodeadmin">Feature Codes</a></li><li><a href="http://freepbx.org" target="_blank" >FreePBX Support</a></li><li><a href="config.php?display=javassh">Java SSH</a></li><li><a href="config.php?display=languagestatus">Language Status</a></li><li><a href="config.php?display=modules">Module Admin</a></li><li><a href="config.php?display=restart">Phone Restart</a></li><li><a href="config.php?display=recordings">System Recordings</a></li><li><a href="config.php?display=userman">User Management</a></li><li><a href="config.php?display=isymphony">ISymphony</a></li></ul><li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Applications</a>
+			<ul class="dropdown-menu" role="menu"><li><a href="config.php?display=bulkextensions">Bulk Extensions</a></li><li><a href="config.php?display=daynight">Call Flow Control</a></li><li><a href="config.php?display=callrecording"
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p.@.@.C.... .....P..2.m1W..W...........
+..*<..:.>Call Recording</a></li><li><a href="config.php?display=callback">Callback</a></li><li><a href="config.php?display=conferences">Conferences</a></li><li><a href="config.php?display=disa">DISA</a></li><li><a href="config.php?display=extensions">Extensions</a></li><li><a href="config.php?display=findmefollow">Follow Me</a></li><li><a href="config.php?display=ivr">IVR</a></li><li><a href="config.php?display=languages">Languages</a></li><li><a href="config.php?display=paging">Paging And Intercom</a></li><li><a href="config.php?display=parking">Parking</a></li><li><a href="config.php?display=queueprio">Queue Priorities</a></li><li><a href="config.php?display=queues">Queues</a></li><li><a href="config.php?display=ringgroups">Ring Groups</a></li><li><a href="config.php?display=setcid">Set CallerID</a></li><li><a href="config.php?display=timeconditions">Time Conditions</a></li><li><a href="config.php?display=timegroups">Time Groups</a></li><li><a href="config.php?display=vmblast">Voicemail Blasting</a></li><li><a href="config.php?display=hotelwakeup">Wake Up Calls</a></li></ul><li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Connectivity</a>
+			<ul class="dropdown-menu" role="menu"><li><a href="config.php?display=dahdichandids">DAHDI Channel DIDs</a></li><li><a href="config.php?display=dahdi">DAHDi Config</a></li><li><a href="config.php?display=motif">Google Voice (Motif)</a></li><li><a href="config
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p.@.@.C.... .....P..2.r.W..W.....-.....
+..*=..:..php?display=did">Inbound Routes</a></li><li><a href="config.php?display=routing">Outbound Routes</a></li><li><a href="config.php?display=sipstation">SIPSTATION</a></li><li><a href="config.php?display=trunks">Trunks</a></li></ul><li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports</a>
+			<ul class="dropdown-menu" role="menu"><li><a href="config.php?display=asteriskinfo">Asterisk Info</a></li><li><a href="config.php?display=logfiles">Asterisk Logfiles</a></li><li><a href="config.php?display=cdr">CDR Reports</a></li><li><a href="config.php?display=phpinfo">PHP Info</a></li><li><a href="config.php?display=index">System Status</a></li><li><a href="config.php?display=weakpasswords">Weak Password Detection</a></li><li><a href="config.php?display=isymphony_menu" target="_blank" >ISymphony Panel</a></li></ul><li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</a>
+			<ul class="dropdown-menu" role="menu"><li><a href="config.php?display=advancedsettings">Advanced Settings</a></li><li><a href="config.php?display=iaxsettings">Asterisk IAX Settings</a></li><li><a href="config.php?display=logfiles_settings">Asterisk Logfile Settings</a></li><li><a href="config.php?display=manager">Asterisk Manager Users</a></li><li><a href="config.php?display=arimanager">Asterisk REST Interface Users</a></li><li><a href="config.php?display=sipsettings">Asterisk SIP Settings</a
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p.@.@.C.... .....P..2.x.W..W....a,.....
+..*=..:.></li><li><a href="config.php?display=contactdir">Contact Directory Servers</a></li><li><a href="config.php?display=extensionsettings">Extension Settings</a></li><li><a href="config.php?display=fax">Fax Configuration</a></li><li><a href="config.php?display=music">Music On Hold</a></li><li><a href="config.php?display=phpagiconf">PHPAGI Config</a></li><li><a href="config.php?display=pinsets">PIN Sets</a></li><li><a href="config.php?display=queuemetrics">QueueMetrics</a></li><li><a href="config.php?display=outroutemsg">Route Congestion Messages</a></li><li><a href="config.php?display=voicemail">Voicemail Admin</a></li></ul><li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">User Panel</a>
+			<ul class="dropdown-menu" role="menu"><li><a href="/ucp" target="ucp" >UCP</a></li><li><a href="/recordings" target="ari" >User Panel</a></li></ul></li>					<li><a id="button_reload" class="navbar-btn reload-btn">Apply Config</a></li>
+				</ul>
+			</div>
+			<div class="navbar-header stuck-right">
+									<div class="nav-search">
+						<div class="" id='fpbxsearch'>
+							<input type="text" class="form-control typeahead" placeholder="Search">
+						</div>
+					</div>
+										<li class="dropdown">
+						<button class="dropdown-toggle nav-button" data-toggle="dropdown"><i id="settings-cog" class="fa fa-cog"></i></button>
+						<ul class="dropdown-menu" role="menu">
+							<li role="presentation" ><a>Hello, a
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p.@.@.C.... .....P..2.~)W..W...........
+..*=..:.dmin</a></li>
+							<li role="presentation" class="divider"></li>
+							<li><a id="user_logout" href="#">Logout</a>
+						</ul>
+					</li>
+							</div>
+		</div>
+	</nav>
+</div>
+<div id="page_body">
+
+455c
+<div class="alert alert-danger" role="alert">The file must be in CSV format!</div><div class="container-fluid">
+	<h1>Blacklist Module</h1>
+		<div class = "display full-border">
+		<div class="row">
+			<div class="col-sm-9">
+					<div class="fpbx-container">
+						<form class="fpbx-submit" name="frm_blacklist" action="" method="post" role="form">
+							<form autocomplete="off" name="edit" action="" method="post" onsubmit="return edit_onsubmit();">
+							<input type="hidden" name="action" value="add">
+							<input type="hidden" name="editnumber" value="">
+							<input type="hidden" name="editdescripton" value="">
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" data-name="blacklist" class="active">
+									<a href="#blacklist" aria-controls="blacklist" role="tab" data-toggle="tab">
+										Blacklist									</a>
+								</li>
+								<li role="presentation" data-name="importexport" class="change-tab">
+									<a href="#importexport" aria-controls="importexport" role="tab" data-toggle="tab">
+										Import/Export									</a>
+								</li>
+								<li role="presentation" data-name="settings" class="change-tab">
+									<a href="#settings" aria-controls="settings" role="tab" data-togg
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p.@.@.C~... .....P..2...W..W...........
+..*=..:.le="tab">
+										Settings									</a>
+								</li>
+							</ul>
+								<div class="tab-content display">
+									<div role=tabpanel" id="blacklist" class="tab-pane active">
+										<div class="table-responsive"> 
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th><input type="checkbox" class="" id="action-toggle-all"></th>
+				<th>Number</th>
+				<th>Description</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr id = "row111111111111">
+<td><input type = "checkbox" class="" id="actonthis111111111111" name="actionList[]" value="111111111111"></td>
+<td>111111111111</td>
+<td>11111111</td>
+<td><a href="#" data-toggle="modal" data-target="#addNumber" data-number='111111111111' data-description='11111111'>
+	<i class="fa fa-edit"></i></a>&nbsp;&nbsp;
+	<a href="#" id="del111111111111" data-number="111111111111" >
+	<i class="fa fa-trash-o"></i></a></td>
+</tr><tr id = "row2222222222">
+<td><input type = "checkbox" class="" id="actonthis2222222222" name="actionList[]" value="2222222222"></td>
+<td>2222222222</td>
+<td>2222222</td>
+<td><a href="#" data-toggle="modal" data-target="#addNumber" data-number='2222222222' data-description='2222222'>
+	<i class="fa fa-edit"></i></a>&nbsp;&nbsp;
+	<a href="#" id="del2222222222" data-number="2222222222" >
+	<i class="fa fa-trash-o"></i></a></td>
+</tr>		</tbody>
+	</table>
+</div>
+									</div>
+									<div role=tabpanel" id="importexport" class="tab-pane"
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p.@.@.C}... .....P..2..yW..W....p......
+..*=..:.>
+										<div class="row">
+											<div class="col-md-12">
+												<div class="row">
+													<div class="col-md-6">
+														<span class="btn btn-default btn-file">
+															Import from CSV<input type="file" class="form-control" name="blacklistfile" id="blacklistfile">
+														</span>
+														<span class="filename"></span>
+													</div>
+													<div class="col-md-6">
+														<a class="btn btn-default" role="button" href="?display=blacklist&amp;action=export&amp;quietmode=1">Export to CSV</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div role=tabpanel" id="settings" class="tab-pane">
+										<!--Block Anonymous-->
+										<div class="element-container">
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row">
+														<div class="form-group">
+															<div class="col-md-4">
+																<b>Block Unknown/Blocked Caller ID</b>
+																<i class="fa fa-question-circle fpbx-help-icon" data-for="blocked"></i>
+															</div>
+															<div class="col-md-8 radioset">
+																<input type="checkbox" name="blocked" id="blocked" value="1" >
+																<label for="blocked">Enable</label>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="c
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4..@.@.......... ...PW..W2.\9...........
+..;...*<
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p.@.@.C|... .....P..2..!W..W.....C.....
+..*B..;.ol-md-12">
+													<span id="blocked-help" class="help-block fpbx-help-block">Check here to catch Unknown/Blocked Caller ID</span>
+												</div>
+											</div>
+										</div>
+										<!--End Block Anonymous-->
+										<!--Destination-->
+										<div class="element-container">
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row">
+														<div class="form-group">
+															<div class="col-md-4">
+																<label class="control-label" for="goto0">Destination for BlackListed Calls</label>
+																<i class="fa fa-question-circle fpbx-help-icon" data-for="goto0"></i>
+															</div>
+															<div class="col-md-8 radioset">
+																<tr><td colspan=2><select data-last="" name="goto0" id="goto0" class="form-control destdropdown "  style="" tabindex="1" data-id="0" ><option value="" style="">== choose one ==</option><option value="Call_Flow_Control"  style="">Call Flow Control</option><option value="Call_Recording"  style="">Call Recording</option><option value="Callback"  style="">Callback</option><option value="Conferences"  style="">Conferences</option><option value="DISA"  style="">DISA</option><option value="Extensions"  style="">Extensions</option><option value="Feature_Code_Admin"  style="">Feature Code Admin</option><option value="IVR"  style="">IVR</option><option value="Languages"  style="">Languages</option><option va
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p.@.@.C{... .....P..2...W..W.....4.....
+..*B..;.lue="Paging_and_Intercom"  style="">Paging and Intercom</option><option value="Phonebook_Directory"  style="">Phonebook Directory</option><option value="Queue_Priorities"  style="">Queue Priorities</option><option value="Queues"  style="">Queues</option><option value="Ring_Groups"  style="">Ring Groups</option><option value="Set_CallerID"  style="">Set CallerID</option><option value="Terminate_Call"  style="">Terminate Call</option><option value="Time_Conditions"  style="">Time Conditions</option><option value="Trunks"  style="">Trunks</option><option value="Voicemail"  style="">Voicemail</option><option value="Voicemail_Blasting"  style="">Voicemail Blasting</option></select> <select data-url="config.php?display=daynight" data-class="daynight" data-mod="daynight" data-last="" name="Call_Flow_Control0" id="Call_Flow_Control0"  tabindex="2" style="display:none;" class="form-control destdropdown2 daynight " data-id="0" ><option value="popover"   style="">Add new Call Flow Control &#133</option></select><select data-url="config.php?display=callrecording" data-class="callrecording" data-mod="callrecording" data-last="" name="Call_Recording0" id="Call_Recording0"  tabindex="2" style="display:none;" class="form-control destdropdown2 callrecording " data-id="0" ><option value="popover"   style="">Add new Call Recording &#133</option></select><select data-url="config.php?display=callback" data-class="callback" data-mod="callback" da
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4./@.@.......... ...PW..W2.a............
+..;...*<
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p @.@.Cz... .....P..2..qW..W...."......
+..*C..;.ta-last="" name="Callback0" id="Callback0"  tabindex="2" style="display:none;" class="form-control destdropdown2 callback " data-id="0" ><option value="popover"   style="">Add new Callback &#133</option></select><select data-url="config.php?display=conferences" data-class="conferences" data-mod="conferences" data-last="" name="Conferences0" id="Conferences0"  tabindex="2" style="display:none;" class="form-control destdropdown2 conferences " data-id="0" ><option value="ext-meetme,9191,1"   style="">My Conference <9191></option><option value="popover"   style="">Add new Conferences &#133</option></select><select data-url="config.php?display=disa" data-class="disa" data-mod="disa" data-last="" name="DISA0" id="DISA0"  tabindex="2" style="display:none;" class="form-control destdropdown2 disa " data-id="0" ><option value="disa,1,1"   style="">James</option><option value="popover"   style="">Add new DISA &#133</option></select><select data-url="config.php?display=extensions" data-class="extensions" data-mod="core" data-last="" name="Extensions0" id="Extensions0"  tabindex="2" style="display:none;" class="form-control destdropdown2 core  extensions" data-id="0" ><option value="from-did-direct,01234,1"   style=""> <01234> JJ Assistant</option><option value="from-did-direct,1234,1"   style=""> <1234> John Jacob</option><option value="from-did-direct,1235,1"   style=""> <1235> Bob Jones</option><option value="from-did-direct,11235,1" 
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p!@.@.Cy... .....P..2...W..W....w|.....
+..*C..;.  style=""> <11235> BJ Assistant</option><option value="from-did-direct,81235,1"   style=""> <81235> East Lobby</option><option value="popover"   style="">Add new Extensions &#133</option></select><select data-last="" name="Feature_Code_Admin0" id="Feature_Code_Admin0"  tabindex="2" style="display:none;" class="form-control destdropdown2 featurecodeadmin " data-id="0" ><option value="ext-featurecodes,*31,1"   style="">Remove a number from the blacklist <*31></option><option value="ext-featurecodes,555,1"   style="">ChanSpy <555></option><option value="ext-featurecodes,7777,1"   style="">Simulate Incoming Call <7777></option><option value="ext-featurecodes,888,1"   style="">ZapBarge <888></option><option value="ext-featurecodes,666,1"   style="">Dial System FAX <666></option><option value="ext-featurecodes,*43,1"   style="">Echo Test <*43></option><option value="ext-featurecodes,*60,1"   style="">Speaking Clock <*60></option><option value="ext-featurecodes,*85,1"   style="">Pickup ParkedCall Prefix <*85></option><option value="ext-featurecodes,411,1"   style="">Phonebook dial-by-name directory <411></option><option value="ext-featurecodes,*271,1"   style="">1: bar <*271></option><option value="ext-featurecodes,*272,1"   style="">2: fandango <*272></option><option value="ext-featurecodes,*98,1"   style="">Dial Voicemail <*98></option></select><select data-url="config.php?display=ivr&action=add" data-class="ivr" data-mod="ivr" 
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.0@.@.......... ...PW..W2.g....(.$.....
+..;...*<
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p"@.@.Cx... .....P..2...W..W....&@.....
+..*C..;.data-last="" name="IVR0" id="IVR0"  tabindex="2" style="display:none;" class="form-control destdropdown2 ivr " data-id="0" ><option value="ivr-3,s,1"   style="">BUGTEST</option><option value="ivr-1,s,1"   style="">Iv-ARRRR</option><option value="ivr-4,s,1"   style="">JAMES</option><option value="popover"   style="">Add new IVR &#133</option></select><select data-url="config.php?display=languages" data-class="languages" data-mod="languages" data-last="" name="Languages0" id="Languages0"  tabindex="2" style="display:none;" class="form-control destdropdown2 languages " data-id="0" ><option value="app-languages,1,1"   style="">PIRATE</option><option value="popover"   style="">Add new Languages &#133</option></select><select data-url="config.php?display=paging&action=add" data-class="paging" data-mod="paging" data-last="" name="Paging_and_Intercom0" id="Paging_and_Intercom0"  tabindex="2" style="display:none;" class="form-control destdropdown2 paging " data-id="0" ><option value="app-pagegroups,7243,1"   style="">Page Group 7243</option><option value="popover"   style="">Add new Paging and Intercom &#133</option></select><select data-last="" name="Phonebook_Directory0" id="Phonebook_Directory0"  tabindex="2" style="display:none;" class="form-control destdropdown2 pbdirectory " data-id="0" ><option value="app-pbdirectory,pbdirectory,1"   style="">Phonebook Directory</option></select><select data-url="config.php?display=queueprio" 
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p#@.@.Cw... .....P..2..iW..W....~......
+..*C..;.data-class="queueprio" data-mod="queueprio" data-last="" name="Queue_Priorities0" id="Queue_Priorities0"  tabindex="2" style="display:none;" class="form-control destdropdown2 queueprio " data-id="0" ><option value="popover"   style="">Add new Queue Priorities &#133</option></select><select data-url="config.php?display=queues" data-class="queues" data-mod="queues" data-last="" name="Queues0" id="Queues0"  tabindex="2" style="display:none;" class="form-control destdropdown2 queues " data-id="0" ><option value="ext-queues,9001,1"   style="">Over 9000 <9001></option><option value="popover"   style="">Add new Queues &#133</option></select><select data-url="config.php?display=ringgroups" data-class="ringgroups" data-mod="ringgroups" data-last="" name="Ring_Groups0" id="Ring_Groups0"  tabindex="2" style="display:none;" class="form-control destdropdown2 ringgroups " data-id="0" ><option value="ext-group,600,1"   style="">Foo <600></option><option value="popover"   style="">Add new Ring Groups &#133</option></select><select data-last="" name="Set_CallerID0" id="Set_CallerID0"  tabindex="2" style="display:none;" class="form-control destdropdown2 setcid " data-id="0" ><option value="app-setcid,1,1"   style="">tst</option></select><select data-class="blackhole" data-last="" name="Terminate_Call0" id="Terminate_Call0"  tabindex="2" style="display:none;" class="form-control destdropdown2 core  blackhole" data-id="0" ><option value="app-bl
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.1@.@.......... ...PW..W2.m1...?.e.....
+..;...*<
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p$@.@.Cv... .....P..2...W..W....y1.....
+..*F..;.ackhole,hangup,1"   style="">Hangup</option><option value="app-blackhole,congestion,1"   style="">Congestion</option><option value="app-blackhole,busy,1"   style="">Busy</option><option value="app-blackhole,zapateller,1"   style="">Play SIT Tone (Zapateller)</option><option value="app-blackhole,musiconhold,1"   style="">Put caller on hold forever</option><option value="app-blackhole,ring,1"   style="">Play ringtones to caller until they hangup</option></select><select data-url="config.php?display=timeconditions" data-class="timeconditions" data-mod="timeconditions" data-last="" name="Time_Conditions0" id="Time_Conditions0"  tabindex="2" style="display:none;" class="form-control destdropdown2 timeconditions " data-id="0" ><option value="timeconditions,1,1"   style="">bar</option><option value="timeconditions,2,1"   style="">fandango</option><option value="popover"   style="">Add new Time Conditions &#133</option></select><select data-class="trunks" data-last="" name="Trunks0" id="Trunks0"  tabindex="2" style="display:none;" class="form-control destdropdown2 core  trunks" data-id="0" ><option value="ext-trunk,1,1"   style="">DAHDI Channel g0 (dahdi)</option><option value="ext-trunk,2,1"   style="">Digium Gateway (sip)</option><option value="ext-trunk,3,1"   style="">IPKALL (sip)</option><option value="ext-trunk,4,1"   style="">Crocodile (dundi)</option></select><select data-class="voicemail" data-last="" name="Voicemail0" id="
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p%@.@.Cu... .....P..2...W..W...........
+..*F..;.Voicemail0"  tabindex="2" style="display:none;" class="form-control destdropdown2 core  voicemail" data-id="0" ><option value="ext-local,vmb1234,1"   style=""><1234> John Jacob (busy)</option><option value="ext-local,vmu1234,1"   style=""><1234> John Jacob (unavail)</option><option value="ext-local,vms1234,1"   style=""><1234> John Jacob (no-msg)</option><option value="ext-local,vmi1234,1"   style=""><1234> John Jacob (instructions-only)</option></select><select data-url="config.php?display=vmblast" data-class="vmblast" data-mod="vmblast" data-last="" name="Voicemail_Blasting0" id="Voicemail_Blasting0"  tabindex="2" style="display:none;" class="form-control destdropdown2 vmblast " data-id="0" ><option value="popover"   style="">Add new Voicemail Blasting &#133</option></select></td></tr>															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<span id="goto0-help" class="help-block fpbx-help-block">Choose where blacklisted calls go</span>
+												</div>
+											</div>
+										</div>
+										<!--End Destination-->
+									</div>
+								</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-sm-3 bootnav">
+					<div class="list-group">
+						<a href="#" class="list-group-item" data-toggle="modal" data-target="#addNumber"><i class="fa fa-plus"></i>&nbsp;&nbsp;Blacklist Number</a>
+					</d
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.2@.@.......... ...PW..W2.r....V.......
+..;...*<
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p&@.@.Ct... .....P..2..aW..W....S......
+..*G..;.iv>
+				</div>
+				<!--Modals-->
+					<!--Add number Modal -->
+<div class="modal fade" id="addNumber" tabindex="-1" role="dialog" aria-labelledby="addNumber" aria-hidden="true">
+    <div class="modal-dialog display">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="addNumber">Add or replace entry</h4>
+			</div>
+			<div class="modal-body">
+				<input type="hidden" id="oldval" value=""/>
+				<!--Number-->
+				<div class="element-container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-3">
+										<label class="control-label" for="number">Number/CallerID</label>
+									</div>
+									<div class="col-md-9">
+										<input type="tel" class="form-control" id="number" name="number" value="" required>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+						</div>
+					</div>
+				</div>
+				<!--END Number-->
+				<!--Description-->
+				<div class="element-container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-3">
+										<label class="control-label" for="description">Description</label>
+									</div>
+									<div class="col-md-
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 590
+E...p'@.@.F.... .....P..2..	W..W....x......
+..*G..;.9">
+										<input type="text" class="form-control" id="description" name="description" value="">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+						</div>
+					</div>
+				</div>
+				<!--END Description-->
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" id="submitnumber">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+				<!--Modals-->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.3@.@.......... ...PW..W2.x....l.......
+..;...*=
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.4@.@......... ...PW..W2.~).....'.....
+..;...*=
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.5@.@.......... ...PW..W2........h.....
+..;...*=
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.6@.@.......... ...PW..W2..y...........
+..;...*=
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.7@.@..
+....... ...PW..W2..!...........
+..;...*=
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.8@.@..	....... ...PW..W2........(.....
+..;...*B
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.9@.@.......... ...PW..W2..q.....i.....
+..;...*B
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.:@.@.......... ...PW..W2..............
+..;...*C
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.;@.@.......... ...PW..W2......!.......
+..;...*C
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.<@.@.......... ...PW..W2..i...8.+.....
+..;...*C
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.=@.@.......... ...PW..W2......O.l.....
+..;...*C
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.>@.@.......... ...PW..W2......e.......
+..;...*F
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.?@.@.......... ...PW..W2..a...|.......
+..;...*F
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.@@.@.......... ...PW..W2..	.....-.....
+..;...*G
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.A@.@.......... ...PW..W2..W...........
+..;...*G
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p(@.@.Cr... .....P..2..WW..W...........
+..*^..;.42d5
+</div></div><div id="footer"><hr /><div id="action-bar"><input  name="reset" type="submit" value="Reset" id="Reset" class="hidden" ><input  name="submit" type="submit" value="Submit" id="Submit" class="hidden" ><input  name="upload" type="submit" value="Upload" id="Upload" class="hidden" ></div><div id="footer_content" class="row"><div class="col-md-4">
+	<a target="_blank" href="http://www.freepbx.org" ><img id="footer_logo1" src="images/freepbx_small.png?load_version=13.0.1alpha1" alt="FreePBX&reg;"/>
+	</a>
+	</div><div class="col-md-4" id="footer_text"><a href="http://www.freepbx.org" target="_blank">FreePBX</a> is a registered trademark of<br /><a href="http://www.freepbx.org/copyright.html" target="_blank"> Schmooze Com., Inc.</a><br />FreePBX 13.0.1alpha1 is licensed under the<a href="http://www.gnu.org/copyleft/gpl.html" target="_blank"> GPL</a><br /><a href="http://www.freepbx.org/copyright.html" target="_blank">Copyright&copy; 2007-2014</a></div><div class="col-md-4">
+	<a target="_blank" href="http://www.schmoozecom.com" ><img id="footer_logo" src="images/schmooze-logo.png" alt="www.schmoozecom.com"/>
+	</a>
+	</div></div></div></div>
+<script type="text/javascript">var fpbx={"conf":{"AS_DISPLAY_FRIENDLY_NAME":1,"AS_DISPLAY_HIDDEN_SETTINGS":0,"AS_DISPLAY_READONLY_SETTINGS":1,"AS_OVERRIDE_READONLY":1,"HTTPENABLESTATIC":0,"HTTPENABLED":1,"HTTPBINDADDRESS":"0.0.0.0","HTTPBINDPORT":8088,"HTTPPREFIX":"","ASTMGRWRITETIME
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p)@.@.Cq... .....P..2...W..W....M......
+..*^..;.OUT":5000,"ENABLE_ARI":1,"ENABLE_ARI_PP":1,"AMPBACKUPEMAILFROM":"","DAYNIGHTTCHOOK":false,"CC_MAX_REQUESTS_GLOBAL":20,"CC_NON_EXTENSION_POLICY":"never","CC_FORCE_DEFAULTS":1,"CC_AGENT_POLICY_DEFAULT":"generic","CC_MONITOR_POLICY_DEFAULT":"generic","CC_OFFER_TIMER_DEFAULT":"30","CCBS_AVAILABLE_TIMER_DEFAULT":"4800","CCNR_AVAILABLE_TIMER_DEFAULT":"7200","CC_RECALL_TIMER_DEFAULT":"15","CC_AGENT_DIALSTRING_DEFAULT":"extension","CC_MAX_AGENTS_DEFAULT":"5","CC_AGENT_ALERT_INFO_DEFAULT":"","CC_AGENT_CID_PREPEND_DEFAULT":"","CC_ANNOUNCE_MONITOR_DEFAULT":1,"CC_MONITOR_ALERT_INFO_DEFAULT":"","CC_MONITOR_CID_PREPEND_DEFAULT":"","CC_MAX_MONITORS_DEFAULT":"5","CC_BLF_OFFERED":"NOT_INUSE","CC_BLF_PENDING":"INUSE","CC_BLF_CALLER_BUSY":"ONHOLD","CC_BLF_RECALL":"RINGING","CEL_ENABLED":1,"DAHDISHOWDIGITALCHANS":0,"DAHDIEXEC":"\/etc\/init.d\/dahdi","DAHDIMODULESLOC":"\/etc\/dahdi\/modules","DAHDIDISABLEWRITE":0,"DAHDIMODPROBELOC":"\/etc\/modprobe.d\/dahdi.conf","DAHDIECHOCAN":"oslec","DAHDISYSTEMLOC":"\/etc\/dahdi\/system.conf","FORCE_JS_CSS_IMG_DOWNLOAD":0,"AMPLOCALBIN":"","FPBXDBUGFILE":"\/var\/log\/asterisk\/freepbx_dbug","DEVEL":false,"FPBXDBUGDISABLE":0,"DISABLE_CSS_AUTOGEN":0,"MODULEADMIN_SKIP_CACHE":1,"DISPLAY_MONITOR_TRUNK_FAILURES_FIELD":0,"JQMIGRATE":1,"SIGNATURECHECK":1,"AMPTRACKENABLE":1,"REMOTEUNLOCK":0,"DEVELRELOAD":false,"POST_RELOAD_DEBUG":0,"POST_RELOAD":"","PRE_RELOAD":"","DIE_FREEPBX_VERBOSE":0,"CRONMAN_UPDATES_CHECK":1,"USE
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p*@.@.Cp... .....P..2...W..W....=......
+..*^..;._PACKAGED_JS":0,"MIXMON_POST":"","ALWAYS_SHOW_DEVICE_DETAILS":1,"DEVICE_STRONG_SECRETS":1,"DEVICE_REMOVE_MAILBOX":0,"DEVICE_SIP_CANREINVITE":"no","DEVICE_SIP_TRUSTRPID":"yes","DEVICE_SIP_SENDRPID":"pai","DEVICE_SIP_NAT":"yes","DEVICE_SIP_ENCRYPTION":"no","DEVICE_SIP_QUALIFYFREQ":60,"DEVICE_QUALIFY":"yes","DEVICE_ALLOW":"","DEVICE_DISALLOW":"","DEVICE_CALLGROUP":"","DEVICE_PICKUPGROUP":"","TRANSFER_CONTEXT":"from-internal-xfer","BLOCK_OUTBOUND_TRUNK_CNAM":0,"CFRINGTIMERDEFAULT":"0","REC_POLICY":"caller","ASTCONFAPP":"app_meetme","ZAP2DAHDICOMPAT":true,"ENABLECW":true,"DISABLECUSTOMCONTEXTS":false,"DITECH_VQA_INBOUND":"7","DITECH_VQA_OUTBOUND":"7","DYNAMICHINTS":false,"CONCURRENCYLIMITDEFAULT":"3","FCBEEPONLY":0,"FORCE_INTERNAL_AUTO_ANSWER_ALL":0,"DIVERSIONHEADER":true,"DEFAULT_INTERNAL_AUTO_ANSWER":"disabled","NOOPTRACE":"0","CWINUSEBUSY":true,"CID_PREPEND_REPLACE":1,"ASTSTOPPOLLINT":"2","ASTSIPDRIVER":"chan_sip","TRUNK_RING_TIMER":300,"AMPBADNUMBER":true,"USEGOOGLEDNSFORENUM":0,"ASTSTOPTIMEOUT":"120","DIAL_OPTIONS":"Ttr","TRUNK_OPTIONS":"Tt","TONEZONE":"us","OUTBOUND_CID_UPDATE":1,"OUTBOUND_DIAL_UPDATE":1,"CONNECTEDLINE_PRESENCESTATE":1,"RINGTIMER":"15","TIMEFORMAT":"12 Hour Format","ASTAGIDIR":"\/var\/lib\/asterisk\/agi-bin","ASTVARLIBDIR":"\/var\/lib\/asterisk","ASTETCDIR":"\/etc\/asterisk","ASTLOGDIR":"\/var\/log\/asterisk","ASTMODDIR":"\/usr\/lib\/asterisk\/modules","ASTRUNDIR":"\/var\/run\/asterisk","ASTSPOOLDIR":"\/var
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p+@.@.Co... .....P..2..OW..W....3~.....
+..*^..;.\/spool\/asterisk","CERTKEYLOC":"\/etc\/asterisk\/keys","AMPCGIBIN":"\/var\/www\/cgi-bin ","AMPBIN":"\/var\/lib\/asterisk\/bin","AMPSBIN":"\/usr\/local\/sbin","AMPWEBROOT":"\/var\/www\/html","MOHDIR":"moh","MIXMON_DIR":"","FOPWEBROOT":"cxpanel","FOLLOWME_AUTO_CREATE":1,"FOLLOWME_DISABLED":1,"FOLLOWME_TIME":"20","FOLLOWME_PRERING":"7","FOLLOWME_RG_STRATEGY":"ringallv2-prim","BADDESTABORT":false,"XTNCONFLICTABORT":false,"CHECKREFERER":true,"SERVERINTITLE":false,"CUSTOMASERROR":true,"RELOADCONFIRM":true,"SHOWLANGUAGE":0,"USE_FREEPBX_MENU_CONF":1,"MODULEADMINWGET":true,"DASHBOARD_INFO_UPDATE_TIME":"30","MAXCALLS":"","DASHBOARD_STATS_UPDATE_TIME":"6","ENABLEOLDDIALPATTERNS":0,"AST_APP_VQA":"","AST_FUNC_CONNECTEDLINE":"CONNECTEDLINE","AST_FUNC_DEVICE_STATE":"DEVICE_STATE","AST_FUNC_EXTENSION_STATE":"EXTENSION_STATE","AST_FUNC_MASTER_CHANNEL":"MASTER_CHANNEL","AST_FUNC_PRESENCE_STATE":"PRESENCE_STATE","AST_FUNC_SHARED":"SHARED","ASTVERSION":"12.6.1","NOTICE_BROWSER_STATS":1,"mainstyle_css_generated":"assets\/css\/mstyle_autogen_1404934874.css","MODULE_REPO":"http:\/\/mirror1.freepbx.org,http:\/\/mirror2.freepbx.org","SESSION_TIMEOUT":2592000,"SIPUSERAGENT":"FPBX","PAGINGMAXPARTICIPANTS":40,"QUEUES_PESISTENTMEMBERS":1,"QUEUES_SHARED_LASTCALL":1,"QUEUES_MIX_MONITOR":1,"QUEUES_HIDE_NOANSWER":1,"QUEUES_EVENTS_WHEN_CALLED_DEFAULT":0,"GENERATE_LEGACY_QUEUE_CODES":1,"QUEUES_EVENTS_MEMEBER_STATUS_DEFAULT":0,"EXTENSION_LIST_RINGGROUPS":0,"P
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p,@.@.Cn... .....P..2...W..W...........
+..*^..;.DFAUTHOR":"www.freepbx.org","BRAND_IMAGE_FAVICON":"images\/favicon.ico","BRAND_IMAGE_TANGO_LEFT":"images\/tango.png","BRAND_TITLE":"FreePBX Administration","BRAND_IMAGE_FREEPBX_FOOT":"images\/freepbx_small.png","BRAND_IMAGE_SPONSOR_FOOT":"images\/schmooze-logo.png","BRAND_FREEPBX_ALT_LEFT":"FreePBX","BRAND_FREEPBX_ALT_FOOT":"FreePBX&reg;","BRAND_SPONSOR_ALT_FOOT":"www.schmoozecom.com","BRAND_IMAGE_FREEPBX_LINK_LEFT":"http:\/\/www.freepbx.org","BRAND_IMAGE_FREEPBX_LINK_FOOT":"http:\/\/www.freepbx.org","BRAND_IMAGE_SPONSOR_LINK_FOOT":"http:\/\/www.schmoozecom.com","BRAND_CSS_ALT_MAINSTYLE":"","BRAND_CSS_ALT_POPOVER":"","BRAND_CSS_CUSTOM":"","VIEW_FREEPBX_ADMIN":"views\/freepbx_admin.php","VIEW_FREEPBX":"views\/freepbx.php","VIEW_FREEPBX_RELOAD":"views\/freepbx_reload.php","VIEW_FREEPBX_RELOADBAR":"views\/freepbx_reloadbar.php","VIEW_WELCOME":"views\/welcome.php","VIEW_WELCOME_NONMANAGER":"views\/welcome_nomanager.php","VIEW_MENUITEM_DISABLED":"views\/menuitem_disabled.php","VIEW_NOACCESS":"views\/noaccess.php","VIEW_UNAUTHORIZED":"views\/unauthorized.php","VIEW_BAD_REFFERER":"views\/bad_refferer.php","VIEW_LOGGEDOUT":"views\/loggedout.php","VIEW_PANEL":"views\/panel.php","VIEW_REPORTS":"views\/reports.php","VIEW_MENU":"views\/menu.php","VIEW_OBE":"views\/obe.php","VIEW_BETA_NOTICE":"views\/beta_notice.php","JQUERY_CSS":"assets\/css\/jquery-ui.css","VIEW_LOGIN":"views\/login.php","VIEW_HEADER":"views\/header.php","VIEW_FOOTER":
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p-@.@.Cm... .....P..2...W..W.....D.....
+..*^..;."views\/footer.php","VIEW_POPOVER_JS":"views\/popover_js.php","BRAND_ALT_JS":"","DASHBOARD_FREEPBX_BRAND":"FreePBX","VIEW_FOOTER_CONTENT":"views\/footer_content.php","FREEI221":1,"WHICH_cp":"\/bin\/cp","WHICH_grep":"\/bin\/grep","WHICH_ifconfig":"\/sbin\/ifconfig","WHICH_mysqldump":"\/usr\/bin\/mysqldump","WHICH_openssl":"\/usr\/bin\/openssl","WHICH_prosodyctl":"\/usr\/bin\/prosodyctl","WHICH_rm":"\/bin\/rm","WHICH_tail":"\/usr\/bin\/tail","WHICH_tar":"\/bin\/tar","WHICH_touch":"\/bin\/touch","AMPSYSLOGLEVEL":"FILE","AMPDISABLELOG":false,"LOG_OUT_MESSAGES":1,"LOG_NOTIFICATIONS":1,"FPBX_LOG_FILE":"\/var\/log\/asterisk\/freepbx.log","PHP_ERROR_HANDLER_OUTPUT":"freepbxlog","AGGRESSIVE_DUPLICATE_CHECK":0,"AMPEXTENSIONS":"extensions","AUTHTYPE":"database","AMP_ACCESS_DB_CREDS":0,"BOOTSTRAP_VER":"3.0.2","BROWSER_STATS":1,"FORCED_ASTVERSION":"","AMPWEBADDRESS":"","JQUERYUI_VER":"1.10.3","JQUERY_VER":"1.11.1","AMPENGINE":"asterisk","USE_GOOGLE_CDN_JS":0,"MIXMON_FORMAT":"wav","AMPMPG123":true,"SSHPORT":"","AMPPLAYKEY":"","RSSFEEDS":"","TCMAINT":true,"TCINTERVAL":"60","AMPUSERMANEMAILFROM":"","VMX_CONTEXT":"from-internal","VMX_LOOPDEST_CONTEXT":"","VMX_LOOPDEST_EXT":"dovm","VMX_LOOPDEST_PRI":1,"VMX_PRI":1,"VMX_TIMEDEST_CONTEXT":"","VMX_TIMEDEST_EXT":"dovm","VMX_TIMEDEST_PRI":1,"USERESMWIBLF":1,"VM_SHOW_IMAP":0,"UCP_MESSAGE_LIMIT":3000,"USEDEVSTATE":true,"USEQUEUESTATE":false,"QUEUES_UPDATECDR":true,"datasource":"","AMPENABLEDEVELDEBUG
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p.@.@.Cl... .....P..2..GW..W...........
+..*^..;.":false,"text_dir":"ltr","uniqueid":"cb60f26eaf7b9fbdc952497c10c76059","dist":{"pbx_type":"freepbxdistro","pbx_version":"6.12.65-23"},"ver":"13.0.1alpha1","reload_needed":false,"brandid":"freepbxdistro","modules":{"sysadmin":{"deployment_id":false,"zendid":null}}},"msg":{"framework":{"reload_unidentified_error":" error(s) occurred, you should view the notification log on the dashboard or main screen to check for more details.","close":"Close","continuemsg":"Continue","cancel":"Cancel","retry":"Retry","update":"Update","save":"Save","bademail":"Invalid email address","updatenotifications":"Update Notifications","securityissue":"Security Issue","validation":{"duplicate":" extension number already in use by: ","delete":"Are you sure you want to delete this?"},"noupdates":"Are you sure you want to disable automatic update notifications? This could leave your system at risk to serious security vulnerabilities. Enabling update notifications will NOT automatically install them but will make sure you are informed as soon as they are available.","noupemail":"Are you sure you don't want to provide an email address where update notifications will be sent. This email will never be transmitted off the PBX. It is used to send update and security notifications when they are detected.","invalid_responce":"Error: Did not receive valid response from server","invalid_response":"Error: Did not receive valid response from server","validateSingle
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p/@.@.Ck... .....P..2...W..W....w......
+..*^..;.Destination":{"required":"Please select a \"Destination\"","error":"Custom Goto contexts must contain the string \"custom-\".  ie: custom-app,s,1"},"weakSecret":{"length":"The secret must be at minimum six characters in length.","types":"The secret must contain at least two numbers and two letters."}}}};
+var extmap={"9191":"Conference: My Conference","*32":"Featurecode: blacklist_last (blacklist:Blacklist the last caller)","*31":"Featurecode: blacklist_remove (blacklist:Remove a number from the blacklist)","*72":"Featurecode: cfon (callforward:Call Forward All Activate)","*73":"Featurecode: cfoff (callforward:Call Forward All Deactivate)","*93":"Featurecode: cfpon (callforward:Call Forward All Prompting Activate)","*74":"Featurecode: cfoff_any (callforward:Call Forward All Prompting Deactivate)","*90":"Featurecode: cfbon (callforward:Call Forward Busy Activate)","*91":"Featurecode: cfboff (callforward:Call Forward Busy Deactivate)","*94":"Featurecode: cfbpon (callforward:Call Forward Busy Prompting Activate)","*92":"Featurecode: cfboff_any (callforward:Call Forward Busy Prompting Deactivate)","*52":"Featurecode: cfuon (callforward:Call Forward No Answer\/Unavailable Activate)","*53":"Featurecode: cfuoff (callforward:Call Forward No Answer\/Unavailable Deactivate)","*95":"Featurecode: cfupon (callforward:Call Forward No Answer\/Unavailable Prompting Activate)","*96":"Featurecode: cf_toggle (callforward:Call Forward Toggle)","
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p0@.@.Cj... .....P..2...W..W....a......
+..*^..;.*70":"Featurecode: cwon (callwaiting:Call Waiting - Activate)","*71":"Featurecode: cwoff (callwaiting:Call Waiting - Deactivate)","*83":"Featurecode: cancel (campon:Camp-On Cancel)","*82":"Featurecode: request (campon:Camp-On Request)","*84":"Featurecode: toggle (campon:Camp-On Toggle)","*87":"Featurecode: conf_status (conferences:Conference Status)","*8":"Featurecode: pickupexten (core:Asterisk General Call Pickup)","555":"Featurecode: chanspy (core:ChanSpy)","**":"Featurecode: disconnect (core:In-Call Asterisk Disconnect Code)","*2":"Featurecode: atxfer (core:In-Call Asterisk Attended Transfer)","##":"Featurecode: blindxfer (core:In-Call Asterisk Blind Transfer)","*1":"Featurecode: automon (core:In-Call Asterisk Toggle Call Recording)","7777":"Featurecode: simu_pstn (core:Simulate Incoming Call)","*12":"Featurecode: userlogoff (core:User Logoff)","*11":"Featurecode: userlogon (core:User Logon)","888":"Featurecode: zapbarge (core:ZapBarge)","*28":"Featurecode: toggle-mode-all (daynight:All: Call Flow Toggle)","*35":"Featurecode: senddictate (dictate:Email completed dictation)","*34":"Featurecode: dodictate (dictate:Perform dictation)","*78":"Featurecode: dnd_on (donotdisturb:DND Activate)","*79":"Featurecode: dnd_off (donotdisturb:DND Deactivate)","*76":"Featurecode: dnd_toggle (donotdisturb:DND Toggle)","666":"Featurecode: simu_fax (fax:Dial System FAX)","*21":"Featurecode: fmf_toggle (findmefollow:Findme Follow Toggle)","
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p1@.@.Ci... .....P..2..?W..W...........
+..*^..;.*68":"Featurecode: hotelwakeup (hotelwakeup:Wake Up Calls)","*69":"Featurecode: calltrace (infoservices:Call Trace)","*43":"Featurecode: echotest (infoservices:Echo Test)","*65":"Featurecode: speakextennum (infoservices:Speak Your Exten Number)","*60":"Featurecode: speakingclock (infoservices:Speaking Clock)","":"Featurecode: miscapp_2869 (miscapps:James)","0000009":"Featurecode: miscapp_11 (miscapps:James)","*80":"Featurecode: intercom-prefix (paging:Intercom prefix)","*54":"Featurecode: intercom-on (paging:User Intercom Allow)","*55":"Featurecode: intercom-off (paging:User Intercom Disallow)","*85":"Featurecode: parkedcall (parking:Pickup ParkedCall Prefix)","411":"Featurecode: app-pbdirectory (pbdirectory:Phonebook dial-by-name directory)","*47":"Featurecode: que_callers (queues:Queue Callers)","*46":"Featurecode: que_pause_toggle (queues:Queue Pause Toggle)","*45":"Featurecode: que_toggle (queues:Queue Toggle)","*99":"Featurecode: record_check (recordings:Check Recording)","*77":"Featurecode: record_save (recordings:Save Recording)","*75":"Featurecode: setspeeddial (speeddial:Set user speed dial)","*0":"Featurecode: callspeeddial (speeddial:Speeddial prefix)","*271":"Featurecode: toggle-mode-1 (timeconditions:1: bar)","*272":"Featurecode: toggle-mode-2 (timeconditions:2: fandango)","*27":"Featurecode: toggle-mode-all (timeconditions:All: Time Condition Override)","*98":"Featurecode: dialvoicemail (voicemail:Dial Voicemai
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1448
+E...p2@.@.Ch... .....P..2...W..W..... .....
+..*^..;.l)","*":"Featurecode: directdialvoicemail (voicemail:Direct Dial Prefix)","*97":"Featurecode: myvoicemail (voicemail:My Voicemail)","7243":"Page Group: ","70":"ParkPlus: ParkCall Default Lot","71":"ParkPlus: PickupSlot Default Lot","72":"ParkPlus: PickupSlot Default Lot","73":"ParkPlus: PickupSlot Default Lot","74":"ParkPlus: PickupSlot Default Lot","75":"ParkPlus: PickupSlot Default Lot","76":"ParkPlus: PickupSlot Default Lot","77":"ParkPlus: PickupSlot Default Lot","78":"ParkPlus: PickupSlot Default Lot","9001":"Queue: Over 9000","600":"Ring Group: Foo","1234":"User Extension: John Jacob","01234":"User Extension: JJ Assistant","1235":"User Extension: Bob Jones","11235":"User Extension: BJ Assistant","81235":"User Extension: East Lobby"};$(document).click();</script><script src="assets/js/bootstrap-3.3.1.custom.min.js"></script><script type="text/javascript" src="assets/js/jquery-ui-1.10.3.custom.min.js"></script><script type="text/javascript" src="assets/js/jed.js?load_version=13.0.1alpha1"></script><script type="text/javascript" src="assets/js/XMLHttpRequest.js?load_version=13.0.1alpha1"></script><script type="text/javascript" src="assets/js/jquery.hotkeys.js?load_version=13.0.1alpha1"></script><script type="text/javascript" src="assets/js/jquery.cookie.js?load_version=13.0.1alpha1"></script><script type="text/javascript" src="assets/js/script.legacy.js?load_version=13.0.1alpha1"></script><script type="text/javascript" sr
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 1189
+E...p3@.@.Dj... .....P..2...W..W.....C.....
+..*^..;.c="assets/js/jquery.autosize.min.js?load_version=13.0.1alpha1"></script><script type="text/javascript" src="assets/js/tabber-minimized.js?load_version=13.0.1alpha1"></script><script type="text/javascript" src="assets/js/typeahead.bundle.js"></script><script type="text/javascript" src="assets/js/search.js"></script><script type="text/javascript" src="assets/blacklist/js/blacklist.js"></script><script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-25724109-1'],['_setCustomVar',1,'type',fpbx.conf.dist.pbx_type,2],['_setCustomVar',2,'typever',fpbx.conf.dist.pbx_version,3],['_setCustomVar',3,'astver',fpbx.conf.ASTVERSION,3],['_setCustomVar',4,'fpbxver',fpbx.conf.ver,3],['_setCustomVar',5,'display',$.urlParam('display'),3],/*['_setCustomVar',1,'uniqueid',fpbx.conf.uniqueid,1],['_setCustomVar',1,'lang',$.cookie('lang')||'en_US',3],*/['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();</script></body>
+</html>
+
+
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.B@.@.......... ...PW..W2..............
+..;...*^
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.C@.@.......... ...PW..W2......../.....
+..;...*^
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.D@.@.......... ...PW..W2..O.....p.....
+..;...*^
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.E@.@.......... ...PW..W2.......{......
+..;...*^
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.F@.@.......... ...PW..W2.......u......
+..;...*^
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.G@.@.......... ...PW..W2..G...1p4.....
+..;...*^
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.H@.@.......... ...PW..W2......Gjv.....
+..;...*^
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.I@.@.......... ...PW..W2......^d......
+..;...*^
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.J@.@.......... ...PW..W2..?...u^......
+..;...*^
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.K@.@.......... ...PW..W2.......Y9.....
+..;...*^
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.L@.@.......... ...PW..W2.......Sz.....
+..;...*^
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.M@.@.......... ...PW..W2..4....N......
+..;...*^
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 5
+E..9p4@.@.I	... .....P..2..4W..W..........
+..*...;.0
+
+
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 0
+E..4p5@.@.I... .....P..2..9W..W....Q,.....
+..*...;.
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.N@.@.......... ...PW..W2..9....Ny.....
+..;...*.
+IP 192.168.0.17.39113 > 192.168.0.32.http: tcp 0
+E..4.O@.@.......... ...PW..W2..:....Nv.....
+..;...*.
+IP 192.168.0.32.http > 192.168.0.17.39113: tcp 0
+E..4p6@.@.I.... .....P..2..:W..X....Q......
+..*...;.
+

@@ -113,6 +113,8 @@ if(isset($message)){
 				<div class="col-sm-3 bootnav">
 					<div class="list-group">
 						<a href="#" class="list-group-item" data-toggle="modal" data-target="#addNumber"><i class="fa fa-plus"></i>&nbsp;&nbsp;Blacklist Number</a>
+						<a href='#' class="list-group-item hidden" id = "trashchecked"><i class="fa fa-trash-o"></i>&nbsp&nbsp&nbsp;<?php echo _('Delete Selected')?></a>
+
 					</div>
 				</div>
 				<!--Modals-->

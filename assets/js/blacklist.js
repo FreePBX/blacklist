@@ -10,7 +10,7 @@ $(document).on('show.bs.tab', 'a[data-toggle="tab"]', function (e) {
     var clicked = $(this).attr('href');
     switch(clicked){
 		case '#settings':
-			$('#Upload').addClass('hidden');			
+			$('#Upload').addClass('hidden');
 			$('#Submit').removeClass('hidden');
 			$('#Reset').removeClass('hidden');
 		break;
@@ -28,6 +28,9 @@ $(document).on('show.bs.tab', 'a[data-toggle="tab"]', function (e) {
 })
 
 $('#submitnumber').on('click',function(){
+	$("#submitnumber").blur();
+	$("#submitnumber").prop("disabled",true);
+	$("#submitnumber").text(_("Adding..."));
 	var num = $('#number').val();
 	var desc = $('#description').val();
 	var oldv = $('#oldval').val();
@@ -42,29 +45,41 @@ $('#submitnumber').on('click',function(){
 			description: desc
 		},
 		function(data,status){
+			$("#submitnumber").prop("disabled",false);
+			$("#submitnumber").text(_("Save Changes"));
 			if(status == "success"){
-				alert(num + _(" Added to the blacklist."));
-				$.get( "config.php?display=blacklist&view=grid&fw_popover=1", function( data ) {
+				alert(sprintf(_("Added %s to the blacklist."), num));
+				$.get( "config.php?display=blacklist&view=grid&quietmode=1", function( data ) {
 					$("#blacklist").html(data);
 				});
 			}
 		}
 	);
 });
-
+var processing = null;
 $('[id^="del"]').on('click', function(){
+	var $this = this;
+	$(this).parents("tr").find("td").css("background-color","lightgrey").css("cursor", "progress");
 	num = $(this).data('number');
+	if(processing !== null) {
+		alert(_("Already Processing a number. Please wait"));
+		return false;
+	}
+	processing = num;
 	$.post("config.php?display=blacklist",
 		{
-			action : "delete", 
-			number : num, 
+			action : "delete",
+			number : num,
 		},
 		function(data,status){
+			processing = null;
 			if(status == "success"){
 				alert(num + _(" Deleted from the blacklist."));
 				$("#row"+num).fadeOut(2000,function(){
 					$(this).remove();
 				});
+			} else {
+				$($this).parents("tr").find("td").css("background-color","").css("cursor","");
 			}
 		}
 	);
@@ -84,7 +99,7 @@ $('#Upload').on('click',function(){
 			alert("Import Failed");
 		}
 	}
-});	
+});
 //Bulk Actions
 $('#action-toggle-all').on("change",function(){
 	var tval = $(this).prop('checked');
@@ -101,7 +116,7 @@ $('input[id^="actonthis"],#action-toggle-all').change(function(){
 	}
 
 });
-//This does the bulk delete... 
+//This does the bulk delete...
 $("#trashchecked").on("click",function(){
 	var reload = false;
 	$('input[id^="actonthis"]').each(function(){
@@ -109,8 +124,8 @@ $("#trashchecked").on("click",function(){
 			var num = $(this).val();
 			$.post("config.php?display=blacklist",
 				{
-					action : "delete", 
-					number : num, 
+					action : "delete",
+					number : num,
 				},
 				function(data,status){
 					if(status == "success"){

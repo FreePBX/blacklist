@@ -7,72 +7,133 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 09:52+0000\n"
+"POT-Creation-Date: 2015-02-11 14:04-0500\n"
 "PO-Revision-Date: 2006-10-17 17:30+0300\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Blacklist"
+#: /usr/src/freepbx/blacklist/page.blacklist.php:130
+msgid "Actions"
 msgstr ""
 
-msgid "Admin"
-msgstr ""
-
-msgid "Blacklist a number"
-msgstr ""
-
-msgid "Remove a number from the blacklist"
-msgstr ""
-
-msgid "Blacklist the last caller"
-msgstr ""
-
-msgid "Blacklist entry"
-msgstr "רשומת רשימה שחורה"
-
-msgid "deleted"
-msgstr "נמחקה"
-
-msgid "Blacklist entries"
-msgstr "רשומות רשימה שחורה"
-
-msgid "Number/CallerID"
-msgstr ""
-
-msgid "Description"
-msgstr ""
-
-msgid "Number"
-msgstr "מספר"
-
-msgid "Delete"
-msgstr "מחק"
-
-msgid "Edit"
-msgstr "ערוך"
-
+#: /usr/src/freepbx/blacklist/page.blacklist.php:96
 msgid "Add or replace entry"
 msgstr "הוסף או החלף רשומה"
 
-msgid "Number/CallerID:"
+#: /usr/src/freepbx/blacklist/install.php:12
+msgid "Blacklist"
 msgstr ""
 
-msgid "Enter the number/CallerID you want to block"
+#: /usr/src/freepbx/blacklist/install.php:9
+msgid "Blacklist a number"
 msgstr ""
 
-msgid "Description:"
+#: /usr/src/freepbx/blacklist/page.blacklist.php:155
+msgid "Blacklist entries"
+msgstr "רשומות רשימה שחורה"
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:148
+msgid "Blacklist entry"
+msgstr "רשומת רשימה שחורה"
+
+#: /usr/src/freepbx/blacklist/install.php:11
+msgid "Blacklist the last caller"
 msgstr ""
 
-msgid "Enter a description for the number you want to block"
-msgstr ""
-
+#: /usr/src/freepbx/blacklist/page.blacklist.php:112
 msgid "Block Unknown/Blocked Caller ID:"
 msgstr ""
 
+#: /usr/src/freepbx/blacklist/page.blacklist.php:113
 msgid "Check here to catch Unknown/Blocked Caller ID"
 msgstr ""
 
+#: /usr/src/freepbx/blacklist/page.blacklist.php:57
+msgid "Could not find file after upload"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:186
+#: /usr/src/freepbx/blacklist/page.blacklist.php:198
+msgid "Delete"
+msgstr "מחק"
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:163
+msgid "Description"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:105
+msgid "Description:"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:191
+#: /usr/src/freepbx/blacklist/page.blacklist.php:199
+msgid "Edit"
+msgstr "ערוך"
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:106
+msgid "Enter a description for the number you want to block"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:100
+msgid "Enter the number/CallerID you want to block"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:133
+msgid "Export to CSV"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:141
+msgid "Import Entries"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:137
+msgid ""
+"Import blacklist entries from a CSV file. Where the first column is the "
+"number and the second is the description"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:137
+msgid "Import from CSV"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:76
+msgid "No Entries to export"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:165
+msgid "Number"
+msgstr "מספר"
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:162
+msgid "Number/CallerID"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:99
+msgid "Number/CallerID:"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/install.php:10
+msgid "Remove a number from the blacklist"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:120
 msgid "Submit Changes"
 msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:55
+msgid "Sucessfully imported all entries"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:60
+msgid "The file must be in CSV format!"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:35
+msgid "There was an error uploading the file"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:148
+msgid "deleted"
+msgstr "נמחקה"

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX blacklist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 09:52+0000\n"
+"POT-Creation-Date: 2015-02-11 14:04-0500\n"
 "PO-Revision-Date: 2011-03-19 00:00+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -30,68 +30,129 @@ msgstr ""
 "X-Poedit-Language: Swedish\n"
 "X-Poedit-Country: SWEDEN\n"
 
-msgid "Blacklist"
-msgstr "Svartlistning"
-
-msgid "Admin"
+#: /usr/src/freepbx/blacklist/page.blacklist.php:130
+msgid "Actions"
 msgstr ""
 
-msgid "Blacklist a number"
-msgstr "Svartlista ett nummer"
-
-msgid "Remove a number from the blacklist"
-msgstr "Ta bort ett nummer från svartlistan"
-
-msgid "Blacklist the last caller"
-msgstr "Svartlista sista samtalet"
-
-msgid "Blacklist entry"
-msgstr "Svartlista nummer"
-
-msgid "deleted"
-msgstr "borttagen"
-
-msgid "Blacklist entries"
-msgstr "Svartlistade nummer"
-
-msgid "Number/CallerID"
-msgstr "Nummer/Nummerpresentation"
-
-msgid "Description"
-msgstr "Beskrivning"
-
-msgid "Number"
-msgstr "Nummer"
-
-msgid "Delete"
-msgstr "Ta bort"
-
-msgid "Edit"
-msgstr "Redigera"
-
+#: /usr/src/freepbx/blacklist/page.blacklist.php:96
 msgid "Add or replace entry"
 msgstr "Lägg till eller byt ut"
 
-msgid "Number/CallerID:"
-msgstr "Nummer/Nummerpresentation:"
+#: /usr/src/freepbx/blacklist/install.php:12
+msgid "Blacklist"
+msgstr "Svartlistning"
 
-msgid "Enter the number/CallerID you want to block"
-msgstr "Skriv in det nummer eller nummerpresentation du vill svartlista"
+#: /usr/src/freepbx/blacklist/install.php:9
+msgid "Blacklist a number"
+msgstr "Svartlista ett nummer"
 
-msgid "Description:"
-msgstr "Beskrivning:"
+#: /usr/src/freepbx/blacklist/page.blacklist.php:155
+msgid "Blacklist entries"
+msgstr "Svartlistade nummer"
 
-msgid "Enter a description for the number you want to block"
-msgstr "Skriv in en kortfattad beskrivning för numret du vill blockera"
+#: /usr/src/freepbx/blacklist/page.blacklist.php:148
+msgid "Blacklist entry"
+msgstr "Svartlista nummer"
 
+#: /usr/src/freepbx/blacklist/install.php:11
+msgid "Blacklist the last caller"
+msgstr "Svartlista sista samtalet"
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:112
 msgid "Block Unknown/Blocked Caller ID:"
 msgstr "Spärra okända/spärrade nummerpresentationer"
 
+#: /usr/src/freepbx/blacklist/page.blacklist.php:113
 msgid "Check here to catch Unknown/Blocked Caller ID"
 msgstr "Aktivera för att spärra okända/blockerade nummerpresentationer"
 
+#: /usr/src/freepbx/blacklist/page.blacklist.php:57
+msgid "Could not find file after upload"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:186
+#: /usr/src/freepbx/blacklist/page.blacklist.php:198
+msgid "Delete"
+msgstr "Ta bort"
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:163
+msgid "Description"
+msgstr "Beskrivning"
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:105
+msgid "Description:"
+msgstr "Beskrivning:"
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:191
+#: /usr/src/freepbx/blacklist/page.blacklist.php:199
+msgid "Edit"
+msgstr "Redigera"
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:106
+msgid "Enter a description for the number you want to block"
+msgstr "Skriv in en kortfattad beskrivning för numret du vill blockera"
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:100
+msgid "Enter the number/CallerID you want to block"
+msgstr "Skriv in det nummer eller nummerpresentation du vill svartlista"
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:133
+msgid "Export to CSV"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:141
+msgid "Import Entries"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:137
+msgid ""
+"Import blacklist entries from a CSV file. Where the first column is the "
+"number and the second is the description"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:137
+msgid "Import from CSV"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:76
+msgid "No Entries to export"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:165
+msgid "Number"
+msgstr "Nummer"
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:162
+msgid "Number/CallerID"
+msgstr "Nummer/Nummerpresentation"
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:99
+msgid "Number/CallerID:"
+msgstr "Nummer/Nummerpresentation:"
+
+#: /usr/src/freepbx/blacklist/install.php:10
+msgid "Remove a number from the blacklist"
+msgstr "Ta bort ett nummer från svartlistan"
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:120
 msgid "Submit Changes"
 msgstr "Spara ändringar"
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:55
+msgid "Sucessfully imported all entries"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:60
+msgid "The file must be in CSV format!"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:35
+msgid "There was an error uploading the file"
+msgstr ""
+
+#: /usr/src/freepbx/blacklist/page.blacklist.php:148
+msgid "deleted"
+msgstr "borttagen"
 
 #~ msgid "Inbound Call Control"
 #~ msgstr "Inkommande samtal"

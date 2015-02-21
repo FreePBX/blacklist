@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-11 14:04-0500\n"
+"POT-Creation-Date: 2015-02-20 19:00-0500\n"
 "PO-Revision-Date: 2009-01-31 17:11+0800\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -18,126 +18,129 @@ msgstr ""
 "X-Poedit-Country: CHINA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:130
+#: page.blacklist.php:130
 msgid "Actions"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:96
+#: page.blacklist.php:96
 msgid "Add or replace entry"
 msgstr "添加或取代项目"
 
-#: /usr/src/freepbx/blacklist/install.php:12
+#: blacklist.i18n.php:4 blacklist.i18n.php:9
+msgid "Admin"
+msgstr ""
+
+#: blacklist.i18n.php:3 blacklist.i18n.php:5 blacklist.i18n.php:7
+#: blacklist.i18n.php:11 install.php:12
 msgid "Blacklist"
 msgstr "黑名单"
 
-#: /usr/src/freepbx/blacklist/install.php:9
+#: install.php:9
 msgid "Blacklist a number"
 msgstr "屏蔽一个号码"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:155
+#: page.blacklist.php:155
 msgid "Blacklist entries"
 msgstr "黑名单项目"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:148
+#: page.blacklist.php:148
 msgid "Blacklist entry"
 msgstr "黑名单项目"
 
-#: /usr/src/freepbx/blacklist/install.php:11
+#: install.php:11
 msgid "Blacklist the last caller"
 msgstr "屏蔽最近通话的主叫"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:112
+#: page.blacklist.php:112
 msgid "Block Unknown/Blocked Caller ID:"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:113
+#: page.blacklist.php:113
 msgid "Check here to catch Unknown/Blocked Caller ID"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:57
+#: page.blacklist.php:57
 msgid "Could not find file after upload"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:186
-#: /usr/src/freepbx/blacklist/page.blacklist.php:198
+#: page.blacklist.php:186 page.blacklist.php:198
 msgid "Delete"
 msgstr "删除"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:163
+#: page.blacklist.php:163
 msgid "Description"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:105
+#: page.blacklist.php:105
 msgid "Description:"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:191
-#: /usr/src/freepbx/blacklist/page.blacklist.php:199
+#: page.blacklist.php:191 page.blacklist.php:199
 msgid "Edit"
 msgstr "编辑"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:106
+#: page.blacklist.php:106
 msgid "Enter a description for the number you want to block"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:100
+#: page.blacklist.php:100
 msgid "Enter the number/CallerID you want to block"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:133
+#: page.blacklist.php:133
 msgid "Export to CSV"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:141
+#: page.blacklist.php:141
 msgid "Import Entries"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:137
+#: page.blacklist.php:137
 msgid ""
 "Import blacklist entries from a CSV file. Where the first column is the "
 "number and the second is the description"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:137
+#: page.blacklist.php:137
 msgid "Import from CSV"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:76
+#: page.blacklist.php:76
 msgid "No Entries to export"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:165
+#: page.blacklist.php:165
 msgid "Number"
 msgstr "号码"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:162
+#: page.blacklist.php:162
 msgid "Number/CallerID"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:99
+#: page.blacklist.php:99
 msgid "Number/CallerID:"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/install.php:10
+#: install.php:10
 msgid "Remove a number from the blacklist"
 msgstr "从黑名单内移除一个号码"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:120
+#: page.blacklist.php:120
 msgid "Submit Changes"
 msgstr "提交更改"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:55
+#: page.blacklist.php:55
 msgid "Sucessfully imported all entries"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:60
+#: page.blacklist.php:60
 msgid "The file must be in CSV format!"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:35
+#: page.blacklist.php:35
 msgid "There was an error uploading the file"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:148
+#: page.blacklist.php:148
 msgid "deleted"
 msgstr "已删除"

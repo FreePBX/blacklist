@@ -12,15 +12,15 @@ $blrows .= <<<HERE
 <td><input type = "checkbox" class="" id="actonthis$number" name="actionList[]" value="$number"></td>
 <td>$number</td>
 <td>$description</td>
-<td><a href="#" data-toggle="modal" data-target="#addNumber" data-number='$number' data-description='$description'>
-	<i class="fa fa-edit"></i></a>&nbsp;&nbsp;
+<td><!--<a href="#" data-toggle="modal" data-target="#addNumber" data-number='$number' data-description='$description'>
+	<i class="fa fa-edit"></i></a>-->
 	<a href="#" id="del$number" data-number="$number" >
 	<i class="fa fa-trash-o"></i></a></td>
 </tr>
 HERE;
 }
 ?>
-<div class="table-responsive"> 
+<div class="table-responsive">
 	<table class="table table-striped table-bordered">
 		<thead>
 			<tr>

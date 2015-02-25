@@ -25,19 +25,21 @@ $(document).on('show.bs.tab', 'a[data-toggle="tab"]', function (e) {
 			$('#Upload').addClass('hidden');
 		break;
 	}
-})
+});
 
 $('#submitnumber').on('click',function(){
-	$("#submitnumber").blur();
-	$("#submitnumber").prop("disabled",true);
-	$("#submitnumber").text(_("Adding..."));
-	var num = $('#number').val();
-	var desc = $('#description').val();
-	var oldv = $('#oldval').val();
-	if(num == ''){
+	var num = $('#number').val(),
+			desc = $('#description').val(),
+			oldv = $('#oldval').val(),
+			$this = this;
+
+	$(this).blur();
+	$(this).prop("disabled",true);
+	$(this).text(_("Adding..."));
+	if(num === ''){
 		warnInvalid($('#number'), 'This cannot be blank');
 	}
-	$.post("config.php?display=blacklist",
+	$.post("ajax.php?module=blacklist&command=add",
 		{
 			action : "add",
 			oldval : oldv,
@@ -45,19 +47,21 @@ $('#submitnumber').on('click',function(){
 			description: desc
 		},
 		function(data,status){
-			$("#submitnumber").prop("disabled",false);
-			$("#submitnumber").text(_("Save Changes"));
-			if(status == "success"){
+			$($this).prop("disabled",false);
+			$($this).text(_("Save Changes"));
+			if(data.status) {
 				alert(sprintf(_("Added %s to the blacklist."), num));
 				$.get( "config.php?display=blacklist&view=grid&quietmode=1", function( data ) {
 					$("#blacklist").html(data);
 				});
+			} else {
+				alert(data.message);
 			}
 		}
 	);
 });
 var processing = null;
-$('[id^="del"]').on('click', function(){
+$(document).on('click', '[id^="del"]', function(){
 	var $this = this;
 	$(this).parents("tr").find("td").css("background-color","lightgrey").css("cursor", "progress");
 	num = $(this).data('number');
@@ -66,7 +70,7 @@ $('[id^="del"]').on('click', function(){
 		return false;
 	}
 	processing = num;
-	$.post("config.php?display=blacklist",
+	$.post("ajax.php?module=blacklist&command=del",
 		{
 			action : "delete",
 			number : num,

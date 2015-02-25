@@ -12,6 +12,34 @@ class Blacklist implements BMO {
 		$this->FreePBX = $freepbx;
 		$this->astman = $this->FreePBX->astman;
 	}
+	public function ajaxRequest($req, &$setting) {
+		$setting['authenticate'] = false;
+		$setting['allowremote'] = false;
+		switch($req) {
+			case "add":
+			case "edit":
+			case "del":
+				return true;
+			break;
+		}
+		return false;
+	}
+
+		public function ajaxHandler() {
+			$request = $_REQUEST;
+			switch($_REQUEST['command']) {
+				case "add":
+					$this->numberAdd($request);
+					return array("status" => true);
+				case "edit":
+					$this->numberDel($request['oldval']);
+					$this->numberAdd($request);
+				case "del":
+					$this->numberDel($request['number']);
+				break;
+			}
+		}
+
 	//BMO Methods
 	public function install(){
 		if (false) {
@@ -26,7 +54,7 @@ class Blacklist implements BMO {
 		$fcc->setProvideDest();
 		$fcc->update();
 		unset($fcc);
-		
+
 		$fcc = new \featurecode('blacklist', 'blacklist_remove');
 		$fcc->setDescription(_('Removes a number from the Blacklist Module'));
 		$fcc->setDefault('*31');
@@ -46,7 +74,7 @@ class Blacklist implements BMO {
 		$dispnum = "blacklist";
 		$astver = $this->FreePBX->Config->get('ASTVERSION');
 		$request = $_REQUEST;
-		
+
 		if(isset($request['goto0'])){
 			$destination = $request[$request['goto0'].'0'];
 		}
@@ -60,14 +88,6 @@ class Blacklist implements BMO {
 				case "settings":
 					$this->destinationSet($destination);
 					$this->blockunknownSet($request['blocked']);
-				break;
-				case "add":
-					$this->numberAdd($request);
-					redirect_standard();
-				break;
-				case "delete":
-					$this->numberDel($number);
-					redirect_standard();
 				break;
 				case "import":
 					if ($_FILES["file"]["error"] > 0) {
@@ -115,10 +135,6 @@ class Blacklist implements BMO {
 						echo _("No Entries to export");
 					}
 					die();
-		    case "edit":
-				$this->numberDel($oldval);
-				$this->numberAdd($request);
-				redirect_standard('editnumber');
 			break;
 			}
 		}
@@ -193,7 +209,7 @@ class Blacklist implements BMO {
 		$ext->add($id, $c, '', new ext_playback('num-was-successfully&added'));
 		$ext->add($id, $c, '', new ext_wait(1));
 		$ext->add($id, $c, '', new ext_hangup);
-	
+
 		$id = "app-blacklist-add-invalid";
 		$c = "s";
 		$ext->add($id, $c, '', new ext_set('NumLoops','$[${NumLoops} + 1]'));
@@ -201,7 +217,7 @@ class Blacklist implements BMO {
 		$ext->add($id, $c, '', new ext_gotoif('$[${NumLoops} < 3]','app-blacklist-add,s,start'));
 		$ext->add($id, $c, '', new ext_playback('goodbye'));
 		$ext->add($id, $c, '', new ext_hangup);
-		
+
 		//Del
 		$ext->add('app-blacklist', $delfc, '', new ext_goto('1', 's', 'app-blacklist-remove'));
 
@@ -225,7 +241,7 @@ class Blacklist implements BMO {
 	 	$ext->add($id, $c, '', new ext_hangup);
 	 	//Last
 		$ext->add('app-blacklist', $lastfc, '', new ext_goto('1', 's', 'app-blacklist-last'));
-	
+
 		$id = "app-blacklist-last";
 		$c = "s";
 		$ext->add($id, $c, '', new ext_answer);
@@ -327,10 +343,10 @@ class Blacklist implements BMO {
 			fatal("Cannot connect to Asterisk Manager with ".$amuser."/".$ampass);
 		}
 	}
-	
+
 	public function numberDel($number){
 		$amuser = $this->FreePBX->Config->get('AMPMGRUSER');
-		$ampass = $this->FreePBX->Config->get('AMPMGRPASS');		
+		$ampass = $this->FreePBX->Config->get('AMPMGRPASS');
 		if ($this->astman) {
 			$this->astman->database_del("blacklist",$number);
 		} else {
@@ -345,9 +361,9 @@ class Blacklist implements BMO {
 		}
 	}
 	public function destinationGet(){
-		return $this->astman->database_get("blacklist","dest");	
+		return $this->astman->database_get("blacklist","dest");
 	}
-	
+
 	public function blockunknownSet($blocked){
 		// Remove filtering for blocked/unknown cid
 		$this->astman->database_del("blacklist","blocked");
@@ -360,7 +376,7 @@ class Blacklist implements BMO {
 	public function blockunknownGet(){
 		return $this->astman->database_get("blacklist","blocked");
 	}
-	
+
 	//Do we need this?
 	public function checkPost($post){
 		return true;

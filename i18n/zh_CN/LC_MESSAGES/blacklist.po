@@ -20,7 +20,7 @@ msgstr ""
 
 #: page.blacklist.php:130
 msgid "Actions"
-msgstr ""
+msgstr "命令"
 
 #: page.blacklist.php:96
 msgid "Add or replace entry"
@@ -53,11 +53,11 @@ msgstr "屏蔽最近通话的主叫"
 
 #: page.blacklist.php:112
 msgid "Block Unknown/Blocked Caller ID:"
-msgstr ""
+msgstr "屏蔽一个未知来电显示"
 
 #: page.blacklist.php:113
 msgid "Check here to catch Unknown/Blocked Caller ID"
-msgstr ""
+msgstr "获取一个未知号码"
 
 #: page.blacklist.php:57
 msgid "Could not find file after upload"
@@ -93,7 +93,7 @@ msgstr ""
 
 #: page.blacklist.php:141
 msgid "Import Entries"
-msgstr ""
+msgstr "导入实体"
 
 #: page.blacklist.php:137
 msgid ""
@@ -103,7 +103,7 @@ msgstr ""
 
 #: page.blacklist.php:137
 msgid "Import from CSV"
-msgstr ""
+msgstr "从CSV导入"
 
 #: page.blacklist.php:76
 msgid "No Entries to export"

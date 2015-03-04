@@ -67,8 +67,10 @@ if(isset($message)){
 																<i class="fa fa-question-circle fpbx-help-icon" data-for="blocked"></i>
 															</div>
 															<div class="col-md-8 radioset">
-																<input type="checkbox" name="blocked" id="blocked" value="1" <?php echo ($filter_blocked === true?" checked=1":"");?>>
-																<label for="blocked"><?php echo _('Enable')?></label>
+																<input type="radio" name="blocked" id="blockedyes" value="1" <?php echo ($filter_blocked === true?"CHECKED":"") ?>>
+																<label for="blockedyes"><?php echo _("Yes");?></label>
+																<input type="radio" name="blocked" id="blockedno" value="" <?php echo ($filter_blocked === true?"":"CHECKED") ?>>
+																<label for="blockedno"><?php echo _("No");?></label>
 															</div>
 														</div>
 													</div>

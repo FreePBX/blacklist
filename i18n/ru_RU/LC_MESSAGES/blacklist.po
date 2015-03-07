@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-11 14:04-0500\n"
+"POT-Creation-Date: 2015-02-20 19:00-0500\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -15,129 +15,129 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:130
+#: page.blacklist.php:130
 msgid "Actions"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:96
+#: page.blacklist.php:96
 msgid "Add or replace entry"
 msgstr "Добавить или заменить запись"
 
-#: /usr/src/freepbx/blacklist/install.php:12
+#: blacklist.i18n.php:4 blacklist.i18n.php:9
+msgid "Admin"
+msgstr "Алминистратор"
+
+#: blacklist.i18n.php:3 blacklist.i18n.php:5 blacklist.i18n.php:7
+#: blacklist.i18n.php:11 install.php:12
 msgid "Blacklist"
 msgstr "Черный список"
 
-#: /usr/src/freepbx/blacklist/install.php:9
+#: install.php:9
 msgid "Blacklist a number"
 msgstr "Внести номер в черный список"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:155
+#: page.blacklist.php:155
 msgid "Blacklist entries"
 msgstr "Записи в Черном списке"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:148
+#: page.blacklist.php:148
 msgid "Blacklist entry"
 msgstr "Запись в Черном списке"
 
-#: /usr/src/freepbx/blacklist/install.php:11
+#: install.php:11
 msgid "Blacklist the last caller"
 msgstr "Внести в черный список номер последнего позвонившего"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:112
+#: page.blacklist.php:112
 msgid "Block Unknown/Blocked Caller ID:"
 msgstr "Заблокировать пустой Caller ID:"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:113
+#: page.blacklist.php:113
 msgid "Check here to catch Unknown/Blocked Caller ID"
 msgstr "Поставьте отметку здесь что бы заблокировать пустой Caller ID"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:57
+#: page.blacklist.php:57
 msgid "Could not find file after upload"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:186
-#: /usr/src/freepbx/blacklist/page.blacklist.php:198
+#: page.blacklist.php:186 page.blacklist.php:198
 msgid "Delete"
 msgstr "Удалить"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:163
+#: page.blacklist.php:163
 msgid "Description"
 msgstr "Описание"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:105
+#: page.blacklist.php:105
 msgid "Description:"
 msgstr "Описание:"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:191
-#: /usr/src/freepbx/blacklist/page.blacklist.php:199
+#: page.blacklist.php:191 page.blacklist.php:199
 msgid "Edit"
 msgstr "Редактировать"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:106
+#: page.blacklist.php:106
 msgid "Enter a description for the number you want to block"
 msgstr "Описание номера, который Вы хотите заблокировать"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:100
+#: page.blacklist.php:100
 msgid "Enter the number/CallerID you want to block"
 msgstr "Введите номер/Caller ID, который Вы хотите заблокировать"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:133
+#: page.blacklist.php:133
 msgid "Export to CSV"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:141
+#: page.blacklist.php:141
 msgid "Import Entries"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:137
+#: page.blacklist.php:137
 msgid ""
 "Import blacklist entries from a CSV file. Where the first column is the "
 "number and the second is the description"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:137
+#: page.blacklist.php:137
 msgid "Import from CSV"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:76
+#: page.blacklist.php:76
 msgid "No Entries to export"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:165
+#: page.blacklist.php:165
 msgid "Number"
 msgstr "Номер"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:162
+#: page.blacklist.php:162
 msgid "Number/CallerID"
 msgstr "Номер/Caller ID"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:99
+#: page.blacklist.php:99
 msgid "Number/CallerID:"
 msgstr "Номер/Caller ID:"
 
-#: /usr/src/freepbx/blacklist/install.php:10
+#: install.php:10
 msgid "Remove a number from the blacklist"
 msgstr "Удалить номер из черного списка"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:120
+#: page.blacklist.php:120
 msgid "Submit Changes"
 msgstr "Применить изменения"
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:55
+#: page.blacklist.php:55
 msgid "Sucessfully imported all entries"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:60
+#: page.blacklist.php:60
 msgid "The file must be in CSV format!"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:35
+#: page.blacklist.php:35
 msgid "There was an error uploading the file"
 msgstr ""
 
-#: /usr/src/freepbx/blacklist/page.blacklist.php:148
+#: page.blacklist.php:148
 msgid "deleted"
 msgstr "удалено"
-
-#~ msgid "Admin"
-#~ msgstr "Алминистратор"

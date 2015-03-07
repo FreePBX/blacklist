@@ -25,20 +25,24 @@ class Blacklist implements BMO {
 		return false;
 	}
 
-		public function ajaxHandler() {
-			$request = $_REQUEST;
-			switch($_REQUEST['command']) {
-				case "add":
-					$this->numberAdd($request);
-					return array("status" => true);
-				case "edit":
-					$this->numberDel($request['oldval']);
-					$this->numberAdd($request);
-				case "del":
-					$this->numberDel($request['number']);
-				break;
-			}
+	public function ajaxHandler() {
+		$request = $_REQUEST;
+		switch($_REQUEST['command']) {
+			case "add":
+				$this->numberAdd($request);
+				return array("status" => true);
+			break;
+			case "edit":
+				$this->numberDel($request['oldval']);
+				$this->numberAdd($request);
+				return array("status" => true);
+			break;
+			case "del":
+				$this->numberDel($request['number']);
+				return array("status" => true);
+			break;
 		}
+	}
 
 	//BMO Methods
 	public function install(){

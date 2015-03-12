@@ -8,23 +8,23 @@ msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:00-0500\n"
-"PO-Revision-Date: 2014-11-17 17:35+0200\n"
+"PO-Revision-Date: 2015-03-11 21:15+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
-"Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/blacklist/"
-"bg_BG/>\n"
+"Language-Team: Bulgarian "
+"<http://weblate.freepbx.org/projects/freepbx/blacklist/bg_BG/>\n"
+"Language: bg_BG\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: bg_BG\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 1.10-dev\n"
+"X-Generator: Weblate 2.2-dev\n"
 "X-Poedit-Language: Bulgarian\n"
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: page.blacklist.php:130
 msgid "Actions"
-msgstr ""
+msgstr "Действия"
 
 #: page.blacklist.php:96
 msgid "Add or replace entry"
@@ -65,7 +65,7 @@ msgstr "Маркирайте за да улавяте Неразпознат/Б�
 
 #: page.blacklist.php:57
 msgid "Could not find file after upload"
-msgstr ""
+msgstr "Не мога да намеря файла след качването"
 
 #: page.blacklist.php:186 page.blacklist.php:198
 msgid "Delete"
@@ -93,25 +93,27 @@ msgstr "Въведете номер/CallerID който искате да бло
 
 #: page.blacklist.php:133
 msgid "Export to CSV"
-msgstr ""
+msgstr "Изнеси в CSV"
 
 #: page.blacklist.php:141
 msgid "Import Entries"
-msgstr ""
+msgstr "Внеси Въвежданията"
 
 #: page.blacklist.php:137
 msgid ""
 "Import blacklist entries from a CSV file. Where the first column is the "
 "number and the second is the description"
 msgstr ""
+"Внасяне на въвеждания за черен списък от CSV файл. Първата колона съдържа "
+"номерата, а втората описание"
 
 #: page.blacklist.php:137
 msgid "Import from CSV"
-msgstr ""
+msgstr "Внеси от CSV"
 
 #: page.blacklist.php:76
 msgid "No Entries to export"
-msgstr ""
+msgstr "Няма Въвеждания за изнасяне"
 
 #: page.blacklist.php:165
 msgid "Number"
@@ -135,15 +137,15 @@ msgstr "Приеми Промените"
 
 #: page.blacklist.php:55
 msgid "Sucessfully imported all entries"
-msgstr ""
+msgstr "Всички въвеждания са внесени успешно"
 
 #: page.blacklist.php:60
 msgid "The file must be in CSV format!"
-msgstr ""
+msgstr "Файлът трябва да е в CSV формат!"
 
 #: page.blacklist.php:35
 msgid "There was an error uploading the file"
-msgstr ""
+msgstr "Грешка при качване на файл"
 
 #: page.blacklist.php:148
 msgid "deleted"

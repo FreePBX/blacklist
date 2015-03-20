@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:00-0500\n"
-"PO-Revision-Date: 2015-03-19 20:20+0200\n"
+"PO-Revision-Date: 2015-03-19 20:22+0200\n"
 "Last-Translator: Jan Peter <jpveldhuizen@gmail.com>\n"
 "Language-Team: Dutch "
 "<http://weblate.freepbx.org/projects/freepbx/blacklist/nl_NL/>\n"
@@ -27,7 +27,7 @@ msgstr "Acties"
 
 #: page.blacklist.php:96
 msgid "Add or replace entry"
-msgstr "Invoer toevoegen of veranderen"
+msgstr "Regel toevoegen of veranderen"
 
 #: blacklist.i18n.php:4 blacklist.i18n.php:9
 msgid "Admin"
@@ -44,11 +44,11 @@ msgstr "Zet een nummer op zwarte lijst"
 
 #: page.blacklist.php:155
 msgid "Blacklist entries"
-msgstr "Nummers op zwarte lijst"
+msgstr "Zwarte lijst regels"
 
 #: page.blacklist.php:148
 msgid "Blacklist entry"
-msgstr "Nummer op zwarte lijst"
+msgstr "Zwarte lijst regel"
 
 #: install.php:11
 msgid "Blacklist the last caller"

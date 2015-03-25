@@ -3,19 +3,23 @@ msgstr ""
 "Project-Id-Version: FreePBX - módulo blacklist module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:00-0500\n"
-"PO-Revision-Date: 2009-01-22 01:08+0100\n"
-"Last-Translator: Juan Asensio Sánchez <okelet@gmail.com>\n"
-"Language-Team: Juan Asensio Sánchez <okelet@gmail.com>\n"
+"PO-Revision-Date: 2015-03-24 23:10+0200\n"
+"Last-Translator: Ernesto <ecasas@sangoma.com>\n"
+"Language-Team: Spanish "
+"<http://weblate.freepbx.org/projects/freepbx/blacklist/es_ES/>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.2-dev\n"
 "X-Poedit-Language: Spanish\n"
 "X-Poedit-Country: SPAIN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: page.blacklist.php:130
 msgid "Actions"
-msgstr ""
+msgstr "Acciones"
 
 #: page.blacklist.php:96
 msgid "Add or replace entry"
@@ -23,7 +27,7 @@ msgstr "Añadir o modificar elemento"
 
 #: blacklist.i18n.php:4 blacklist.i18n.php:9
 msgid "Admin"
-msgstr ""
+msgstr "Administrador"
 
 #: blacklist.i18n.php:3 blacklist.i18n.php:5 blacklist.i18n.php:7
 #: blacklist.i18n.php:11 install.php:12
@@ -48,15 +52,15 @@ msgstr "Añadir a la lista negra el último número llamado"
 
 #: page.blacklist.php:112
 msgid "Block Unknown/Blocked Caller ID:"
-msgstr ""
+msgstr "Bloquear ID de llamada desconocido/bloqueado:"
 
 #: page.blacklist.php:113
 msgid "Check here to catch Unknown/Blocked Caller ID"
-msgstr ""
+msgstr "Haga click aca para capturar ID de llamada desconocido/bloqueado"
 
 #: page.blacklist.php:57
 msgid "Could not find file after upload"
-msgstr ""
+msgstr "No puedo encontrar el archivo luego de subirlo"
 
 #: page.blacklist.php:186 page.blacklist.php:198
 msgid "Delete"
@@ -64,11 +68,11 @@ msgstr "Eliminar"
 
 #: page.blacklist.php:163
 msgid "Description"
-msgstr ""
+msgstr "Descripcion"
 
 #: page.blacklist.php:105
 msgid "Description:"
-msgstr ""
+msgstr "Descripción:"
 
 #: page.blacklist.php:191 page.blacklist.php:199
 msgid "Edit"
@@ -76,33 +80,35 @@ msgstr "Editar"
 
 #: page.blacklist.php:106
 msgid "Enter a description for the number you want to block"
-msgstr ""
+msgstr "Introduzca una descripción del numero que quiere bloquear"
 
 #: page.blacklist.php:100
 msgid "Enter the number/CallerID you want to block"
-msgstr ""
+msgstr "Introduzca el numero/ID de llamada que desea bloquear"
 
 #: page.blacklist.php:133
 msgid "Export to CSV"
-msgstr ""
+msgstr "Exportar a CSV"
 
 #: page.blacklist.php:141
 msgid "Import Entries"
-msgstr ""
+msgstr "Importar Entradas"
 
 #: page.blacklist.php:137
 msgid ""
 "Import blacklist entries from a CSV file. Where the first column is the "
 "number and the second is the description"
 msgstr ""
+"Importar lista negra desde un CSV. Donde la primera columna es el numero y "
+"la segunda es una descripción"
 
 #: page.blacklist.php:137
 msgid "Import from CSV"
-msgstr ""
+msgstr "Importar desde un CSV"
 
 #: page.blacklist.php:76
 msgid "No Entries to export"
-msgstr ""
+msgstr "No hay entradas a exportar"
 
 #: page.blacklist.php:165
 msgid "Number"
@@ -110,11 +116,11 @@ msgstr "Número"
 
 #: page.blacklist.php:162
 msgid "Number/CallerID"
-msgstr ""
+msgstr "Numero/IDllamada"
 
 #: page.blacklist.php:99
 msgid "Number/CallerID:"
-msgstr ""
+msgstr "Numero/IDllamada:"
 
 #: install.php:10
 msgid "Remove a number from the blacklist"
@@ -126,15 +132,15 @@ msgstr "Enviar cambios"
 
 #: page.blacklist.php:55
 msgid "Sucessfully imported all entries"
-msgstr ""
+msgstr "Se importaron todas las entradas satisfactoriamente"
 
 #: page.blacklist.php:60
 msgid "The file must be in CSV format!"
-msgstr ""
+msgstr "El archivo debe estar en formato CSV!"
 
 #: page.blacklist.php:35
 msgid "There was an error uploading the file"
-msgstr ""
+msgstr "hubo un error subiendo el archivo"
 
 #: page.blacklist.php:148
 msgid "deleted"

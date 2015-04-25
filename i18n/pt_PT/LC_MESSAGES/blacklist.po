@@ -10,137 +10,142 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:00-0500\n"
-"PO-Revision-Date: 2015-02-20 19:00-0500\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2015-04-25 00:52+0200\n"
+"Last-Translator: Paulo <paulop1975@gmail.com>\n"
+"Language-Team: Portuguese (Portugal) "
+"<http://weblate.freepbx.org/projects/freepbx/blacklist/pt_PT/>\n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: page.blacklist.php:130
 msgid "Actions"
-msgstr ""
+msgstr "Ações"
 
 #: page.blacklist.php:96
 msgid "Add or replace entry"
-msgstr ""
+msgstr "Adicionar ou substituir entrada"
 
 #: blacklist.i18n.php:4 blacklist.i18n.php:9
 msgid "Admin"
-msgstr ""
+msgstr "Admin"
 
 #: blacklist.i18n.php:3 blacklist.i18n.php:5 blacklist.i18n.php:7
 #: blacklist.i18n.php:11 install.php:12
 msgid "Blacklist"
-msgstr ""
+msgstr "Lista Negra"
 
 #: install.php:9
 msgid "Blacklist a number"
-msgstr ""
+msgstr "Inlcuir número em Lista Negra"
 
 #: page.blacklist.php:155
 msgid "Blacklist entries"
-msgstr ""
+msgstr "Entradas na Lista Negra"
 
 #: page.blacklist.php:148
 msgid "Blacklist entry"
-msgstr ""
+msgstr "Entrada na Lista Negra"
 
 #: install.php:11
 msgid "Blacklist the last caller"
-msgstr ""
+msgstr "Incluir último chamador na Lista Negra"
 
 #: page.blacklist.php:112
 msgid "Block Unknown/Blocked Caller ID:"
-msgstr ""
+msgstr "Bloquear ID de Chamador Desconhecidos/Bloqueados:"
 
 #: page.blacklist.php:113
 msgid "Check here to catch Unknown/Blocked Caller ID"
-msgstr ""
+msgstr "Selecione para capturar ID de Chamador Desconhecido/Bloqueado"
 
 #: page.blacklist.php:57
 msgid "Could not find file after upload"
-msgstr ""
+msgstr "Não foi possível encontrar ficheiro após transferencia"
 
 #: page.blacklist.php:186 page.blacklist.php:198
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
 #: page.blacklist.php:163
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 #: page.blacklist.php:105
 msgid "Description:"
-msgstr ""
+msgstr "Descrição:"
 
 #: page.blacklist.php:191 page.blacklist.php:199
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: page.blacklist.php:106
 msgid "Enter a description for the number you want to block"
-msgstr ""
+msgstr "Introduza uma descrição para o número que pretende bloquear"
 
 #: page.blacklist.php:100
 msgid "Enter the number/CallerID you want to block"
-msgstr ""
+msgstr "Introduza o número/CallerID que pretende bloquear"
 
 #: page.blacklist.php:133
 msgid "Export to CSV"
-msgstr ""
+msgstr "Exportar para CSV"
 
 #: page.blacklist.php:141
 msgid "Import Entries"
-msgstr ""
+msgstr "Importar Entradas"
 
 #: page.blacklist.php:137
 msgid ""
 "Import blacklist entries from a CSV file. Where the first column is the "
 "number and the second is the description"
 msgstr ""
+"Importar entrada na lista negra a partir de ficheiro CSV. A primeira coluna "
+"é o número e a segunda é a descrição"
 
 #: page.blacklist.php:137
 msgid "Import from CSV"
-msgstr ""
+msgstr "Importar de CSV"
 
 #: page.blacklist.php:76
 msgid "No Entries to export"
-msgstr ""
+msgstr "Sem Entradas para exportar"
 
 #: page.blacklist.php:165
 msgid "Number"
-msgstr ""
+msgstr "Número"
 
 #: page.blacklist.php:162
 msgid "Number/CallerID"
-msgstr ""
+msgstr "Número/CallerID"
 
 #: page.blacklist.php:99
 msgid "Number/CallerID:"
-msgstr ""
+msgstr "Número/CallerID:"
 
 #: install.php:10
 msgid "Remove a number from the blacklist"
-msgstr ""
+msgstr "Remover um número da lista negra"
 
 #: page.blacklist.php:120
 msgid "Submit Changes"
-msgstr ""
+msgstr "Submeter Alterações"
 
 #: page.blacklist.php:55
 msgid "Sucessfully imported all entries"
-msgstr ""
+msgstr "Todas as entradas importadas com sucesso"
 
 #: page.blacklist.php:60
 msgid "The file must be in CSV format!"
-msgstr ""
+msgstr "O ficheiro deve estar no formato CSV!"
 
 #: page.blacklist.php:35
 msgid "There was an error uploading the file"
-msgstr ""
+msgstr "Ocorreu um erro transferindo o ficheiro"
 
 #: page.blacklist.php:148
 msgid "deleted"
-msgstr ""
+msgstr "eliminado"

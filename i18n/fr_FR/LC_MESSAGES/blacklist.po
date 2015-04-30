@@ -20,16 +20,20 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:00-0500\n"
-"PO-Revision-Date: 2009-04-15 21:41+0100\n"
-"Last-Translator: Séverine GUTIERREZ <severine@medialsace.fr>\n"
-"Language-Team: Français <LL@li.org>\n"
+"PO-Revision-Date: 2015-04-29 21:13+0200\n"
+"Last-Translator: philippebolduc <philippe@florenceinc.com>\n"
+"Language-Team: French "
+"<http://weblate.freepbx.org/projects/freepbx/blacklist/fr_FR/>\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: page.blacklist.php:130
 msgid "Actions"
-msgstr ""
+msgstr "Actions"
 
 #: page.blacklist.php:96
 msgid "Add or replace entry"
@@ -37,7 +41,7 @@ msgstr "Ajouter ou remplacer une entrée"
 
 #: blacklist.i18n.php:4 blacklist.i18n.php:9
 msgid "Admin"
-msgstr ""
+msgstr "Administrateur"
 
 #: blacklist.i18n.php:3 blacklist.i18n.php:5 blacklist.i18n.php:7
 #: blacklist.i18n.php:11 install.php:12
@@ -62,7 +66,7 @@ msgstr "Blacklister le dernier appelant"
 
 #: page.blacklist.php:112
 msgid "Block Unknown/Blocked Caller ID:"
-msgstr ""
+msgstr "Bloquer Inconnu/Bloqué l'identifiant de l'appelant :"
 
 #: page.blacklist.php:113
 msgid "Check here to catch Unknown/Blocked Caller ID"

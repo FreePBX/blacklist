@@ -1,8 +1,9 @@
 <?php
+$infohtml = '';
 if(isset($message)){
 	$infohtml = '<div class="well well-info">';
 	$infohtml .= $message;
-	$infohtml .= '</div>';	
+	$infohtml .= '</div>';
 }
 
 
@@ -12,7 +13,7 @@ if(isset($message)){
 	<?php echo $infohtml?>
 	<div class = "display full-border">
 		<div class="row">
-			<div class="col-sm-9">
+			<div class="col-sm-12">
 					<div class="fpbx-container">
 						<form class="fpbx-submit" name="frm_blacklist" action="" method="post" role="form">
 							<form autocomplete="off" name="edit" action="" method="post" onsubmit="return edit_onsubmit();">
@@ -110,13 +111,6 @@ if(isset($message)){
 									</div>
 								</div>
 						</form>
-					</div>
-				</div>
-				<div class="col-sm-3 bootnav">
-					<div class="list-group">
-						<a href="#" class="list-group-item" data-toggle="modal" data-target="#addNumber"><i class="fa fa-plus"></i>&nbsp;&nbsp;Blacklist Number</a>
-						<a href='#' class="list-group-item hidden" id = "trashchecked"><i class="fa fa-trash-o"></i>&nbsp&nbsp&nbsp;<?php echo _('Delete Selected')?></a>
-
 					</div>
 				</div>
 				<!--Modals-->

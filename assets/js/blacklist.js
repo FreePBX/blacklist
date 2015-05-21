@@ -51,9 +51,7 @@ $('#submitnumber').on('click',function(){
 			$($this).text(_("Save Changes"));
 			if(data.status) {
 				alert(sprintf(_("Added %s to the blacklist."), num));
-				$.get( "config.php?display=blacklist&view=grid&quietmode=1", function( data ) {
-					$("#blacklist").html(data);
-				});
+				$('#blGrid').bootstrapTable('refresh',{});
 			} else {
 				alert(data.message);
 			}
@@ -62,32 +60,14 @@ $('#submitnumber').on('click',function(){
 });
 var processing = null;
 $(document).on('click', '[id^="del"]', function(){
-	var $this = this;
-	$(this).parents("tr").find("td").css("background-color","lightgrey").css("cursor", "progress");
-	num = $(this).data('number');
-	if(processing !== null) {
-		alert(_("Already Processing a number. Please wait"));
-		return false;
-	}
-	processing = num;
+	var num = $(this).data('number');
 	$.post("ajax.php?module=blacklist&command=del",
 		{
 			action : "delete",
 			number : num,
-		},
-		function(data,status){
-			processing = null;
-			if(status == "success"){
-				alert(num + _(" Deleted from the blacklist."));
-				$("#row"+num).fadeOut(2000,function(){
-					$(this).remove();
-				});
-			} else {
-				$($this).parents("tr").find("td").css("background-color","").css("cursor","");
-			}
-		}
-	);
-});
+		});
+		$('#blGrid').bootstrapTable('remove',{field:'number', values:[num]});
+	});
 
 $('#Upload').on('click',function(){
 	var file = document.getElementById("blacklistfile");

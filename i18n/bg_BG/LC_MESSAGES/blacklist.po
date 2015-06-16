@@ -10,8 +10,7 @@ msgstr ""
 "POT-Creation-Date: 2015-03-06 21:35-0500\n"
 "PO-Revision-Date: 2014-11-17 17:35+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
-"Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/blacklist/"
-"bg_BG/>\n"
+"Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/blacklist/bg_BG/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,16 +43,11 @@ msgid "Adding..."
 msgstr ""
 
 #: Blacklist.class.php:56
-msgid ""
-"Adds a number to the Blacklist Module.  All calls from that number to the "
-"system will receive a disconnect recording.  Manage these in the Blacklist "
-"module."
+msgid "Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module."
 msgstr ""
 
 #: Blacklist.class.php:69
-msgid ""
-"Adds the last caller to the Blacklist Module.  All calls from that number to "
-"the system will receive a disconnect recording."
+msgid "Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording."
 msgstr ""
 
 #: blacklist.i18n.php:6 blacklist.i18n.php:10
@@ -93,9 +87,9 @@ msgstr "Маркирайте за да улавяте Неразпознат/Б�
 msgid "Choose where blacklisted calls go"
 msgstr ""
 
-#: Blacklist.class.php:120
+#: page.blacklist.php:57
 msgid "Could not find file after upload"
-msgstr ""
+msgstr "Не мога да намеря файла след качването"
 
 #: views/general.php:118
 msgid "Delete Selected"
@@ -109,13 +103,13 @@ msgstr "Описание"
 msgid "Destination for BlackListed Calls"
 msgstr ""
 
-#: views/general.php:52
+#: page.blacklist.php:133
 msgid "Export to CSV"
-msgstr ""
+msgstr "Изнеси в CSV"
 
-#: views/general.php:47
+#: page.blacklist.php:137
 msgid "Import from CSV"
-msgstr ""
+msgstr "Внеси от CSV"
 
 #: views/general.php:28
 msgid "Import/Export"
@@ -125,9 +119,9 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Blacklist.class.php:139
+#: page.blacklist.php:76
 msgid "No Entries to export"
-msgstr ""
+msgstr "Няма Въвеждания за изнасяне"
 
 #: views/blgrid.php:39
 msgid "Number"
@@ -169,17 +163,17 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: Blacklist.class.php:118
+#: page.blacklist.php:55
 msgid "Sucessfully imported all entries"
-msgstr ""
+msgstr "Всички въвеждания са внесени успешно"
 
-#: Blacklist.class.php:123
+#: page.blacklist.php:60
 msgid "The file must be in CSV format!"
-msgstr ""
+msgstr "Файлът трябва да е в CSV формат!"
 
-#: Blacklist.class.php:98
+#: page.blacklist.php:35
 msgid "There was an error uploading the file"
-msgstr ""
+msgstr "Грешка при качване на файл"
 
 #: Blacklist.class.php:294
 msgid "Upload"
@@ -188,6 +182,18 @@ msgstr ""
 #: views/general.php:71
 msgid "Yes"
 msgstr ""
+
+#: page.blacklist.php:130
+msgid "Actions"
+msgstr "Действия"
+
+#: page.blacklist.php:141
+msgid "Import Entries"
+msgstr "Внеси Въвежданията"
+
+#: page.blacklist.php:137
+msgid "Import blacklist entries from a CSV file. Where the first column is the number and the second is the description"
+msgstr "Внасяне на въвеждания за черен списък от CSV файл. Първата колона съдържа номерата, а втората описание"
 
 #~ msgid "Blacklist entries"
 #~ msgstr "Въведени в Черен Списък"

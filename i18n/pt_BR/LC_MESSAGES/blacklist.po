@@ -1,0 +1,149 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for blacklist
+# Copyright (C) 2008-2015 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-20 19:00-0500\n"
+"PO-Revision-Date: 2015-04-29 08:49+0200\n"
+"Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
+"Language-Team: Portuguese (Brazil) "
+"<http://weblate.freepbx.org/projects/freepbx/blacklist/pt_BR/>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.2-dev\n"
+
+#: page.blacklist.php:130
+msgid "Actions"
+msgstr ""
+
+#: page.blacklist.php:96
+msgid "Add or replace entry"
+msgstr ""
+
+#: blacklist.i18n.php:4 blacklist.i18n.php:9
+msgid "Admin"
+msgstr ""
+
+#: blacklist.i18n.php:3 blacklist.i18n.php:5 blacklist.i18n.php:7
+#: blacklist.i18n.php:11 install.php:12
+msgid "Blacklist"
+msgstr ""
+
+#: install.php:9
+msgid "Blacklist a number"
+msgstr ""
+
+#: page.blacklist.php:155
+msgid "Blacklist entries"
+msgstr ""
+
+#: page.blacklist.php:148
+msgid "Blacklist entry"
+msgstr ""
+
+#: install.php:11
+msgid "Blacklist the last caller"
+msgstr ""
+
+#: page.blacklist.php:112
+msgid "Block Unknown/Blocked Caller ID:"
+msgstr ""
+
+#: page.blacklist.php:113
+msgid "Check here to catch Unknown/Blocked Caller ID"
+msgstr ""
+
+#: page.blacklist.php:57
+msgid "Could not find file after upload"
+msgstr ""
+
+#: page.blacklist.php:186 page.blacklist.php:198
+msgid "Delete"
+msgstr "Apagar"
+
+#: page.blacklist.php:163
+msgid "Description"
+msgstr ""
+
+#: page.blacklist.php:105
+msgid "Description:"
+msgstr ""
+
+#: page.blacklist.php:191 page.blacklist.php:199
+msgid "Edit"
+msgstr ""
+
+#: page.blacklist.php:106
+msgid "Enter a description for the number you want to block"
+msgstr ""
+
+#: page.blacklist.php:100
+msgid "Enter the number/CallerID you want to block"
+msgstr ""
+
+#: page.blacklist.php:133
+msgid "Export to CSV"
+msgstr ""
+
+#: page.blacklist.php:141
+msgid "Import Entries"
+msgstr ""
+
+#: page.blacklist.php:137
+msgid ""
+"Import blacklist entries from a CSV file. Where the first column is the "
+"number and the second is the description"
+msgstr ""
+
+#: page.blacklist.php:137
+msgid "Import from CSV"
+msgstr ""
+
+#: page.blacklist.php:76
+msgid "No Entries to export"
+msgstr ""
+
+#: page.blacklist.php:165
+msgid "Number"
+msgstr ""
+
+#: page.blacklist.php:162
+msgid "Number/CallerID"
+msgstr ""
+
+#: page.blacklist.php:99
+msgid "Number/CallerID:"
+msgstr ""
+
+#: install.php:10
+msgid "Remove a number from the blacklist"
+msgstr ""
+
+#: page.blacklist.php:120
+msgid "Submit Changes"
+msgstr ""
+
+#: page.blacklist.php:55
+msgid "Sucessfully imported all entries"
+msgstr ""
+
+#: page.blacklist.php:60
+msgid "The file must be in CSV format!"
+msgstr ""
+
+#: page.blacklist.php:35
+msgid "There was an error uploading the file"
+msgstr ""
+
+#: page.blacklist.php:148
+msgid "deleted"
+msgstr ""

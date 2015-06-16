@@ -37,16 +37,11 @@ msgid "Adding..."
 msgstr ""
 
 #: Blacklist.class.php:56
-msgid ""
-"Adds a number to the Blacklist Module.  All calls from that number to the "
-"system will receive a disconnect recording.  Manage these in the Blacklist "
-"module."
+msgid "Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module."
 msgstr ""
 
 #: Blacklist.class.php:69
-msgid ""
-"Adds the last caller to the Blacklist Module.  All calls from that number to "
-"the system will receive a disconnect recording."
+msgid "Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording."
 msgstr ""
 
 #: blacklist.i18n.php:6 blacklist.i18n.php:10
@@ -86,9 +81,9 @@ msgstr "Поставьте отметку здесь что бы заблоки�
 msgid "Choose where blacklisted calls go"
 msgstr ""
 
-#: Blacklist.class.php:120
+#: page.blacklist.php:57
 msgid "Could not find file after upload"
-msgstr ""
+msgstr "После загрузки файл не найден"
 
 #: views/general.php:118
 msgid "Delete Selected"
@@ -102,13 +97,13 @@ msgstr "Описание"
 msgid "Destination for BlackListed Calls"
 msgstr ""
 
-#: views/general.php:52
+#: page.blacklist.php:133
 msgid "Export to CSV"
-msgstr ""
+msgstr "Экспорт в CSV"
 
-#: views/general.php:47
+#: page.blacklist.php:137
 msgid "Import from CSV"
-msgstr ""
+msgstr "Импорт из CSV"
 
 #: views/general.php:28
 msgid "Import/Export"
@@ -118,9 +113,9 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Blacklist.class.php:139
+#: page.blacklist.php:76
 msgid "No Entries to export"
-msgstr ""
+msgstr "Нет записей для экспорта"
 
 #: views/blgrid.php:39
 msgid "Number"
@@ -162,17 +157,17 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: Blacklist.class.php:118
+#: page.blacklist.php:55
 msgid "Sucessfully imported all entries"
-msgstr ""
+msgstr "Все записи успешно импортированы"
 
-#: Blacklist.class.php:123
+#: page.blacklist.php:60
 msgid "The file must be in CSV format!"
-msgstr ""
+msgstr "Файл должен быть в формате CSV!"
 
-#: Blacklist.class.php:98
+#: page.blacklist.php:35
 msgid "There was an error uploading the file"
-msgstr ""
+msgstr "Возникла ошибка загрузки файла"
 
 #: Blacklist.class.php:294
 msgid "Upload"
@@ -181,6 +176,18 @@ msgstr ""
 #: views/general.php:71
 msgid "Yes"
 msgstr ""
+
+#: page.blacklist.php:130
+msgid "Actions"
+msgstr "Действия"
+
+#: page.blacklist.php:141
+msgid "Import Entries"
+msgstr "Импорт записей"
+
+#: page.blacklist.php:137
+msgid "Import blacklist entries from a CSV file. Where the first column is the number and the second is the description"
+msgstr "Импорт записей черного списка из файла CSV. Первый столбец - номер, второй - описание"
 
 #~ msgid "Blacklist entries"
 #~ msgstr "Записи в Черном списке"

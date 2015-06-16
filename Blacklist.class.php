@@ -73,10 +73,13 @@ class Blacklist implements BMO {
             _('Remove a number from the blacklist');
             _('Blacklist the last caller');
             _('Blacklist');
+            _('Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module.');
+            _('Removes a number from the Blacklist Module');
+            _('Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.');
         }
         $fcc = new \featurecode('blacklist', 'blacklist_add');
         $fcc->setDescription('Blacklist a number');
-        $fcc->setHelpText(_('Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module.'));
+        $fcc->setHelpText('Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module.');
         $fcc->setDefault('*30');
         $fcc->setProvideDest();
         $fcc->update();
@@ -84,14 +87,14 @@ class Blacklist implements BMO {
 
         $fcc = new \featurecode('blacklist', 'blacklist_remove');
         $fcc->setDescription('Remove a number from the blacklist');
-        $fcc->setHelpText(_('Removes a number from the Blacklist Module'));
+        $fcc->setHelpText('Removes a number from the Blacklist Module');
         $fcc->setDefault('*31');
         $fcc->setProvideDest();
         $fcc->update();
         unset($fcc);
         $fcc = new featurecode('blacklist', 'blacklist_last');
         $fcc->setDescription('Blacklist the last caller');
-        $fcc->setHelpText(_('Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.'));
+        $fcc->setHelpText('Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.');
         $fcc->setDefault('*32');
         $fcc->update();
         unset($fcc);

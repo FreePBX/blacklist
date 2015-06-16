@@ -75,20 +75,23 @@ class Blacklist implements BMO {
             _('Blacklist');
         }
         $fcc = new \featurecode('blacklist', 'blacklist_add');
-        $fcc->setDescription(_('Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module.'));
+        $fcc->setDescription('Blacklist a number');
+        $fcc->setHelpText(_('Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module.'));
         $fcc->setDefault('*30');
         $fcc->setProvideDest();
         $fcc->update();
         unset($fcc);
 
         $fcc = new \featurecode('blacklist', 'blacklist_remove');
-        $fcc->setDescription(_('Removes a number from the Blacklist Module'));
+        $fcc->setDescription('Remove a number from the blacklist');
+        $fcc->setHelpText(_('Removes a number from the Blacklist Module'));
         $fcc->setDefault('*31');
         $fcc->setProvideDest();
         $fcc->update();
         unset($fcc);
         $fcc = new featurecode('blacklist', 'blacklist_last');
-        $fcc->setDescription(_('Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.'));
+        $fcc->setDescription('Blacklist the last caller');
+        $fcc->setHelpText(_('Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.'));
         $fcc->setDefault('*32');
         $fcc->update();
         unset($fcc);

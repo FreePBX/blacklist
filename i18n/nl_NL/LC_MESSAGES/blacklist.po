@@ -9,143 +9,210 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:00-0500\n"
+"POT-Creation-Date: 2015-06-16 15:30-0400\n"
 "PO-Revision-Date: 2015-03-19 20:22+0200\n"
 "Last-Translator: Jan Peter <jpveldhuizen@gmail.com>\n"
-"Language-Team: Dutch "
-"<http://weblate.freepbx.org/projects/freepbx/blacklist/nl_NL/>\n"
-"Language: nl_NL\n"
+"Language-Team: Dutch <http://weblate.freepbx.org/projects/freepbx/blacklist/"
+"nl_NL/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl_NL\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: page.blacklist.php:130
+#: views/blgrid.php:11
 msgid "Actions"
 msgstr "Acties"
 
-#: page.blacklist.php:96
+#: views/addnumber.php:7
 msgid "Add or replace entry"
 msgstr "Regel toevoegen of veranderen"
 
-#: blacklist.i18n.php:4 blacklist.i18n.php:9
-msgid "Admin"
-msgstr "Beheer"
+#: assets/js/blacklist.js:53
+#, perl-format
+msgid "Added %s to the blacklist."
+msgstr ""
 
-#: blacklist.i18n.php:3 blacklist.i18n.php:5 blacklist.i18n.php:7
-#: blacklist.i18n.php:11 install.php:12
+#: assets/js/blacklist.js:38
+msgid "Adding..."
+msgstr ""
+
+#: Blacklist.class.php:79
+msgid ""
+"Adds a number to the Blacklist Module.  All calls from that number to the "
+"system will receive a disconnect recording.  Manage these in the Blacklist "
+"module."
+msgstr ""
+
+#: Blacklist.class.php:94
+msgid ""
+"Adds the last caller to the Blacklist Module.  All calls from that number to "
+"the system will receive a disconnect recording."
+msgstr ""
+
+#: Blacklist.class.php:75 views/general.php:24
 msgid "Blacklist"
 msgstr "Zwarte lijst"
 
-#: install.php:9
+#: views/general.php:12
+msgid "Blacklist Module"
+msgstr ""
+
+#: views/blgrid.php:3
+msgid "Blacklist Number"
+msgstr ""
+
+#: Blacklist.class.php:72
 msgid "Blacklist a number"
 msgstr "Zet een nummer op zwarte lijst"
 
-#: page.blacklist.php:155
-msgid "Blacklist entries"
-msgstr "Zwarte lijst regels"
-
-#: page.blacklist.php:148
-msgid "Blacklist entry"
-msgstr "Zwarte lijst regel"
-
-#: install.php:11
+#: Blacklist.class.php:74
 msgid "Blacklist the last caller"
 msgstr "Zet nummer van laatste oproep op zwarte lijst"
 
-#: page.blacklist.php:112
-msgid "Block Unknown/Blocked Caller ID:"
-msgstr "Blokkeer onbekend/geblokkeerd Caller ID:"
+#: views/general.php:67
+msgid "Block Unknown/Blocked Caller ID"
+msgstr ""
 
-#: page.blacklist.php:113
+#: views/general.php:82
 msgid "Check here to catch Unknown/Blocked Caller ID"
 msgstr "Aanvinken om onbekende/geblokkeerde Caller ID te blokkeren"
 
-#: page.blacklist.php:57
+#: views/general.php:106
+msgid "Choose where blacklisted calls go"
+msgstr ""
+
+#: Blacklist.class.php:145
 msgid "Could not find file after upload"
 msgstr "Kan het bestand niet vinden na uploaden"
 
-#: page.blacklist.php:186 page.blacklist.php:198
-msgid "Delete"
-msgstr "Verwijderen"
+#: views/blgrid.php:2
+msgid "Delete Selected"
+msgstr ""
 
-#: page.blacklist.php:163
+#: views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
 msgstr "Omschrijving"
 
-#: page.blacklist.php:105
-msgid "Description:"
-msgstr "Omschrijving:"
+#: views/general.php:94
+msgid "Destination for BlackListed Calls"
+msgstr ""
 
-#: page.blacklist.php:191 page.blacklist.php:199
-msgid "Edit"
-msgstr "Bewerken"
-
-#: page.blacklist.php:106
-msgid "Enter a description for the number you want to block"
-msgstr "Voeg een beschrijving toe voor het nummer dat u wilt blokkeren"
-
-#: page.blacklist.php:100
-msgid "Enter the number/CallerID you want to block"
-msgstr "Voeg het nummer/Caller ID in welke u wilt blokkeren"
-
-#: page.blacklist.php:133
+#: views/general.php:53
 msgid "Export to CSV"
 msgstr "Exporteren naar komma-gescheiden bestand (CSV)"
 
-#: page.blacklist.php:141
-msgid "Import Entries"
-msgstr "Importeer regels"
-
-#: page.blacklist.php:137
-msgid ""
-"Import blacklist entries from a CSV file. Where the first column is the "
-"number and the second is the description"
-msgstr ""
-"Importeer zwarte lijst regels vanuit een komma-gescheiden (CSV)-bestand. De "
-"eerste kolom bevat het nummer en de tweede kolom bevat de omschrijving"
-
-#: page.blacklist.php:137
+#: views/general.php:48
 msgid "Import from CSV"
 msgstr "Importeer vanuit een komma-gescheiden bestand (CSV)"
 
-#: page.blacklist.php:76
+#: views/general.php:29
+msgid "Import/Export"
+msgstr ""
+
+#: views/general.php:74
+msgid "No"
+msgstr ""
+
+#: Blacklist.class.php:164
 msgid "No Entries to export"
 msgstr "Geen regels om te exporteren"
 
-#: page.blacklist.php:165
+#: views/blgrid.php:9
 msgid "Number"
 msgstr "Nummer"
 
-#: page.blacklist.php:162
+#: views/addnumber.php:18
 msgid "Number/CallerID"
 msgstr "Nummer/Caller ID"
 
-#: page.blacklist.php:99
-msgid "Number/CallerID:"
-msgstr "Nummer/Caller ID:"
-
-#: install.php:10
+#: Blacklist.class.php:73
 msgid "Remove a number from the blacklist"
 msgstr "Verwijder een nummer van de zwarte lijst"
 
-#: page.blacklist.php:120
-msgid "Submit Changes"
-msgstr "Veranderingen opslaan"
+#: Blacklist.class.php:87
+msgid "Removes a number from the Blacklist Module"
+msgstr ""
 
-#: page.blacklist.php:55
+#: Blacklist.class.php:308
+msgid "Reset"
+msgstr ""
+
+#: assets/js/blacklist.js:51
+msgid "Save Changes"
+msgstr ""
+
+#: views/general.php:34
+msgid "Settings"
+msgstr ""
+
+#: Blacklist.class.php:314
+msgid "Submit"
+msgstr ""
+
+#: Blacklist.class.php:143
 msgid "Sucessfully imported all entries"
 msgstr "Importeren van regels geslaagd"
 
-#: page.blacklist.php:60
+#: Blacklist.class.php:148
 msgid "The file must be in CSV format!"
 msgstr "Het bestand moet een komma-gescheiden bestand (CSV) zijn!"
 
-#: page.blacklist.php:35
+#: Blacklist.class.php:123
 msgid "There was an error uploading the file"
 msgstr "Bij het uploaden deed zich een fout voor"
 
-#: page.blacklist.php:148
-msgid "deleted"
-msgstr "verwijderd"
+#: Blacklist.class.php:320
+msgid "Upload"
+msgstr ""
+
+#: views/general.php:72
+msgid "Yes"
+msgstr ""
+
+#~ msgid "Admin"
+#~ msgstr "Beheer"
+
+#~ msgid "Blacklist entries"
+#~ msgstr "Zwarte lijst regels"
+
+#~ msgid "Blacklist entry"
+#~ msgstr "Zwarte lijst regel"
+
+#~ msgid "Block Unknown/Blocked Caller ID:"
+#~ msgstr "Blokkeer onbekend/geblokkeerd Caller ID:"
+
+#~ msgid "Delete"
+#~ msgstr "Verwijderen"
+
+#~ msgid "Description:"
+#~ msgstr "Omschrijving:"
+
+#~ msgid "Edit"
+#~ msgstr "Bewerken"
+
+#~ msgid "Enter a description for the number you want to block"
+#~ msgstr "Voeg een beschrijving toe voor het nummer dat u wilt blokkeren"
+
+#~ msgid "Enter the number/CallerID you want to block"
+#~ msgstr "Voeg het nummer/Caller ID in welke u wilt blokkeren"
+
+#~ msgid "Import Entries"
+#~ msgstr "Importeer regels"
+
+#~ msgid ""
+#~ "Import blacklist entries from a CSV file. Where the first column is the "
+#~ "number and the second is the description"
+#~ msgstr ""
+#~ "Importeer zwarte lijst regels vanuit een komma-gescheiden (CSV)-bestand. "
+#~ "De eerste kolom bevat het nummer en de tweede kolom bevat de omschrijving"
+
+#~ msgid "Number/CallerID:"
+#~ msgstr "Nummer/Caller ID:"
+
+#~ msgid "Submit Changes"
+#~ msgstr "Veranderingen opslaan"
+
+#~ msgid "deleted"
+#~ msgstr "verwijderd"

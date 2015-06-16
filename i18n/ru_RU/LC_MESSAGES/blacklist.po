@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-06 21:35-0500\n"
+"POT-Creation-Date: 2015-06-16 15:30-0400\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -15,13 +15,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: assets/js/blacklist.js:81
-msgid " Deleted from the blacklist."
-msgstr ""
-
-#: views/blgrid.php:41
-msgid "Action"
-msgstr ""
+#: views/blgrid.php:11
+msgid "Actions"
+msgstr "Действия"
 
 #: views/addnumber.php:7
 msgid "Add or replace entry"
@@ -36,88 +32,88 @@ msgstr ""
 msgid "Adding..."
 msgstr ""
 
-#: Blacklist.class.php:56
-msgid "Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module."
+#: Blacklist.class.php:79
+msgid ""
+"Adds a number to the Blacklist Module.  All calls from that number to the "
+"system will receive a disconnect recording.  Manage these in the Blacklist "
+"module."
 msgstr ""
 
-#: Blacklist.class.php:69
-msgid "Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording."
+#: Blacklist.class.php:94
+msgid ""
+"Adds the last caller to the Blacklist Module.  All calls from that number to "
+"the system will receive a disconnect recording."
 msgstr ""
 
-#: blacklist.i18n.php:6 blacklist.i18n.php:10
-msgid "Admin"
-msgstr "Алминистратор"
-
-#: assets/js/blacklist.js:69
-msgid "Already Processing a number. Please wait"
-msgstr ""
-
-#: Blacklist.class.php:53 blacklist.i18n.php:4 blacklist.i18n.php:8
-#: views/general.php:23
+#: Blacklist.class.php:75 views/general.php:24
 msgid "Blacklist"
 msgstr "Черный список"
 
-#: views/general.php:11
+#: views/general.php:12
 msgid "Blacklist Module"
 msgstr ""
 
-#: Blacklist.class.php:50
+#: views/blgrid.php:3
+msgid "Blacklist Number"
+msgstr ""
+
+#: Blacklist.class.php:72
 msgid "Blacklist a number"
 msgstr "Внести номер в черный список"
 
-#: Blacklist.class.php:52
+#: Blacklist.class.php:74
 msgid "Blacklist the last caller"
 msgstr "Внести в черный список номер последнего позвонившего"
 
-#: views/general.php:66
+#: views/general.php:67
 msgid "Block Unknown/Blocked Caller ID"
 msgstr ""
 
-#: views/general.php:81
+#: views/general.php:82
 msgid "Check here to catch Unknown/Blocked Caller ID"
 msgstr "Поставьте отметку здесь что бы заблокировать пустой Caller ID"
 
-#: views/general.php:105
+#: views/general.php:106
 msgid "Choose where blacklisted calls go"
 msgstr ""
 
-#: page.blacklist.php:57
+#: Blacklist.class.php:145
 msgid "Could not find file after upload"
 msgstr "После загрузки файл не найден"
 
-#: views/general.php:118
+#: views/blgrid.php:2
 msgid "Delete Selected"
 msgstr ""
 
-#: views/addnumber.php:40 views/blgrid.php:40
+#: views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
 msgstr "Описание"
 
-#: views/general.php:93
+#: views/general.php:94
 msgid "Destination for BlackListed Calls"
 msgstr ""
 
-#: page.blacklist.php:133
+#: views/general.php:53
 msgid "Export to CSV"
 msgstr "Экспорт в CSV"
 
-#: page.blacklist.php:137
+#: views/general.php:48
 msgid "Import from CSV"
 msgstr "Импорт из CSV"
 
-#: views/general.php:28
+#: views/general.php:29
 msgid "Import/Export"
 msgstr ""
 
-#: views/general.php:73
+#: views/general.php:74
 msgid "No"
 msgstr ""
 
-#: page.blacklist.php:76
+#: Blacklist.class.php:164
 msgid "No Entries to export"
 msgstr "Нет записей для экспорта"
 
-#: views/blgrid.php:39
+#: views/blgrid.php:9
 msgid "Number"
 msgstr "Номер"
 
@@ -125,15 +121,15 @@ msgstr "Номер"
 msgid "Number/CallerID"
 msgstr "Номер/Caller ID"
 
-#: Blacklist.class.php:51
+#: Blacklist.class.php:73
 msgid "Remove a number from the blacklist"
 msgstr "Удалить номер из черного списка"
 
-#: Blacklist.class.php:63
+#: Blacklist.class.php:87
 msgid "Removes a number from the Blacklist Module"
 msgstr ""
 
-#: Blacklist.class.php:282
+#: Blacklist.class.php:308
 msgid "Reset"
 msgstr ""
 
@@ -141,53 +137,46 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
-#: views/blgrid.php:10
-msgid "Select"
-msgstr ""
-
-#: views/blgrid.php:36
-msgid "Select All"
-msgstr ""
-
-#: views/general.php:33
+#: views/general.php:34
 msgid "Settings"
 msgstr ""
 
-#: Blacklist.class.php:288
+#: Blacklist.class.php:314
 msgid "Submit"
 msgstr ""
 
-#: page.blacklist.php:55
+#: Blacklist.class.php:143
 msgid "Sucessfully imported all entries"
 msgstr "Все записи успешно импортированы"
 
-#: page.blacklist.php:60
+#: Blacklist.class.php:148
 msgid "The file must be in CSV format!"
 msgstr "Файл должен быть в формате CSV!"
 
-#: page.blacklist.php:35
+#: Blacklist.class.php:123
 msgid "There was an error uploading the file"
 msgstr "Возникла ошибка загрузки файла"
 
-#: Blacklist.class.php:294
+#: Blacklist.class.php:320
 msgid "Upload"
 msgstr ""
 
-#: views/general.php:71
+#: views/general.php:72
 msgid "Yes"
 msgstr ""
 
-#: page.blacklist.php:130
-msgid "Actions"
-msgstr "Действия"
+#~ msgid "Admin"
+#~ msgstr "Алминистратор"
 
-#: page.blacklist.php:141
-msgid "Import Entries"
-msgstr "Импорт записей"
+#~ msgid "Import Entries"
+#~ msgstr "Импорт записей"
 
-#: page.blacklist.php:137
-msgid "Import blacklist entries from a CSV file. Where the first column is the number and the second is the description"
-msgstr "Импорт записей черного списка из файла CSV. Первый столбец - номер, второй - описание"
+#~ msgid ""
+#~ "Import blacklist entries from a CSV file. Where the first column is the "
+#~ "number and the second is the description"
+#~ msgstr ""
+#~ "Импорт записей черного списка из файла CSV. Первый столбец - номер, "
+#~ "второй - описание"
 
 #~ msgid "Blacklist entries"
 #~ msgstr "Записи в Черном списке"

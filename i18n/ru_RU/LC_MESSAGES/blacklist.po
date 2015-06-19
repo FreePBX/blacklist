@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-16 15:30-0400\n"
+"POT-Creation-Date: 2015-06-19 17:28-0400\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -32,14 +32,14 @@ msgstr ""
 msgid "Adding..."
 msgstr ""
 
-#: Blacklist.class.php:79
+#: Blacklist.class.php:76
 msgid ""
 "Adds a number to the Blacklist Module.  All calls from that number to the "
 "system will receive a disconnect recording.  Manage these in the Blacklist "
 "module."
 msgstr ""
 
-#: Blacklist.class.php:94
+#: Blacklist.class.php:78
 msgid ""
 "Adds the last caller to the Blacklist Module.  All calls from that number to "
 "the system will receive a disconnect recording."
@@ -77,7 +77,7 @@ msgstr "Поставьте отметку здесь что бы заблоки�
 msgid "Choose where blacklisted calls go"
 msgstr ""
 
-#: Blacklist.class.php:145
+#: Blacklist.class.php:148
 msgid "Could not find file after upload"
 msgstr "После загрузки файл не найден"
 
@@ -109,7 +109,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Blacklist.class.php:164
+#: Blacklist.class.php:167
 msgid "No Entries to export"
 msgstr "Нет записей для экспорта"
 
@@ -125,11 +125,11 @@ msgstr "Номер/Caller ID"
 msgid "Remove a number from the blacklist"
 msgstr "Удалить номер из черного списка"
 
-#: Blacklist.class.php:87
+#: Blacklist.class.php:77
 msgid "Removes a number from the Blacklist Module"
 msgstr ""
 
-#: Blacklist.class.php:308
+#: Blacklist.class.php:311
 msgid "Reset"
 msgstr ""
 
@@ -141,23 +141,23 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: Blacklist.class.php:314
+#: Blacklist.class.php:317
 msgid "Submit"
 msgstr ""
 
-#: Blacklist.class.php:143
+#: Blacklist.class.php:146
 msgid "Sucessfully imported all entries"
 msgstr "Все записи успешно импортированы"
 
-#: Blacklist.class.php:148
+#: Blacklist.class.php:151
 msgid "The file must be in CSV format!"
 msgstr "Файл должен быть в формате CSV!"
 
-#: Blacklist.class.php:123
+#: Blacklist.class.php:126
 msgid "There was an error uploading the file"
 msgstr "Возникла ошибка загрузки файла"
 
-#: Blacklist.class.php:320
+#: Blacklist.class.php:323
 msgid "Upload"
 msgstr ""
 

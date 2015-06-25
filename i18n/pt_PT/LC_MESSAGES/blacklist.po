@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-19 17:28-0400\n"
+"POT-Creation-Date: 2015-06-25 18:39-0400\n"
 "PO-Revision-Date: 2015-04-25 00:52+0200\n"
 "Last-Translator: Paulo <paulop1975@gmail.com>\n"
 "Language-Team: Portuguese (Portugal) <http://weblate.freepbx.org/projects/"
@@ -38,20 +38,20 @@ msgstr ""
 msgid "Adding..."
 msgstr ""
 
-#: Blacklist.class.php:76
+#: Blacklist.class.php:79
 msgid ""
 "Adds a number to the Blacklist Module.  All calls from that number to the "
 "system will receive a disconnect recording.  Manage these in the Blacklist "
 "module."
 msgstr ""
 
-#: Blacklist.class.php:78
+#: Blacklist.class.php:81
 msgid ""
 "Adds the last caller to the Blacklist Module.  All calls from that number to "
 "the system will receive a disconnect recording."
 msgstr ""
 
-#: Blacklist.class.php:75 views/general.php:24
+#: Blacklist.class.php:78 views/general.php:24
 msgid "Blacklist"
 msgstr "Lista Negra"
 
@@ -63,11 +63,11 @@ msgstr ""
 msgid "Blacklist Number"
 msgstr ""
 
-#: Blacklist.class.php:72
+#: Blacklist.class.php:75
 msgid "Blacklist a number"
 msgstr "Inlcuir número em Lista Negra"
 
-#: Blacklist.class.php:74
+#: Blacklist.class.php:77
 msgid "Blacklist the last caller"
 msgstr "Incluir último chamador na Lista Negra"
 
@@ -83,7 +83,7 @@ msgstr "Selecione para capturar ID de Chamador Desconhecido/Bloqueado"
 msgid "Choose where blacklisted calls go"
 msgstr ""
 
-#: Blacklist.class.php:148
+#: Blacklist.class.php:151
 msgid "Could not find file after upload"
 msgstr "Não foi possível encontrar ficheiro após transferencia"
 
@@ -115,7 +115,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Blacklist.class.php:167
+#: Blacklist.class.php:170
 msgid "No Entries to export"
 msgstr "Sem Entradas para exportar"
 
@@ -127,15 +127,15 @@ msgstr "Número"
 msgid "Number/CallerID"
 msgstr "Número/CallerID"
 
-#: Blacklist.class.php:73
+#: Blacklist.class.php:76
 msgid "Remove a number from the blacklist"
 msgstr "Remover um número da lista negra"
 
-#: Blacklist.class.php:77
+#: Blacklist.class.php:80
 msgid "Removes a number from the Blacklist Module"
 msgstr ""
 
-#: Blacklist.class.php:311
+#: Blacklist.class.php:314
 msgid "Reset"
 msgstr ""
 
@@ -147,23 +147,23 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: Blacklist.class.php:317
+#: Blacklist.class.php:320
 msgid "Submit"
 msgstr ""
 
-#: Blacklist.class.php:146
+#: Blacklist.class.php:149
 msgid "Sucessfully imported all entries"
 msgstr "Todas as entradas importadas com sucesso"
 
-#: Blacklist.class.php:151
+#: Blacklist.class.php:154
 msgid "The file must be in CSV format!"
 msgstr "O ficheiro deve estar no formato CSV!"
 
-#: Blacklist.class.php:126
+#: Blacklist.class.php:129
 msgid "There was an error uploading the file"
 msgstr "Ocorreu um erro transferindo o ficheiro"
 
-#: Blacklist.class.php:323
+#: Blacklist.class.php:326
 msgid "Upload"
 msgstr ""
 

@@ -20,9 +20,9 @@
 		cbrows[i] = row['number'];
 	}
 
-	function linkFormatter(value,row){
+	function linkFormatter(value,row,idx){
 		var html = '<a href="#" data-toggle="modal" data-target="#addNumber" data-number="'+value+'" data-description="'+row['description']+'" ><i class="fa fa-pencil"></i></a>';
-		html += '&nbsp;<a href="#" id="del'+value+'" data-number="'+value+'"><i class="fa fa-trash"></i></a>';
+		html += '&nbsp;<a href="#" id="del'+value+'" data-idx="'+idx+'" data-number="'+value+'" class="delAction"><i class="fa fa-trash"></i></a>';
 		return html;
 	}
 

@@ -61,12 +61,14 @@ $('#submitnumber').on('click',function(){
 var processing = null;
 $(document).on('click', '[id^="del"]', function(){
 	var num = $(this).data('number');
+	var idx = $(this).data('idx');
 	$.post("ajax.php?module=blacklist&command=del",
 		{
 			action : "delete",
 			number : num,
+		}).done(function(){
+			$('#blGrid').bootstrapTable('refresh',{silent: true});
 		});
-		$('#blGrid').bootstrapTable('remove',{field:'number', values:[num]});
 	});
 
 $('#Upload').on('click',function(){

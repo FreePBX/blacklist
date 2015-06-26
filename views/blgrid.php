@@ -7,7 +7,7 @@
           <tr>
 						<th data-checkbox="true" data-formatter="cbFormatter"></th>
             <th data-field="number"><?php echo _("Number")?></th>
-            <th data-field="description"><?php echo _("Description")?></th>
+            <th data-field="description" data-formatter="descFormatter"><?php echo _("Description")?></th>
             <th data-field="number" data-formatter="linkFormatter"><?php echo _("Actions")?></th>
         </tr>
     </thead>
@@ -25,7 +25,13 @@
 		html += '&nbsp;<a href="#" id="del'+value+'" data-idx="'+idx+'" data-number="'+value+'" class="delAction"><i class="fa fa-trash"></i></a>';
 		return html;
 	}
-
+	function descFormatter(value){
+		if(value == 1){
+			return "";
+		}else{
+			return value;
+		}
+	}
 	$("#blkDelete").click(function(e){
 		e.preventDefault();
 		if(confirm(_("Are you sure you want to remove the selected item(s) from the blacklist?"))){

@@ -31,6 +31,9 @@ class Blacklist implements BMO {
     public function ajaxHandler(){
 
       $request = $_REQUEST;
+        if(!empty($_REQUEST['oldval']) && $_REQUEST['command'] == 'add' ){
+          $_REQUEST['command'] = 'edit';
+        }
         switch ($_REQUEST['command']) {
           case 'add':
             $this->numberAdd($request);

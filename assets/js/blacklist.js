@@ -1,9 +1,9 @@
 $('#addNumber').on('show.bs.modal', function (e) {
 	var number = $(e.relatedTarget).data('number');
 	var description = $(e.relatedTarget).data('description');
-	$(e.currentTarget).find('input[name="number"]').val(number);
-	$(e.currentTarget).find('input[name="oldval"]').val(number);
-	$(e.currentTarget).find('input[name="description"]').val(description);
+	$("#number").val(number);
+	$("#oldval").val(number);
+	$("#description").val(description);
 });
 
 $(document).on('show.bs.tab', 'a[data-toggle="tab"]', function (e) {

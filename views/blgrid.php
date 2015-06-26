@@ -36,16 +36,19 @@
 		e.preventDefault();
 		if(confirm(_("Are you sure you want to remove the selected item(s) from the blacklist?"))){
 			$('input[name="btSelectItem"]:checked').each(function(){
-				var num = cbrows[$(this).data("index")];
+				var ro = $('#blGrid').bootstrapTable('getData');
+				console.log($(this).data());
+				var num = ro[$(this).data("index")].number;
 				$.post("ajax.php?module=blacklist",
 					{
 						command : "del",
 						number : num,
 					}
 				);
-				$('#blGrid').bootstrapTable('remove',{field:'number', values:[num]});
 			});
-			$('#blGrid').bootstrapTable('refresh',{});
+			setTimeout(function(){
+				$('#blGrid').bootstrapTable('refresh',{silent: true});
+			}, 2000);
 		}
 	});
 </script>

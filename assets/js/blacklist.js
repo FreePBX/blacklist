@@ -71,6 +71,18 @@ $(document).on('click', '[id^="del"]', function(){
 		});
 	});
 
+	$(document).on('click', '[id^="report"]', function(){
+		var num = $(this).data('number');
+		$.post("ajax.php?module=blacklist&command=calllog",
+			{number: num},
+			function(data,status){
+				console.log(data);
+					$("#blReport").bootstrapTable({});
+					$('#blReport').bootstrapTable('load',data);
+			}
+		);
+		$("#numreport").modal("show");
+	});
 $('#Upload').on('click',function(){
 	var file = document.getElementById("blacklistfile");
 	var formData = new FormData();

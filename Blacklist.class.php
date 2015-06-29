@@ -21,6 +21,7 @@ class Blacklist implements BMO {
             case 'edit':
             case 'del':
             case 'getJSON':
+            case 'calllog':
                 return true;
             break;
         }
@@ -47,6 +48,14 @@ class Blacklist implements BMO {
           case 'del':
             $ret = $this->numberDel($request['number']);
             return array('status' => $ret);
+          break;
+          case 'calllog':
+            $number = $request['number'];
+            $sql = 'SELECT calldate FROM asteriskcdrdb.cdr WHERE src = ?';
+            $stmt = \FreePBX::Database()->prepare($sql);
+            $stmt->execute(array($number));
+            $ret = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return $ret;
           break;
           case 'getJSON':
             switch($request['jdata']){

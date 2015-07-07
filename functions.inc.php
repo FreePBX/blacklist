@@ -79,6 +79,7 @@ function blacklist_blacklist_add($fc) {
 	$id = "app-blacklist-add";
 	$c = "s";
 	$ext->add($id, $c, '', new ext_answer);
+	$ext->add($id, $c, '', new ext_macro('user-callerid'));
 	$ext->add($id, $c, '', new ext_wait(1));
 	$ext->add($id, $c, '', new ext_set('NumLoops', 0));
 	$ext->add($id, $c, 'start', new ext_playback('enter-num-blacklist'));
@@ -115,6 +116,7 @@ function blacklist_blacklist_remove($fc) {
 	$id = "app-blacklist-remove";
 	$c = "s";
 	$ext->add($id, $c, '', new ext_answer);
+	$ext->add($id, $c, '', new ext_macro('user-callerid'));
 	$ext->add($id, $c, '', new ext_wait(1));
 	$ext->add($id, $c, '', new ext_playback('entr-num-rmv-blklist'));
 	$ext->add($id, $c, '', new ext_digittimeout(5));
@@ -140,6 +142,7 @@ function blacklist_blacklist_last($fc) {
 	$id = "app-blacklist-last";
 	$c = "s";
 	$ext->add($id, $c, '', new ext_answer);
+	$ext->add($id, $c, '', new ext_macro('user-callerid'));
 	$ext->add($id, $c, '', new ext_wait(1));
 	$ext->add($id, $c, '', new ext_setvar('lastcaller', '${DB(CALLTRACE/${CALLERID(number)})}'));
 	$ext->add($id, $c, '', new ext_gotoif('$[ $[ "${lastcaller}" = "" ] | $[ "${lastcaller}" = "unknown" ] ]', 'noinfo'));

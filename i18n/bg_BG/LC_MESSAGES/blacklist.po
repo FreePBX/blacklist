@@ -10,8 +10,7 @@ msgstr ""
 "POT-Creation-Date: 2015-06-25 18:39-0400\n"
 "PO-Revision-Date: 2014-11-17 17:35+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
-"Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/blacklist/"
-"bg_BG/>\n"
+"Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/blacklist/bg_BG/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,16 +39,11 @@ msgid "Adding..."
 msgstr ""
 
 #: Blacklist.class.php:79
-msgid ""
-"Adds a number to the Blacklist Module.  All calls from that number to the "
-"system will receive a disconnect recording.  Manage these in the Blacklist "
-"module."
+msgid "Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module."
 msgstr ""
 
 #: Blacklist.class.php:81
-msgid ""
-"Adds the last caller to the Blacklist Module.  All calls from that number to "
-"the system will receive a disconnect recording."
+msgid "Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording."
 msgstr ""
 
 #: Blacklist.class.php:78 views/general.php:24
@@ -175,16 +169,6 @@ msgstr ""
 #~ msgid "Admin"
 #~ msgstr "Админ"
 
-#~ msgid "Import Entries"
-#~ msgstr "Внеси Въвежданията"
-
-#~ msgid ""
-#~ "Import blacklist entries from a CSV file. Where the first column is the "
-#~ "number and the second is the description"
-#~ msgstr ""
-#~ "Внасяне на въвеждания за черен списък от CSV файл. Първата колона съдържа "
-#~ "номерата, а втората описание"
-
 #~ msgid "Blacklist entries"
 #~ msgstr "Въведени в Черен Списък"
 
@@ -208,6 +192,12 @@ msgstr ""
 
 #~ msgid "Enter the number/CallerID you want to block"
 #~ msgstr "Въведете номер/CallerID който искате да блокирате"
+
+#~ msgid "Import Entries"
+#~ msgstr "Внеси Въвежданията"
+
+#~ msgid "Import blacklist entries from a CSV file. Where the first column is the number and the second is the description"
+#~ msgstr "Внасяне на въвеждания за черен списък от CSV файл. Първата колона съдържа номерата, а втората описание"
 
 #~ msgid "Number/CallerID:"
 #~ msgstr "Номер/CallerID:"

@@ -33,16 +33,11 @@ msgid "Adding..."
 msgstr ""
 
 #: Blacklist.class.php:79
-msgid ""
-"Adds a number to the Blacklist Module.  All calls from that number to the "
-"system will receive a disconnect recording.  Manage these in the Blacklist "
-"module."
+msgid "Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module."
 msgstr ""
 
 #: Blacklist.class.php:81
-msgid ""
-"Adds the last caller to the Blacklist Module.  All calls from that number to "
-"the system will receive a disconnect recording."
+msgid "Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording."
 msgstr ""
 
 #: Blacklist.class.php:78 views/general.php:24
@@ -168,16 +163,6 @@ msgstr ""
 #~ msgid "Admin"
 #~ msgstr "Алминистратор"
 
-#~ msgid "Import Entries"
-#~ msgstr "Импорт записей"
-
-#~ msgid ""
-#~ "Import blacklist entries from a CSV file. Where the first column is the "
-#~ "number and the second is the description"
-#~ msgstr ""
-#~ "Импорт записей черного списка из файла CSV. Первый столбец - номер, "
-#~ "второй - описание"
-
 #~ msgid "Blacklist entries"
 #~ msgstr "Записи в Черном списке"
 
@@ -201,6 +186,12 @@ msgstr ""
 
 #~ msgid "Enter the number/CallerID you want to block"
 #~ msgstr "Введите номер/Caller ID, который Вы хотите заблокировать"
+
+#~ msgid "Import Entries"
+#~ msgstr "Импорт записей"
+
+#~ msgid "Import blacklist entries from a CSV file. Where the first column is the number and the second is the description"
+#~ msgstr "Импорт записей черного списка из файла CSV. Первый столбец - номер, второй - описание"
 
 #~ msgid "Number/CallerID:"
 #~ msgstr "Номер/Caller ID:"

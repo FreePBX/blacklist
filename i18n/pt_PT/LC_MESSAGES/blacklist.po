@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:00-0500\n"
+"POT-Creation-Date: 2015-07-07 15:04+1000\n"
 "PO-Revision-Date: 2015-04-25 00:52+0200\n"
 "Last-Translator: Paulo <paulop1975@gmail.com>\n"
-"Language-Team: Portuguese (Portugal) "
-"<http://weblate.freepbx.org/projects/freepbx/blacklist/pt_PT/>\n"
-"Language: pt_PT\n"
+"Language-Team: Portuguese (Portugal) <http://weblate.freepbx.org/projects/"
+"freepbx/blacklist/pt_PT/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt_PT\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
@@ -29,12 +29,11 @@ msgstr "Ações"
 msgid "Add or replace entry"
 msgstr "Adicionar ou substituir entrada"
 
-#: blacklist.i18n.php:4 blacklist.i18n.php:9
+#: blacklist.i18n.php:6 blacklist.i18n.php:10
 msgid "Admin"
 msgstr "Admin"
 
-#: blacklist.i18n.php:3 blacklist.i18n.php:5 blacklist.i18n.php:7
-#: blacklist.i18n.php:11 install.php:12
+#: blacklist.i18n.php:4 blacklist.i18n.php:8 install.php:12
 msgid "Blacklist"
 msgstr "Lista Negra"
 

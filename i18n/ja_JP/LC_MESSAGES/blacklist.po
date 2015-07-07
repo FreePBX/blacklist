@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:00-0500\n"
+"POT-Creation-Date: 2015-07-07 15:04+1000\n"
 "PO-Revision-Date: 2014-02-19 04:47+0200\n"
 "Last-Translator: Kenichi Fukaumi <k.fukaumi@qloog.com>\n"
 "Language-Team: Japanese <http://example.com/projects/freepbx/blacklist/ja/>\n"
@@ -56,12 +56,11 @@ msgstr ""
 msgid "Add or replace entry"
 msgstr "エントリーを追加、更新する"
 
-#: blacklist.i18n.php:4 blacklist.i18n.php:9
+#: blacklist.i18n.php:6 blacklist.i18n.php:10
 msgid "Admin"
 msgstr "アドミン"
 
-#: blacklist.i18n.php:3 blacklist.i18n.php:5 blacklist.i18n.php:7
-#: blacklist.i18n.php:11 install.php:12
+#: blacklist.i18n.php:4 blacklist.i18n.php:8 install.php:12
 msgid "Blacklist"
 msgstr "ブラックリスト"
 

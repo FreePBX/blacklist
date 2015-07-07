@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:00-0500\n"
+"POT-Creation-Date: 2015-07-07 15:04+1000\n"
 "PO-Revision-Date: 2008-11-06 14:48+0100\n"
 "Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
 "Language-Team: Italian\n"
@@ -25,12 +25,11 @@ msgstr ""
 msgid "Add or replace entry"
 msgstr "Aggiungi o sostituisci voce"
 
-#: blacklist.i18n.php:4 blacklist.i18n.php:9
+#: blacklist.i18n.php:6 blacklist.i18n.php:10
 msgid "Admin"
 msgstr ""
 
-#: blacklist.i18n.php:3 blacklist.i18n.php:5 blacklist.i18n.php:7
-#: blacklist.i18n.php:11 install.php:12
+#: blacklist.i18n.php:4 blacklist.i18n.php:8 install.php:12
 msgid "Blacklist"
 msgstr "Blacklist"
 

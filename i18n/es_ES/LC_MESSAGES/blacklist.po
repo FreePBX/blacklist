@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - módulo blacklist module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:00-0500\n"
+"POT-Creation-Date: 2015-07-07 15:04+1000\n"
 "PO-Revision-Date: 2015-03-24 23:10+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
-"Language-Team: Spanish "
-"<http://weblate.freepbx.org/projects/freepbx/blacklist/es_ES/>\n"
-"Language: es_ES\n"
+"Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
+"blacklist/es_ES/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 "X-Poedit-Language: Spanish\n"
@@ -25,12 +25,11 @@ msgstr "Acciones"
 msgid "Add or replace entry"
 msgstr "Añadir o modificar elemento"
 
-#: blacklist.i18n.php:4 blacklist.i18n.php:9
+#: blacklist.i18n.php:6 blacklist.i18n.php:10
 msgid "Admin"
 msgstr "Administrador"
 
-#: blacklist.i18n.php:3 blacklist.i18n.php:5 blacklist.i18n.php:7
-#: blacklist.i18n.php:11 install.php:12
+#: blacklist.i18n.php:4 blacklist.i18n.php:8 install.php:12
 msgid "Blacklist"
 msgstr "Lista negra"
 

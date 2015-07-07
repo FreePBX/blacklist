@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:00-0500\n"
+"POT-Creation-Date: 2015-07-07 15:04+1000\n"
 "PO-Revision-Date: 2015-03-11 21:15+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
-"Language-Team: Bulgarian "
-"<http://weblate.freepbx.org/projects/freepbx/blacklist/bg_BG/>\n"
-"Language: bg_BG\n"
+"Language-Team: Bulgarian <http://weblate.freepbx.org/projects/freepbx/"
+"blacklist/bg_BG/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: bg_BG\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 "X-Poedit-Language: Bulgarian\n"
@@ -30,12 +30,11 @@ msgstr "Действия"
 msgid "Add or replace entry"
 msgstr "Добави или замени въведен номер"
 
-#: blacklist.i18n.php:4 blacklist.i18n.php:9
+#: blacklist.i18n.php:6 blacklist.i18n.php:10
 msgid "Admin"
 msgstr "Админ"
 
-#: blacklist.i18n.php:3 blacklist.i18n.php:5 blacklist.i18n.php:7
-#: blacklist.i18n.php:11 install.php:12
+#: blacklist.i18n.php:4 blacklist.i18n.php:8 install.php:12
 msgid "Blacklist"
 msgstr "Черен Списък"
 

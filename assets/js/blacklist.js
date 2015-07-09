@@ -50,7 +50,11 @@ $('#submitnumber').on('click',function(){
 			$($this).prop("disabled",false);
 			$($this).text(_("Save Changes"));
 			if(data.status) {
-				alert(sprintf(_("Added %s to the blacklist."), num));
+				if(oldv.length > 0){
+					alert(_("Entry Updated"));
+				}else {
+					alert(sprintf(_("Added %s to the blacklist."), num));
+				}
 				$('#blGrid').bootstrapTable('refresh',{});
 			} else {
 				alert(data.message);

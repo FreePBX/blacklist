@@ -40,6 +40,11 @@ if(isset($message)){
 										<?php echo load_view(__DIR__.'/blgrid.php',array('blacklist' => $blacklist));?>
 									</div>
 									<div role=tabpanel" id="importexport" class="tab-pane">
+										<div class="alert alert-info">
+											<b><?php echo _("CSV Format") ?></b></br><hr/>
+												number,description<br/>
+												{<?php echo _("NUMBER")?>},{<?php echo _("DESCRIPTION")?>}
+										</div>
 										<div class="row">
 											<div class="col-md-12">
 												<div class="row">

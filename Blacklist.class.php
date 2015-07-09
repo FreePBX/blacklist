@@ -237,6 +237,9 @@ class Blacklist implements BMO {
         $c = 's';
         $ext->add($id, $c, '', new ext_answer());
         $ext->add($id, $c, '', new ext_macro('user-callerid'));
+	$ext->add($id, $c, '', new ext_goto('${CHANNEL(language)},1'));
+	//English
+	$c = 'en';
         $ext->add($id, $c, '', new ext_wait(1));
         $ext->add($id, $c, '', new ext_set('NumLoops', 0));
         $ext->add($id, $c, 'start', new ext_playback('enter-num-blacklist'));
@@ -248,6 +251,19 @@ class Blacklist implements BMO {
         $ext->add($id, $c, '', new ext_noop('Waiting for input'));
         $ext->add($id, $c, 'end', new ext_waitexten(60));
         $ext->add($id, $c, '', new ext_playback('sorry-youre-having-problems&goodbye'));
+	//Japanese
+	$c = 'ja';
+        $ext->add($id, $c, '', new ext_wait(1));
+        $ext->add($id, $c, '', new ext_set('NumLoops', 0));
+        $ext->add($id, $c, 'start', new ext_playback('enter-num-blacklist'));
+        $ext->add($id, $c, '', new ext_digittimeout(5));
+        $ext->add($id, $c, '', new ext_responsetimeout(60));
+        $ext->add($id, $c, '', new ext_read('blacknr', 'then-press-pound'));
+        $ext->add($id, $c, '', new ext_saydigits('${blacknr}'));
+        $ext->add($id, $c, '', new ext_playback('if-correct-press&digits/1&pleasepress'));
+        $ext->add($id, $c, '', new ext_noop('Waiting for input'));
+        $ext->add($id, $c, 'end', new ext_waitexten(60));
+	//Can be localized later on if needed
         $c = '1';
         $ext->add($id, $c, '', new ext_gotoif('$[ "${blacknr}" != ""]', '', 'app-blacklist-add-invalid,s,1'));
         $ext->add($id, $c, '', new ext_set('DB(blacklist/${blacknr})', 1));
@@ -270,7 +286,10 @@ class Blacklist implements BMO {
         $c = 's';
         $ext->add($id, $c, '', new ext_answer());
         $ext->add($id, $c, '', new ext_macro('user-callerid'));
-        $ext->add($id, $c, '', new ext_wait(1));
+	$ext->add($id, $c, '', new ext_goto('${CHANNEL(language)},1'));
+        //English
+	$c = 'en';
+	$ext->add($id, $c, '', new ext_wait(1));
         $ext->add($id, $c, '', new ext_playback('entr-num-rmv-blklist'));
         $ext->add($id, $c, '', new ext_digittimeout(5));
         $ext->add($id, $c, '', new ext_responsetimeout(60));
@@ -280,6 +299,18 @@ class Blacklist implements BMO {
         $ext->add($id, $c, '', new ext_noop('Waiting for input'));
         $ext->add($id, $c, 'end', new ext_waitexten(60));
         $ext->add($id, $c, '', new ext_playback('sorry-youre-having-problems&goodbye'));
+	//Japanese
+	$c = 'ja';
+	$ext->add($id, $c, '', new ext_wait(1));
+        $ext->add($id, $c, '', new ext_playback('entr-num-rmv-blklist'));
+        $ext->add($id, $c, '', new ext_digittimeout(5));
+        $ext->add($id, $c, '', new ext_responsetimeout(60));
+        $ext->add($id, $c, '', new ext_read('blacknr', 'then-press-pound'));
+        $ext->add($id, $c, '', new ext_saydigits('${blacknr}'));
+        $ext->add($id, $c, '', new ext_playback('if-correct-press&digits/1&pleasepress'));
+        $ext->add($id, $c, '', new ext_noop('Waiting for input'));
+        $ext->add($id, $c, 'end', new ext_waitexten(60));
+	//Can be localized later on if needed
         $c = '1';
         $ext->add($id, $c, '', new ext_dbdel('blacklist/${blacknr}'));
         $ext->add($id, $c, '', new ext_playback('num-was-successfully&removed'));
@@ -292,6 +323,9 @@ class Blacklist implements BMO {
         $c = 's';
         $ext->add($id, $c, '', new ext_answer());
         $ext->add($id, $c, '', new ext_macro('user-callerid'));
+	$ext->add($id, $c, '', new ext_goto('${CHANNEL(language)},1'));
+	//English
+	$c = 'en';	
         $ext->add($id, $c, '', new ext_wait(1));
         $ext->add($id, $c, '', new ext_setvar('lastcaller', '${DB(CALLTRACE/${CALLERID(number)})}'));
         $ext->add($id, $c, '', new ext_gotoif('$[ $[ "${lastcaller}" = "" ] | $[ "${lastcaller}" = "unknown" ] ]', 'noinfo'));
@@ -306,6 +340,23 @@ class Blacklist implements BMO {
         $ext->add($id, $c, '', new ext_noop('Waiting for input'));
         $ext->add($id, $c, 'end', new ext_waitexten(60));
         $ext->add($id, $c, '', new ext_playback('sorry-youre-having-problems&goodbye'));
+	//Japanese
+	$c = 'ja';	
+        $ext->add($id, $c, '', new ext_wait(1));
+        $ext->add($id, $c, '', new ext_setvar('lastcaller', '${DB(CALLTRACE/${CALLERID(number)})}'));
+        $ext->add($id, $c, '', new ext_gotoif('$[ $[ "${lastcaller}" = "" ] | $[ "${lastcaller}" = "unknown" ] ]', 'noinfo'));
+        $ext->add($id, $c, '', new ext_playback('privacy-to-blacklist-last-caller&telephone-number'));
+        $ext->add($id, $c, '', new ext_saydigits('${lastcaller}'));
+        $ext->add($id, $c, '', new ext_setvar('TIMEOUT(digit)', '3'));
+        $ext->add($id, $c, '', new ext_setvar('TIMEOUT(response)', '7'));
+        $ext->add($id, $c, '', new ext_playback('if-correct-press&digits/1&pleasepress'));
+        $ext->add($id, $c, '', new ext_goto('end'));
+        $ext->add($id, $c, 'noinfo', new ext_playback('unidentified-no-callback'));
+        $ext->add($id, $c, '', new ext_hangup());
+        $ext->add($id, $c, '', new ext_noop('Waiting for input'));
+        $ext->add($id, $c, 'end', new ext_waitexten(60));
+        $ext->add($id, $c, '', new ext_playback('sorry-youre-having-problems&goodbye'));
+	//Can be localized later on if needed
         $c = '1';
         $ext->add($id, $c, '', new ext_set('DB(blacklist/${lastcaller})', 1));
         $ext->add($id, $c, '', new ext_playback('num-was-successfully'));

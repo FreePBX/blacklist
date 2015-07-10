@@ -1,6 +1,6 @@
 <?php
 
-// vim: set ai ts=4 sw=4 ft=php:
+// vim: set ai ts=4 sw=4 ft=php expandtab:
 //	License for all code of this FreePBX module can be found in the license file inside the module directory
 //	Copyright 2014 Schmooze Com Inc.
 //
@@ -244,8 +244,17 @@ class Blacklist implements BMO {
         $ext->add($id, $c, '', new ext_responsetimeout(60));
         $ext->add($id, $c, '', new ext_read('blacknr', 'then-press-pound'));
         $ext->add($id, $c, '', new ext_saydigits('${blacknr}'));
-        $ext->add($id, $c, '', new ext_playback('if-correct-press&digits/1'));
-        $ext->add($id, $c, '', new ext_noop('Waiting for input'));
+        // i18n - Some languages need this is a different format. If we don't
+        // know about the language, assume english
+        $ext->add($id, $c, '', new ext_gotoif('$[${DIALPLAN_EXISTS('.$id.',${CHANNEL(language)},1)}]', '${CHANNEL(language)},1'));
+        // en - default
+        $ext->add($id, 'en', '', new ext_playback('if-correct-press&digits/1'));
+        $ext->add($id, 'en', '', new ext_goto($id, $c, 'endintl'));
+        // ja
+        $ext->add($id, 'ja', '', new ext_playback('if-correct-press&digits/1&pleasepress'));
+        $ext->add($id, 'ja', '', new ext_goto($id, $c, 'endintl'));
+
+        $ext->add($id, $c, 'endintl', new ext_noop('Waiting for input'));
         $ext->add($id, $c, 'end', new ext_waitexten(60));
         $ext->add($id, $c, '', new ext_playback('sorry-youre-having-problems&goodbye'));
         $c = '1';

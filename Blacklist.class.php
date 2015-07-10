@@ -254,7 +254,7 @@ class Blacklist implements BMO {
         $ext->add($id, 'ja', '', new ext_playback('if-correct-press&digits/1&pleasepress'));
         $ext->add($id, 'ja', '', new ext_return());
 
-        $ext->add($id, $c, 'endintl', new ext_noop('Waiting for input'));
+        $ext->add($id, $c, '', new ext_noop('Waiting for input'));
         $ext->add($id, $c, 'end', new ext_waitexten(10));
         $ext->add($id, $c, '', new ext_playback('sorry-youre-having-problems&goodbye'));
         $ext->add($id, $c, '', new ext_wait(1));
@@ -287,7 +287,16 @@ class Blacklist implements BMO {
         $ext->add($id, $c, '', new ext_responsetimeout(60));
         $ext->add($id, $c, '', new ext_read('blacknr', 'then-press-pound'));
         $ext->add($id, $c, '', new ext_saydigits('${blacknr}'));
-        $ext->add($id, $c, '', new ext_playback('if-correct-press&digits/1'));
+        // i18n - Some languages need this is a different format. If we don't
+        // know about the language, assume english
+        $ext->add($id, $c, '', new ext_gosubif('$[${DIALPLAN_EXISTS('.$id.',${CHANNEL(language)})}]', $id.',${CHANNEL(language)},1', $id.',en,1'));
+        // en - default
+        $ext->add($id, 'en', '', new ext_playback('if-correct-press&digits/1'));
+        $ext->add($id, 'en', '', new ext_return());
+        // ja
+        $ext->add($id, 'ja', '', new ext_playback('if-correct-press&digits/1&pleasepress'));
+        $ext->add($id, 'ja', '', new ext_return());
+
         $ext->add($id, $c, '', new ext_noop('Waiting for input'));
         $ext->add($id, $c, 'end', new ext_waitexten(60));
         $ext->add($id, $c, '', new ext_playback('sorry-youre-having-problems&goodbye'));
@@ -310,7 +319,16 @@ class Blacklist implements BMO {
         $ext->add($id, $c, '', new ext_saydigits('${lastcaller}'));
         $ext->add($id, $c, '', new ext_setvar('TIMEOUT(digit)', '3'));
         $ext->add($id, $c, '', new ext_setvar('TIMEOUT(response)', '7'));
-        $ext->add($id, $c, '', new ext_playback('if-correct-press&digits/1'));
+        // i18n - Some languages need this is a different format. If we don't
+        // know about the language, assume english
+        $ext->add($id, $c, '', new ext_gosubif('$[${DIALPLAN_EXISTS('.$id.',${CHANNEL(language)})}]', $id.',${CHANNEL(language)},1', $id.',en,1'));
+        // en - default
+        $ext->add($id, 'en', '', new ext_playback('if-correct-press&digits/1'));
+        $ext->add($id, 'en', '', new ext_return());
+        // ja
+        $ext->add($id, 'ja', '', new ext_playback('if-correct-press&digits/1&pleasepress'));
+        $ext->add($id, 'ja', '', new ext_return());
+
         $ext->add($id, $c, '', new ext_goto('end'));
         $ext->add($id, $c, 'noinfo', new ext_playback('unidentified-no-callback'));
         $ext->add($id, $c, '', new ext_hangup());

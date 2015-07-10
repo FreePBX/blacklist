@@ -257,6 +257,8 @@ class Blacklist implements BMO {
         $ext->add($id, $c, 'endintl', new ext_noop('Waiting for input'));
         $ext->add($id, $c, 'end', new ext_waitexten(60));
         $ext->add($id, $c, '', new ext_playback('sorry-youre-having-problems&goodbye'));
+        $ext->add($id, $c, '', new ext_wait(1));
+        $ext->add($id, $c, '', new ext_hangup());
         $c = '1';
         $ext->add($id, $c, '', new ext_gotoif('$[ "${blacknr}" != ""]', '', 'app-blacklist-add-invalid,s,1'));
         $ext->add($id, $c, '', new ext_set('DB(blacklist/${blacknr})', 1));

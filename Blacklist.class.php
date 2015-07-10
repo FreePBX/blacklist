@@ -246,16 +246,16 @@ class Blacklist implements BMO {
         $ext->add($id, $c, '', new ext_saydigits('${blacknr}'));
         // i18n - Some languages need this is a different format. If we don't
         // know about the language, assume english
-        $ext->add($id, $c, '', new ext_gotoif('$[${DIALPLAN_EXISTS('.$id.',${CHANNEL(language)},1)}]', '${CHANNEL(language)},1'));
+        $ext->add($id, $c, '', new ext_gosubif('$[${DIALPLAN_EXISTS('.$id.',${CHANNEL(language)})}]', $id.',${CHANNEL(language)},1', $id.',en,1'));
         // en - default
         $ext->add($id, 'en', '', new ext_playback('if-correct-press&digits/1'));
-        $ext->add($id, 'en', '', new ext_goto($id, $c, 'endintl'));
+        $ext->add($id, 'en', '', new ext_return());
         // ja
         $ext->add($id, 'ja', '', new ext_playback('if-correct-press&digits/1&pleasepress'));
-        $ext->add($id, 'ja', '', new ext_goto($id, $c, 'endintl'));
+        $ext->add($id, 'ja', '', new ext_return());
 
         $ext->add($id, $c, 'endintl', new ext_noop('Waiting for input'));
-        $ext->add($id, $c, 'end', new ext_waitexten(60));
+        $ext->add($id, $c, 'end', new ext_waitexten(10));
         $ext->add($id, $c, '', new ext_playback('sorry-youre-having-problems&goodbye'));
         $ext->add($id, $c, '', new ext_wait(1));
         $ext->add($id, $c, '', new ext_hangup());

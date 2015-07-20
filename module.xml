@@ -2,7 +2,7 @@
 	<rawname>blacklist</rawname>
 	<repo>standard</repo>
 	<name>Blacklist</name>
-	<version>13.0.4</version>
+	<version>13.0.5</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*13.0.5* Fix astman and minor blacklist issues FREEPBX-9666
 		*13.0.4* #9615 - Fix multilanguage support.
 		*13.0.3* FREEPBX-9557, FREEPBX-9558, FREEPBX-9559, FREEPBX-9560
 		*13.0.2* Version bump Beta

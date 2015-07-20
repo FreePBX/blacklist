@@ -12,6 +12,16 @@ class Blacklist implements BMO {
 		}
 		$this->FreePBX = $freepbx;
 		$this->astman = $this->FreePBX->astman;
+
+		if (false) {
+			_('Blacklist a number');
+			_('Remove a number from the blacklist');
+			_('Blacklist the last caller');
+			_('Blacklist');
+			_('Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module.');
+			_('Removes a number from the Blacklist Module');
+			_('Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.');
+		}
 	}
 	public function ajaxRequest($req, &$setting){
 		$setting['authenticate'] = false;
@@ -37,40 +47,40 @@ class Blacklist implements BMO {
 		}
 		switch ($_REQUEST['command']) {
 			case 'add':
-			$this->numberAdd($request);
-			return array('status' => true);
+				$this->numberAdd($request);
+				return array('status' => true);
 			break;
 			case 'edit':
-			$this->numberDel($request['oldval']);
-			$this->numberAdd($request);
-			return array('status' => true);
+				$this->numberDel($request['oldval']);
+				$this->numberAdd($request);
+				return array('status' => true);
 			break;
 			case 'del':
-			$ret = $this->numberDel($request['number']);
-			return array('status' => $ret);
+				$ret = $this->numberDel($request['number']);
+				return array('status' => $ret);
 			break;
 			case 'calllog':
-			$number = $request['number'];
-			$sql = 'SELECT calldate FROM asteriskcdrdb.cdr WHERE src = ?';
-			$stmt = \FreePBX::Database()->prepare($sql);
-			$stmt->execute(array($number));
-			$ret = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-			return $ret;
+				$number = $request['number'];
+				$sql = 'SELECT calldate FROM asteriskcdrdb.cdr WHERE src = ?';
+				$stmt = \FreePBX::Database()->prepare($sql);
+				$stmt->execute(array($number));
+				$ret = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+				return $ret;
 			break;
 			case 'getJSON':
 			switch($request['jdata']){
 				case 'grid':
-				$ret = array();
-				$blacklist = $this->getBlacklist();
-				foreach($blacklist as $item){
-					$number = $item['number'];
-					$description = $item['description'];
-					if($number == 'dest' || $number == 'blocked'){
-						continue;
-					}else{
-						$ret[] = array('number' => $number, 'description' => $description);
+					$ret = array();
+					$blacklist = $this->getBlacklist();
+					foreach($blacklist as $item){
+						$number = $item['number'];
+						$description = $item['description'];
+						if($number == 'dest' || $number == 'blocked'){
+							continue;
+						}else{
+							$ret[] = array('number' => $number, 'description' => $description);
+						}
 					}
-				}
 				return $ret;
 				break;
 			}
@@ -79,16 +89,7 @@ class Blacklist implements BMO {
 	}
 
 	//BMO Methods
-	public function install(){
-		if (false) {
-			_('Blacklist a number');
-			_('Remove a number from the blacklist');
-			_('Blacklist the last caller');
-			_('Blacklist');
-			_('Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module.');
-			_('Removes a number from the Blacklist Module');
-			_('Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.');
-		}
+	public function install() {
 		$fcc = new \featurecode('blacklist', 'blacklist_add');
 		$fcc->setDescription('Blacklist a number');
 		$fcc->setHelpText('Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module.');
@@ -112,9 +113,12 @@ class Blacklist implements BMO {
 		unset($fcc);
 	}
 	public function uninstall(){}
+
 	public function backup(){}
+
 	public function restore($backup){}
-	public function doConfigPageInit($page){
+
+	public function doConfigPageInit($page) {
 		$dispnum = 'blacklist';
 		$astver = $this->FreePBX->Config->get('ASTVERSION');
 		$request = $_REQUEST;
@@ -130,63 +134,65 @@ class Blacklist implements BMO {
 		if (isset($request['action'])) {
 			switch ($action) {
 				case 'settings':
-				$this->destinationSet($destination);
-				$this->blockunknownSet($request['blocked']);
+					$this->destinationSet($destination);
+					$this->blockunknownSet($request['blocked']);
 				break;
 				case 'import':
-				if ($_FILES['file']['error'] > 0) {
-					echo '<div class="alert alert-danger" role="alert">'._('There was an error uploading the file').'</div>';
-				} else {
-					if (pathinfo($_FILES['blacklistfile']['name'], PATHINFO_EXTENSION) == 'csv') {
-						$path = sys_get_temp_dir().'/'.$_FILES['blacklistfile']['name'];
-						move_uploaded_file($_FILES['blacklistfile']['tmp_name'], $path);
-						if (file_exists($path)) {
-							ini_set('auto_detect_line_endings', true);
-							$handle = fopen($path, 'r');
-							set_time_limit(0);
-							while (($data = fgetcsv($handle)) !== false) {
-								if ($data[0] == 'number' && $data[1] == 'description') {
-									continue;
-								}
-								blacklist_add(array(
-									'number' => $data[0],
-									'description' => $data[1],
-									'blocked' => 0,
-								));
-							}
-							unlink($path);
-							echo '<div class="alert alert-success" role="alert">'._('Sucessfully imported all entries').'</div>';
-						} else {
-							echo '<div class="alert alert-danger" role="alert">'._('Could not find file after upload').'</div>';
-						}
+					if ($_FILES['file']['error'] > 0) {
+						echo '<div class="alert alert-danger" role="alert">'._('There was an error uploading the file').'</div>';
 					} else {
-						echo '<div class="alert alert-danger" role="alert">'._('The file must be in CSV format!').'</div>';
+						if (pathinfo($_FILES['blacklistfile']['name'], PATHINFO_EXTENSION) == 'csv') {
+							$path = sys_get_temp_dir().'/'.$_FILES['blacklistfile']['name'];
+							move_uploaded_file($_FILES['blacklistfile']['tmp_name'], $path);
+							if (file_exists($path)) {
+								ini_set('auto_detect_line_endings', true);
+								$handle = fopen($path, 'r');
+								set_time_limit(0);
+								while (($data = fgetcsv($handle)) !== false) {
+									if ($data[0] == 'number' && $data[1] == 'description') {
+										continue;
+									}
+									blacklist_add(array(
+										'number' => $data[0],
+										'description' => $data[1],
+										'blocked' => 0,
+									));
+								}
+								unlink($path);
+								echo '<div class="alert alert-success" role="alert">'._('Sucessfully imported all entries').'</div>';
+							} else {
+								echo '<div class="alert alert-danger" role="alert">'._('Could not find file after upload').'</div>';
+							}
+						} else {
+							echo '<div class="alert alert-danger" role="alert">'._('The file must be in CSV format!').'</div>';
+						}
 					}
-				}
 				break;
 				case 'export':
-				$list = $this->getBlacklist();
-				if (!empty($list)) {
-					header('Content-Type: text/csv; charset=utf-8');
-					header('Content-Disposition: attachment; filename=blacklist.csv');
-					$output = fopen('php://output', 'w');
-					fputcsv($output, array('number', 'description'));
-					foreach ($list as $l) {
-						fputcsv($output, $l);
+					$list = $this->getBlacklist();
+					if (!empty($list)) {
+						header('Content-Type: text/csv; charset=utf-8');
+						header('Content-Disposition: attachment; filename=blacklist.csv');
+						$output = fopen('php://output', 'w');
+						fputcsv($output, array('number', 'description'));
+						foreach ($list as $l) {
+							fputcsv($output, $l);
+						}
+					} else {
+						header('HTTP/1.0 404 Not Found');
+						echo _('No Entries to export');
 					}
-				} else {
-					header('HTTP/1.0 404 Not Found');
-					echo _('No Entries to export');
-				}
-				die();
+					die();
 				break;
 			}
 		}
 	}
+
 	public function myDialplanHooks(){
 		return true;
 	}
-	public function doDialplanHook(&$ext, $engine, $priority){
+
+	public function doDialplanHook(&$ext, $engine, $priority) {
 		$modulename = 'blacklist';
 		//Add
 		$fcc = new \featurecode($modulename, 'blacklist_add');
@@ -342,8 +348,8 @@ class Blacklist implements BMO {
 		$ext->add($id, $c, '', new ext_wait(1));
 		$ext->add($id, $c, '', new ext_hangup());
 	}
-	public function getActionBar($request)
-	{
+
+	public function getActionBar($request) {
 		$buttons = array();
 		switch ($request['display']) {
 			case 'blacklist':
@@ -374,7 +380,7 @@ class Blacklist implements BMO {
 	}
 
 	//Blacklist Methods
-	public function showPage(){
+	public function showPage() {
 		$blacklistitems = $this->getBlacklist();
 		$destination = $this->destinationGet();
 		$filter_blocked = $this->blockunknownGet() == 1 ? true : false;
@@ -393,7 +399,7 @@ class Blacklist implements BMO {
 	 * Get lists
 	 * @return array Black listed numbers
 	 */
-	public function getBlacklist(){
+	public function getBlacklist() {
 		if ($this->astman->connected()) {
 			$list = $this->astman->database_show('blacklist');
 			$blacklisted = array();
@@ -412,9 +418,6 @@ class Blacklist implements BMO {
 	 * @param  array $post Array of blacklist params
 	 */
 	public function numberAdd($post){
-		if (!$this->checkPost($post)) {
-			return false;
-		}
 		extract($post);
 		if ($this->astman->connected()) {
 			$post['description'] == '' ? $post['description'] = '1' : $post['description'];
@@ -424,40 +427,75 @@ class Blacklist implements BMO {
 		}
 	}
 
+	/**
+	 * Delete a number
+	 * @param  string $number Number to delete
+	 * @return boolean         Status of deletion
+	 */
 	public function numberDel($number){
-		if ($this->astman) {
+		if ($this->astman->connected()) {
 			return($this->astman->database_del('blacklist', $number));
 		} else {
-			fatal('Cannot connect to Asterisk Manager, is Asterisk running?');
+			throw new Exception('Cannot connect to Asterisk Manager, is Asterisk running?');
 		}
 	}
-	public function destinationSet($dest)
-	{
-		$this->astman->database_del('blacklist', 'dest');
-		if ($dest) {
-			$this->astman->database_put('blacklist', 'dest', $dest);
-			needreload();
+
+	/**
+	 * Set blacklist destination
+	 * @param  string $dest Destination
+	 * @return boolean       Status of set
+	 */
+	public function destinationSet($dest) {
+		if ($this->astman->connected()) {
+			$this->astman->database_del('blacklist', 'dest');
+			if (!empty($dest)) {
+				return $this->astman->database_put('blacklist', 'dest', $dest);
+			} else {
+				return true;
+			}
+		} else {
+			throw new Exception('Cannot connect to Asterisk Manager, is Asterisk running?');
 		}
 	}
+
+	/**
+	 * Get the destination
+	 * @return string The destination
+	 */
 	public function destinationGet(){
-		return $this->astman->database_get('blacklist', 'dest');
-	}
-
-	public function blockunknownSet($blocked){
-		// Remove filtering for blocked/unknown cid
-		$this->astman->database_del('blacklist', 'blocked');
-		// Add it back if it's checked
-		if ($blocked) {
-			$this->astman->database_put('blacklist', 'blocked', '1');
-			needreload();
+		if ($this->astman->connected()) {
+			return $this->astman->database_get('blacklist', 'dest');
+		} else {
+			throw new Exception('Cannot connect to Asterisk Manager, is Asterisk running?');
 		}
 	}
-	public function blockunknownGet(){
-		return $this->astman->database_get('blacklist', 'blocked');
+
+	/**
+	 * Whether to block unknown calls
+	 * @param  boolean $blocked True to block, false otherwise
+	 */
+	public function blockunknownSet($blocked){
+		if ($this->astman->connected()) {
+			// Remove filtering for blocked/unknown cid
+			$this->astman->database_del('blacklist', 'blocked');
+			// Add it back if it's checked
+			if (!empty($blocked)) {
+				$this->astman->database_put('blacklist', 'blocked', '1');
+			}
+		} else {
+			throw new Exception('Cannot connect to Asterisk Manager, is Asterisk running?');
+		}
 	}
 
-	//Do we need this?
-	public function checkPost($post){
-		return true;
+	/**
+	 * Get status of unknown blocking
+	 * @return string 1 if blocked, 0 otherwise
+	 */
+	public function blockunknownGet(){
+		if ($this->astman->connected()) {
+			return $this->astman->database_get('blacklist', 'blocked');
+		} else {
+			throw new Exception('Cannot connect to Asterisk Manager, is Asterisk running?');
+		}
 	}
 }

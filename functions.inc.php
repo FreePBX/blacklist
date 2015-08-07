@@ -144,7 +144,7 @@ function blacklist_blacklist_last($fc) {
 	$ext->add($id, $c, '', new ext_answer);
 	$ext->add($id, $c, '', new ext_macro('user-callerid'));
 	$ext->add($id, $c, '', new ext_wait(1));
-        $ext->add($id, $c, '', new ext_setvar('lastcaller', '${DB(CALLTRACE/${AMPUSER})}'));
+	$ext->add($id, $c, '', new ext_setvar('lastcaller', '${DB(CALLTRACE/${AMPUSER})}'));
 	$ext->add($id, $c, '', new ext_gotoif('$[ $[ "${lastcaller}" = "" ] | $[ "${lastcaller}" = "unknown" ] ]', 'noinfo'));
  	$ext->add($id, $c, '', new ext_playback('privacy-to-blacklist-last-caller&telephone-number'));
 	$ext->add($id, $c, '', new ext_saydigits('${lastcaller}'));
@@ -275,4 +275,3 @@ $ast_ge_16 =  version_compare($amp_conf['ASTVERSION'], "1.6", "ge");
 function blacklist_chk($post){
 	return true;
 }
-

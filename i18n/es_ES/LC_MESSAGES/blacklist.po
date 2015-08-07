@@ -1,8 +1,8 @@
-#: page.blacklist.php:130
+#: views/blgrid.php:11
 msgid "Actions"
 msgstr ""
 
-#: page.blacklist.php:96
+#: views/addnumber.php:7
 msgid "Add or replace entry"
 msgstr ""
 
@@ -16,11 +16,16 @@ msgid "Adding..."
 msgstr ""
 
 #: Blacklist.class.php:21
-msgid "Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module."
+msgid ""
+"Adds a number to the Blacklist Module.  All calls from that number to the "
+"system will receive a disconnect recording.  Manage these in the Blacklist "
+"module."
 msgstr ""
 
 #: Blacklist.class.php:23
-msgid "Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording."
+msgid ""
+"Adds the last caller to the Blacklist Module.  All calls from that number to "
+"the system will receive a disconnect recording."
 msgstr ""
 
 #: Blacklist.class.php:20 views/general.php:24
@@ -35,11 +40,11 @@ msgstr ""
 msgid "Blacklist Number"
 msgstr ""
 
-#: install.php:9
+#: Blacklist.class.php:17
 msgid "Blacklist a number"
 msgstr ""
 
-#: install.php:11
+#: Blacklist.class.php:19
 msgid "Blacklist the last caller"
 msgstr ""
 
@@ -59,7 +64,7 @@ msgstr ""
 msgid "Call Log"
 msgstr ""
 
-#: page.blacklist.php:113
+#: views/general.php:87
 msgid "Check here to catch Unknown/Blocked Caller ID"
 msgstr ""
 
@@ -71,7 +76,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: page.blacklist.php:57
+#: Blacklist.class.php:164
 msgid "Could not find file after upload"
 msgstr ""
 
@@ -83,7 +88,7 @@ msgstr ""
 msgid "Delete Selected"
 msgstr ""
 
-#: page.blacklist.php:163
+#: views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
 msgstr ""
 
@@ -95,11 +100,11 @@ msgstr ""
 msgid "Entry Updated"
 msgstr ""
 
-#: page.blacklist.php:133
+#: views/general.php:58
 msgid "Export to CSV"
 msgstr ""
 
-#: page.blacklist.php:137
+#: views/general.php:53
 msgid "Import from CSV"
 msgstr ""
 
@@ -115,19 +120,19 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: page.blacklist.php:76
+#: Blacklist.class.php:183
 msgid "No Entries to export"
 msgstr ""
 
-#: page.blacklist.php:165
+#: views/blgrid.php:9
 msgid "Number"
 msgstr ""
 
-#: page.blacklist.php:162
+#: views/addnumber.php:18
 msgid "Number/CallerID"
 msgstr ""
 
-#: install.php:10
+#: Blacklist.class.php:18
 msgid "Remove a number from the blacklist"
 msgstr ""
 
@@ -155,15 +160,15 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: page.blacklist.php:55
+#: Blacklist.class.php:162
 msgid "Sucessfully imported all entries"
 msgstr ""
 
-#: page.blacklist.php:60
+#: Blacklist.class.php:167
 msgid "The file must be in CSV format!"
 msgstr ""
 
-#: page.blacklist.php:35
+#: Blacklist.class.php:142
 msgid "There was an error uploading the file"
 msgstr ""
 
@@ -173,56 +178,4 @@ msgstr ""
 
 #: views/general.php:77
 msgid "Yes"
-msgstr ""
-
-#: page.blacklist.php:155
-msgid "Blacklist entries"
-msgstr ""
-
-#: page.blacklist.php:148
-msgid "Blacklist entry"
-msgstr ""
-
-#: page.blacklist.php:112
-msgid "Block Unknown/Blocked Caller ID:"
-msgstr ""
-
-#: page.blacklist.php:186 page.blacklist.php:198
-msgid "Delete"
-msgstr ""
-
-#: page.blacklist.php:105
-msgid "Description:"
-msgstr ""
-
-#: page.blacklist.php:191 page.blacklist.php:199
-msgid "Edit"
-msgstr ""
-
-#: page.blacklist.php:106
-msgid "Enter a description for the number you want to block"
-msgstr ""
-
-#: page.blacklist.php:100
-msgid "Enter the number/CallerID you want to block"
-msgstr ""
-
-#: page.blacklist.php:141
-msgid "Import Entries"
-msgstr ""
-
-#: page.blacklist.php:137
-msgid "Import blacklist entries from a CSV file. Where the first column is the number and the second is the description"
-msgstr ""
-
-#: page.blacklist.php:99
-msgid "Number/CallerID:"
-msgstr ""
-
-#: page.blacklist.php:120
-msgid "Submit Changes"
-msgstr ""
-
-#: page.blacklist.php:148
-msgid "deleted"
 msgstr ""

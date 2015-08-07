@@ -66,16 +66,11 @@ msgid "Adding..."
 msgstr ""
 
 #: Blacklist.class.php:21
-msgid ""
-"Adds a number to the Blacklist Module.  All calls from that number to the "
-"system will receive a disconnect recording.  Manage these in the Blacklist "
-"module."
+msgid "Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module."
 msgstr ""
 
 #: Blacklist.class.php:23
-msgid ""
-"Adds the last caller to the Blacklist Module.  All calls from that number to "
-"the system will receive a disconnect recording."
+msgid "Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording."
 msgstr ""
 
 #: Blacklist.class.php:20 views/general.php:24
@@ -116,8 +111,7 @@ msgstr ""
 
 #: views/general.php:87
 msgid "Check here to catch Unknown/Blocked Caller ID"
-msgstr ""
-"不明/ブロックされた発信者番号をキャッチするにはここにチェックを入れてください"
+msgstr "不明/ブロックされた発信者番号をキャッチするにはここにチェックを入れてください"
 
 #: views/general.php:111
 msgid "Choose where blacklisted calls go"
@@ -231,6 +225,17 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
+#: page.blacklist.php:141
+msgid "Import Entries"
+msgstr ""
+
+#: page.blacklist.php:137
+msgid "Import blacklist entries from a CSV file. Where the first column is the number and the second is the description"
+msgstr ""
+
+#~ msgid "deleted"
+#~ msgstr "削除されました"
+
 #~ msgid "Admin"
 #~ msgstr "アドミン"
 
@@ -263,6 +268,3 @@ msgstr ""
 
 #~ msgid "Submit Changes"
 #~ msgstr "変更を適用"
-
-#~ msgid "deleted"
-#~ msgstr "削除されました"

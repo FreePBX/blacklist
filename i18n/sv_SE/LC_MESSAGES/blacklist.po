@@ -48,16 +48,11 @@ msgid "Adding..."
 msgstr ""
 
 #: Blacklist.class.php:21
-msgid ""
-"Adds a number to the Blacklist Module.  All calls from that number to the "
-"system will receive a disconnect recording.  Manage these in the Blacklist "
-"module."
+msgid "Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module."
 msgstr ""
 
 #: Blacklist.class.php:23
-msgid ""
-"Adds the last caller to the Blacklist Module.  All calls from that number to "
-"the system will receive a disconnect recording."
+msgid "Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording."
 msgstr ""
 
 #: Blacklist.class.php:20 views/general.php:24
@@ -210,6 +205,18 @@ msgstr ""
 
 #: views/general.php:77
 msgid "Yes"
+msgstr ""
+
+#: page.blacklist.php:141
+msgid "Import Entries"
+msgstr ""
+
+#: page.blacklist.php:137
+msgid "Import blacklist entries from a CSV file. Where the first column is the number and the second is the description"
+msgstr ""
+
+#: blacklist.i18n.php:6 blacklist.i18n.php:10
+msgid "Admin"
 msgstr ""
 
 #~ msgid "Blacklist entries"

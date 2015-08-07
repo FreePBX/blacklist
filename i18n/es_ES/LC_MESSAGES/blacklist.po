@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - módulo blacklist module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-07 15:04+1000\n"
+"POT-Creation-Date: 2015-08-07 13:17-0700\n"
 "PO-Revision-Date: 2015-03-24 23:10+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -25,11 +25,7 @@ msgstr "Acciones"
 msgid "Add or replace entry"
 msgstr "Añadir o modificar elemento"
 
-#: blacklist.i18n.php:6 blacklist.i18n.php:10
-msgid "Admin"
-msgstr "Administrador"
-
-#: blacklist.i18n.php:4 blacklist.i18n.php:8 install.php:12
+#: install.php:12
 msgid "Blacklist"
 msgstr "Lista negra"
 
@@ -144,3 +140,6 @@ msgstr "hubo un error subiendo el archivo"
 #: page.blacklist.php:148
 msgid "deleted"
 msgstr "eliminada"
+
+#~ msgid "Admin"
+#~ msgstr "Administrador"

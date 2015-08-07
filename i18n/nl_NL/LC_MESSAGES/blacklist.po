@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-07 15:04+1000\n"
+"POT-Creation-Date: 2015-08-07 13:17-0700\n"
 "PO-Revision-Date: 2015-03-19 20:22+0200\n"
 "Last-Translator: Jan Peter <jpveldhuizen@gmail.com>\n"
 "Language-Team: Dutch <http://weblate.freepbx.org/projects/freepbx/blacklist/"
@@ -29,11 +29,7 @@ msgstr "Acties"
 msgid "Add or replace entry"
 msgstr "Regel toevoegen of veranderen"
 
-#: blacklist.i18n.php:6 blacklist.i18n.php:10
-msgid "Admin"
-msgstr "Beheer"
-
-#: blacklist.i18n.php:4 blacklist.i18n.php:8 install.php:12
+#: install.php:12
 msgid "Blacklist"
 msgstr "Zwarte lijst"
 
@@ -148,3 +144,6 @@ msgstr "Bij het uploaden deed zich een fout voor"
 #: page.blacklist.php:148
 msgid "deleted"
 msgstr "verwijderd"
+
+#~ msgid "Admin"
+#~ msgstr "Beheer"

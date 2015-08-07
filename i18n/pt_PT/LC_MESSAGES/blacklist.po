@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-07 15:04+1000\n"
+"POT-Creation-Date: 2015-08-07 13:17-0700\n"
 "PO-Revision-Date: 2015-04-25 00:52+0200\n"
 "Last-Translator: Paulo <paulop1975@gmail.com>\n"
 "Language-Team: Portuguese (Portugal) <http://weblate.freepbx.org/projects/"
@@ -29,11 +29,7 @@ msgstr "Ações"
 msgid "Add or replace entry"
 msgstr "Adicionar ou substituir entrada"
 
-#: blacklist.i18n.php:6 blacklist.i18n.php:10
-msgid "Admin"
-msgstr "Admin"
-
-#: blacklist.i18n.php:4 blacklist.i18n.php:8 install.php:12
+#: install.php:12
 msgid "Blacklist"
 msgstr "Lista Negra"
 
@@ -148,3 +144,6 @@ msgstr "Ocorreu um erro transferindo o ficheiro"
 #: page.blacklist.php:148
 msgid "deleted"
 msgstr "eliminado"
+
+#~ msgid "Admin"
+#~ msgstr "Admin"

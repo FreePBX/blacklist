@@ -10,29 +10,33 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-08-07 13:18-0700\n"
-"PO-Revision-Date: 2015-08-07 13:18-0700\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2015-10-10 11:56+0200\n"
+"Last-Translator: Media <mousavi.media@gmail.com>\n"
+"Language-Team: Persian "
+"<http://weblate.freepbx.org/projects/freepbx/blacklist/fa/>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: views/blgrid.php:11
 msgid "Actions"
-msgstr ""
+msgstr "عملیات"
 
 #: views/addnumber.php:7
 msgid "Add or replace entry"
-msgstr ""
+msgstr "افزودن یا جایگزاری ورودی"
 
 #: assets/js/blacklist.js:56
 #, perl-format
 msgid "Added %s to the blacklist."
-msgstr ""
+msgstr "ا %s اضافه شده به فهرست سیاه"
 
 #: assets/js/blacklist.js:38
 msgid "Adding..."
-msgstr ""
+msgstr "در حال اضافه شدن..."
 
 #: Blacklist.class.php:21
 msgid ""
@@ -49,27 +53,27 @@ msgstr ""
 
 #: Blacklist.class.php:20 views/general.php:24
 msgid "Blacklist"
-msgstr ""
+msgstr "فهرست سیاه"
 
 #: views/general.php:12
 msgid "Blacklist Module"
-msgstr ""
+msgstr "ماژول فهرست سیاه"
 
 #: views/blgrid.php:3
 msgid "Blacklist Number"
-msgstr ""
+msgstr "شماره فهرست سیاه"
 
 #: Blacklist.class.php:17
 msgid "Blacklist a number"
-msgstr ""
+msgstr "تعداد فهرست سیاه"
 
 #: Blacklist.class.php:19
 msgid "Blacklist the last caller"
-msgstr ""
+msgstr "فهرست سیاه آخرین تماس گیرنده"
 
 #: views/general.php:72
 msgid "Block Unknown/Blocked Caller ID"
-msgstr ""
+msgstr "مسدود کردن ناشناس/شناسه تماس گیرنده مسدود شده"
 
 #: views/general.php:44
 msgid "CSV Format"
@@ -77,39 +81,39 @@ msgstr ""
 
 #: views/addnumber.php:75
 msgid "Call Date/Time"
-msgstr ""
+msgstr "تاریخ/ساعت تماس"
 
 #: views/addnumber.php:69
 msgid "Call Log"
-msgstr ""
+msgstr "لاگ تماس"
 
 #: views/general.php:87
 msgid "Check here to catch Unknown/Blocked Caller ID"
-msgstr ""
+msgstr "برای دیدن شناسه تماس گیرنده مسدود شده/ناشناخته اینجا را چک کنید"
 
 #: views/general.php:111
 msgid "Choose where blacklisted calls go"
-msgstr ""
+msgstr "انتخاب کنید تماس های مسدود شده به کجا روند"
 
 #: views/addnumber.php:57
 msgid "Close"
-msgstr ""
+msgstr "بستن"
 
 #: Blacklist.class.php:164
 msgid "Could not find file after upload"
-msgstr ""
+msgstr "فایل بعد از بارگذاری یافت نمیشود"
 
 #: views/general.php:46
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "شرح"
 
 #: views/blgrid.php:2
 msgid "Delete Selected"
-msgstr ""
+msgstr "حذف انتخاب شده"
 
 #: views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
-msgstr ""
+msgstr "شرح"
 
 #: views/general.php:99
 msgid "Destination for BlackListed Calls"

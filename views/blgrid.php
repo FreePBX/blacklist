@@ -1,5 +1,5 @@
 <div id="toolbar-all">
-	<button id="blkDelete"><?php echo _("Delete Selected")?></button>
+	<button id="blkDelete" class="btn btn-danger"><?php echo _("Delete Selected")?></button>
 	<a href="#" class="btn btn-default" data-toggle="modal" data-target="#addNumber"><i class="fa fa-plus"></i>&nbsp;&nbsp;<?php echo _("Blacklist Number")?></a>
 </div>
 <table id="blGrid" data-toolbar="#toolbar-all" data-url="ajax.php?module=blacklist&command=getJSON&jdata=grid" data-cache="false" data-maintain-selected="true" data-show-columns="true" data-show-toggle="true" data-toggle="table" data-pagination="true" data-search="true" class="table table-striped">

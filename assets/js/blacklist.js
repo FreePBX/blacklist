@@ -10,22 +10,23 @@ $(document).on('show.bs.tab', 'a[data-toggle="tab"]', function (e) {
     var clicked = $(this).attr('href');
     switch(clicked){
 		case '#settings':
+			$('#action-bar').removeClass('hidden');
 			$('#Upload').addClass('hidden');
 			$('#Submit').removeClass('hidden');
 			$('#Reset').removeClass('hidden');
 		break;
 		case '#importexport':
+			$('#action-bar').removeClass('hidden');
 			$('#Submit').addClass('hidden');
 			$('#Reset').addClass('hidden');
 			$('#Upload').removeClass('hidden');
 		break;
 		default:
-			$('#Submit').addClass('hidden');
-			$('#Reset').addClass('hidden');
-			$('#Upload').addClass('hidden');
+			$('#action-bar').addClass('hidden');
 		break;
 	}
 });
+$('#action-bar').addClass('hidden');
 
 $('#submitnumber').on('click',function(){
 	var num = $('#number').val(),

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX blacklist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-07 13:18-0700\n"
+"POT-Creation-Date: 2015-10-20 14:38-0700\n"
 "PO-Revision-Date: 2011-03-19 00:00+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -38,12 +38,12 @@ msgstr ""
 msgid "Add or replace entry"
 msgstr "Lägg till eller byt ut"
 
-#: assets/js/blacklist.js:56
+#: assets/js/blacklist.js:57
 #, perl-format
 msgid "Added %s to the blacklist."
 msgstr ""
 
-#: assets/js/blacklist.js:38
+#: assets/js/blacklist.js:39
 msgid "Adding..."
 msgstr ""
 
@@ -128,7 +128,7 @@ msgstr "Beskrivning"
 msgid "Destination for BlackListed Calls"
 msgstr ""
 
-#: assets/js/blacklist.js:54
+#: assets/js/blacklist.js:55
 msgid "Entry Updated"
 msgstr ""
 
@@ -176,7 +176,7 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: assets/js/blacklist.js:51
+#: assets/js/blacklist.js:52
 msgid "Save Changes"
 msgstr ""
 

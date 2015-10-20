@@ -6,12 +6,12 @@ msgstr ""
 msgid "Add or replace entry"
 msgstr ""
 
-#: assets/js/blacklist.js:56
+#: assets/js/blacklist.js:57
 #, perl-format
 msgid "Added %s to the blacklist."
 msgstr ""
 
-#: assets/js/blacklist.js:38
+#: assets/js/blacklist.js:39
 msgid "Adding..."
 msgstr ""
 
@@ -96,7 +96,7 @@ msgstr ""
 msgid "Destination for BlackListed Calls"
 msgstr ""
 
-#: assets/js/blacklist.js:54
+#: assets/js/blacklist.js:55
 msgid "Entry Updated"
 msgstr ""
 
@@ -144,7 +144,7 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: assets/js/blacklist.js:51
+#: assets/js/blacklist.js:52
 msgid "Save Changes"
 msgstr ""
 

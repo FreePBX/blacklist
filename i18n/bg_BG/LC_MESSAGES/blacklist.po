@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-20 18:59-0400\n"
+"POT-Creation-Date: 2015-10-20 14:38-0700\n"
 "PO-Revision-Date: 2014-11-17 17:35+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
-"Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/blacklist/bg_BG/>\n"
+"Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/blacklist/"
+"bg_BG/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,23 +30,28 @@ msgstr "Действия"
 msgid "Add or replace entry"
 msgstr "Добави или замени въведен номер"
 
-#: assets/js/blacklist.js:56
+#: assets/js/blacklist.js:57
 #, perl-format
 msgid "Added %s to the blacklist."
 msgstr "%s е добавен в черния списък."
 
-#: assets/js/blacklist.js:38
+#: assets/js/blacklist.js:39
 msgid "Adding..."
 msgstr "Добавяне..."
 
 #: Blacklist.class.php:21
-msgid "Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module."
+msgid ""
+"Adds a number to the Blacklist Module.  All calls from that number to the "
+"system will receive a disconnect recording.  Manage these in the Blacklist "
+"module."
 msgstr ""
 "Добавя номер към Черния Списък.  На всички обаждания от този номер към "
 "системата ще отговори съобщение за прекъсване."
 
 #: Blacklist.class.php:23
-msgid "Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording."
+msgid ""
+"Adds the last caller to the Blacklist Module.  All calls from that number to "
+"the system will receive a disconnect recording."
 msgstr ""
 "Добавя последния обадил се номер към Черния Списък.  На всички обаждания от "
 "този номер към системата ще отговори съобщение за прекъсване."
@@ -118,7 +124,7 @@ msgstr "Описание"
 msgid "Destination for BlackListed Calls"
 msgstr "Направление за Обаждания от Черния Списък"
 
-#: assets/js/blacklist.js:54
+#: assets/js/blacklist.js:55
 msgid "Entry Updated"
 msgstr "Въвеждането е Обновено"
 
@@ -166,7 +172,7 @@ msgstr "Премахва номер от Черния Списък"
 msgid "Reset"
 msgstr "Изчисти"
 
-#: assets/js/blacklist.js:51
+#: assets/js/blacklist.js:52
 msgid "Save Changes"
 msgstr "Запиши Промените"
 
@@ -235,8 +241,12 @@ msgstr "Да"
 #~ msgid "Import Entries"
 #~ msgstr "Внеси Въвежданията"
 
-#~ msgid "Import blacklist entries from a CSV file. Where the first column is the number and the second is the description"
-#~ msgstr "Внасяне на въвеждания за черен списък от CSV файл. Първата колона съдържа номерата, а втората описание"
+#~ msgid ""
+#~ "Import blacklist entries from a CSV file. Where the first column is the "
+#~ "number and the second is the description"
+#~ msgstr ""
+#~ "Внасяне на въвеждания за черен списък от CSV файл. Първата колона съдържа "
+#~ "номерата, а втората описание"
 
 #~ msgid "Number/CallerID:"
 #~ msgstr "Номер/CallerID:"

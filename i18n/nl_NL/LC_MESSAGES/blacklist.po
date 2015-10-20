@@ -9,10 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-20 18:59-0400\n"
+"POT-Creation-Date: 2015-10-20 14:38-0700\n"
 "PO-Revision-Date: 2015-03-19 20:22+0200\n"
 "Last-Translator: Jan Peter <jpveldhuizen@gmail.com>\n"
-"Language-Team: Dutch <http://weblate.freepbx.org/projects/freepbx/blacklist/nl_NL/>\n"
+"Language-Team: Dutch <http://weblate.freepbx.org/projects/freepbx/blacklist/"
+"nl_NL/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,21 +29,26 @@ msgstr "Acties"
 msgid "Add or replace entry"
 msgstr "Regel toevoegen of veranderen"
 
-#: assets/js/blacklist.js:56
+#: assets/js/blacklist.js:57
 #, perl-format
 msgid "Added %s to the blacklist."
 msgstr ""
 
-#: assets/js/blacklist.js:38
+#: assets/js/blacklist.js:39
 msgid "Adding..."
 msgstr ""
 
 #: Blacklist.class.php:21
-msgid "Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module."
+msgid ""
+"Adds a number to the Blacklist Module.  All calls from that number to the "
+"system will receive a disconnect recording.  Manage these in the Blacklist "
+"module."
 msgstr ""
 
 #: Blacklist.class.php:23
-msgid "Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording."
+msgid ""
+"Adds the last caller to the Blacklist Module.  All calls from that number to "
+"the system will receive a disconnect recording."
 msgstr ""
 
 #: Blacklist.class.php:20 views/general.php:24
@@ -113,7 +119,7 @@ msgstr "Omschrijving"
 msgid "Destination for BlackListed Calls"
 msgstr ""
 
-#: assets/js/blacklist.js:54
+#: assets/js/blacklist.js:55
 msgid "Entry Updated"
 msgstr ""
 
@@ -161,7 +167,7 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: assets/js/blacklist.js:51
+#: assets/js/blacklist.js:52
 msgid "Save Changes"
 msgstr ""
 
@@ -230,8 +236,12 @@ msgstr ""
 #~ msgid "Import Entries"
 #~ msgstr "Importeer regels"
 
-#~ msgid "Import blacklist entries from a CSV file. Where the first column is the number and the second is the description"
-#~ msgstr "Importeer zwarte lijst regels vanuit een komma-gescheiden (CSV)-bestand. De eerste kolom bevat het nummer en de tweede kolom bevat de omschrijving"
+#~ msgid ""
+#~ "Import blacklist entries from a CSV file. Where the first column is the "
+#~ "number and the second is the description"
+#~ msgstr ""
+#~ "Importeer zwarte lijst regels vanuit een komma-gescheiden (CSV)-bestand. "
+#~ "De eerste kolom bevat het nummer en de tweede kolom bevat de omschrijving"
 
 #~ msgid "Number/CallerID:"
 #~ msgstr "Nummer/Caller ID:"

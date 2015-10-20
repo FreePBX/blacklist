@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-07 13:18-0700\n"
+"POT-Creation-Date: 2015-10-20 14:38-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,12 +25,12 @@ msgstr ""
 msgid "Add or replace entry"
 msgstr ""
 
-#: assets/js/blacklist.js:56
+#: assets/js/blacklist.js:57
 #, perl-format
 msgid "Added %s to the blacklist."
 msgstr ""
 
-#: assets/js/blacklist.js:38
+#: assets/js/blacklist.js:39
 msgid "Adding..."
 msgstr ""
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Destination for BlackListed Calls"
 msgstr ""
 
-#: assets/js/blacklist.js:54
+#: assets/js/blacklist.js:55
 msgid "Entry Updated"
 msgstr ""
 
@@ -165,7 +165,7 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: assets/js/blacklist.js:51
+#: assets/js/blacklist.js:52
 msgid "Save Changes"
 msgstr ""
 

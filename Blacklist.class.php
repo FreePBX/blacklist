@@ -189,7 +189,7 @@ class Blacklist implements BMO {
 	}
 
 	public function myDialplanHooks(){
-		return true;
+		return 400;
 	}
 
 	public function doDialplanHook(&$ext, $engine, $priority) {

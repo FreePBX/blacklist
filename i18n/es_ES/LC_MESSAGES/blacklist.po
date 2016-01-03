@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-08 23:52+0200\n"
-"PO-Revision-Date: 2016-01-03 08:02+0200\n"
+"PO-Revision-Date: 2016-01-03 08:03+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish "
 "<http://weblate.freepbx.org/projects/freepbx/blacklist/es_ES/>\n"
@@ -195,7 +195,7 @@ msgstr "hubo un error subiendo el archivo"
 
 #: Blacklist.class.php:373
 msgid "Upload"
-msgstr "Descargar"
+msgstr "Subir"
 
 #: views/general.php:77
 msgid "Yes"

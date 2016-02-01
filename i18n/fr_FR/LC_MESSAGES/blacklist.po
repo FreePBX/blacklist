@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-20 14:38-0700\n"
-"PO-Revision-Date: 2016-02-01 08:59+0200\n"
+"PO-Revision-Date: 2016-02-01 10:26+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French "
 "<http://weblate.freepbx.org/projects/freepbx/blacklist/fr_FR/>\n"
@@ -83,15 +83,15 @@ msgstr "Ajouter dans la liste noire le dernier appelant"
 
 #: views/general.php:72
 msgid "Block Unknown/Blocked Caller ID"
-msgstr ""
+msgstr "Bloquer les ID appelant inconnus ou bloqués"
 
 #: views/general.php:44
 msgid "CSV Format"
-msgstr ""
+msgstr "Format CSV"
 
 #: views/addnumber.php:75
 msgid "Call Date/Time"
-msgstr ""
+msgstr "Date/Heure de l'appel"
 
 #: views/addnumber.php:69
 msgid "Call Log"

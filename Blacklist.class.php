@@ -237,8 +237,9 @@ class Blacklist implements BMO {
 		$modulename = 'blacklist';
 		*/
 		//Dialplan for add
-		$ext->add('app-blacklist', $addfc, '', new ext_goto('1', 's', 'app-blacklist-add'));
-
+		if(!empty($addfc)){
+			$ext->add('app-blacklist', $addfc, '', new ext_goto('1', 's', 'app-blacklist-add'));
+		}
 		$id = 'app-blacklist-add';
 		$c = 's';
 		$ext->add($id, $c, '', new ext_answer());
@@ -281,8 +282,9 @@ class Blacklist implements BMO {
 		$ext->add($id, $c, '', new ext_hangup());
 
 		//Del
-		$ext->add('app-blacklist', $delfc, '', new ext_goto('1', 's', 'app-blacklist-remove'));
-
+		if(!empty($delfc)){
+			$ext->add('app-blacklist', $delfc, '', new ext_goto('1', 's', 'app-blacklist-remove'));
+		}
 		$id = 'app-blacklist-remove';
 		$c = 's';
 		$ext->add($id, $c, '', new ext_answer());
@@ -311,9 +313,11 @@ class Blacklist implements BMO {
 		$ext->add($id, $c, '', new ext_playback('num-was-successfully&removed'));
 		$ext->add($id, $c, '', new ext_wait(1));
 		$ext->add($id, $c, '', new ext_hangup());
-		//Last
-		$ext->add('app-blacklist', $lastfc, '', new ext_goto('1', 's', 'app-blacklist-last'));
 
+		//Last
+		if(!empty($lastfc)){
+			$ext->add('app-blacklist', $lastfc, '', new ext_goto('1', 's', 'app-blacklist-last'));
+		}
 		$id = 'app-blacklist-last';
 		$c = 's';
 		$ext->add($id, $c, '', new ext_answer());

@@ -39,6 +39,7 @@ $('#submitnumber').on('click',function(){
 	$(this).text(_("Adding..."));
 	if(num === ''){
 		warnInvalid($('#number'), 'This cannot be blank');
+		return;
 	}
 	$.post("ajax.php?module=blacklist&command=add",
 		{

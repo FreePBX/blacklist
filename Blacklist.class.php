@@ -502,4 +502,57 @@ class Blacklist implements BMO {
 			throw new Exception('Cannot connect to Asterisk Manager, is Asterisk running?');
 		}
 	}
+	//BulkHandler hooks
+	public function bulkhandlerGetTypes() {
+		return array(
+			'blacklist' => array(
+				'name' => _('Blacklist'),
+				'description' => _('Import/Export Caller Blacklist')
+			)
+		);
+	}
+	public function bulkhandlerGetHeaders($type) {
+		switch($type){
+			case 'blacklist':
+				$headers = array();
+				$headers['number'] = array('required' => true, 'identifier' => _("Phone Number"), 'description' => _("The number as it appears in the callerid display"));
+				$headers['description'] = array('required' => false, 'identifier' => _("Description"), 'description' => _("Description of number blacklisted"));
+			break;
+		}
+		return $headers;
+	}
+	public function bulkhandlerImport($type, $rawData, $replaceExisting = true) {
+		$blistnums = array();
+		if(!$replaceExisting){
+			$blist = $this->getBlacklist();
+			foreach ($blist as $value) {
+				$blistnums[] = $value['number'];
+			}
+		}
+		switch($type){
+			case 'blacklist':
+				foreach($rawData as $data){
+					if(empty($data['number'])){
+						return array('status' => false, 'message'=> _('Phone Number Required'));
+					}
+					//Skip existing numbers. Array is only populated if replace is false.
+					if(in_array($data['number'], $blistnums)){
+						continue;
+					}
+					$this->numberAdd($data);
+				}
+			break;
+		}
+		return array('status' => true);
+	}
+	public function bulkhandlerExport($type) {
+		$data = NULL;
+		switch ($type) {
+			case 'blacklist':
+				$data = $this->getBlacklist();
+			break;
+		}
+		return $data;
+	}
+
 }

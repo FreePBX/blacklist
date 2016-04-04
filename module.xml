@@ -2,7 +2,7 @@
 	<rawname>blacklist</rawname>
 	<repo>standard</repo>
 	<name>Blacklist</name>
-	<version>13.0.8</version>
+	<version>13.0.9</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,6 +12,7 @@
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*13.0.9* FREEPBX-11967 FREEPBX-11895 FREEPBX-11836
 		*13.0.8* Hide box when not showing
 		*13.0.7* FREEPBX-10493 Dont add quotes to Asterisk Database
 		*13.0.6* Fixed issue with last caller not populating

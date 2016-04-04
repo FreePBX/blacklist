@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-20 14:38-0700\n"
+"POT-Creation-Date: 2016-04-04 12:33-0700\n"
 "PO-Revision-Date: 2015-10-16 13:57+0200\n"
 "Last-Translator: james <zhulizhong@gmail.com>\n"
 "Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
@@ -30,7 +30,7 @@ msgstr "命令"
 msgid "Add or replace entry"
 msgstr "添加或取代项目"
 
-#: assets/js/blacklist.js:57
+#: assets/js/blacklist.js:58
 #, perl-format
 msgid "Added %s to the blacklist."
 msgstr "把%s 添加到黑名单。"
@@ -55,7 +55,12 @@ msgid ""
 msgstr ""
 "添加最后一个呼叫方添加到黑名单模块。所有从此号码呼入的通话都将收到话机语音。"
 
-#: Blacklist.class.php:20 views/general.php:24
+#: blacklist.i18n.php:6 blacklist.i18n.php:12
+msgid "Admin"
+msgstr ""
+
+#: Blacklist.class.php:20 Blacklist.class.php:509 blacklist.i18n.php:4
+#: blacklist.i18n.php:10 views/general.php:24
 msgid "Blacklist"
 msgstr "黑名单"
 
@@ -115,15 +120,19 @@ msgstr "描述"
 msgid "Delete Selected"
 msgstr "删除已选项"
 
-#: views/addnumber.php:40 views/blgrid.php:10
+#: Blacklist.class.php:519 views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
 msgstr "描述"
+
+#: Blacklist.class.php:519
+msgid "Description of number blacklisted"
+msgstr ""
 
 #: views/general.php:99
 msgid "Destination for BlackListed Calls"
 msgstr "黑名单呼叫目的地"
 
-#: assets/js/blacklist.js:55
+#: assets/js/blacklist.js:56
 msgid "Entry Updated"
 msgstr ""
 
@@ -138,6 +147,10 @@ msgstr "从CSV导入"
 #: views/general.php:29
 msgid "Import/Export"
 msgstr "导入/导出"
+
+#: Blacklist.class.php:510
+msgid "Import/Export Caller Blacklist"
+msgstr ""
 
 #: views/general.php:46
 msgid "NUMBER"
@@ -159,6 +172,14 @@ msgstr "号码"
 msgid "Number/CallerID"
 msgstr ""
 
+#: Blacklist.class.php:518
+msgid "Phone Number"
+msgstr ""
+
+#: Blacklist.class.php:536
+msgid "Phone Number Required"
+msgstr ""
+
 #: Blacklist.class.php:18
 msgid "Remove a number from the blacklist"
 msgstr "从黑名单内移除一个号码"
@@ -167,11 +188,11 @@ msgstr "从黑名单内移除一个号码"
 msgid "Removes a number from the Blacklist Module"
 msgstr "从黑名单中移除一个号码"
 
-#: Blacklist.class.php:361
+#: Blacklist.class.php:365
 msgid "Reset"
 msgstr "重新设置"
 
-#: assets/js/blacklist.js:52
+#: assets/js/blacklist.js:53
 msgid "Save Changes"
 msgstr "保存修改"
 
@@ -183,7 +204,7 @@ msgstr "保存修改"
 msgid "Settings"
 msgstr "设置"
 
-#: Blacklist.class.php:367
+#: Blacklist.class.php:371
 msgid "Submit"
 msgstr "提交"
 
@@ -195,11 +216,19 @@ msgstr "成功导入所有项"
 msgid "The file must be in CSV format!"
 msgstr "文件必须是CSV格式！"
 
+#: Blacklist.class.php:518
+msgid "The number as it appears in the callerid display"
+msgstr ""
+
 #: Blacklist.class.php:142
 msgid "There was an error uploading the file"
 msgstr "上传文件发生错误"
 
-#: Blacklist.class.php:373
+#: blacklist.i18n.php:8
+msgid "This module is used to manage a system wide list of blocked callers"
+msgstr ""
+
+#: Blacklist.class.php:377
 msgid "Upload"
 msgstr "上传"
 

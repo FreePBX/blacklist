@@ -57,6 +57,14 @@
 		*1.1.1* Add he_IL translation
 		*1.1* First 2.2 release. Fix minor warnings.
 	</changelog>
+	<hooks>
+		<bulkhandler class="Bulkhandler" namespace="FreePBX\modules">
+			<method callingMethod="getHeaders" class="Blacklist">bulkhandlerGetHeaders</method>
+			<method callingMethod="getTypes" class="Blacklist">bulkhandlerGetTypes</method>
+			<method callingMethod="import" class="Blacklist">bulkhandlerImport</method>
+			<method callingMethod="export" class="Blacklist">bulkhandlerExport</method>
+		</bulkhandler>
+	</hooks>
 	<depends>
 		<module>core ge 2.5.1.2</module>
 	</depends>

@@ -11,7 +11,6 @@ $(document).on('show.bs.tab', 'a[data-toggle="tab"]', function (e) {
     switch(clicked){
 		case '#settings':
 			$('#action-bar').removeClass('hidden');
-			$('#Upload').addClass('hidden');
 			$('#Submit').removeClass('hidden');
 			$('#Reset').removeClass('hidden');
 		break;
@@ -19,7 +18,6 @@ $(document).on('show.bs.tab', 'a[data-toggle="tab"]', function (e) {
 			$('#action-bar').removeClass('hidden');
 			$('#Submit').addClass('hidden');
 			$('#Reset').addClass('hidden');
-			$('#Upload').removeClass('hidden');
 		break;
 		default:
 			$('#action-bar').addClass('hidden');

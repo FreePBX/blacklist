@@ -366,12 +366,6 @@ class Blacklist implements BMO {
 					'id' => 'Submit',
 					'value' => _('Submit'),
 				),
-				'upload' => array(
-					'name' => 'upload',
-					'class' => 'hidden',
-					'id' => 'Upload',
-					'value' => _('Upload'),
-				),
 			);
 
 			return $buttons;

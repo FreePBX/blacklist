@@ -10,16 +10,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-04 12:33-0700\n"
-"PO-Revision-Date: 2015-10-10 13:48+0200\n"
+"PO-Revision-Date: 2016-04-06 21:28+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
-"Language-Team: Persian <http://weblate.freepbx.org/projects/freepbx/"
-"blacklist/fa/>\n"
+"Language-Team: Persian "
+"<http://weblate.freepbx.org/projects/freepbx/blacklist/fa/>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.2-dev\n"
+"X-Generator: Weblate 2.4\n"
 
 #: views/blgrid.php:11
 msgid "Actions"
@@ -56,7 +56,7 @@ msgstr ""
 
 #: blacklist.i18n.php:6 blacklist.i18n.php:12
 msgid "Admin"
-msgstr ""
+msgstr "مدیر"
 
 #: Blacklist.class.php:20 Blacklist.class.php:509 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:24
@@ -125,7 +125,7 @@ msgstr "شرح"
 
 #: Blacklist.class.php:519
 msgid "Description of number blacklisted"
-msgstr ""
+msgstr "شرح شماره فهرست سیاه"
 
 #: views/general.php:99
 msgid "Destination for BlackListed Calls"
@@ -149,7 +149,7 @@ msgstr "ورود/خروج"
 
 #: Blacklist.class.php:510
 msgid "Import/Export Caller Blacklist"
-msgstr ""
+msgstr "ورود/خروج تماس گیرنده از فهرست سیاه"
 
 #: views/general.php:46
 msgid "NUMBER"
@@ -173,11 +173,11 @@ msgstr "شماره/شناسه تماس گیرنده"
 
 #: Blacklist.class.php:518
 msgid "Phone Number"
-msgstr ""
+msgstr "شماره تلفن"
 
 #: Blacklist.class.php:536
 msgid "Phone Number Required"
-msgstr ""
+msgstr "شماره تلفن ضروری است"
 
 #: Blacklist.class.php:18
 msgid "Remove a number from the blacklist"
@@ -217,7 +217,7 @@ msgstr "فایل باید به فرمت CSV باشد!"
 
 #: Blacklist.class.php:518
 msgid "The number as it appears in the callerid display"
-msgstr ""
+msgstr "شماره وارد شده به عنوان شماره تماس گیرنده نمایش داده میشود"
 
 #: Blacklist.class.php:142
 msgid "There was an error uploading the file"
@@ -225,7 +225,7 @@ msgstr "در بارگذاری فایل خطا رخ داد"
 
 #: blacklist.i18n.php:8
 msgid "This module is used to manage a system wide list of blocked callers"
-msgstr ""
+msgstr "این ماژول برای مدیریت سیستم فهرست سیاه تماس گیرندگان استفاده میشود"
 
 #: Blacklist.class.php:377
 msgid "Upload"

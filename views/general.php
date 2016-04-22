@@ -36,32 +36,16 @@ if(isset($message)){
 								</li>
 							</ul>
 								<div class="tab-content display">
-									<div role=tabpanel" id="blacklist" class="tab-pane active">
+									<div role="tabpanel" id="blacklist" class="tab-pane active">
 										<?php echo load_view(__DIR__.'/blgrid.php',array('blacklist' => $blacklist));?>
 									</div>
-									<div role=tabpanel" id="importexport" class="tab-pane">
+									<div role="tabpanel" id="importexport" class="tab-pane">
 										<div class="alert alert-info">
-											<b><?php echo _("CSV Format") ?></b></br><hr/>
-												number,description<br/>
-												{<?php echo _("NUMBER")?>},{<?php echo _("DESCRIPTION")?>}
+											<?php echo _("This functionality is now part of the Bulk Handler Module")?></br>
 										</div>
-										<div class="row">
-											<div class="col-md-12">
-												<div class="row">
-													<div class="col-md-6">
-														<span class="btn btn-default btn-file">
-															<?php echo _('Import from CSV')?><input type="file" class="form-control" name="blacklistfile" id="blacklistfile">
-														</span>
-														<span class="filename"></span>
-													</div>
-													<div class="col-md-6">
-														<a class="btn btn-default" role="button" href="?display=blacklist&amp;action=export&amp;quietmode=1"><?php echo _('Export to CSV')?></a>
-													</div>
-												</div>
-											</div>
-										</div>
+										<a href = '?display=bulkhandler' class="btn btn-default"><?php echo _("Bulk Handler")?></a>
 									</div>
-									<div role=tabpanel" id="settings" class="tab-pane">
+									<div role="tabpanel" id="settings" class="tab-pane">
 										<!--Block Anonymous-->
 										<div class="element-container">
 											<div class="row">

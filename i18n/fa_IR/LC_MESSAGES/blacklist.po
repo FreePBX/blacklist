@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-04 12:33-0700\n"
+"POT-Creation-Date: 2016-04-22 15:02-0700\n"
 "PO-Revision-Date: 2016-04-06 21:28+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
-"Language-Team: Persian "
-"<http://weblate.freepbx.org/projects/freepbx/blacklist/fa/>\n"
-"Language: fa\n"
+"Language-Team: Persian <http://weblate.freepbx.org/projects/freepbx/"
+"blacklist/fa/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fa\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -29,12 +29,12 @@ msgstr "عملیات"
 msgid "Add or replace entry"
 msgstr "افزودن یا جایگزاری ورودی"
 
-#: assets/js/blacklist.js:58
+#: assets/js/blacklist.js:56
 #, perl-format
 msgid "Added %s to the blacklist."
 msgstr "به فهرست سیاه %s اضافه شد."
 
-#: assets/js/blacklist.js:39
+#: assets/js/blacklist.js:37
 msgid "Adding..."
 msgstr "در حال اضافه شدن..."
 
@@ -58,7 +58,7 @@ msgstr ""
 msgid "Admin"
 msgstr "مدیر"
 
-#: Blacklist.class.php:20 Blacklist.class.php:509 blacklist.i18n.php:4
+#: Blacklist.class.php:20 Blacklist.class.php:503 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:24
 msgid "Blacklist"
 msgstr "فهرست سیاه"
@@ -79,13 +79,13 @@ msgstr "تعداد فهرست سیاه"
 msgid "Blacklist the last caller"
 msgstr "فهرست سیاه آخرین تماس گیرنده"
 
-#: views/general.php:72
+#: views/general.php:56
 msgid "Block Unknown/Blocked Caller ID"
 msgstr "مسدود کردن ناشناس/شناسه تماس گیرنده مسدود شده"
 
-#: views/general.php:44
-msgid "CSV Format"
-msgstr "فرمت CSV"
+#: views/general.php:46
+msgid "Bulk Handler"
+msgstr ""
 
 #: views/addnumber.php:75
 msgid "Call Date/Time"
@@ -95,11 +95,11 @@ msgstr "تاریخ/ساعت تماس"
 msgid "Call Log"
 msgstr "لاگ تماس"
 
-#: views/general.php:87
+#: views/general.php:71
 msgid "Check here to catch Unknown/Blocked Caller ID"
 msgstr "برای دیدن شناسه تماس گیرنده مسدود شده/ناشناخته اینجا را چک کنید"
 
-#: views/general.php:111
+#: views/general.php:95
 msgid "Choose where blacklisted calls go"
 msgstr "انتخاب کنید تماس های مسدود شده به کجا روند"
 
@@ -111,51 +111,35 @@ msgstr "بستن"
 msgid "Could not find file after upload"
 msgstr "فایل بعد از بارگذاری یافت نمیشود"
 
-#: views/general.php:46
-msgid "DESCRIPTION"
-msgstr "شرح"
-
 #: views/blgrid.php:2
 msgid "Delete Selected"
 msgstr "حذف انتخاب شده"
 
-#: Blacklist.class.php:519 views/addnumber.php:40 views/blgrid.php:10
+#: Blacklist.class.php:513 views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
 msgstr "شرح"
 
-#: Blacklist.class.php:519
+#: Blacklist.class.php:513
 msgid "Description of number blacklisted"
 msgstr "شرح شماره فهرست سیاه"
 
-#: views/general.php:99
+#: views/general.php:83
 msgid "Destination for BlackListed Calls"
 msgstr "مقصد تماس های فهرست سیاه"
 
-#: assets/js/blacklist.js:56
+#: assets/js/blacklist.js:54
 msgid "Entry Updated"
 msgstr "ورودی به روز شده"
-
-#: views/general.php:58
-msgid "Export to CSV"
-msgstr "خروجی برای CSV"
-
-#: views/general.php:53
-msgid "Import from CSV"
-msgstr "ورود از CSV"
 
 #: views/general.php:29
 msgid "Import/Export"
 msgstr "ورود/خروج"
 
-#: Blacklist.class.php:510
+#: Blacklist.class.php:504
 msgid "Import/Export Caller Blacklist"
 msgstr "ورود/خروج تماس گیرنده از فهرست سیاه"
 
-#: views/general.php:46
-msgid "NUMBER"
-msgstr "تعداد"
-
-#: views/general.php:79
+#: views/general.php:63
 msgid "No"
 msgstr "خیر"
 
@@ -171,11 +155,11 @@ msgstr "تعداد"
 msgid "Number/CallerID"
 msgstr "شماره/شناسه تماس گیرنده"
 
-#: Blacklist.class.php:518
+#: Blacklist.class.php:512
 msgid "Phone Number"
 msgstr "شماره تلفن"
 
-#: Blacklist.class.php:536
+#: Blacklist.class.php:530
 msgid "Phone Number Required"
 msgstr "شماره تلفن ضروری است"
 
@@ -191,7 +175,7 @@ msgstr "ماژول حذف شماره از فهرست سیاه"
 msgid "Reset"
 msgstr "بازنشانی"
 
-#: assets/js/blacklist.js:53
+#: assets/js/blacklist.js:51
 msgid "Save Changes"
 msgstr "ذخیره تغییرات"
 
@@ -215,7 +199,7 @@ msgstr "تمام موارد با موفقیت وارد شدند"
 msgid "The file must be in CSV format!"
 msgstr "فایل باید به فرمت CSV باشد!"
 
-#: Blacklist.class.php:518
+#: Blacklist.class.php:512
 msgid "The number as it appears in the callerid display"
 msgstr "شماره وارد شده به عنوان شماره تماس گیرنده نمایش داده میشود"
 
@@ -223,14 +207,32 @@ msgstr "شماره وارد شده به عنوان شماره تماس گیرن�
 msgid "There was an error uploading the file"
 msgstr "در بارگذاری فایل خطا رخ داد"
 
+#: views/general.php:44
+msgid "This functionality is now part of the Bulk Handler Module"
+msgstr ""
+
 #: blacklist.i18n.php:8
 msgid "This module is used to manage a system wide list of blocked callers"
 msgstr "این ماژول برای مدیریت سیستم فهرست سیاه تماس گیرندگان استفاده میشود"
 
-#: Blacklist.class.php:377
-msgid "Upload"
-msgstr "بارگذاری"
-
-#: views/general.php:77
+#: views/general.php:61
 msgid "Yes"
 msgstr "بله"
+
+#~ msgid "CSV Format"
+#~ msgstr "فرمت CSV"
+
+#~ msgid "DESCRIPTION"
+#~ msgstr "شرح"
+
+#~ msgid "Export to CSV"
+#~ msgstr "خروجی برای CSV"
+
+#~ msgid "Import from CSV"
+#~ msgstr "ورود از CSV"
+
+#~ msgid "NUMBER"
+#~ msgstr "تعداد"
+
+#~ msgid "Upload"
+#~ msgstr "بارگذاری"

@@ -27,18 +27,18 @@ $(document).on('show.bs.tab', 'a[data-toggle="tab"]', function (e) {
 $('#action-bar').addClass('hidden');
 
 $('#submitnumber').on('click',function(){
-	var num = $('#number').val(),
-			desc = $('#description').val(),
-			oldv = $('#oldval').val(),
-			$this = this;
-
+	var num = $('#number').val();
+	var desc = $('#description').val();
+	var oldv = $('#oldval').val();
+	$this = this;
+	if(num === ''){
+		warnInvalid($('#number'), _('Number/CallerID cannot be blank'));
+		return;
+	}
 	$(this).blur();
 	$(this).prop("disabled",true);
 	$(this).text(_("Adding..."));
-	if(num === ''){
-		warnInvalid($('#number'), 'This cannot be blank');
-		return;
-	}
+
 	$.post("ajax.php?module=blacklist&command=add",
 		{
 			action : "add",

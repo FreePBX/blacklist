@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-22 15:02-0700\n"
+"POT-Creation-Date: 2016-05-20 08:37-0700\n"
 "PO-Revision-Date: 2014-02-19 04:47+0200\n"
 "Last-Translator: Kenichi Fukaumi <k.fukaumi@qloog.com>\n"
 "Language-Team: Japanese <http://example.com/projects/freepbx/blacklist/ja/>\n"
@@ -61,7 +61,7 @@ msgstr "エントリーを追加、更新する"
 msgid "Added %s to the blacklist."
 msgstr ""
 
-#: assets/js/blacklist.js:37
+#: assets/js/blacklist.js:40
 msgid "Adding..."
 msgstr ""
 
@@ -179,6 +179,10 @@ msgstr "番号"
 #: views/addnumber.php:18
 msgid "Number/CallerID"
 msgstr "番号/発信者ID"
+
+#: assets/js/blacklist.js:35
+msgid "Number/CallerID cannot be blank"
+msgstr ""
 
 #: Blacklist.class.php:512
 msgid "Phone Number"

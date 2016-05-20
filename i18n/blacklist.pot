@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-22 15:02-0700\n"
+"POT-Creation-Date: 2016-05-20 08:37-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr ""
 msgid "Added %s to the blacklist."
 msgstr ""
 
-#: assets/js/blacklist.js:37
+#: assets/js/blacklist.js:40
 msgid "Adding..."
 msgstr ""
 
@@ -152,6 +152,10 @@ msgstr ""
 
 #: views/addnumber.php:18
 msgid "Number/CallerID"
+msgstr ""
+
+#: assets/js/blacklist.js:35
+msgid "Number/CallerID cannot be blank"
 msgstr ""
 
 #: Blacklist.class.php:512

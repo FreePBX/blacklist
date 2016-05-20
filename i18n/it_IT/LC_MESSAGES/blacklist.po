@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-22 15:02-0700\n"
+"POT-Creation-Date: 2016-05-20 08:37-0700\n"
 "PO-Revision-Date: 2008-11-06 14:48+0100\n"
 "Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
 "Language-Team: Italian\n"
@@ -30,7 +30,7 @@ msgstr "Aggiungi o sostituisci voce"
 msgid "Added %s to the blacklist."
 msgstr ""
 
-#: assets/js/blacklist.js:37
+#: assets/js/blacklist.js:40
 msgid "Adding..."
 msgstr ""
 
@@ -146,6 +146,10 @@ msgstr "Numero"
 
 #: views/addnumber.php:18
 msgid "Number/CallerID"
+msgstr ""
+
+#: assets/js/blacklist.js:35
+msgid "Number/CallerID cannot be blank"
 msgstr ""
 
 #: Blacklist.class.php:512

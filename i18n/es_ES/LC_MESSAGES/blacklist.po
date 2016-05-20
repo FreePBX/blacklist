@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-22 15:02-0700\n"
+"POT-Creation-Date: 2016-05-20 08:37-0700\n"
 "PO-Revision-Date: 2016-01-03 08:03+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -27,7 +27,7 @@ msgstr "Añadir o modificar elemento"
 msgid "Added %s to the blacklist."
 msgstr "Añadido %s a la lista negra."
 
-#: assets/js/blacklist.js:37
+#: assets/js/blacklist.js:40
 msgid "Adding..."
 msgstr "Añadiendo..."
 
@@ -149,6 +149,10 @@ msgstr "Número"
 #: views/addnumber.php:18
 msgid "Number/CallerID"
 msgstr "Numero/IDllamada"
+
+#: assets/js/blacklist.js:35
+msgid "Number/CallerID cannot be blank"
+msgstr ""
 
 #: Blacklist.class.php:512
 msgid "Phone Number"

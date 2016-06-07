@@ -30,6 +30,7 @@ class Blacklist implements BMO {
 			case 'add':
 			case 'edit':
 			case 'del':
+			case 'bulkdelete':
 			case 'getJSON':
 			case 'calllog':
 			return true;
@@ -54,6 +55,14 @@ class Blacklist implements BMO {
 				$this->numberDel($request['oldval']);
 				$this->numberAdd($request);
 				return array('status' => true);
+			break;
+			case 'bulkdelete':
+				$numbers = isset($_REQUEST['numbers'])?$_REQUEST['numbers']:array();
+				$numbers = json_decode($numbers, true);
+				foreach ($numbers as $number) {
+					$this->numberDel($number);
+				}
+				return array('status' => 'true', 'message' => _("Numbers Deleted"));
 			break;
 			case 'del':
 				$ret = $this->numberDel($request['number']);

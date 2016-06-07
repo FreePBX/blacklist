@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-20 08:37-0700\n"
-"PO-Revision-Date: 2016-01-03 08:03+0200\n"
+"PO-Revision-Date: 2016-06-06 20:46+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
-"Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
-"blacklist/es_ES/>\n"
+"Language-Team: Spanish "
+"<http://weblate.freepbx.org/projects/freepbx/blacklist/es_ES/>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.2-dev\n"
+"X-Generator: Weblate 2.4\n"
 
 #: views/blgrid.php:11
 msgid "Actions"
@@ -51,7 +51,7 @@ msgstr ""
 
 #: blacklist.i18n.php:6 blacklist.i18n.php:12
 msgid "Admin"
-msgstr ""
+msgstr "Admin"
 
 #: Blacklist.class.php:20 Blacklist.class.php:503 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:24
@@ -80,7 +80,7 @@ msgstr "Bloquear Desconocido/Bloqueado identificador de llamadas"
 
 #: views/general.php:46
 msgid "Bulk Handler"
-msgstr ""
+msgstr "Manejador de a granel"
 
 #: views/addnumber.php:75
 msgid "Call Date/Time"
@@ -116,7 +116,7 @@ msgstr "Descripcion"
 
 #: Blacklist.class.php:513
 msgid "Description of number blacklisted"
-msgstr ""
+msgstr "Descripción de numero en Lista Negra"
 
 #: views/general.php:83
 msgid "Destination for BlackListed Calls"
@@ -132,7 +132,7 @@ msgstr "Importar/Exportar"
 
 #: Blacklist.class.php:504
 msgid "Import/Export Caller Blacklist"
-msgstr ""
+msgstr "Importar/Exportar lista negra de llamantes"
 
 #: views/general.php:63
 msgid "No"
@@ -152,15 +152,15 @@ msgstr "Numero/IDllamada"
 
 #: assets/js/blacklist.js:35
 msgid "Number/CallerID cannot be blank"
-msgstr ""
+msgstr "Numero/IDllamada no puede estar en blanco"
 
 #: Blacklist.class.php:512
 msgid "Phone Number"
-msgstr ""
+msgstr "Numero Teléfono"
 
 #: Blacklist.class.php:530
 msgid "Phone Number Required"
-msgstr ""
+msgstr "Numero Teléfono Requerido"
 
 #: Blacklist.class.php:18
 msgid "Remove a number from the blacklist"
@@ -200,7 +200,7 @@ msgstr "El archivo debe estar en formato CSV!"
 
 #: Blacklist.class.php:512
 msgid "The number as it appears in the callerid display"
-msgstr ""
+msgstr "EL numero tal cual aparece en el despliegue de ID de LLamada"
 
 #: Blacklist.class.php:142
 msgid "There was an error uploading the file"
@@ -208,11 +208,13 @@ msgstr "hubo un error subiendo el archivo"
 
 #: views/general.php:44
 msgid "This functionality is now part of the Bulk Handler Module"
-msgstr ""
+msgstr "Esta funcionalidad forma parte ahora del Manejador a Granel"
 
 #: blacklist.i18n.php:8
 msgid "This module is used to manage a system wide list of blocked callers"
 msgstr ""
+"Este modulo es usado para administrar una lista de números bloqueados a "
+"nivel de todo el sistema"
 
 #: views/general.php:61
 msgid "Yes"

@@ -86,7 +86,7 @@ class Blacklist implements BMO {
 					$order = $_REQUEST['order'];
 					$limit = $_REQUEST['limit'];
 					$offset = $_REQUEST['offset'];
-					$search = $_REQUEST['search'];
+					$search = isset($_REQUEST['search']) ? $_REQUEST['search'] : "";
 
 					if($order == 'desc') {
 						$blacklist = array_reverse($blacklist);

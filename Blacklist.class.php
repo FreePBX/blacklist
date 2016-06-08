@@ -79,9 +79,28 @@ class Blacklist implements BMO {
 			case 'getJSON':
 			switch($request['jdata']){
 				case 'grid':
-					$ret = array();
+					set_time_limit(0);
 					$blacklist = $this->getBlacklist();
-					foreach($blacklist as $item){
+
+					$total = count($blacklist);
+					$order = $_REQUEST['order'];
+					$limit = $_REQUEST['limit'];
+					$offset = $_REQUEST['offset'];
+					$search = $_REQUEST['search'];
+
+					if($order == 'desc') {
+						$blacklist = array_reverse($blacklist);
+					}
+					if(!empty($search)) {
+						$search = array(
+							"number" => $search,
+							"description" => $search
+						);
+						$blacklist = $this->multidimensionalSearch($blacklist, $search);
+					}
+					$rows = array_splice($blacklist,$offset,$limit);
+					$ret = array();
+					foreach($rows as $item){
 						$number = $item['number'];
 						$description = $item['description'];
 						if($number == 'dest' || $number == 'blocked'){
@@ -90,11 +109,44 @@ class Blacklist implements BMO {
 							$ret[] = array('number' => $number, 'description' => $description);
 						}
 					}
-				return $ret;
+					return array(
+						"total" => $total,
+						"rows" => $ret
+					);
 				break;
 			}
 			break;
 		}
+	}
+
+	/**
+	 * 3d Array Search
+	 * @param  array $array  The array to search
+	 * @param  array $search The fields to search EG $search = array("number" => $search,"description" => $search);
+	 * @return array         The final array
+	 */
+	public function multidimensionalSearch($array, $search) {
+		$results = array();
+		if (empty($search) || empty($array)) {
+			return false;
+		}
+
+		foreach ($array as $key => $value) {
+			$exists = false;
+			foreach ($search as $skey => $svalue) {
+				if(isset($array[$key][$skey])) {
+					if(preg_match('/'.$svalue.'/i',$array[$key][$skey])) {
+						$exists = true;
+						break;
+					}
+				}
+			}
+			if($exists){
+				$results[] = $value;
+			}
+		}
+
+		return $results;
 	}
 
 	//BMO Methods

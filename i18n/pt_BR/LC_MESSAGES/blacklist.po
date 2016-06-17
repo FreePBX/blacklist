@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-20 08:37-0700\n"
+"POT-Creation-Date: 2016-06-17 16:53-0700\n"
 "PO-Revision-Date: 2015-04-29 08:49+0200\n"
 "Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -55,7 +55,7 @@ msgstr ""
 msgid "Admin"
 msgstr ""
 
-#: Blacklist.class.php:20 Blacklist.class.php:503 blacklist.i18n.php:4
+#: Blacklist.class.php:20 Blacklist.class.php:512 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:24
 msgid "Blacklist"
 msgstr ""
@@ -104,7 +104,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: Blacklist.class.php:164
+#: Blacklist.class.php:173
 msgid "Could not find file after upload"
 msgstr ""
 
@@ -112,11 +112,11 @@ msgstr ""
 msgid "Delete Selected"
 msgstr ""
 
-#: Blacklist.class.php:513 views/addnumber.php:40 views/blgrid.php:10
+#: Blacklist.class.php:522 views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
 msgstr ""
 
-#: Blacklist.class.php:513
+#: Blacklist.class.php:522
 msgid "Description of number blacklisted"
 msgstr ""
 
@@ -132,7 +132,7 @@ msgstr ""
 msgid "Import/Export"
 msgstr ""
 
-#: Blacklist.class.php:504
+#: Blacklist.class.php:513
 msgid "Import/Export Caller Blacklist"
 msgstr ""
 
@@ -140,7 +140,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Blacklist.class.php:183
+#: Blacklist.class.php:192
 msgid "No Entries to export"
 msgstr ""
 
@@ -156,11 +156,15 @@ msgstr ""
 msgid "Number/CallerID cannot be blank"
 msgstr ""
 
-#: Blacklist.class.php:512
+#: Blacklist.class.php:65
+msgid "Numbers Deleted"
+msgstr ""
+
+#: Blacklist.class.php:521
 msgid "Phone Number"
 msgstr ""
 
-#: Blacklist.class.php:530
+#: Blacklist.class.php:539
 msgid "Phone Number Required"
 msgstr ""
 
@@ -172,7 +176,7 @@ msgstr ""
 msgid "Removes a number from the Blacklist Module"
 msgstr ""
 
-#: Blacklist.class.php:365
+#: Blacklist.class.php:374
 msgid "Reset"
 msgstr ""
 
@@ -188,23 +192,23 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: Blacklist.class.php:371
+#: Blacklist.class.php:380
 msgid "Submit"
 msgstr ""
 
-#: Blacklist.class.php:162
+#: Blacklist.class.php:171
 msgid "Sucessfully imported all entries"
 msgstr ""
 
-#: Blacklist.class.php:167
+#: Blacklist.class.php:176
 msgid "The file must be in CSV format!"
 msgstr ""
 
-#: Blacklist.class.php:512
+#: Blacklist.class.php:521
 msgid "The number as it appears in the callerid display"
 msgstr ""
 
-#: Blacklist.class.php:142
+#: Blacklist.class.php:151
 msgid "There was an error uploading the file"
 msgstr ""
 

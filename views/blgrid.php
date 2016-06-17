@@ -33,23 +33,4 @@
 			return value;
 		}
 	}
-	$("#blkDelete").click(function(e){
-		e.preventDefault();
-		if(confirm(_("Are you sure you want to remove the selected item(s) from the blacklist?"))){
-			$('input[name="btSelectItem"]:checked').each(function(){
-				var ro = $('#blGrid').bootstrapTable('getData');
-				console.log($(this).data());
-				var num = ro[$(this).data("index")].number;
-				$.post("ajax.php?module=blacklist",
-					{
-						command : "del",
-						number : num,
-					}
-				);
-			});
-			setTimeout(function(){
-				$('#blGrid').bootstrapTable('refresh',{silent: true});
-			}, 2000);
-		}
-	});
 </script>

@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-17 16:53-0700\n"
-"PO-Revision-Date: 2016-05-26 18:50+0200\n"
-"Last-Translator: Media <mousavi.media@gmail.com>\n"
-"Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
-"blacklist/fa_IR/>\n"
+"PO-Revision-Date: 2016-06-22 09:27+0200\n"
+"Last-Translator: psdk <hyavari26@gmail.com>\n"
+"Language-Team: Persian (Iran) "
+"<http://weblate.freepbx.org/projects/freepbx/blacklist/fa_IR/>\n"
+"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa_IR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -162,7 +162,7 @@ msgstr "شماره/تلفن تماس گیرنده نمیتواند خالی با
 
 #: Blacklist.class.php:65
 msgid "Numbers Deleted"
-msgstr ""
+msgstr "شماره ها حذف شدند"
 
 #: Blacklist.class.php:521
 msgid "Phone Number"

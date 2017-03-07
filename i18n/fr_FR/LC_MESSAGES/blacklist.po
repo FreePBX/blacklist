@@ -20,16 +20,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-09 14:17-0700\n"
-"PO-Revision-Date: 2016-02-01 10:26+0200\n"
-"Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
-"Language-Team: French <http://weblate.freepbx.org/projects/freepbx/blacklist/"
-"fr_FR/>\n"
+"PO-Revision-Date: 2017-03-07 09:20+0200\n"
+"Last-Translator: Nicolas <freepbx@riendeau.org>\n"
+"Language-Team: French "
+"<http://weblate.freepbx.org/projects/freepbx/blacklist/fr_FR/>\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr_FR\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.2-dev\n"
+"X-Generator: Weblate 2.4\n"
 
 #: views/blgrid.php:11
 msgid "Actions"
@@ -42,11 +42,11 @@ msgstr "Ajouter ou remplacer une entrée"
 #: assets/js/blacklist.js:56
 #, perl-format
 msgid "Added %s to the blacklist."
-msgstr ""
+msgstr "Ajouter %s à la liste noire."
 
 #: assets/js/blacklist.js:40
 msgid "Adding..."
-msgstr ""
+msgstr "En cours d'ajout..."
 
 #: Blacklist.class.php:21
 msgid ""
@@ -54,12 +54,16 @@ msgid ""
 "system will receive a disconnect recording.  Manage these in the Blacklist "
 "module."
 msgstr ""
+"Ajoute un numéro à la liste noire. Tous les appels de ce numéro recevrons un "
+"message de déconnexion. Gérer ceux-ci dans le module de liste noire."
 
 #: Blacklist.class.php:23
 msgid ""
 "Adds the last caller to the Blacklist Module.  All calls from that number to "
 "the system will receive a disconnect recording."
 msgstr ""
+"Ajoute le dernier appelant à la liste noire. Tous les appels de ce numéro "
+"recevrons un message de déconnexion."
 
 #: blacklist.i18n.php:6 blacklist.i18n.php:12
 msgid "Admin"
@@ -112,47 +116,47 @@ msgstr ""
 
 #: views/addnumber.php:57
 msgid "Close"
-msgstr ""
+msgstr "Fermer"
 
 #: Blacklist.class.php:171
 msgid "Could not find file after upload"
-msgstr ""
+msgstr "Le fichier n'a pas pu être trouvé après le téléchargement"
 
 #: views/blgrid.php:2
 msgid "Delete Selected"
-msgstr ""
+msgstr "Supprimer les entrées sélectionnées"
 
 #: Blacklist.class.php:520 views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: Blacklist.class.php:520
 msgid "Description of number blacklisted"
-msgstr ""
+msgstr "Description du numéro sur la liste noire"
 
 #: views/general.php:83
 msgid "Destination for BlackListed Calls"
-msgstr ""
+msgstr "Destination des appels sur la liste noire"
 
 #: assets/js/blacklist.js:54
 msgid "Entry Updated"
-msgstr ""
+msgstr "Entrée mise à jour"
 
 #: views/general.php:29
 msgid "Import/Export"
-msgstr ""
+msgstr "Importer/Exporter"
 
 #: Blacklist.class.php:511
 msgid "Import/Export Caller Blacklist"
-msgstr ""
+msgstr "Importer/Exporter la liste noire des appelants"
 
 #: views/general.php:63
 msgid "No"
-msgstr ""
+msgstr "Non"
 
 #: Blacklist.class.php:190
 msgid "No Entries to export"
-msgstr ""
+msgstr "Pas d'entrées à exporter"
 
 #: views/blgrid.php:9
 msgid "Number"
@@ -168,15 +172,15 @@ msgstr ""
 
 #: Blacklist.class.php:63
 msgid "Numbers Deleted"
-msgstr ""
+msgstr "Numéros supprimés"
 
 #: Blacklist.class.php:519
 msgid "Phone Number"
-msgstr ""
+msgstr "Numéro de téléphone"
 
 #: Blacklist.class.php:537
 msgid "Phone Number Required"
-msgstr ""
+msgstr "Numéro de téphone requis"
 
 #: Blacklist.class.php:18
 msgid "Remove a number from the blacklist"
@@ -184,43 +188,43 @@ msgstr "Retirer un numéro de la blacklist"
 
 #: Blacklist.class.php:22
 msgid "Removes a number from the Blacklist Module"
-msgstr ""
+msgstr "Supprime un numéro de la liste noire"
 
 #: Blacklist.class.php:372
 msgid "Reset"
-msgstr ""
+msgstr "Réinitialiser"
 
 #: assets/js/blacklist.js:51
 msgid "Save Changes"
-msgstr ""
+msgstr "Sauvegarder les modifications"
 
 #: views/addnumber.php:58
 msgid "Save changes"
-msgstr ""
+msgstr "Sauvegarder les modifications"
 
 #: views/general.php:34
 msgid "Settings"
-msgstr ""
+msgstr "Paramètres"
 
 #: Blacklist.class.php:378
 msgid "Submit"
-msgstr ""
+msgstr "Soumettre"
 
 #: Blacklist.class.php:169
 msgid "Sucessfully imported all entries"
-msgstr ""
+msgstr "Les entrées ont été importées avec succès"
 
 #: Blacklist.class.php:174
 msgid "The file must be in CSV format!"
-msgstr ""
+msgstr "Le fichier doit être en format CSV !"
 
 #: Blacklist.class.php:519
 msgid "The number as it appears in the callerid display"
-msgstr ""
+msgstr "Le numéro tel qui apparait sur l'afficheur"
 
 #: Blacklist.class.php:149
 msgid "There was an error uploading the file"
-msgstr ""
+msgstr "Il y a eu une erreur lors du téléchargement du fichier"
 
 #: views/general.php:44
 msgid "This functionality is now part of the Bulk Handler Module"
@@ -228,11 +232,11 @@ msgstr ""
 
 #: blacklist.i18n.php:8
 msgid "This module is used to manage a system wide list of blocked callers"
-msgstr ""
+msgstr "Ce module sert a gérer une liste noire globale d'appelants"
 
 #: views/general.php:61
 msgid "Yes"
-msgstr ""
+msgstr "Oui"
 
 #~ msgid "CSV Format"
 #~ msgstr "Format CSV"

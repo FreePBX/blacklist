@@ -1,13 +1,20 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for blacklist
+# Copyright (C) 2008-2016 Sangoma, Inc.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-09 14:17-0700\n"
-"PO-Revision-Date: 2016-12-09 08:27+0200\n"
-"Last-Translator: Ernesto <ecasas@sangoma.com>\n"
-"Language-Team: Spanish "
-"<http://weblate.freepbx.org/projects/freepbx/blacklist/es_ES/>\n"
-"Language: es_ES\n"
+"PO-Revision-Date: 2016-12-05 21:08+0200\n"
+"Last-Translator: Sven <spiderrs4@web.de>\n"
+"Language-Team: German "
+"<http://weblate.freepbx.org/projects/freepbx/blacklist/de_DE/>\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,20 +23,20 @@ msgstr ""
 
 #: views/blgrid.php:11
 msgid "Actions"
-msgstr "Acciones"
+msgstr "Aktionen"
 
 #: views/addnumber.php:7
 msgid "Add or replace entry"
-msgstr "Añadir o modificar elemento"
+msgstr "Eintrag hinzufügen oder ersetzen"
 
 #: assets/js/blacklist.js:56
 #, perl-format
 msgid "Added %s to the blacklist."
-msgstr "Añadido %s a la lista negra."
+msgstr "%s wurde der Sperrliste hinzugefügt."
 
 #: assets/js/blacklist.js:40
 msgid "Adding..."
-msgstr "Añadiendo..."
+msgstr "Hinzufügen..."
 
 #: Blacklist.class.php:21
 msgid ""
@@ -37,207 +44,188 @@ msgid ""
 "system will receive a disconnect recording.  Manage these in the Blacklist "
 "module."
 msgstr ""
-"Añade un número al Modulo Lista Negra. Todas las llamadas desde ese número "
-"del sistema recibirán una grabación de desconexión. Administrar estos en el "
-"módulo de la lista negra."
+"Füge eine Nummer der Sperrliste hinzu. Alle Anrufe von dieser Nummer "
+"erhalten eine Trennungsansage. Verwalte dies im Sperrlistenmodul."
 
 #: Blacklist.class.php:23
 msgid ""
 "Adds the last caller to the Blacklist Module.  All calls from that number to "
 "the system will receive a disconnect recording."
 msgstr ""
-"Agrega la última persona que llama al módulo de la lista negra. Todas las "
-"llamadas desde ese número del sistema recibirán una grabación de desconexión."
+"Fügt den letzten Anrufen der Sperrliste hinzu. Alle Anrufe von dieser Nummer "
+"erhalten eine Trennungsansage."
 
 #: blacklist.i18n.php:6 blacklist.i18n.php:12
 msgid "Admin"
-msgstr "Admin"
+msgstr "Administrator"
 
 #: Blacklist.class.php:20 Blacklist.class.php:510 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:24
 msgid "Blacklist"
-msgstr "Lista negra"
+msgstr "Sperrliste"
 
 #: views/general.php:12
 msgid "Blacklist Module"
-msgstr "Modulo Lista Negra"
+msgstr "Sperrliste"
 
 #: views/blgrid.php:3
 msgid "Blacklist Number"
-msgstr "Número Lista Negra"
+msgstr "Nummer hinzufügen"
 
 #: Blacklist.class.php:17
 msgid "Blacklist a number"
-msgstr "Añadir un número a la lista negra"
+msgstr "Eine Nummer hinzufügen"
 
 #: Blacklist.class.php:19
 msgid "Blacklist the last caller"
-msgstr "Añadir a la lista negra el último número llamado"
+msgstr "Letzten Anrufer zur Sperrliste hinzufügen"
 
 #: views/general.php:56
 msgid "Block Unknown/Blocked Caller ID"
-msgstr "Bloquear Desconocido/Bloqueado identificador de llamadas"
+msgstr "Unbekannte/Blockierte AnruferID blockieren"
 
 #: views/general.php:46
 msgid "Bulk Handler"
-msgstr "Manejador de a granel"
+msgstr "Bulk-Handler"
 
 #: views/addnumber.php:75
 msgid "Call Date/Time"
-msgstr "Fecha/Hora Llamada"
+msgstr "Anruf Datum/Uhrzeit"
 
 #: views/addnumber.php:69
 msgid "Call Log"
-msgstr "Registro de Llamadas"
+msgstr "Anrufliste"
 
 #: views/general.php:71
 msgid "Check here to catch Unknown/Blocked Caller ID"
-msgstr "Haga click aca para capturar ID de llamada desconocido/bloqueado"
+msgstr "Sperrliste für Unbekannte/Blockierte AnruferID aktivieren/deaktivieren"
 
 #: views/general.php:95
 msgid "Choose where blacklisted calls go"
-msgstr "Elija donde las llamadas listas negras van"
+msgstr "Wähle was mit Anrufern der Sperrliste passieren soll"
 
 #: views/addnumber.php:57
 msgid "Close"
-msgstr "Cerrar"
+msgstr "Schließen"
 
 #: Blacklist.class.php:171
 msgid "Could not find file after upload"
-msgstr "No puedo encontrar el archivo luego de subirlo"
+msgstr "Konnte die Datei nach dem Hochladen nicht finden"
 
 #: views/blgrid.php:2
 msgid "Delete Selected"
-msgstr "Eliminar Seleccionados"
+msgstr "Auswahl löschen"
 
 #: Blacklist.class.php:520 views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
-msgstr "Descripcion"
+msgstr "Beschreibung"
 
 #: Blacklist.class.php:520
 msgid "Description of number blacklisted"
-msgstr "Descripción de numero en Lista Negra"
+msgstr "Beschreibung der Nummer auf der Sperrliste"
 
 #: views/general.php:83
 msgid "Destination for BlackListed Calls"
-msgstr "Destino para llamadas Lista Negra"
+msgstr "Ziel für Anrufer der Sperrliste"
 
 #: assets/js/blacklist.js:54
 msgid "Entry Updated"
-msgstr "Entrada Actualizada"
+msgstr "Eintrag aktualisiert"
 
 #: views/general.php:29
 msgid "Import/Export"
-msgstr "Importar/Exportar"
+msgstr "Importieren/Exportieren"
 
 #: Blacklist.class.php:511
 msgid "Import/Export Caller Blacklist"
-msgstr "Importar/Exportar lista negra de llamantes"
+msgstr "Sperrliste Importieren/Exportieren"
 
 #: views/general.php:63
 msgid "No"
-msgstr "No"
+msgstr "Nein"
 
 #: Blacklist.class.php:190
 msgid "No Entries to export"
-msgstr "No hay entradas a exportar"
+msgstr "Keine Einträge zum Exportieren"
 
 #: views/blgrid.php:9
 msgid "Number"
-msgstr "Número"
+msgstr "Nummer"
 
 #: views/addnumber.php:18
 msgid "Number/CallerID"
-msgstr "Numero/IDllamada"
+msgstr "Nummer/AnruferID"
 
 #: assets/js/blacklist.js:35
 msgid "Number/CallerID cannot be blank"
-msgstr "Numero/IDllamada no puede estar en blanco"
+msgstr "Nummer/AnruferID darf nicht leer sein"
 
 #: Blacklist.class.php:63
 msgid "Numbers Deleted"
-msgstr "Números Borrados"
+msgstr "Nummern gelöscht"
 
 #: Blacklist.class.php:519
 msgid "Phone Number"
-msgstr "Numero Teléfono"
+msgstr "Telefonnummer"
 
 #: Blacklist.class.php:537
 msgid "Phone Number Required"
-msgstr "Numero Teléfono Requerido"
+msgstr "Telefonnummer erforderlich"
 
 #: Blacklist.class.php:18
 msgid "Remove a number from the blacklist"
-msgstr "Eliminar un número de la lista negra"
+msgstr "Nummer von der Sperrliste entfernen"
 
 #: Blacklist.class.php:22
 msgid "Removes a number from the Blacklist Module"
-msgstr "Elimina un número de la lista negra del módulo"
+msgstr "Nummer von der Sperrliste entfernen"
 
 #: Blacklist.class.php:372
 msgid "Reset"
-msgstr "Reiniciar"
+msgstr "Zurücksetzen"
 
 #: assets/js/blacklist.js:51
 msgid "Save Changes"
-msgstr "Guardar Cambios"
+msgstr "Änderung speichern"
 
 #: views/addnumber.php:58
 msgid "Save changes"
-msgstr "Guardar Cambios"
+msgstr "Änderungen speichern"
 
 #: views/general.php:34
 msgid "Settings"
-msgstr "Configuracion"
+msgstr "Einstellungen"
 
 #: Blacklist.class.php:378
 msgid "Submit"
-msgstr "Enviar"
+msgstr "Bestätigen"
 
 #: Blacklist.class.php:169
 msgid "Sucessfully imported all entries"
-msgstr "Se importaron todas las entradas satisfactoriamente"
+msgstr "Alle Einträge erfolgreich importiert"
 
 #: Blacklist.class.php:174
 msgid "The file must be in CSV format!"
-msgstr "El archivo debe estar en formato CSV!"
+msgstr "Die Datei muss im CSV Format sein!"
 
 #: Blacklist.class.php:519
 msgid "The number as it appears in the callerid display"
-msgstr "EL numero tal cual aparece en el despliegue de ID de LLamada"
+msgstr "Die Nummer erscheint in der AnruferID Anzeige"
 
 #: Blacklist.class.php:149
 msgid "There was an error uploading the file"
-msgstr "hubo un error subiendo el archivo"
+msgstr "Beim Hochladen der Datei ist ein Fehler auftgetreten"
 
 #: views/general.php:44
 msgid "This functionality is now part of the Bulk Handler Module"
-msgstr "Esta funcionalidad forma parte ahora del Manejador a Granel"
+msgstr "Diese Funktionalität ist jetzt Teil des Bulk-Handler Modul"
 
 #: blacklist.i18n.php:8
 msgid "This module is used to manage a system wide list of blocked callers"
 msgstr ""
-"Este modulo es usado para administrar una lista de números bloqueados a "
-"nivel de todo el sistema"
+"Dieses Modul wird verwendet, um eine systemweite Liste von blockierten "
+"Anrufern zu verwalten"
 
 #: views/general.php:61
 msgid "Yes"
-msgstr "Si"
-
-#~ msgid "CSV Format"
-#~ msgstr "Formato CSV"
-
-#~ msgid "DESCRIPTION"
-#~ msgstr "DESCRIPCION"
-
-#~ msgid "Export to CSV"
-#~ msgstr "Exportar a CSV"
-
-#~ msgid "Import from CSV"
-#~ msgstr "Importar desde un CSV"
-
-#~ msgid "NUMBER"
-#~ msgstr "NUMERO"
-
-#~ msgid "Upload"
-#~ msgstr "Subir"
+msgstr "Ja"

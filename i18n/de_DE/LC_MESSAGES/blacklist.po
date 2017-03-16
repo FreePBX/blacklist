@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-09 14:17-0700\n"
+"POT-Creation-Date: 2017-03-15 18:36-0700\n"
 "PO-Revision-Date: 2016-12-05 21:08+0200\n"
 "Last-Translator: Sven <spiderrs4@web.de>\n"
-"Language-Team: German "
-"<http://weblate.freepbx.org/projects/freepbx/blacklist/de_DE/>\n"
-"Language: de_DE\n"
+"Language-Team: German <http://weblate.freepbx.org/projects/freepbx/blacklist/"
+"de_DE/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -55,7 +55,7 @@ msgstr ""
 "Fügt den letzten Anrufen der Sperrliste hinzu. Alle Anrufe von dieser Nummer "
 "erhalten eine Trennungsansage."
 
-#: blacklist.i18n.php:6 blacklist.i18n.php:12
+#: blacklist.i18n.php:6
 msgid "Admin"
 msgstr "Administrator"
 

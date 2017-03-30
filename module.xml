@@ -2,7 +2,7 @@
 	<rawname>blacklist</rawname>
 	<repo>standard</repo>
 	<name>Blacklist</name>
-	<version>13.0.14.1</version>
+	<version>13.0.14.2</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,6 +12,7 @@
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*13.0.14.2* FREEPBX-14482 using wrong prompt
 		*13.0.14.1* FREEPBX-14347 Blacklist prompt replacement
 		*13.0.14* Language updates
 		*13.0.13* FREEPBX-12480 Fix column toggle

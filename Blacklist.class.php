@@ -256,7 +256,7 @@ class Blacklist implements BMO {
 		$ext->add($id, $c, 'start', new ext_playback('enter-num-blacklist'));
 		$ext->add($id, $c, '', new ext_digittimeout(5));
 		$ext->add($id, $c, '', new ext_responsetimeout(60));
-		$ext->add($id, $c, '', new ext_read('blacknr', 'vm-press-pound'));
+		$ext->add($id, $c, '', new ext_read('blacknr', 'vm-then-pound'));
 		$ext->add($id, $c, '', new ext_saydigits('${blacknr}'));
 		// i18n - Some languages need this is a different format. If we don't
 		// know about the language, assume english
@@ -300,7 +300,7 @@ class Blacklist implements BMO {
 		$ext->add($id, $c, '', new ext_playback('entr-num-rmv-blklist'));
 		$ext->add($id, $c, '', new ext_digittimeout(5));
 		$ext->add($id, $c, '', new ext_responsetimeout(60));
-		$ext->add($id, $c, '', new ext_read('blacknr', 'vm-press-pound'));
+		$ext->add($id, $c, '', new ext_read('blacknr', 'vm-then-pound'));
 		$ext->add($id, $c, '', new ext_saydigits('${blacknr}'));
 		// i18n - Some languages need this is a different format. If we don't
 		// know about the language, assume english

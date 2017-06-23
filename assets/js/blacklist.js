@@ -56,6 +56,7 @@ $('#submitnumber').on('click',function(){
 					alert(sprintf(_("Added %s to the blacklist."), num));
 				}
 				$('#blGrid').bootstrapTable('refresh',{});
+				$("#addNumber").modal('hide');
 			} else {
 				alert(data.message);
 			}

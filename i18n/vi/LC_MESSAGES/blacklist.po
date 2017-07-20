@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-15 18:36-0700\n"
-"PO-Revision-Date: 2017-06-07 09:12+0200\n"
-"Last-Translator: Peter Trinh <ftek@ymail.com>\n"
-"Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
-"blacklist/vi/>\n"
+"PO-Revision-Date: 2017-07-20 10:28+0200\n"
+"Last-Translator: PETER <ftek@ymail.com>\n"
+"Language-Team: Vietnamese "
+"<http://weblate.freepbx.org/projects/freepbx/blacklist/vi/>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -99,7 +99,7 @@ msgstr "Nhật ký cuộc gọi"
 
 #: views/general.php:71
 msgid "Check here to catch Unknown/Blocked Caller ID"
-msgstr "Kiểm tra ở đây để biết ID người gọi không biết/ bị chặn"
+msgstr "Đánh dấu check ở đây để biết ID người gọi không biết/ bị chặn"
 
 #: views/general.php:95
 msgid "Choose where blacklisted calls go"

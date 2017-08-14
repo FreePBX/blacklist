@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-15 18:36-0700\n"
+"POT-Creation-Date: 2017-08-14 17:39-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,7 +52,7 @@ msgid "Admin"
 msgstr ""
 
 #: Blacklist.class.php:20
-#: Blacklist.class.php:510
+#: Blacklist.class.php:537
 #: blacklist.i18n.php:4
 #: blacklist.i18n.php:10
 #: views/general.php:24
@@ -111,13 +111,13 @@ msgstr ""
 msgid "Delete Selected"
 msgstr ""
 
-#: Blacklist.class.php:520
+#: Blacklist.class.php:547
 #: views/addnumber.php:40
 #: views/blgrid.php:10
 msgid "Description"
 msgstr ""
 
-#: Blacklist.class.php:520
+#: Blacklist.class.php:547
 msgid "Description of number blacklisted"
 msgstr ""
 
@@ -133,7 +133,7 @@ msgstr ""
 msgid "Import/Export"
 msgstr ""
 
-#: Blacklist.class.php:511
+#: Blacklist.class.php:538
 msgid "Import/Export Caller Blacklist"
 msgstr ""
 
@@ -161,11 +161,11 @@ msgstr ""
 msgid "Numbers Deleted"
 msgstr ""
 
-#: Blacklist.class.php:519
+#: Blacklist.class.php:546
 msgid "Phone Number"
 msgstr ""
 
-#: Blacklist.class.php:537
+#: Blacklist.class.php:564
 msgid "Phone Number Required"
 msgstr ""
 
@@ -177,7 +177,7 @@ msgstr ""
 msgid "Removes a number from the Blacklist Module"
 msgstr ""
 
-#: Blacklist.class.php:372
+#: Blacklist.class.php:399
 msgid "Reset"
 msgstr ""
 
@@ -193,7 +193,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: Blacklist.class.php:378
+#: Blacklist.class.php:405
 msgid "Submit"
 msgstr ""
 
@@ -205,7 +205,7 @@ msgstr ""
 msgid "The file must be in CSV format!"
 msgstr ""
 
-#: Blacklist.class.php:519
+#: Blacklist.class.php:546
 msgid "The number as it appears in the callerid display"
 msgstr ""
 

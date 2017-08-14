@@ -262,7 +262,7 @@ class Blacklist implements BMO {
 		// know about the language, assume english
 		$ext->add($id, $c, '', new ext_gosubif('$[${DIALPLAN_EXISTS('.$id.',${CHANNEL(language)})}]', $id.',${CHANNEL(language)},1', $id.',en,1'));
 		// en - default
-		$ext->add($id, 'en', '', new ext_playback('if-correct-press&digits/1'));
+		$ext->add($id, 'en', '', new ext_playback('if-correct-press&digits/1&to-enter-a-diff-number&press&digits/2'));
 		$ext->add($id, 'en', '', new ext_return());
 		// ja
 		$ext->add($id, 'ja', '', new ext_playback('if-correct-press&digits/1&pleasepress'));
@@ -280,6 +280,15 @@ class Blacklist implements BMO {
 		$ext->add($id, $c, '', new ext_wait(1));
 		$ext->add($id, $c, '', new ext_hangup());
 
+        $c = '2';
+        $ext->add($id, $c, '', new ext_set('NumLoops', '$[${NumLoops} + 1]'));
+        $ext->add($id, $c, '', new ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-add,s,start'));
+        $ext->add($id, $c, '', new ext_playback('goodbye'));
+        $ext->add($id, $c, '', new ext_hangup());
+
+        $ext->add($id, 't', '', new ext_goto('app-blacklist-add-invalid,s,1'));
+        $ext->add($id, 'i', '', new ext_goto('app-blacklist-add-invalid,s,1'));
+
 		$id = 'app-blacklist-add-invalid';
 		$c = 's';
 		$ext->add($id, $c, '', new ext_set('NumLoops', '$[${NumLoops} + 1]'));
@@ -296,8 +305,9 @@ class Blacklist implements BMO {
 		$c = 's';
 		$ext->add($id, $c, '', new ext_answer());
 		$ext->add($id, $c, '', new ext_macro('user-callerid'));
-		$ext->add($id, $c, '', new ext_wait(1));
-		$ext->add($id, $c, '', new ext_playback('entr-num-rmv-blklist'));
+		$ext->add($id, $c, '', new ext_set('NumLoops', 0));
+        $ext->add($id, $c, '', new ext_wait(1));
+		$ext->add($id, $c, 'start', new ext_playback('entr-num-rmv-blklist'));
 		$ext->add($id, $c, '', new ext_digittimeout(5));
 		$ext->add($id, $c, '', new ext_responsetimeout(60));
 		$ext->add($id, $c, '', new ext_read('blacknr', 'vm-then-pound'));
@@ -306,7 +316,7 @@ class Blacklist implements BMO {
 		// know about the language, assume english
 		$ext->add($id, $c, '', new ext_gosubif('$[${DIALPLAN_EXISTS('.$id.',${CHANNEL(language)})}]', $id.',${CHANNEL(language)},1', $id.',en,1'));
 		// en - default
-		$ext->add($id, 'en', '', new ext_playback('if-correct-press&digits/1'));
+		$ext->add($id, 'en', '', new ext_playback('if-correct-press&digits/1&to-enter-a-diff-number&press&digits/2'));
 		$ext->add($id, 'en', '', new ext_return());
 		// ja
 		$ext->add($id, 'ja', '', new ext_playback('if-correct-press&digits/1&pleasepress'));
@@ -321,7 +331,24 @@ class Blacklist implements BMO {
 		$ext->add($id, $c, '', new ext_wait(1));
 		$ext->add($id, $c, '', new ext_hangup());
 
-		//Last
+        $c = '2';
+        $ext->add($id, $c, '', new ext_set('NumLoops', '$[${NumLoops} + 1]'));
+        $ext->add($id, $c, '', new ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-remove,s,start'));
+        $ext->add($id, $c, '', new ext_playback('goodbye'));
+        $ext->add($id, $c, '', new ext_hangup());
+
+        $ext->add($id, 't', '', new ext_goto('app-blacklist-remove-invalid,s,1'));
+        $ext->add($id, 'i', '', new ext_goto('app-blacklist-remove-invalid,s,1'));
+
+        $id = 'app-blacklist-remove-invalid';
+        $c = 's';
+        $ext->add($id, $c, '', new ext_set('NumLoops', '$[${NumLoops} + 1]'));
+        $ext->add($id, $c, '', new ext_playback('pm-invalid-option'));
+        $ext->add($id, $c, '', new ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-remove,s,start'));
+        $ext->add($id, $c, '', new ext_playback('goodbye'));
+        $ext->add($id, $c, '', new ext_hangup());
+
+        //Last
 		if(!empty($lastfc)){
 			$ext->add('app-blacklist', $lastfc, '', new ext_goto('1', 's', 'app-blacklist-last'));
 		}

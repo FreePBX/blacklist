@@ -67,13 +67,15 @@ var processing = null;
 $(document).on('click', '[id^="del"]', function(){
 	var num = $(this).data('number');
 	var idx = $(this).data('idx');
-	$.post("ajax.php?module=blacklist&command=del",
-		{
+	if(confirm(_("Are you sure you want to delete this item?"))){
+		$.post("ajax.php?module=blacklist&command=del",
+			{
 			action : "delete",
 			number : num,
 		}).done(function(){
 			$('#blGrid').bootstrapTable('refresh',{silent: true});
 		});
+	}
 	});
 
 	$(document).on('click', '[id^="report"]', function(){
@@ -127,7 +129,6 @@ $("#blkDelete").on("click",function(e){
 	$('input[name="btSelectItem"]:checked').each(function(){
 			var idx = $(this).data('index');
 			numbers.push(cbrows[idx]);
-			$('#blGrid').bootstrapTable('removeByUniqueId', idx);
 	});
 	$.post("ajax.php?module=blacklist&command=bulkdelete", { numbers: JSON.stringify(numbers) }).done(function(){
 																																																		numbers = null;

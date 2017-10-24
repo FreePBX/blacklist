@@ -22,7 +22,7 @@
 
 	function linkFormatter(value,row,idx){
 		var html = '<a href="#" data-toggle="modal" data-target="#addNumber" data-number="'+row['number']+'" data-description="'+row['description']+'" ><i class="fa fa-pencil"></i></a>';
-		html += '&nbsp;<a href="#" id="del'+row['number']+'" data-idx="'+idx+'" data-number="'+row['number']+'" class="delAction"><i class="fa fa-trash"></i></a>';
+		html += '&nbsp;<a href="#" id="del'+row['number']+'" data-idx="'+idx+'" data-number="'+row['number']+'" ><i class="fa fa-trash"></i></a>';
 		html += '&nbsp;<a href="#" id="report'+row['number']+'" data-number="'+row['number']+'"><i class="fa fa-area-chart"></i></a>';
 		return html;
 	}

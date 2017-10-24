@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-14 17:39-0400\n"
+"POT-Creation-Date: 2017-10-24 16:01-0400\n"
 "PO-Revision-Date: 2015-04-25 00:52+0200\n"
 "Last-Translator: Paulo <paulop1975@gmail.com>\n"
 "Language-Team: Portuguese (Portugal) <http://weblate.freepbx.org/projects/"
@@ -54,6 +54,10 @@ msgstr ""
 #: blacklist.i18n.php:6
 msgid "Admin"
 msgstr "Admin"
+
+#: assets/js/blacklist.js:70
+msgid "Are you sure you want to delete this item?"
+msgstr ""
 
 #: Blacklist.class.php:20 Blacklist.class.php:537 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:24

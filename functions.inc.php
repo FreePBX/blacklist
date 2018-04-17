@@ -55,7 +55,9 @@ function blacklist_hookGet_config($engine) {
                     }
 
 					$exten = $exten.(empty($cidnum)?"":"/".$cidnum); //if a CID num is defined, add it
-					$ext->splice($context, $exten, 3, new ext_gosub('1', 's', 'app-blacklist-check'));
+					$ext->splice($context, $exten, 3, new ext_set('returnhere', '1'));
+					$ext->splice($context, $exten, 4, new ext_gosub('1', 's', 'app-blacklist-check'));
+					$ext->splice($context, $exten, 6, new ext_gotoif('${LEN(${BLDEST})}', '${BLDEST}'));
 				}
 			} // else no DID's defined. Not even a catchall.
 			break;

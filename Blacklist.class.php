@@ -1,14 +1,14 @@
 <?php
-
+namespace FreePBX\modules;
 // vim: set ai ts=4 sw=4 ft=php expandtab:
 //	License for all code of this FreePBX module can be found in the license file inside the module directory
 //	Copyright 2014 Schmooze Com Inc.
-//
+//  Copyright 2018 Sangoma Technologies, Inc
 
-class Blacklist implements BMO {
+class Blacklist implements \BMO {
 	public function __construct($freepbx = null){
 		if ($freepbx == null) {
-			throw new Exception('Not given a FreePBX Object');
+			throw new \RuntimeException('Not given a FreePBX Object');
 		}
 		$this->FreePBX = $freepbx;
 		$this->astman = $this->FreePBX->astman;
@@ -34,7 +34,6 @@ class Blacklist implements BMO {
 			return true;
 			break;
 		}
-
 		return false;
 	}
 
@@ -112,7 +111,7 @@ class Blacklist implements BMO {
 		$fcc->setProvideDest();
 		$fcc->update();
 		unset($fcc);
-		$fcc = new featurecode('blacklist', 'blacklist_last');
+		$fcc = new \featurecode('blacklist', 'blacklist_last');
 		$fcc->setDescription('Blacklist the last caller');
 		$fcc->setHelpText('Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.');
 		$fcc->setDefault('*32');
@@ -216,7 +215,7 @@ class Blacklist implements BMO {
 		$id = 'app-blacklist';
 		$c = 's';
 		$ext->addInclude('from-internal-additional', $id); // Add the include from from-internal
-		$ext->add($id, $c, '', new ext_macro('user-callerid'));
+		$ext->add($id, $c, '', new \ext_macro('user-callerid'));
 		$id = 'app-blacklist-check';
 		// LookupBlackList doesn't seem to match empty astdb entry for "blacklist/", so we
 		// need to check for the setting and if set, send to the blacklisted area
@@ -224,170 +223,170 @@ class Blacklist implements BMO {
 		// don't generate the dialplan if they are not using the function
 		//
 		if ($this->astman->database_get('blacklist', 'blocked') == '1') {
-			$ext->add($id, $c, '', new ext_gotoif('$["${CALLERID(number)}" = "Unknown"]', 'check-blocked'));
-			$ext->add($id, $c, '', new ext_gotoif('$["${CALLERID(number)}" = "Unavailable"]', 'check-blocked'));
-			$ext->add($id, $c, '', new ext_gotoif('$["foo${CALLERID(number)}" = "foo"]', 'check-blocked', 'check'));
-			$ext->add($id, $c, 'check-blocked', new ext_gotoif('$["${DB(blacklist/blocked)}" = "1"]', 'blacklisted'));
+			$ext->add($id, $c, '', new \ext_gotoif('$["${CALLERID(number)}" = "Unknown"]', 'check-blocked'));
+			$ext->add($id, $c, '', new \ext_gotoif('$["${CALLERID(number)}" = "Unavailable"]', 'check-blocked'));
+			$ext->add($id, $c, '', new \ext_gotoif('$["foo${CALLERID(number)}" = "foo"]', 'check-blocked', 'check'));
+			$ext->add($id, $c, 'check-blocked', new \ext_gotoif('$["${DB(blacklist/blocked)}" = "1"]', 'blacklisted'));
 		}
 
-		$ext->add($id, $c, 'check', new ext_gotoif('$["${BLACKLIST()}"="1"]', 'blacklisted'));
-		$ext->add($id, $c, '', new ext_setvar('CALLED_BLACKLIST', '1'));
-		$ext->add($id, $c, '', new ext_return(''));
-		$ext->add($id, $c, 'blacklisted', new ext_answer(''));
-		$ext->add($id, $c, '', new ext_set('BLDEST', '${DB(blacklist/dest)}'));
-		$ext->add($id, $c, '', new ext_gotoif('${LEN(${BLDEST})}', '${BLDEST}', 'app-blackhole,zapateller,1'));
+		$ext->add($id, $c, 'check', new \ext_gotoif('$["${BLACKLIST()}"="1"]', 'blacklisted'));
+		$ext->add($id, $c, '', new \ext_setvar('CALLED_BLACKLIST', '1'));
+		$ext->add($id, $c, '', new \ext_return(''));
+		$ext->add($id, $c, 'blacklisted', new \ext_answer(''));
+		$ext->add($id, $c, '', new \ext_set('BLDEST', '${DB(blacklist/dest)}'));
+		$ext->add($id, $c, '', new \ext_gotoif('${LEN(${BLDEST})}', '${BLDEST}', 'app-blackhole,zapateller,1'));
 		/*
-		$ext->add($id, $c, '', new ext_wait(1));
-		$ext->add($id, $c, '', new ext_zapateller(''));
-		$ext->add($id, $c, '', new ext_playback('ss-noservice'));
-		$ext->add($id, $c, '', new ext_hangup(''));
+		$ext->add($id, $c, '', new \ext_wait(1));
+		$ext->add($id, $c, '', new \ext_zapateller(''));
+		$ext->add($id, $c, '', new \ext_playback('ss-noservice'));
+		$ext->add($id, $c, '', new \ext_hangup(''));
 		$modulename = 'blacklist';
 		*/
 		//Dialplan for add
 		if(!empty($addfc)){
-			$ext->add('app-blacklist', $addfc, '', new ext_goto('1', 's', 'app-blacklist-add'));
+			$ext->add('app-blacklist', $addfc, '', new \ext_goto('1', 's', 'app-blacklist-add'));
 		}
 		$id = 'app-blacklist-add';
 		$c = 's';
-		$ext->add($id, $c, '', new ext_answer());
-		$ext->add($id, $c, '', new ext_macro('user-callerid'));
-		$ext->add($id, $c, '', new ext_wait(1));
-		$ext->add($id, $c, '', new ext_set('NumLoops', 0));
-		$ext->add($id, $c, 'start', new ext_digittimeout(5));
-		$ext->add($id, $c, '', new ext_responsetimeout(10));
-		$ext->add($id, $c, '', new ext_read('blacknr', 'enter-num-blacklist&vm-then-pound'));
-		$ext->add($id, $c, '', new ext_saydigits('${blacknr}'));
+		$ext->add($id, $c, '', new \ext_answer());
+		$ext->add($id, $c, '', new \ext_macro('user-callerid'));
+		$ext->add($id, $c, '', new \ext_wait(1));
+		$ext->add($id, $c, '', new \ext_set('NumLoops', 0));
+		$ext->add($id, $c, 'start', new \ext_digittimeout(5));
+		$ext->add($id, $c, '', new \ext_responsetimeout(10));
+		$ext->add($id, $c, '', new \ext_read('blacknr', 'enter-num-blacklist&vm-then-pound'));
+		$ext->add($id, $c, '', new \ext_saydigits('${blacknr}'));
 		// i18n - Some languages need this is a different format. If we don't
 		// know about the language, assume english
-		$ext->add($id, $c, '', new ext_gosubif('$[${DIALPLAN_EXISTS('.$id.',${CHANNEL(language)})}]', $id.',${CHANNEL(language)},1', $id.',en,1'));
+		$ext->add($id, $c, '', new \ext_gosubif('$[${DIALPLAN_EXISTS('.$id.',${CHANNEL(language)})}]', $id.',${CHANNEL(language)},1', $id.',en,1'));
 		// en - default
-		$ext->add($id, 'en', '', new ext_digittimeout(1));
-		$ext->add($id, 'en', '', new ext_read('confirm','if-correct-press&digits/1&to-enter-a-diff-number&press&digits/2'));
-		$ext->add($id, 'en', '', new ext_return());
+		$ext->add($id, 'en', '', new \ext_digittimeout(1));
+		$ext->add($id, 'en', '', new \ext_read('confirm','if-correct-press&digits/1&to-enter-a-diff-number&press&digits/2'));
+		$ext->add($id, 'en', '', new \ext_return());
 		// ja
-		$ext->add($id, 'ja', '', new ext_digittimeout(1));
-		$ext->add($id, 'ja', '', new ext_read('if-correct-press&digits/1&pleasepress'));
-		$ext->add($id, 'ja', '', new ext_return());
+		$ext->add($id, 'ja', '', new \ext_digittimeout(1));
+		$ext->add($id, 'ja', '', new \ext_read('if-correct-press&digits/1&pleasepress'));
+		$ext->add($id, 'ja', '', new \ext_return());
 
-		$ext->add($id, $c, '', new ext_gotoif('$[ "${confirm}" = "1" ]','app-blacklist-add,1,1'));
-		$ext->add($id, $c, '', new ext_gotoif('$[ "${confirm}" = "2" ]','app-blacklist-add,2,1'));
-		$ext->add($id, $c, '', new ext_goto('app-blacklist-add-invalid,s,1'));
+		$ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "1" ]','app-blacklist-add,1,1'));
+		$ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "2" ]','app-blacklist-add,2,1'));
+		$ext->add($id, $c, '', new \ext_goto('app-blacklist-add-invalid,s,1'));
 
 		$c = '1';
-		$ext->add($id, $c, '', new ext_gotoif('$[ "${blacknr}" != ""]', '', 'app-blacklist-add-invalid,s,1'));
-		$ext->add($id, $c, '', new ext_set('DB(blacklist/${blacknr})', 1));
-		$ext->add($id, $c, '', new ext_playback('num-was-successfully&added'));
-		$ext->add($id, $c, '', new ext_wait(1));
-		$ext->add($id, $c, '', new ext_hangup());
+		$ext->add($id, $c, '', new \ext_gotoif('$[ "${blacknr}" != ""]', '', 'app-blacklist-add-invalid,s,1'));
+		$ext->add($id, $c, '', new \ext_set('DB(blacklist/${blacknr})', 1));
+		$ext->add($id, $c, '', new \ext_playback('num-was-successfully&added'));
+		$ext->add($id, $c, '', new \ext_wait(1));
+		$ext->add($id, $c, '', new \ext_hangup());
 
         $c = '2';
-        $ext->add($id, $c, '', new ext_set('NumLoops', '$[${NumLoops} + 1]'));
-        $ext->add($id, $c, '', new ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-add,s,start'));
-        $ext->add($id, $c, '', new ext_playback('sorry-youre-having-problems&goodbye'));
-        $ext->add($id, $c, '', new ext_hangup());
+        $ext->add($id, $c, '', new \ext_set('NumLoops', '$[${NumLoops} + 1]'));
+        $ext->add($id, $c, '', new \ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-add,s,start'));
+        $ext->add($id, $c, '', new \ext_playback('sorry-youre-having-problems&goodbye'));
+        $ext->add($id, $c, '', new \ext_hangup());
 
 
 		$id = 'app-blacklist-add-invalid';
 		$c = 's';
-		$ext->add($id, $c, '', new ext_set('NumLoops', '$[${NumLoops} + 1]'));
-		$ext->add($id, $c, '', new ext_playback('pm-invalid-option'));
-		$ext->add($id, $c, '', new ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-add,s,start'));
-		$ext->add($id, $c, '', new ext_playback('sorry-youre-having-problems&goodbye'));
-		$ext->add($id, $c, '', new ext_hangup());
+		$ext->add($id, $c, '', new \ext_set('NumLoops', '$[${NumLoops} + 1]'));
+		$ext->add($id, $c, '', new \ext_playback('pm-invalid-option'));
+		$ext->add($id, $c, '', new \ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-add,s,start'));
+		$ext->add($id, $c, '', new \ext_playback('sorry-youre-having-problems&goodbye'));
+		$ext->add($id, $c, '', new \ext_hangup());
 
 		//Del
 		if(!empty($delfc)){
-			$ext->add('app-blacklist', $delfc, '', new ext_goto('1', 's', 'app-blacklist-remove'));
+			$ext->add('app-blacklist', $delfc, '', new \ext_goto('1', 's', 'app-blacklist-remove'));
 		}
 		$id = 'app-blacklist-remove';
 		$c = 's';
-		$ext->add($id, $c, '', new ext_answer());
-		$ext->add($id, $c, '', new ext_macro('user-callerid'));
-		$ext->add($id, $c, '', new ext_set('NumLoops', 0));
-        $ext->add($id, $c, '', new ext_wait(1));
-		$ext->add($id, $c, 'start', new ext_digittimeout(5));
-		$ext->add($id, $c, '', new ext_responsetimeout(10));
-		$ext->add($id, $c, '', new ext_read('blacknr', 'entr-num-rmv-blklist&vm-then-pound'));
-		$ext->add($id, $c, '', new ext_saydigits('${blacknr}'));
+		$ext->add($id, $c, '', new \ext_answer());
+		$ext->add($id, $c, '', new \ext_macro('user-callerid'));
+		$ext->add($id, $c, '', new \ext_set('NumLoops', 0));
+        $ext->add($id, $c, '', new \ext_wait(1));
+		$ext->add($id, $c, 'start', new \ext_digittimeout(5));
+		$ext->add($id, $c, '', new \ext_responsetimeout(10));
+		$ext->add($id, $c, '', new \ext_read('blacknr', 'entr-num-rmv-blklist&vm-then-pound'));
+		$ext->add($id, $c, '', new \ext_saydigits('${blacknr}'));
 		// i18n - Some languages need this is a different format. If we don't
 		// know about the language, assume english
-		$ext->add($id, $c, '', new ext_gosubif('$[${DIALPLAN_EXISTS('.$id.',${CHANNEL(language)})}]', $id.',${CHANNEL(language)},1', $id.',en,1'));
+		$ext->add($id, $c, '', new \ext_gosubif('$[${DIALPLAN_EXISTS('.$id.',${CHANNEL(language)})}]', $id.',${CHANNEL(language)},1', $id.',en,1'));
 		// en - default
-		$ext->add($id, 'en', '', new ext_digittimeout(1));
-		$ext->add($id, 'en', '', new ext_read('confirm','if-correct-press&digits/1&to-enter-a-diff-number&press&digits/2'));
-		$ext->add($id, 'en', '', new ext_return());
+		$ext->add($id, 'en', '', new \ext_digittimeout(1));
+		$ext->add($id, 'en', '', new \ext_read('confirm','if-correct-press&digits/1&to-enter-a-diff-number&press&digits/2'));
+		$ext->add($id, 'en', '', new \ext_return());
 		// ja
-		$ext->add($id, 'ja', '', new ext_digittimeout(1));
-		$ext->add($id, 'ja', '', new ext_read('confirm','if-correct-press&digits/1&pleasepress'));
-		$ext->add($id, 'ja', '', new ext_return());
+		$ext->add($id, 'ja', '', new \ext_digittimeout(1));
+		$ext->add($id, 'ja', '', new \ext_read('confirm','if-correct-press&digits/1&pleasepress'));
+		$ext->add($id, 'ja', '', new \ext_return());
 
-		$ext->add($id, $c, '', new ext_gotoif('$[ "${confirm}" = "1" ]','app-blacklist-remove,1,1'));
-	        $ext->add($id, $c, '', new ext_gotoif('$[ "${confirm}" = "2" ]','app-blacklist-remove,2,1'));
-	        $ext->add($id, $c, '', new ext_goto('app-blacklist-add-invalid,s,1'));
+		$ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "1" ]','app-blacklist-remove,1,1'));
+	        $ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "2" ]','app-blacklist-remove,2,1'));
+	        $ext->add($id, $c, '', new \ext_goto('app-blacklist-add-invalid,s,1'));
 
 		$c = '1';
-		$ext->add($id, $c, '', new ext_dbdel('blacklist/${blacknr}'));
-		$ext->add($id, $c, '', new ext_playback('num-was-successfully&removed'));
-		$ext->add($id, $c, '', new ext_wait(1));
-		$ext->add($id, $c, '', new ext_hangup());
+		$ext->add($id, $c, '', new \ext_dbdel('blacklist/${blacknr}'));
+		$ext->add($id, $c, '', new \ext_playback('num-was-successfully&removed'));
+		$ext->add($id, $c, '', new \ext_wait(1));
+		$ext->add($id, $c, '', new \ext_hangup());
 
         $c = '2';
-        $ext->add($id, $c, '', new ext_set('NumLoops', '$[${NumLoops} + 1]'));
-        $ext->add($id, $c, '', new ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-remove,s,start'));
-        $ext->add($id, $c, '', new ext_playback('goodbye'));
-        $ext->add($id, $c, '', new ext_hangup());
+        $ext->add($id, $c, '', new \ext_set('NumLoops', '$[${NumLoops} + 1]'));
+        $ext->add($id, $c, '', new \ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-remove,s,start'));
+        $ext->add($id, $c, '', new \ext_playback('goodbye'));
+        $ext->add($id, $c, '', new \ext_hangup());
 
 
         $id = 'app-blacklist-remove-invalid';
         $c = 's';
-        $ext->add($id, $c, '', new ext_set('NumLoops', '$[${NumLoops} + 1]'));
-        $ext->add($id, $c, '', new ext_playback('pm-invalid-option'));
-        $ext->add($id, $c, '', new ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-remove,s,start'));
-        $ext->add($id, $c, '', new ext_playback('sorry-youre-having-problems&goodbye'));
-        $ext->add($id, $c, '', new ext_hangup());
+        $ext->add($id, $c, '', new \ext_set('NumLoops', '$[${NumLoops} + 1]'));
+        $ext->add($id, $c, '', new \ext_playback('pm-invalid-option'));
+        $ext->add($id, $c, '', new \ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-remove,s,start'));
+        $ext->add($id, $c, '', new \ext_playback('sorry-youre-having-problems&goodbye'));
+        $ext->add($id, $c, '', new \ext_hangup());
 
         //Last
 		if(!empty($lastfc)){
-			$ext->add('app-blacklist', $lastfc, '', new ext_goto('1', 's', 'app-blacklist-last'));
+			$ext->add('app-blacklist', $lastfc, '', new \ext_goto('1', 's', 'app-blacklist-last'));
 		}
 		$id = 'app-blacklist-last';
 		$c = 's';
-		$ext->add($id, $c, '', new ext_answer());
-		$ext->add($id, $c, '', new ext_macro('user-callerid'));
-		$ext->add($id, $c, '', new ext_wait(1));
-		$ext->add($id, $c, '', new ext_setvar('lastcaller', '${DB(CALLTRACE/${AMPUSER})}'));
-		$ext->add($id, $c, '', new ext_gotoif('$[ $[ "${lastcaller}" = "" ] | $[ "${lastcaller}" = "unknown" ] ]', 'noinfo'));
-		$ext->add($id, $c, '', new ext_playback('privacy-to-blacklist-last-caller&telephone-number'));
-		$ext->add($id, $c, '', new ext_saydigits('${lastcaller}'));
-		$ext->add($id, $c, '', new ext_setvar('TIMEOUT(digit)', '1'));
-		$ext->add($id, $c, '', new ext_setvar('TIMEOUT(response)', '7'));
+		$ext->add($id, $c, '', new \ext_answer());
+		$ext->add($id, $c, '', new \ext_macro('user-callerid'));
+		$ext->add($id, $c, '', new \ext_wait(1));
+		$ext->add($id, $c, '', new \ext_setvar('lastcaller', '${DB(CALLTRACE/${AMPUSER})}'));
+		$ext->add($id, $c, '', new \ext_gotoif('$[ $[ "${lastcaller}" = "" ] | $[ "${lastcaller}" = "unknown" ] ]', 'noinfo'));
+		$ext->add($id, $c, '', new \ext_playback('privacy-to-blacklist-last-caller&telephone-number'));
+		$ext->add($id, $c, '', new \ext_saydigits('${lastcaller}'));
+		$ext->add($id, $c, '', new \ext_setvar('TIMEOUT(digit)', '1'));
+		$ext->add($id, $c, '', new \ext_setvar('TIMEOUT(response)', '7'));
 		// i18n - Some languages need this is a different format. If we don't
 		// know about the language, assume english
-		$ext->add($id, $c, '', new ext_gosubif('$[${DIALPLAN_EXISTS('.$id.',${CHANNEL(language)})}]', $id.',${CHANNEL(language)},1', $id.',en,1'));
+		$ext->add($id, $c, '', new \ext_gosubif('$[${DIALPLAN_EXISTS('.$id.',${CHANNEL(language)})}]', $id.',${CHANNEL(language)},1', $id.',en,1'));
 		// en - default
-		$ext->add($id, 'en', '', new ext_read('confirm','if-correct-press&digits/1'));
-		$ext->add($id, 'en', '', new ext_return());
+		$ext->add($id, 'en', '', new \ext_read('confirm','if-correct-press&digits/1'));
+		$ext->add($id, 'en', '', new \ext_return());
 		// ja
-		$ext->add($id, 'ja', '', new ext_read('confirm','if-correct-press&digits/1&pleasepress'));
-		$ext->add($id, 'ja', '', new ext_return());
+		$ext->add($id, 'ja', '', new \ext_read('confirm','if-correct-press&digits/1&pleasepress'));
+		$ext->add($id, 'ja', '', new \ext_return());
 
-		$ext->add($id, $c, '', new ext_gotoif('$[ "${confirm}" = "1" ]','app-blacklist-last,1,1'));
-		$ext->add($id, $c, '', new ext_goto('end'));
-		$ext->add($id, $c, 'noinfo', new ext_playback('unidentified-no-callback'));
-		$ext->add($id, $c, '', new ext_hangup());
-		$ext->add($id, $c, '', new ext_noop('Waiting for input'));
-		$ext->add($id, $c, 'end', new ext_playback('sorry-youre-having-problems&goodbye'));
-		$ext->add($id, $c, '', new ext_hangup());
+		$ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "1" ]','app-blacklist-last,1,1'));
+		$ext->add($id, $c, '', new \ext_goto('end'));
+		$ext->add($id, $c, 'noinfo', new \ext_playback('unidentified-no-callback'));
+		$ext->add($id, $c, '', new \ext_hangup());
+		$ext->add($id, $c, '', new \ext_noop('Waiting for input'));
+		$ext->add($id, $c, 'end', new \ext_playback('sorry-youre-having-problems&goodbye'));
+		$ext->add($id, $c, '', new \ext_hangup());
 
 		$c = '1';
-		$ext->add($id, $c, '', new ext_set('DB(blacklist/${lastcaller})', 1));
-		$ext->add($id, $c, '', new ext_playback('num-was-successfully'));
-		$ext->add($id, $c, '', new ext_playback('added'));
-		$ext->add($id, $c, '', new ext_wait(1));
-		$ext->add($id, $c, '', new ext_hangup());
+		$ext->add($id, $c, '', new \ext_set('DB(blacklist/${lastcaller})', 1));
+		$ext->add($id, $c, '', new \ext_playback('num-was-successfully'));
+		$ext->add($id, $c, '', new \ext_playback('added'));
+		$ext->add($id, $c, '', new \ext_wait(1));
+		$ext->add($id, $c, '', new \ext_hangup());
 
-		$ext->add($id, 'i', '', new ext_playback('sorry-youre-having-problems&goodbye'));
-		$ext->add($id, 'i', '', new ext_hangup());
+		$ext->add($id, 'i', '', new \ext_playback('sorry-youre-having-problems&goodbye'));
+		$ext->add($id, 'i', '', new \ext_hangup());
 	}
 
 	public function getActionBar($request) {
@@ -444,7 +443,7 @@ class Blacklist implements BMO {
 			}
 			return $blacklisted;
 		} else {
-			throw new Exception('Cannot connect to Asterisk Manager, is Asterisk running?');
+			throw new \RuntimeException('Cannot connect to Asterisk Manager, is Asterisk running?');
 		}
 	}
 
@@ -458,7 +457,7 @@ class Blacklist implements BMO {
 			$post['description'] == '' ? $post['description'] = '1' : $post['description'];
 			$this->astman->database_put('blacklist', $post['number'], $post['description']);
 		} else {
-			throw new Exception('Cannot connect to Asterisk Manager, is Asterisk running?');
+			throw new \RuntimeException('Cannot connect to Asterisk Manager, is Asterisk running?');
 		}
 	}
 
@@ -471,7 +470,7 @@ class Blacklist implements BMO {
 		if ($this->astman->connected()) {
 			return($this->astman->database_del('blacklist', $number));
 		} else {
-			throw new Exception('Cannot connect to Asterisk Manager, is Asterisk running?');
+			throw new \RuntimeException('Cannot connect to Asterisk Manager, is Asterisk running?');
 		}
 	}
 
@@ -489,7 +488,7 @@ class Blacklist implements BMO {
 				return true;
 			}
 		} else {
-			throw new Exception('Cannot connect to Asterisk Manager, is Asterisk running?');
+			throw new \RuntimeException('Cannot connect to Asterisk Manager, is Asterisk running?');
 		}
 	}
 
@@ -501,7 +500,7 @@ class Blacklist implements BMO {
 		if ($this->astman->connected()) {
 			return $this->astman->database_get('blacklist', 'dest');
 		} else {
-			throw new Exception('Cannot connect to Asterisk Manager, is Asterisk running?');
+			throw new \RuntimeException('Cannot connect to Asterisk Manager, is Asterisk running?');
 		}
 	}
 
@@ -518,7 +517,7 @@ class Blacklist implements BMO {
 				$this->astman->database_put('blacklist', 'blocked', '1');
 			}
 		} else {
-			throw new Exception('Cannot connect to Asterisk Manager, is Asterisk running?');
+			throw new \RuntimeException('Cannot connect to Asterisk Manager, is Asterisk running?');
 		}
 	}
 
@@ -530,7 +529,7 @@ class Blacklist implements BMO {
 		if ($this->astman->connected()) {
 			return $this->astman->database_get('blacklist', 'blocked');
 		} else {
-			throw new Exception('Cannot connect to Asterisk Manager, is Asterisk running?');
+			throw new \RuntimeException('Cannot connect to Asterisk Manager, is Asterisk running?');
 		}
 	}
 	//BulkHandler hooks

@@ -4,27 +4,10 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 //  Copyright (C) 2006 Magnus Ullberg (magnus@ullberg.us)
 //  Portions Copyright (C) 2010 Mikael Carlsson (mickecamino@gmail.com)
 //	Copyright 2013 Schmooze Com Inc.
+//  Copyright 2018 Sangoma Technologies, Inc
 
+include __DIR__.'/functions.migrated.php';
 
-function blacklist_get_config($engine) {
-	//Handled in the class
-	return true;
-}
-
-function blacklist_blacklist_add($fc) {
-	//Handled in the class
-	return true;
-}
-
-function blacklist_blacklist_remove($fc) {
-	//Handled in the class
-	return true;
-}
-
-function blacklist_blacklist_last($fc) {
-	//Handled in the class
-	return true;
-}
 //not sure how to make this BMO
 function blacklist_hookGet_config($engine) {
 	global $ext;
@@ -60,22 +43,5 @@ function blacklist_hookGet_config($engine) {
 			} // else no DID's defined. Not even a catchall.
 			break;
 	}
-}
-
-function blacklist_list() {
-	return FreePBX::Blacklist()->getBlacklist();
-}
-
-function blacklist_del($number){
-	return FreePBX::Blacklist()->numberDel($number);
-}
-
-function blacklist_add($post){
-	return FreePBX::Blacklist()->numberAdd($post);
-}
-
-// ensures post vars is valid
-function blacklist_chk($post){
-	return FreePBX::Blacklist()->checkPost($post);
 }
 

@@ -6,7 +6,7 @@ class Backup Extends Base\BackupBase{
     $files = [];
     $dirs = [];
     $configs = [];
-    $configs = FreePBX::Blacklist()->getBlacklist();
+    $configs = $this->FreePBX->Blacklist->getBlacklist();
     $this->addConfigs($configs);
   }
 }

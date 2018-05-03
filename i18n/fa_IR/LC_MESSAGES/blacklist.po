@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-18 19:20-0500\n"
+"POT-Creation-Date: 2018-05-03 16:46-0400\n"
 "PO-Revision-Date: 2016-06-22 09:27+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -63,7 +63,7 @@ msgstr "مدیر"
 msgid "Are you sure you want to delete this item?"
 msgstr ""
 
-#: Blacklist.class.php:20 Blacklist.class.php:540 blacklist.i18n.php:4
+#: Blacklist.class.php:20 Blacklist.class.php:542 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:24
 msgid "Blacklist"
 msgstr "لیست سیاه"
@@ -120,11 +120,11 @@ msgstr "فایل بعد از بارگذاری یافت نشد"
 msgid "Delete Selected"
 msgstr "حذف مورد انتخاب شده"
 
-#: Blacklist.class.php:550 views/addnumber.php:40 views/blgrid.php:10
+#: Blacklist.class.php:552 views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
 msgstr "توضیحات"
 
-#: Blacklist.class.php:550
+#: Blacklist.class.php:552
 msgid "Description of number blacklisted"
 msgstr "مقصد تماس های لیست سیاه"
 
@@ -140,7 +140,7 @@ msgstr "ورودی بروز رسانی شده"
 msgid "Import/Export"
 msgstr "ورود/خروج"
 
-#: Blacklist.class.php:541
+#: Blacklist.class.php:543
 msgid "Import/Export Caller Blacklist"
 msgstr "ورود/خروج تماس گیرنده لیست سیاه"
 
@@ -168,11 +168,11 @@ msgstr "شماره/تلفن تماس گیرنده نمیتواند خالی با
 msgid "Numbers Deleted"
 msgstr "شماره ها حذف شدند"
 
-#: Blacklist.class.php:549
+#: Blacklist.class.php:551
 msgid "Phone Number"
 msgstr "شماره تلفن"
 
-#: Blacklist.class.php:567
+#: Blacklist.class.php:569
 msgid "Phone Number Required"
 msgstr "شماره تلفن ضروری است"
 
@@ -184,7 +184,7 @@ msgstr "خروج شماره از لیست سیاه"
 msgid "Removes a number from the Blacklist Module"
 msgstr "حذف شماره از لیست سیاه"
 
-#: Blacklist.class.php:402
+#: Blacklist.class.php:404
 msgid "Reset"
 msgstr "بازنشانی"
 
@@ -200,7 +200,7 @@ msgstr "ذخیره تغییرات"
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: Blacklist.class.php:408
+#: Blacklist.class.php:410
 msgid "Submit"
 msgstr "ثبت"
 
@@ -212,7 +212,7 @@ msgstr "تمام موارد با موفقیت وارد شدند"
 msgid "The file must be in CSV format!"
 msgstr "فایل باید با فرمت CSV باشد!"
 
-#: Blacklist.class.php:549
+#: Blacklist.class.php:551
 msgid "The number as it appears in the callerid display"
 msgstr "شماره ای که به عنوان شناسه تماس گیرنده نمایش داده می شود"
 

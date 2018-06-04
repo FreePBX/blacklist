@@ -452,13 +452,13 @@ class Blacklist implements \BMO {
 	 * @param  array $post Array of blacklist params
 	 */
 	public function numberAdd($post){
-		extract($post);
 		if ($this->astman->connected()) {
 			$post['description'] == '' ? $post['description'] = '1' : $post['description'];
 			$this->astman->database_put('blacklist', $post['number'], $post['description']);
 		} else {
 			throw new \RuntimeException('Cannot connect to Asterisk Manager, is Asterisk running?');
 		}
+		return $post['number'];
 	}
 
 	/**

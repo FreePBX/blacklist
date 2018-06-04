@@ -5,40 +5,127 @@ namespace FreePBX\modules\Blacklist\Api\Gql;
 use GraphQLRelay\Relay;
 use GraphQL\Type\Definition\Type;
 use FreePBX\modules\Api\Gql\Base;
+use GraphQL\Type\Definition\ObjectType;
 
 class Blacklist extends Base {
 	protected $module = 'blacklist';
 
-	public function constructQuery() {
-		if($this->checkAllReadScope()) {
-			return [
-				'allBlacklists' => [
-					'type' => $this->typeContainer->get('blacklist')->getConnectionReference(),
-					'description' => 'Used to manage a system wide list of blocked callers',
-					'args' => Relay::connectionArgs(),
-					'resolve' => function($root, $args) {
-						return Relay::connectionFromArray($this->freepbx->Blacklist->getBlacklist(), $args);
-					},
-				],
-				'blacklist' => [
-					'type' => $this->typeContainer->get('blacklist')->getReference(),
-					'args' => [
-						'id' => [
-							'type' => Type::id(),
-							'description' => 'The ID',
-						]
-					],
-					'resolve' => function($root, $args) {
-						$list = $this->freepbx->Blacklist->getBlacklist();
-						$item = array_search(Relay::fromGlobalId($args['id'])['id'], array_column($list, 'number'));
-						return isset($list[$item]) ? $list[$item] : null;
-					}
-				]
-			];
+	public function mutationCallback() {
+		if($this->checkAllWriteScope()) {
+			return function() {
+				return [
+					'addBlacklist' => Relay::mutationWithClientMutationId([
+						'name' => 'addBlacklist',
+						'description' => 'Add a new number to the blacklist',
+						'inputFields' => [
+							'number' => [
+								'type' => Type::nonNull(Type::string())
+							],
+							'description' => [
+								'type' => Type::string()
+							]
+						],
+						'outputFields' => [
+							'blacklist' => [
+								'type' => $this->typeContainer->get('blacklist')->getObject(),
+								'resolve' => function ($payload) {
+									return $payload;
+								}
+							]
+						],
+						'mutateAndGetPayload' => function ($input) {
+							$this->freepbx->Blacklist->numberAdd($input);
+							$list = $this->freepbx->Blacklist->getBlacklist();
+							$item = array_search($input['number'], array_column($list, 'number'));
+							return isset($list[$item]) ? $list[$item] : null;
+						}
+					]),
+					'removeBlacklist' => Relay::mutationWithClientMutationId([
+						'name' => 'removeBlacklist',
+						'description' => 'Remove a number from the blacklist',
+						'inputFields' => [
+							'number' => [
+								'type' => Type::nonNull(Type::string())
+							]
+						],
+						'outputFields' => [
+							'deletedId' => [
+								'type' => Type::nonNull(Type::id()),
+								'resolve' => function ($payload) {
+									return $payload['id'];
+								}
+							]
+						],
+						'mutateAndGetPayload' => function ($input) {
+							$this->freepbx->Blacklist->numberDel($input['number']);
+							return ['id' => $input['number']];
+						}
+					])
+				];
+			};
 		}
 	}
 
-	public function initTypes() {
+	public function queryCallback() {
+		if($this->checkAllReadScope()) {
+			return function() {
+				return [
+					'allBlacklists' => [
+						'type' => $this->typeContainer->get('blacklist')->getConnectionType(),
+						'description' => 'Used to manage a system wide list of blocked callers',
+						'args' => Relay::connectionArgs(),
+						'resolve' => function($root, $args) {
+							return Relay::connectionFromArray($this->freepbx->Blacklist->getBlacklist(), $args);
+						},
+					],
+					'blacklist' => [
+						'type' => $this->typeContainer->get('blacklist')->getObject(),
+						'args' => [
+							'id' => [
+								'type' => Type::id(),
+								'description' => 'The ID',
+							]
+						],
+						'resolve' => function($root, $args) {
+							$list = $this->freepbx->Blacklist->getBlacklist();
+							$item = array_search(Relay::fromGlobalId($args['id'])['id'], array_column($list, 'number'));
+							return isset($list[$item]) ? $list[$item] : null;
+						}
+					],
+					'blacklistSettings' => [
+						'type' => $this->typeContainer->get('blacklistsettings')->getObject(),
+						'description' => 'Blacklist Settings',
+						'resolve' => function($root, $args) {
+							return []; //trick the resolver into not thinking this is null
+						}
+					]
+				];
+			};
+		}
+	}
+
+	public function initializeTypes() {
+		$user = $this->typeContainer->create('blacklistsettings','object');
+		$user->setDescription('Blacklist Settings');
+		$user->addFieldCallback(function() {
+			return [
+				'blockUnknown' => [
+					'type' => Type::boolean(),
+					'description' => 'Catch Unknown/Blocked Caller ID',
+					'resolve' => function ($root, $args) {
+						return $this->freepbx->Blacklist->blockunknownGet() == 1 ? true : false;
+					}
+				],
+				'destinationConnection' => [
+					'type' => $this->typeContainer->get('destination')->getObject(),
+					'description' => 'Destination for blacklisted calls',
+					'resolve' => function($root, $args) {
+						return $this->typeContainer->get('destination')->resolveValue($this->freepbx->Blacklist->destinationGet());
+					}
+				]
+			];
+		});
+
 		$user = $this->typeContainer->create('blacklist');
 		$user->setDescription('Used to manage a system wide list of blocked callers');
 

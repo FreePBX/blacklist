@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-03 16:46-0400\n"
+"POT-Creation-Date: 2018-08-20 14:34-0400\n"
 "PO-Revision-Date: 2015-03-19 20:22+0200\n"
 "Last-Translator: Jan Peter <jpveldhuizen@gmail.com>\n"
 "Language-Team: Dutch <http://weblate.freepbx.org/projects/freepbx/blacklist/"
@@ -59,7 +59,7 @@ msgstr "Beheer"
 msgid "Are you sure you want to delete this item?"
 msgstr ""
 
-#: Blacklist.class.php:20 Blacklist.class.php:542 blacklist.i18n.php:4
+#: Blacklist.class.php:20 Blacklist.class.php:541 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:24
 msgid "Blacklist"
 msgstr "Zwarte lijst"
@@ -108,7 +108,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: Blacklist.class.php:171
+#: Blacklist.class.php:170
 msgid "Could not find file after upload"
 msgstr "Kan het bestand niet vinden na uploaden"
 
@@ -116,11 +116,11 @@ msgstr "Kan het bestand niet vinden na uploaden"
 msgid "Delete Selected"
 msgstr ""
 
-#: Blacklist.class.php:552 views/addnumber.php:40 views/blgrid.php:10
+#: Blacklist.class.php:551 views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
 msgstr "Omschrijving"
 
-#: Blacklist.class.php:552
+#: Blacklist.class.php:551
 msgid "Description of number blacklisted"
 msgstr ""
 
@@ -136,7 +136,7 @@ msgstr ""
 msgid "Import/Export"
 msgstr ""
 
-#: Blacklist.class.php:543
+#: Blacklist.class.php:542
 msgid "Import/Export Caller Blacklist"
 msgstr ""
 
@@ -144,7 +144,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Blacklist.class.php:190
+#: Blacklist.class.php:189
 msgid "No Entries to export"
 msgstr "Geen regels om te exporteren"
 
@@ -160,15 +160,15 @@ msgstr "Nummer/Caller ID"
 msgid "Number/CallerID cannot be blank"
 msgstr ""
 
-#: Blacklist.class.php:63
+#: Blacklist.class.php:62
 msgid "Numbers Deleted"
 msgstr ""
 
-#: Blacklist.class.php:551
+#: Blacklist.class.php:550
 msgid "Phone Number"
 msgstr ""
 
-#: Blacklist.class.php:569
+#: Blacklist.class.php:568
 msgid "Phone Number Required"
 msgstr ""
 
@@ -180,7 +180,7 @@ msgstr "Verwijder een nummer van de zwarte lijst"
 msgid "Removes a number from the Blacklist Module"
 msgstr ""
 
-#: Blacklist.class.php:404
+#: Blacklist.class.php:403
 msgid "Reset"
 msgstr ""
 
@@ -196,23 +196,23 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: Blacklist.class.php:410
+#: Blacklist.class.php:409
 msgid "Submit"
 msgstr ""
 
-#: Blacklist.class.php:169
+#: Blacklist.class.php:168
 msgid "Sucessfully imported all entries"
 msgstr "Importeren van regels geslaagd"
 
-#: Blacklist.class.php:174
+#: Blacklist.class.php:173
 msgid "The file must be in CSV format!"
 msgstr "Het bestand moet een komma-gescheiden bestand (CSV) zijn!"
 
-#: Blacklist.class.php:551
+#: Blacklist.class.php:550
 msgid "The number as it appears in the callerid display"
 msgstr ""
 
-#: Blacklist.class.php:149
+#: Blacklist.class.php:148
 msgid "There was an error uploading the file"
 msgstr "Bij het uploaden deed zich een fout voor"
 

@@ -17,10 +17,10 @@
 	</changelog>
 	<hooks>
 		<bulkhandler class="Bulkhandler" namespace="FreePBX\modules">
-			<method callingMethod="getHeaders" class="Blacklist">bulkhandlerGetHeaders</method>
-			<method callingMethod="getTypes" class="Blacklist">bulkhandlerGetTypes</method>
-			<method callingMethod="import" class="Blacklist">bulkhandlerImport</method>
-			<method callingMethod="export" class="Blacklist">bulkhandlerExport</method>
+			<method callingMethod="getHeaders" class="Blacklist" namespace="FreePBX\modules">bulkhandlerGetHeaders</method>
+			<method callingMethod="getTypes" class="Blacklist" namespace="FreePBX\modules">bulkhandlerGetTypes</method>
+			<method callingMethod="import" class="Blacklist" namespace="FreePBX\modules">bulkhandlerImport</method>
+			<method callingMethod="export" class="Blacklist" namespace="FreePBX\modules">bulkhandlerExport</method>
 		</bulkhandler>
 	</hooks>
 	<depends>

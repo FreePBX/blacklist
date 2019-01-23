@@ -229,14 +229,15 @@ class Blacklist implements \BMO {
 			$ext->add($id, $c, 'check-blocked', new \ext_gotoif('$["${DB(blacklist/blocked)}" = "1"]', 'blacklisted'));
 		}
 
-		$ext->add($id, $c, 'check', new \ext_gotoif('$["${BLACKLIST()}"="1"]', 'blacklisted'));
-		$ext->add($id, $c, '', new \ext_setvar('CALLED_BLACKLIST', '1'));
-		$ext->add($id, $c, '', new \ext_return(''));
-		$ext->add($id, $c, 'blacklisted', new \ext_answer(''));
-		$ext->add($id, $c, '', new \ext_set('BLDEST', '${DB(blacklist/dest)}'));
-		$ext->add($id, $c, '', new \ext_gotoif('$["${returnhere}"="1"]', 'returnto'));
-		$ext->add($id, $c, '', new \ext_gotoif('${LEN(${BLDEST})}', '${BLDEST}', 'app-blackhole,zapateller,1'));
-		$ext->add($id, $c, 'returnto', new \ext_return());
+		$ext->add($id, $c, 'check', new ext_gotoif('$["${BLACKLIST()}"="1"]', 'blacklisted'));
+		$ext->add($id, $c, '', new ext_setvar('CALLED_BLACKLIST', '1'));
+		$ext->add($id, $c, '', new ext_return(''));
+		$ext->add($id, $c, 'blacklisted', new ext_answer(''));
+		$ext->add($id, $c, '', new ext_set('BLDEST', '${DB(blacklist/dest)}'));
+		$ext->add($id, $c, '', new ext_execif('$["${BLDEST}"=""]', 'Set', 'BLDEST=app-blackhole,hangup,1'));
+		$ext->add($id, $c, '', new ext_gotoif('$["${returnhere}"="1"]', 'returnto'));
+		$ext->add($id, $c, '', new ext_gotoif('${LEN(${BLDEST})}', '${BLDEST}', 'app-blackhole,zapateller,1'));
+		$ext->add($id, $c, 'returnto', new ext_return());
 		/*
 		$ext->add($id, $c, '', new \ext_wait(1));
 		$ext->add($id, $c, '', new \ext_zapateller(''));

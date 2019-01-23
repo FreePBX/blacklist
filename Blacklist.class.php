@@ -235,6 +235,7 @@ class Blacklist implements BMO {
 		$ext->add($id, $c, '', new ext_return(''));
 		$ext->add($id, $c, 'blacklisted', new ext_answer(''));
 		$ext->add($id, $c, '', new ext_set('BLDEST', '${DB(blacklist/dest)}'));
+		$ext->add($id, $c, '', new ext_execif('$["${BLDEST}"=""]', 'Set', 'BLDEST=app-blackhole,hangup,1'));
 		$ext->add($id, $c, '', new ext_gotoif('$["${returnhere}"="1"]', 'returnto'));
 		$ext->add($id, $c, '', new ext_gotoif('${LEN(${BLDEST})}', '${BLDEST}', 'app-blackhole,zapateller,1'));
 		$ext->add($id, $c, 'returnto', new ext_return());

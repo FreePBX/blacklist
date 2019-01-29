@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-03 16:46-0400\n"
+"POT-Creation-Date: 2019-01-29 15:46+0530\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -54,7 +54,7 @@ msgstr "Алминистратор"
 msgid "Are you sure you want to delete this item?"
 msgstr ""
 
-#: Blacklist.class.php:20 Blacklist.class.php:542 blacklist.i18n.php:4
+#: Blacklist.class.php:20 Blacklist.class.php:543 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:24
 msgid "Blacklist"
 msgstr "Черный список"
@@ -111,11 +111,11 @@ msgstr "После загрузки файл не найден"
 msgid "Delete Selected"
 msgstr ""
 
-#: Blacklist.class.php:552 views/addnumber.php:40 views/blgrid.php:10
+#: Blacklist.class.php:553 views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
 msgstr "Описание"
 
-#: Blacklist.class.php:552
+#: Blacklist.class.php:553
 msgid "Description of number blacklisted"
 msgstr ""
 
@@ -131,7 +131,7 @@ msgstr ""
 msgid "Import/Export"
 msgstr ""
 
-#: Blacklist.class.php:543
+#: Blacklist.class.php:544
 msgid "Import/Export Caller Blacklist"
 msgstr ""
 
@@ -159,11 +159,11 @@ msgstr ""
 msgid "Numbers Deleted"
 msgstr ""
 
-#: Blacklist.class.php:551
+#: Blacklist.class.php:552
 msgid "Phone Number"
 msgstr ""
 
-#: Blacklist.class.php:569
+#: Blacklist.class.php:570
 msgid "Phone Number Required"
 msgstr ""
 
@@ -175,7 +175,7 @@ msgstr "Удалить номер из черного списка"
 msgid "Removes a number from the Blacklist Module"
 msgstr ""
 
-#: Blacklist.class.php:404
+#: Blacklist.class.php:405
 msgid "Reset"
 msgstr ""
 
@@ -191,7 +191,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: Blacklist.class.php:410
+#: Blacklist.class.php:411
 msgid "Submit"
 msgstr ""
 
@@ -203,7 +203,7 @@ msgstr "Все записи успешно импортированы"
 msgid "The file must be in CSV format!"
 msgstr "Файл должен быть в формате CSV!"
 
-#: Blacklist.class.php:551
+#: Blacklist.class.php:552
 msgid "The number as it appears in the callerid display"
 msgstr ""
 

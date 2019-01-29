@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-03 16:46-0400\n"
+"POT-Creation-Date: 2019-01-29 15:46+0530\n"
 "PO-Revision-Date: 2015-10-16 13:57+0200\n"
 "Last-Translator: james <zhulizhong@gmail.com>\n"
 "Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
@@ -63,7 +63,7 @@ msgstr ""
 msgid "Are you sure you want to delete this item?"
 msgstr ""
 
-#: Blacklist.class.php:20 Blacklist.class.php:542 blacklist.i18n.php:4
+#: Blacklist.class.php:20 Blacklist.class.php:543 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:24
 msgid "Blacklist"
 msgstr "黑名单"
@@ -120,11 +120,11 @@ msgstr "上传后找不到此文件"
 msgid "Delete Selected"
 msgstr "删除已选项"
 
-#: Blacklist.class.php:552 views/addnumber.php:40 views/blgrid.php:10
+#: Blacklist.class.php:553 views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
 msgstr "描述"
 
-#: Blacklist.class.php:552
+#: Blacklist.class.php:553
 msgid "Description of number blacklisted"
 msgstr ""
 
@@ -140,7 +140,7 @@ msgstr ""
 msgid "Import/Export"
 msgstr "导入/导出"
 
-#: Blacklist.class.php:543
+#: Blacklist.class.php:544
 msgid "Import/Export Caller Blacklist"
 msgstr ""
 
@@ -168,11 +168,11 @@ msgstr ""
 msgid "Numbers Deleted"
 msgstr ""
 
-#: Blacklist.class.php:551
+#: Blacklist.class.php:552
 msgid "Phone Number"
 msgstr ""
 
-#: Blacklist.class.php:569
+#: Blacklist.class.php:570
 msgid "Phone Number Required"
 msgstr ""
 
@@ -184,7 +184,7 @@ msgstr "从黑名单内移除一个号码"
 msgid "Removes a number from the Blacklist Module"
 msgstr "从黑名单中移除一个号码"
 
-#: Blacklist.class.php:404
+#: Blacklist.class.php:405
 msgid "Reset"
 msgstr "重新设置"
 
@@ -200,7 +200,7 @@ msgstr "保存修改"
 msgid "Settings"
 msgstr "设置"
 
-#: Blacklist.class.php:410
+#: Blacklist.class.php:411
 msgid "Submit"
 msgstr "提交"
 
@@ -212,7 +212,7 @@ msgstr "成功导入所有项"
 msgid "The file must be in CSV format!"
 msgstr "文件必须是CSV格式！"
 
-#: Blacklist.class.php:551
+#: Blacklist.class.php:552
 msgid "The number as it appears in the callerid display"
 msgstr ""
 

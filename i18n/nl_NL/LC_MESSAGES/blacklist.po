@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 14:34-0400\n"
+"POT-Creation-Date: 2019-01-29 15:49+0530\n"
 "PO-Revision-Date: 2015-03-19 20:22+0200\n"
 "Last-Translator: Jan Peter <jpveldhuizen@gmail.com>\n"
 "Language-Team: Dutch <http://weblate.freepbx.org/projects/freepbx/blacklist/"
@@ -59,7 +59,7 @@ msgstr "Beheer"
 msgid "Are you sure you want to delete this item?"
 msgstr ""
 
-#: Blacklist.class.php:20 Blacklist.class.php:541 blacklist.i18n.php:4
+#: Blacklist.class.php:20 Blacklist.class.php:542 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:24
 msgid "Blacklist"
 msgstr "Zwarte lijst"
@@ -116,11 +116,11 @@ msgstr "Kan het bestand niet vinden na uploaden"
 msgid "Delete Selected"
 msgstr ""
 
-#: Blacklist.class.php:551 views/addnumber.php:40 views/blgrid.php:10
+#: Blacklist.class.php:552 views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
 msgstr "Omschrijving"
 
-#: Blacklist.class.php:551
+#: Blacklist.class.php:552
 msgid "Description of number blacklisted"
 msgstr ""
 
@@ -136,7 +136,7 @@ msgstr ""
 msgid "Import/Export"
 msgstr ""
 
-#: Blacklist.class.php:542
+#: Blacklist.class.php:543
 msgid "Import/Export Caller Blacklist"
 msgstr ""
 
@@ -164,11 +164,11 @@ msgstr ""
 msgid "Numbers Deleted"
 msgstr ""
 
-#: Blacklist.class.php:550
+#: Blacklist.class.php:551
 msgid "Phone Number"
 msgstr ""
 
-#: Blacklist.class.php:568
+#: Blacklist.class.php:569
 msgid "Phone Number Required"
 msgstr ""
 
@@ -180,7 +180,7 @@ msgstr "Verwijder een nummer van de zwarte lijst"
 msgid "Removes a number from the Blacklist Module"
 msgstr ""
 
-#: Blacklist.class.php:403
+#: Blacklist.class.php:404
 msgid "Reset"
 msgstr ""
 
@@ -196,7 +196,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: Blacklist.class.php:409
+#: Blacklist.class.php:410
 msgid "Submit"
 msgstr ""
 
@@ -208,7 +208,7 @@ msgstr "Importeren van regels geslaagd"
 msgid "The file must be in CSV format!"
 msgstr "Het bestand moet een komma-gescheiden bestand (CSV) zijn!"
 
-#: Blacklist.class.php:550
+#: Blacklist.class.php:551
 msgid "The number as it appears in the callerid display"
 msgstr ""
 

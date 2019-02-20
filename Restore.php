@@ -12,6 +12,7 @@ class Restore Extends Base\RestoreBase{
 		}
 	}
 	public function processLegacy($pdo, $data, $tables, $unknownTables){
+		$astdb =  $data['astdb'];
 		if(!isset($astdb['blacklist'])){
 			return $this;
 		}

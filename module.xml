@@ -2,7 +2,7 @@
 	<rawname>blacklist</rawname>
 	<repo>standard</repo>
 	<name>Blacklist</name>
-	<version>15.0.2.5</version>
+	<version>15.0.2.6</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,6 +12,7 @@
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*15.0.2.6* fixing legacy restore 
 		*15.0.2.5* fixing legacy restore 
 		*15.0.2.4* FREEPBX-18905 Blacklist not working 
 		*15.0.2.3* FREEPBX-18905 Blacklist not working 

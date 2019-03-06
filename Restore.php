@@ -4,12 +4,13 @@ use FreePBX\modules\Backup as Base;
 class Restore Extends Base\RestoreBase{
 	public function runRestore($jobid){
 		$configs = $this->getConfigs();
-		foreach($configs as $item){
+		foreach($configs['data'] as $item){
 			if(empty($item['number'])){
 				continue;
 			}
 			$this->FreePBX->Blacklist->numberAdd($item);
 		}
+		$this->importFeatureCodes($configs['features']);
 	}
 	public function processLegacy($pdo, $data, $tables, $unknownTables){
 		$astdb =  $data['astdb'];
@@ -19,5 +20,6 @@ class Restore Extends Base\RestoreBase{
 		foreach($astdb['blacklist'] as $number => $desc){
 			$this->FreePBX->Blacklist->numberAdd(['number' => $number, 'description' => $desc]);
 		}
+		$this->restoreLegacyFeatureCodes($pdo);
 	}
 }

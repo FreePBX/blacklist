@@ -8,6 +8,7 @@ class Restore Extends Base\RestoreBase{
 			if(empty($item['number'])){
 				continue;
 			}
+			$this->deleteOldData();
 			$this->FreePBX->Blacklist->numberAdd($item);
 		}
 		$this->importFeatureCodes($configs['features']);
@@ -17,9 +18,16 @@ class Restore Extends Base\RestoreBase{
 		if(!isset($astdb['blacklist'])){
 			return $this;
 		}
+		$this->deleteOldData();
 		foreach($astdb['blacklist'] as $number => $desc){
 			$this->FreePBX->Blacklist->numberAdd(['number' => $number, 'description' => $desc]);
 		}
 		$this->restoreLegacyFeatureCodes($pdo);
+	}
+	public function deleteOldData(){
+		$this->astman = $this->FreePBX->astman;
+		if ($this->astman->connected()) {
+			$this->astman->database_deltree('blacklist');
+		}
 	}
 }

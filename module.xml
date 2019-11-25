@@ -2,7 +2,7 @@
 	<rawname>blacklist</rawname>
 	<repo>standard</repo>
 	<name>Blacklist</name>
-	<version>15.0.2.9</version>
+	<version>15.0.2.10</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,6 +12,7 @@
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*15.0.2.10* FREEI-890 Fix XSS Bootstrap Datatable Issues 
 		*15.0.2.9* Related to FREEPBX-20414: removed $jobid from runRestore() 
 		*15.0.2.8* FREEPBX-20389 Restoring backup into FreePBX 15 system is not flushing the previously existing blacklist entries. 
 		*15.0.2.7* fixing backup

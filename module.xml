@@ -2,7 +2,7 @@
 	<rawname>blacklist</rawname>
 	<repo>standard</repo>
 	<name>Blacklist</name>
-	<version>15.0.2.10</version>
+	<version>16.0.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,17 +12,7 @@
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
-		*15.0.2.10* FREEI-890 Fix XSS Bootstrap Datatable Issues 
-		*15.0.2.9* Related to FREEPBX-20414: removed $jobid from runRestore() 
-		*15.0.2.8* FREEPBX-20389 Restoring backup into FreePBX 15 system is not flushing the previously existing blacklist entries. 
-		*15.0.2.7* fixing backup
-		*15.0.2.6* fixing legacy restore
-		*15.0.2.5* fixing legacy restore
-		*15.0.2.4* FREEPBX-18905 Blacklist not working
-		*15.0.2.3* FREEPBX-18905 Blacklist not working
-		*15.0.2.2* FREEPBX-18352 Hook namespace issue
-		*15.0.2* Packaging of ver 15.0.2
-		*15.0.1* Forked from 13.0.14.9 Implement Backup 15
+		*16.0.1alpha* 16.0.1 alpha release
 	</changelog>
 	<hooks>
 		<bulkhandler class="Bulkhandler" namespace="FreePBX\modules">
@@ -36,6 +26,6 @@
 		<module>core ge 2.5.1.2</module>
 	</depends>
 	<supported>
-		<version>15.0</version>
+		<version>16.0</version>
 	</supported>
 </module>

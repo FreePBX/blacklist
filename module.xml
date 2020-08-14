@@ -2,16 +2,18 @@
 	<rawname>blacklist</rawname>
 	<repo>standard</repo>
 	<name>Blacklist</name>
-	<version>15.0.2.10</version>
+	<version>15.0.2.11</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<category>Admin</category>
 	<description>This module is used to manage a system wide list of blocked callers</description>
+	<more-info>https://wiki.freepbx.org/display/F2/Blacklist+Module</more-info>
 	<menuitems>
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*15.0.2.11* Packaging of ver 15.0.2.11
 		*15.0.2.10* FREEI-890 Fix XSS Bootstrap Datatable Issues 
 		*15.0.2.9* Related to FREEPBX-20414: removed $jobid from runRestore() 
 		*15.0.2.8* FREEPBX-20389 Restoring backup into FreePBX 15 system is not flushing the previously existing blacklist entries. 

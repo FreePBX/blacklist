@@ -2,16 +2,18 @@
 	<rawname>blacklist</rawname>
 	<repo>standard</repo>
 	<name>Blacklist</name>
-	<version>14.0.3</version>
+	<version>14.0.4</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<category>Admin</category>
 	<description>This module is used to manage a system wide list of blocked callers</description>
+	<more-info>https://wiki.freepbx.org/display/F2/Blacklist+Module</more-info>
 	<menuitems>
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*14.0.4* Packaging of ver 14.0.4
 		*14.0.3* FREEI-890 Fix XSS Bootstrap Datatable Issues 
 		*14.0.2* FREEPBX-18905 Blacklist not working 
 		*14.0.1* Inital 14

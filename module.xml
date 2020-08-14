@@ -8,6 +8,7 @@
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<category>Admin</category>
 	<description>This module is used to manage a system wide list of blocked callers</description>
+	<more-info>https://wiki.freepbx.org/display/F2/Blacklist+Module</more-info>
 	<menuitems>
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>

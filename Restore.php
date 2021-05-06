@@ -4,11 +4,11 @@ use FreePBX\modules\Backup as Base;
 class Restore Extends Base\RestoreBase{
 	public function runRestore(){
 		$configs = $this->getConfigs();
+		$this->deleteOldData();
 		foreach($configs['data'] as $item){
 			if(empty($item['number'])){
 				continue;
 			}
-			$this->deleteOldData();
 			$this->FreePBX->Blacklist->numberAdd($item);
 		}
 		$this->importFeatureCodes($configs['features']);

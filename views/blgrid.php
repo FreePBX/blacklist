@@ -26,11 +26,11 @@
 		html += '&nbsp;<a href="#" id="report'+row['number']+'" data-number="'+row['number']+'"><i class="fa fa-area-chart"></i></a>';
 		return html;
 	}
-	function descFormatter(value){
+	function descFormatter(value,row){
 		if(value == 1){
 			return "";
 		}else{
-			return value;
+			return row['description'];
 		}
 	}
 </script>

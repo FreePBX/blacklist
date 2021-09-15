@@ -459,7 +459,7 @@ class Blacklist implements BMO {
 		extract($post);
 		if ($this->astman->connected()) {
 			$post['description'] == '' ? $post['description'] = '1' : $post['description'];
-			$this->astman->database_put('blacklist', $post['number'], $post['description']);
+			$this->astman->database_put('blacklist', $post['number'], htmlentities($post['description'], ENT_COMPAT | ENT_HTML401, "UTF-8"));
 		} else {
 			throw new Exception('Cannot connect to Asterisk Manager, is Asterisk running?');
 		}

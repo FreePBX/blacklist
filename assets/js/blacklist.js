@@ -26,7 +26,7 @@ $(document).on('show.bs.tab', 'a[data-toggle="tab"]', function (e) {
 });
 $('#action-bar').addClass('hidden');
 
-$('#submitnumber').on('click',function(){
+$('#submitnumber').on('click', function() {
 	var num = $('#number').val();
 	var desc = $('#description').val();
 	var oldv = $('#oldval').val();
@@ -39,110 +39,128 @@ $('#submitnumber').on('click',function(){
 	$(this).prop("disabled",true);
 	$(this).text(_("Adding..."));
 
-	$.post("ajax.php?module=blacklist&command=add",
-		{
-			action : "add",
-			oldval : oldv,
-			number : num,
-			description: desc
-		},
-		function(data,status){
-			$($this).prop("disabled",false);
-			$($this).text(_("Save Changes"));
-			if(data.status) {
-				if(oldv.length > 0){
-					alert(_("Entry Updated"));
-				}else {
-					alert(sprintf(_("Added %s to the blacklist."), num));
-				}
-				$('#blGrid').bootstrapTable('refresh',{});
-				$("#addNumber").modal('hide');
+	var post_data = {
+		module		: 'blacklist',
+		command		: 'add',
+		action		: "add",
+		oldval		: oldv,
+		number		: num,
+		description	: desc
+	};
+	$.post(window.FreePBX.ajaxurl, post_data, function(data)
+	{
+		$($this).prop("disabled",false);
+		$($this).text(_("Save Changes"));
+		if(data.status) {
+			if(oldv.length > 0){
+				fpbxToast(_("Entry Updated"), '', 'success');
 			} else {
-				alert(data.message);
+				fpbxToast(sprintf(_("Added %s to the blacklist"), num), '', 'success');
 			}
+			$('#blGrid').bootstrapTable('refresh',{});
+			$("#addNumber").modal('hide');
+		} else {
+			alert(data.message);
+		}
+	});
+});
+
+var processing = null;
+$(document).on('click', '[id^="del"]', function() {
+	var num = $(this).data('number');
+	fpbxConfirm(
+		sprintf(_("Are you sure you want to delete the number %s?"), num),
+		_("Yes"),_("No"),
+		function() {
+			var post_data = {
+				module	: 'blacklist',
+				command	: 'del',
+				action	: "delete",
+				number	: num,
+			};
+			$.post(window.FreePBX.ajaxurl, post_data)
+			.done(function(data) {
+				if (data.status == true) {
+					$('#blGrid').bootstrapTable('refresh',{silent: true});
+					fpbxToast(sprintf(_('Number %s removed from the blacklist'), num), '', 'success');
+				} else {
+					fpbxToast(data.message, '', 'error');
+				}
+			});
 		}
 	);
 });
-var processing = null;
-$(document).on('click', '[id^="del"]', function(){
-	var num = $(this).data('number');
-	var idx = $(this).data('idx');
-	if(confirm(_("Are you sure you want to delete this item?"))){
-		$.post("ajax.php?module=blacklist&command=del",
-			{
-			action : "delete",
-			number : num,
-		}).done(function(){
-			$('#blGrid').bootstrapTable('refresh',{silent: true});
-		});
-	}
-	});
 
-	$(document).on('click', '[id^="report"]', function(){
-		var num = $(this).data('number');
-		$.post("ajax.php?module=blacklist&command=calllog",
-			{number: num},
-			function(data,status){
-				console.log(data);
-					$("#blReport").bootstrapTable({});
-					$('#blReport').bootstrapTable('load',data);
-			}
-		);
-		$("#numreport").modal("show");
+$(document).on('click', '[id^="report"]', function() {
+	var num = $(this).data('number');
+	var post_data = {
+		module	: 'blacklist',
+		command	: 'calllog',
+		number	: num,
+	};
+	$.post(window.FreePBX.ajaxurl, post_data, function(data)
+	{
+		$("#blReport").bootstrapTable({});
+		$('#blReport').bootstrapTable('load', data);
 	});
-$('#Upload').on('click',function(){
-	var file = document.getElementById("blacklistfile");
-	var formData = new FormData();
-	formData.append("blacklistfile", file.files[0])
-	var xhr = new XMLHttpRequest();
-	xhr.open('POST','config.php?display=blacklist&action=import', true);
-	xhr.send(formData);
-	xhr.onreadystatechange = function(){
-		if(xhr.status == 200){
-			location.reload()
-		}else{
-			alert("Import Failed");
-		}
-	}
+	$("#numreport").modal("show");
 });
+
 //Bulk Actions
-$('#action-toggle-all').on("change",function(){
+$('#action-toggle-all').on("change", function() {
 	var tval = $(this).prop('checked');
-	$('input[id^="actonthis"]').each(function(){
+	$('input[id^="actonthis"]').each(function() {
 		$(this).prop('checked', tval);
 	});
 });
 
-$('input[id^="actonthis"],#action-toggle-all').change(function(){
-	if($('input[id^="actonthis"]').is(":checked")){
+$('input[id^="actonthis"],#action-toggle-all').change(function() {
+	if($('input[id^="actonthis"]').is(":checked")) {
 		$("#trashchecked").removeClass("hidden");
-	}else{
+	} else {
 		$("#trashchecked").addClass("hidden");
 	}
 
 });
+
 //This does the bulk delete...
-$("#blkDelete").on("click",function(e){
+$("#blkDelete").on("click", function(e) {
 	e.preventDefault();
 	var numbers = [];
-	$('#blGrid').bootstrapTable('showLoading');
-	$('input[name="btSelectItem"]:checked').each(function(){
-			var idx = $(this).data('index');
-			numbers.push(cbrows[idx]);
+	$('input[name="btSelectItem"]:checked').each(function() {
+		var idx = $(this).data('index');
+		numbers.push(cbrows[idx]);
 	});
-	$.post("ajax.php?module=blacklist&command=bulkdelete", { numbers: JSON.stringify(numbers) }).done(function(){
-																																																		numbers = null;
-																																																		$('#blGrid').bootstrapTable('refresh');
-																																																		$('#blGrid').bootstrapTable('HIDELoading');
-																																																	});
-
-	//Reset ui elements
-	//hide the action element in botnav
-	$("#delchecked").addClass("hidden");
-	//no boxes should be checked but if they are uncheck em.
-	$('input[name="btSelectItem"]:checked').each(function(){
-		$(this).prop('checked', false);
-	});
-	//Uncheck the "check all" box
-	$('#action-toggle-all').prop('checked', false);
+	if (numbers.length == 0) {
+		fpbxToast('There is no record selected!', '', 'warning');
+	} else {
+		fpbxConfirm(
+			_("Are you sure to delete the selected records?"),
+			_("Yes"),_("No"),
+			function() {
+				$('#blGrid').bootstrapTable('showLoading');
+				var post_data = {
+					module	: 'blacklist',
+					command	: 'bulkdelete',
+					numbers	: JSON.stringify(numbers),
+				};
+				$.post(window.FreePBX.ajaxurl, post_data)
+				.done(function() {
+					numbers = null;
+					$('#blGrid').bootstrapTable('refresh');
+					$('#blGrid').bootstrapTable('hideLoading');
+				});
+		
+				//Reset ui elements
+				//hide the action element in botnav
+				$("#delchecked").addClass("hidden");
+				//no boxes should be checked but if they are uncheck em.
+				$('input[name="btSelectItem"]:checked').each(function() {
+					$(this).prop('checked', false);
+				});
+				//Uncheck the "check all" box
+				$('#action-toggle-all').prop('checked', false);
+			}
+		);
+	}
 });

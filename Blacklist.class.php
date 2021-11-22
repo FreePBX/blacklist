@@ -66,9 +66,10 @@ class Blacklist implements \BMO {
 				return array('status' => $ret);
 			break;
 			case 'calllog':
+				$mod_cdr = $this->FreePBX->Cdr;
 				$number = $request['number'];
-				$sql = 'SELECT calldate FROM asteriskcdrdb.cdr WHERE src = ?';
-				$stmt = \FreePBX::Database()->prepare($sql);
+				$sql = sprintf('SELECT DISTINCT calldate FROM %s WHERE src = ?', $mod_cdr->getDbTable());
+				$stmt = $mod_cdr->getCdrDbHandle()->prepare($sql);
 				$stmt->execute(array($number));
 				$ret = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 				return $ret;

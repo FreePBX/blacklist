@@ -40,6 +40,7 @@
 	</hooks>
 	<depends>
 		<module>core ge 2.5.1.2</module>
+		<module>cdr</module>
 	</depends>
 	<supported>
 		<version>15.0</version>

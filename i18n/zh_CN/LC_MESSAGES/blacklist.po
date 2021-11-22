@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-22 06:46+0000\n"
+"POT-Creation-Date: 2021-11-22 06:48+0000\n"
 "PO-Revision-Date: 2015-10-16 13:57+0200\n"
 "Last-Translator: james <zhulizhong@gmail.com>\n"
 "Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
@@ -55,10 +55,6 @@ msgid ""
 msgstr ""
 "添加最后一个呼叫方添加到黑名单模块。所有从此号码呼入的通话都将收到话机语音。"
 
-#: blacklist.i18n.php:6
-msgid "Admin"
-msgstr ""
-
 #: assets/js/blacklist.js:138
 msgid "Are you sure to delete the selected records?"
 msgstr ""
@@ -68,8 +64,7 @@ msgstr ""
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:20 Blacklist.class.php:543 blacklist.i18n.php:4
-#: blacklist.i18n.php:10 views/general.php:24
+#: Blacklist.class.php:20 Blacklist.class.php:543 views/general.php:24
 msgid "Blacklist"
 msgstr "黑名单"
 
@@ -232,10 +227,6 @@ msgstr "上传文件发生错误"
 
 #: views/general.php:44
 msgid "This functionality is now part of the Bulk Handler Module"
-msgstr ""
-
-#: blacklist.i18n.php:8
-msgid "This module is used to manage a system wide list of blocked callers"
 msgstr ""
 
 #: views/general.php:61 assets/js/blacklist.js:73 assets/js/blacklist.js:139

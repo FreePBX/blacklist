@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-22 06:46+0000\n"
+"POT-Creation-Date: 2021-11-22 06:48+0000\n"
 "PO-Revision-Date: 2016-06-22 09:27+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -55,10 +55,6 @@ msgstr ""
 "افزودن آخرین تماس گیرنده به لیست سیاه. تمامی تماس ها از این شماره به سیستم "
 "قطع خواهند شد."
 
-#: blacklist.i18n.php:6
-msgid "Admin"
-msgstr "مدیر"
-
 #: assets/js/blacklist.js:138
 msgid "Are you sure to delete the selected records?"
 msgstr ""
@@ -68,8 +64,7 @@ msgstr ""
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:20 Blacklist.class.php:543 blacklist.i18n.php:4
-#: blacklist.i18n.php:10 views/general.php:24
+#: Blacklist.class.php:20 Blacklist.class.php:543 views/general.php:24
 msgid "Blacklist"
 msgstr "لیست سیاه"
 
@@ -234,13 +229,15 @@ msgstr "در بارگذاری فایل خطا رخ داده است"
 msgid "This functionality is now part of the Bulk Handler Module"
 msgstr "این عملکرد در حال حاضر بخشی از ماژول کنترل کننده دسته ای می باشد"
 
-#: blacklist.i18n.php:8
-msgid "This module is used to manage a system wide list of blocked callers"
-msgstr "این ماژول به منظور مدیریت تماس گیرندگان بلوکه شده استفاده می شود"
-
 #: views/general.php:61 assets/js/blacklist.js:73 assets/js/blacklist.js:139
 msgid "Yes"
 msgstr "بله"
+
+#~ msgid "Admin"
+#~ msgstr "مدیر"
+
+#~ msgid "This module is used to manage a system wide list of blocked callers"
+#~ msgstr "این ماژول به منظور مدیریت تماس گیرندگان بلوکه شده استفاده می شود"
 
 #~ msgid "Added %s to the blacklist."
 #~ msgstr "به لیست سیاه %s اضافه شد."

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-22 06:46+0000\n"
+"POT-Creation-Date: 2021-11-22 06:48+0000\n"
 "PO-Revision-Date: 2018-02-16 19:35+0200\n"
 "Last-Translator: Nils <Nils@heckenkamp.info>\n"
 "Language-Team: German <http://weblate.freepbx.org/projects/freepbx/blacklist/"
@@ -55,10 +55,6 @@ msgstr ""
 "Fügt den letzten Anrufen der Sperrliste hinzu. Alle Anrufe von dieser Nummer "
 "erhalten eine Trennungsansage."
 
-#: blacklist.i18n.php:6
-msgid "Admin"
-msgstr "Administrator"
-
 #: assets/js/blacklist.js:138
 msgid "Are you sure to delete the selected records?"
 msgstr ""
@@ -68,8 +64,7 @@ msgstr ""
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:20 Blacklist.class.php:543 blacklist.i18n.php:4
-#: blacklist.i18n.php:10 views/general.php:24
+#: Blacklist.class.php:20 Blacklist.class.php:543 views/general.php:24
 msgid "Blacklist"
 msgstr "Sperrliste"
 
@@ -234,15 +229,17 @@ msgstr "Beim Hochladen der Datei ist ein Fehler auftgetreten"
 msgid "This functionality is now part of the Bulk Handler Module"
 msgstr "Diese Funktionalität ist jetzt Teil des Bulk-Handler Modul"
 
-#: blacklist.i18n.php:8
-msgid "This module is used to manage a system wide list of blocked callers"
-msgstr ""
-"Dieses Modul wird verwendet, um eine systemweite Liste von blockierten "
-"Anrufern zu verwalten"
-
 #: views/general.php:61 assets/js/blacklist.js:73 assets/js/blacklist.js:139
 msgid "Yes"
 msgstr "Ja"
+
+#~ msgid "Admin"
+#~ msgstr "Administrator"
+
+#~ msgid "This module is used to manage a system wide list of blocked callers"
+#~ msgstr ""
+#~ "Dieses Modul wird verwendet, um eine systemweite Liste von blockierten "
+#~ "Anrufern zu verwalten"
 
 #~ msgid "Added %s to the blacklist."
 #~ msgstr "%s wurde der Sperrliste hinzugefügt."

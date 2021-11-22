@@ -2,7 +2,7 @@
 	<rawname>blacklist</rawname>
 	<repo>standard</repo>
 	<name>Blacklist</name>
-	<version>16.0.6</version>
+	<version>16.0.7</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -13,6 +13,7 @@
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*16.0.7* Packaging of ver 16.0.7
 		*16.0.6* FREEPBX-22989 - Call Log in BlackList show date duplicate 
 		*16.0.5* REEI-3374 Vuln-001 Stored Cross-Site Scripting 
 		*16.0.4* FREEI-3281 FreePBX 16 to 16 backup and restore is not restoring the Blacklist data 
@@ -29,7 +30,8 @@
 		</bulkhandler>
 	</hooks>
 	<depends>
-		<module>core ge 2.5.1.2</module>
+		<module>core ge 16.0.56.24</module>
+		<module>cdr ge 16.0.11</module>
 	</depends>
 	<supported>
 		<version>16.0</version>

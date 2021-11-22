@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-22 06:46+0000\n"
+"POT-Creation-Date: 2021-11-22 06:48+0000\n"
 "PO-Revision-Date: 2017-07-20 10:28+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -56,10 +56,6 @@ msgstr ""
 "Thêm người gọi cuối cùng vào Mô đun Danh sách đen. Tất cả các cuộc gọi từ số "
 "đó đến hệ thống sẽ nhận được một bản ghi ngắt kết nối."
 
-#: blacklist.i18n.php:6
-msgid "Admin"
-msgstr "Quản trị viên"
-
 #: assets/js/blacklist.js:138
 msgid "Are you sure to delete the selected records?"
 msgstr ""
@@ -69,8 +65,7 @@ msgstr ""
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:20 Blacklist.class.php:543 blacklist.i18n.php:4
-#: blacklist.i18n.php:10 views/general.php:24
+#: Blacklist.class.php:20 Blacklist.class.php:543 views/general.php:24
 msgid "Blacklist"
 msgstr "Danh sách đen"
 
@@ -237,15 +232,17 @@ msgstr ""
 "Chức năng này hiện tại là một phần của Mô đun Bulk Handler ( Bộ quản lý tổng "
 "hợp)"
 
-#: blacklist.i18n.php:8
-msgid "This module is used to manage a system wide list of blocked callers"
-msgstr ""
-"Mô đun này được sử dụng để quản lý một hệ thống danh sách lớn các người gọi "
-"bị khóa"
-
 #: views/general.php:61 assets/js/blacklist.js:73 assets/js/blacklist.js:139
 msgid "Yes"
 msgstr "Có"
+
+#~ msgid "Admin"
+#~ msgstr "Quản trị viên"
+
+#~ msgid "This module is used to manage a system wide list of blocked callers"
+#~ msgstr ""
+#~ "Mô đun này được sử dụng để quản lý một hệ thống danh sách lớn các người "
+#~ "gọi bị khóa"
 
 #~ msgid "Added %s to the blacklist."
 #~ msgstr "Đã thêm %s vào danh sách đen."

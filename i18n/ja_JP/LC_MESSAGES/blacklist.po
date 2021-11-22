@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-22 06:46+0000\n"
+"POT-Creation-Date: 2021-11-22 06:48+0000\n"
 "PO-Revision-Date: 2014-02-19 04:47+0200\n"
 "Last-Translator: Kenichi Fukaumi <k.fukaumi@qloog.com>\n"
 "Language-Team: Japanese <http://example.com/projects/freepbx/blacklist/ja/>\n"
@@ -78,10 +78,6 @@ msgid ""
 "the system will receive a disconnect recording."
 msgstr ""
 
-#: blacklist.i18n.php:6
-msgid "Admin"
-msgstr "アドミン"
-
 #: assets/js/blacklist.js:138
 msgid "Are you sure to delete the selected records?"
 msgstr ""
@@ -91,8 +87,7 @@ msgstr ""
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:20 Blacklist.class.php:543 blacklist.i18n.php:4
-#: blacklist.i18n.php:10 views/general.php:24
+#: Blacklist.class.php:20 Blacklist.class.php:543 views/general.php:24
 msgid "Blacklist"
 msgstr "ブラックリスト"
 
@@ -258,13 +253,12 @@ msgstr ""
 msgid "This functionality is now part of the Bulk Handler Module"
 msgstr ""
 
-#: blacklist.i18n.php:8
-msgid "This module is used to manage a system wide list of blocked callers"
-msgstr ""
-
 #: views/general.php:61 assets/js/blacklist.js:73 assets/js/blacklist.js:139
 msgid "Yes"
 msgstr ""
+
+#~ msgid "Admin"
+#~ msgstr "アドミン"
 
 #~ msgid "deleted"
 #~ msgstr "削除されました"

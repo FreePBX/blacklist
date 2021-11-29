@@ -2,7 +2,7 @@
 	<rawname>blacklist</rawname>
 	<repo>standard</repo>
 	<name>Blacklist</name>
-	<version>15.0.2.16</version>
+	<version>15.0.2.17</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -13,6 +13,7 @@
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*15.0.2.17* FREEPBX-23086: Add i18n detection to phrases that are not detected 
 		*15.0.2.16* FREEPBX-22989 - Call Log in BlackList show date duplicate 
 		*15.0.2.15* REEI-3374 Vuln-001 Stored Cross-Site Scripting 
 		*15.0.2.14* FREEI-3281 

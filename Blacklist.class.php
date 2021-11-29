@@ -98,23 +98,23 @@ class Blacklist implements \BMO {
 	//BMO Methods
 	public function install() {
 		$fcc = new \featurecode('blacklist', 'blacklist_add');
-		$fcc->setDescription('Blacklist a number');
-		$fcc->setHelpText('Adds a number to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.  Manage these in the Blacklist module.');
+		$fcc->setDescription(_('Blacklist a number'));
+		$fcc->setHelpText(_('Adds a number to the Blacklist Module. All calls from that number to the system will receive a disconnect recording. Manage these in the Blacklist module.'));
 		$fcc->setDefault('*30');
 		$fcc->setProvideDest();
 		$fcc->update();
 		unset($fcc);
 
 		$fcc = new \featurecode('blacklist', 'blacklist_remove');
-		$fcc->setDescription('Remove a number from the blacklist');
-		$fcc->setHelpText('Removes a number from the Blacklist Module');
+		$fcc->setDescription(_('Remove a number from the blacklist'));
+		$fcc->setHelpText(_('Removes a number from the Blacklist Module'));
 		$fcc->setDefault('*31');
 		$fcc->setProvideDest();
 		$fcc->update();
 		unset($fcc);
 		$fcc = new \featurecode('blacklist', 'blacklist_last');
-		$fcc->setDescription('Blacklist the last caller');
-		$fcc->setHelpText('Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.');
+		$fcc->setDescription(_('Blacklist the last caller'));
+		$fcc->setHelpText(_('Adds the last caller to the Blacklist Module. All calls from that number to the system will receive a disconnect recording.'));
 		$fcc->setDefault('*32');
 		$fcc->update();
 		unset($fcc);
@@ -325,8 +325,8 @@ class Blacklist implements \BMO {
 		$ext->add($id, 'ja', '', new \ext_return());
 
 		$ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "1" ]','app-blacklist-remove,1,1'));
-	        $ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "2" ]','app-blacklist-remove,2,1'));
-	        $ext->add($id, $c, '', new \ext_goto('app-blacklist-add-invalid,s,1'));
+	    $ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "2" ]','app-blacklist-remove,2,1'));
+	    $ext->add($id, $c, '', new \ext_goto('app-blacklist-add-invalid,s,1'));
 
 		$c = '1';
 		$ext->add($id, $c, '', new \ext_dbdel('blacklist/${blacknr}'));
@@ -447,7 +447,7 @@ class Blacklist implements \BMO {
 			}
 			return $blacklisted;
 		} else {
-			throw new \RuntimeException('Cannot connect to Asterisk Manager, is Asterisk running?');
+			throw new \RuntimeException(_('Cannot connect to Asterisk Manager, is Asterisk running?'));
 		}
 	}
 
@@ -460,7 +460,7 @@ class Blacklist implements \BMO {
 			$post['description'] == '' ? $post['description'] = '1' : $post['description'];
 			$this->astman->database_put('blacklist', $post['number'], htmlentities($post['description'], ENT_COMPAT | ENT_HTML401, "UTF-8"));
 		} else {
-			throw new \RuntimeException('Cannot connect to Asterisk Manager, is Asterisk running?');
+			throw new \RuntimeException(_('Cannot connect to Asterisk Manager, is Asterisk running?'));
 		}
 		return $post['number'];
 	}
@@ -474,7 +474,7 @@ class Blacklist implements \BMO {
 		if ($this->astman->connected()) {
 			return($this->astman->database_del('blacklist', $number));
 		} else {
-			throw new \RuntimeException('Cannot connect to Asterisk Manager, is Asterisk running?');
+			throw new \RuntimeException(_('Cannot connect to Asterisk Manager, is Asterisk running?'));
 		}
 	}
 
@@ -492,7 +492,7 @@ class Blacklist implements \BMO {
 				return true;
 			}
 		} else {
-			throw new \RuntimeException('Cannot connect to Asterisk Manager, is Asterisk running?');
+			throw new \RuntimeException(_('Cannot connect to Asterisk Manager, is Asterisk running?'));
 		}
 	}
 
@@ -504,7 +504,7 @@ class Blacklist implements \BMO {
 		if ($this->astman->connected()) {
 			return $this->astman->database_get('blacklist', 'dest');
 		} else {
-			throw new \RuntimeException('Cannot connect to Asterisk Manager, is Asterisk running?');
+			throw new \RuntimeException(_('Cannot connect to Asterisk Manager, is Asterisk running?'));
 		}
 	}
 
@@ -521,7 +521,7 @@ class Blacklist implements \BMO {
 				$this->astman->database_put('blacklist', 'blocked', '1');
 			}
 		} else {
-			throw new \RuntimeException('Cannot connect to Asterisk Manager, is Asterisk running?');
+			throw new \RuntimeException(_('Cannot connect to Asterisk Manager, is Asterisk running?'));
 		}
 	}
 
@@ -533,7 +533,7 @@ class Blacklist implements \BMO {
 		if ($this->astman->connected()) {
 			return $this->astman->database_get('blacklist', 'blocked');
 		} else {
-			throw new \RuntimeException('Cannot connect to Asterisk Manager, is Asterisk running?');
+			throw new \RuntimeException(_('Cannot connect to Asterisk Manager, is Asterisk running?'));
 		}
 	}
 	//BulkHandler hooks
@@ -549,8 +549,16 @@ class Blacklist implements \BMO {
 		switch($type){
 			case 'blacklist':
 				$headers = array();
-				$headers['number'] = array('required' => true, 'identifier' => _("Phone Number"), 'description' => _("The number as it appears in the callerid display"));
-				$headers['description'] = array('required' => false, 'identifier' => _("Description"), 'description' => _("Description of number blacklisted"));
+				$headers['number'] = array(
+					'required' => true,
+					'identifier' => _("Phone Number"),
+					'description' => _("The number as it appears in the callerid display")
+				);
+				$headers['description'] = array(
+					'required' => false,
+					'identifier' => _("Description"),
+					'description' => _("Description of number blacklisted")
+				);
 			break;
 		}
 		return $headers;

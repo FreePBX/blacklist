@@ -16,7 +16,7 @@ class Blacklist extends Base {
 				return [
 					'addBlacklist' => Relay::mutationWithClientMutationId([
 						'name' => 'addBlacklist',
-						'description' => 'Add a new number to the blacklist',
+						'description' => _('Add a new number to the blacklist'),
 						'inputFields' => [
 							'number' => [
 								'type' => Type::nonNull(Type::string())
@@ -42,7 +42,7 @@ class Blacklist extends Base {
 					]),
 					'removeBlacklist' => Relay::mutationWithClientMutationId([
 						'name' => 'removeBlacklist',
-						'description' => 'Remove a number from the blacklist',
+						'description' => _('Remove a number from the blacklist'),
 						'inputFields' => [
 							'number' => [
 								'type' => Type::nonNull(Type::string())
@@ -72,7 +72,7 @@ class Blacklist extends Base {
 				return [
 					'allBlacklists' => [
 						'type' => $this->typeContainer->get('blacklist')->getConnectionType(),
-						'description' => 'Used to manage a system wide list of blocked callers',
+						'description' => _('Used to manage a system wide list of blocked callers'),
 						'args' => Relay::connectionArgs(),
 						'resolve' => function($root, $args) {
 							return Relay::connectionFromArray($this->freepbx->Blacklist->getBlacklist(), $args);
@@ -83,7 +83,7 @@ class Blacklist extends Base {
 						'args' => [
 							'id' => [
 								'type' => Type::id(),
-								'description' => 'The ID',
+								'description' => _('The ID'),
 							]
 						],
 						'resolve' => function($root, $args) {
@@ -94,7 +94,7 @@ class Blacklist extends Base {
 					],
 					'blacklistSettings' => [
 						'type' => $this->typeContainer->get('blacklistsettings')->getObject(),
-						'description' => 'Blacklist Settings',
+						'description' => _('Blacklist Settings'),
 						'resolve' => function($root, $args) {
 							return []; //trick the resolver into not thinking this is null
 						}
@@ -106,19 +106,19 @@ class Blacklist extends Base {
 
 	public function initializeTypes() {
 		$user = $this->typeContainer->create('blacklistsettings','object');
-		$user->setDescription('Blacklist Settings');
+		$user->setDescription(_('Blacklist Settings'));
 		$user->addFieldCallback(function() {
 			return [
 				'blockUnknown' => [
 					'type' => Type::boolean(),
-					'description' => 'Catch Unknown/Blocked Caller ID',
+					'description' => _('Catch Unknown/Blocked Caller ID'),
 					'resolve' => function ($root, $args) {
 						return $this->freepbx->Blacklist->blockunknownGet() == 1 ? true : false;
 					}
 				],
 				'destinationConnection' => [
 					'type' => $this->typeContainer->get('destination')->getObject(),
-					'description' => 'Destination for blacklisted calls',
+					'description' => _('Destination for blacklisted calls'),
 					'resolve' => function($root, $args) {
 						return $this->typeContainer->get('destination')->resolveValue($this->freepbx->Blacklist->destinationGet());
 					}
@@ -127,7 +127,7 @@ class Blacklist extends Base {
 		});
 
 		$user = $this->typeContainer->create('blacklist');
-		$user->setDescription('Used to manage a system wide list of blocked callers');
+		$user->setDescription(_('Used to manage a system wide list of blocked callers'));
 
 		$user->addInterfaceCallback(function() {
 			return [$this->getNodeDefinition()['nodeInterface']];
@@ -146,11 +146,11 @@ class Blacklist extends Base {
 				}),
 				'number' => [
 					'type' => Type::string(),
-					'description' => 'The number to block'
+					'description' => _('The number to block')
 				],
 				'description' => [
 					'type' => Type::string(),
-					'description' => 'Description of the blocked number'
+					'description' => _('Description of the blocked number')
 				]
 			];
 		});

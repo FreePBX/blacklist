@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-29 15:46+0530\n"
-"PO-Revision-Date: 2021-11-23 07:00+0000\n"
+"PO-Revision-Date: 2021-12-08 06:05+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
 "blacklist/ru/>\n"
@@ -181,19 +181,19 @@ msgstr ""
 
 #: Blacklist.class.php:405
 msgid "Reset"
-msgstr ""
+msgstr "Сброс"
 
 #: assets/js/blacklist.js:51
 msgid "Save Changes"
-msgstr ""
+msgstr "Сохранить изменения"
 
 #: views/addnumber.php:58
 msgid "Save changes"
-msgstr ""
+msgstr "Сохранить изменения"
 
 #: views/general.php:34
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 #: Blacklist.class.php:411
 msgid "Submit"

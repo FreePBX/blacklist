@@ -1,4 +1,11 @@
-$('#addNumber').on('show.bs.modal', function (e) {
+function getGrid() {
+	return $('#blGrid');
+}
+function getAddNumber() {
+	return $('#addNumber');
+}
+
+getAddNumber().on('show.bs.modal', function (e) {
 	var number = $(e.relatedTarget).data('number');
 	var description = $(e.relatedTarget).data('description');
 	$("#number").val(number);
@@ -35,6 +42,10 @@ $('#submitnumber').on('click', function() {
 		warnInvalid($('#number'), _('Number/CallerID cannot be blank'));
 		return;
 	}
+	if(desc === '1'){
+		warnInvalid($('#description'), _('Description not allowed, reserved character!'));
+		return;
+	}
 	$(this).blur();
 	$(this).prop("disabled",true);
 	$(this).text(_("Adding..."));
@@ -57,10 +68,10 @@ $('#submitnumber').on('click', function() {
 			} else {
 				fpbxToast(sprintf(_("Added %s to the blacklist"), num), '', 'success');
 			}
-			$('#blGrid').bootstrapTable('refresh',{});
-			$("#addNumber").modal('hide');
+			getGrid().bootstrapTable('refresh',{});
+			getAddNumber().modal('hide');
 		} else {
-			alert(data.message);
+			fpbxToast(data.message, '', 'error');
 		}
 	});
 });
@@ -81,7 +92,7 @@ $(document).on('click', '[id^="del"]', function() {
 			$.post(window.FreePBX.ajaxurl, post_data)
 			.done(function(data) {
 				if (data.status == true) {
-					$('#blGrid').bootstrapTable('refresh',{silent: true});
+					getGrid().bootstrapTable('refresh',{silent: true});
 					fpbxToast(sprintf(_('Number %s removed from the blacklist'), num), '', 'success');
 				} else {
 					fpbxToast(data.message, '', 'error');
@@ -93,15 +104,8 @@ $(document).on('click', '[id^="del"]', function() {
 
 $(document).on('click', '[id^="report"]', function() {
 	var num = $(this).data('number');
-	var post_data = {
-		module	: 'blacklist',
-		command	: 'calllog',
-		number	: num,
-	};
-	$.post(window.FreePBX.ajaxurl, post_data, function(data)
-	{
-		$("#blReport").bootstrapTable({});
-		$('#blReport').bootstrapTable('load', data);
+	$("#blReport").bootstrapTable('refresh', {
+		url: window.FreePBX.ajaxurl + "?module=blacklist&command=calllog&number=" + num ,
 	});
 	$("#numreport").modal("show");
 });
@@ -138,7 +142,7 @@ $("#blkDelete").on("click", function(e) {
 			_("Are you sure to delete the selected records?"),
 			_("Yes"),_("No"),
 			function() {
-				$('#blGrid').bootstrapTable('showLoading');
+				getGrid().bootstrapTable('showLoading');
 				var post_data = {
 					module	: 'blacklist',
 					command	: 'bulkdelete',
@@ -147,8 +151,8 @@ $("#blkDelete").on("click", function(e) {
 				$.post(window.FreePBX.ajaxurl, post_data)
 				.done(function() {
 					numbers = null;
-					$('#blGrid').bootstrapTable('refresh');
-					$('#blGrid').bootstrapTable('hideLoading');
+					getGrid().bootstrapTable('refresh');
+					getGrid().bootstrapTable('hideLoading');
 				});
 		
 				//Reset ui elements
@@ -164,3 +168,29 @@ $("#blkDelete").on("click", function(e) {
 		);
 	}
 });
+
+
+var cbrows = [];
+function cbFormatter(val,row,i){
+	cbrows[i] = row['number'];
+}
+
+function linkFormatter(value,row,idx){
+	var html = sprintf('<a href="#" data-toggle="modal" data-target="#addNumber" data-number="%(number)s" data-description="%(description)s" ><i class="fa fa-pencil"></i></a>', row);
+	html += sprintf('&nbsp;<a href="#" id="del%(args[0].number)s" data-idx="%(args[1])s" data-number="%(args[0].number)s" ><i class="fa fa-trash"></i></a>', {args: [row, idx]});
+	html += sprintf('&nbsp;<a href="#" id="report%(number)s" data-number="%(number)s"><i class="fa fa-area-chart"></i></a>', row);
+	return html;
+}
+function descFormatter(value,row){
+	if(value == 1){
+		return "";
+	}else{
+		return row['description'];
+	}
+}
+function lastDateFormatter (value, row, idx) {
+	if (row.count === 0) {
+		return value;
+	}
+	return moment(value).tz(timezone).format(datetimeformat) + " - " + moment(value).tz(timezone).fromNow();
+}

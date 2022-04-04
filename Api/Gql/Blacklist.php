@@ -40,6 +40,31 @@ class Blacklist extends Base {
 							return isset($list[$item]) ? $list[$item] : null;
 						}
 					]),
+					'setBlacklistSettings' => Relay::mutationWithClientMutationId([
+						'name' => 'setBlacklistSettings',
+						'description' => _('Add a new number to the blacklist'),
+						'inputFields' => [
+							'blockUnknown' => [
+								'type' => Type::boolean()
+							],
+							'destination' => [
+								'type' => Type::string()
+							]
+						],
+						'outputFields' => [
+							'blockUnknown' => [
+								'type' => Type::boolean()
+							],
+							'destination' => [
+								'type' => Type::string()
+							]
+						],
+						'mutateAndGetPayload' => function ($input) {
+							$this->freepbx->Blacklist->blockunknownSet($input['blockUnknown']);
+							$this->freepbx->Blacklist->destinationSet($input['destination']);
+							return ['blockUnknown' => $input['blockUnknown'],'destination'=>$input['destination']];
+						}
+					]),
 					'removeBlacklist' => Relay::mutationWithClientMutationId([
 						'name' => 'removeBlacklist',
 						'description' => _('Remove a number from the blacklist'),
@@ -60,7 +85,7 @@ class Blacklist extends Base {
 							$this->freepbx->Blacklist->numberDel($input['number']);
 							return ['id' => $input['number']];
 						}
-					])
+					]),
 				];
 			};
 		}
@@ -88,8 +113,8 @@ class Blacklist extends Base {
 						],
 						'resolve' => function($root, $args) {
 							$list = $this->freepbx->Blacklist->getBlacklist();
-							$item = array_search(Relay::fromGlobalId($args['id'])['id'], array_column($list, 'number'));
-							return isset($list[$item]) ? $list[$item] : null;
+							$item = array_search($args['id'], array_column($list, 'number'));
+							return ($item && isset($list[$item])) ? $list[$item] : null;
 						}
 					],
 					'blacklistSettings' => [
@@ -116,11 +141,17 @@ class Blacklist extends Base {
 						return $this->freepbx->Blacklist->blockunknownGet() == 1 ? true : false;
 					}
 				],
-				'destinationConnection' => [
-					'type' => $this->typeContainer->get('destination')->getObject(),
+				'destination' => [
+					'type' => Type::string(),
 					'description' => _('Destination for blacklisted calls'),
 					'resolve' => function($root, $args) {
-						return $this->typeContainer->get('destination')->resolveValue($this->freepbx->Blacklist->destinationGet());
+						$destinationConnection=$this->typeContainer->get('destination')->resolveValue($this->freepbx->Blacklist->destinationGet());
+						$getDestinations = \FreePBX::Modules()->getDestinations();
+						$destination = isset($destinationConnection)? $destinationConnection : null;
+						$destination_description = isset($getDestinations[$destination])? $getDestinations[$destination] : null;
+						$name = isset($destination_description['name'])? $destination_description['name'] :'';
+						$category = isset($destination_description['category'])? $destination_description['category'] : $name;
+						return isset($destination_description['description'])? $category.':'.$destination_description['description']:null;
 					}
 				]
 			];

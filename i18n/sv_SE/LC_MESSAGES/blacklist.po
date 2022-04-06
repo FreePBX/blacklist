@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX blacklist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-29 04:23+0000\n"
+"POT-Creation-Date: 2022-04-06 04:59+0000\n"
 "PO-Revision-Date: 2011-03-19 00:00+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:19
+#: Api/Gql/Blacklist.php:19 Api/Gql/Blacklist.php:45
 msgid "Add a new number to the blacklist"
 msgstr ""
 
@@ -104,7 +104,7 @@ msgstr ""
 msgid "Blacklist Number"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:97 Api/Gql/Blacklist.php:109
+#: Api/Gql/Blacklist.php:122 Api/Gql/Blacklist.php:134
 msgid "Blacklist Settings"
 msgstr ""
 
@@ -138,7 +138,7 @@ msgstr ""
 msgid "Cannot connect to Asterisk Manager, is Asterisk running?"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:114
+#: Api/Gql/Blacklist.php:139
 msgid "Catch Unknown/Blocked Caller ID"
 msgstr ""
 
@@ -170,7 +170,7 @@ msgstr "Beskrivning"
 msgid "Description of number blacklisted"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:153
+#: Api/Gql/Blacklist.php:184
 msgid "Description of the blocked number"
 msgstr ""
 
@@ -178,7 +178,7 @@ msgstr ""
 msgid "Destination for BlackListed Calls"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:121
+#: Api/Gql/Blacklist.php:146
 msgid "Destination for blacklisted calls"
 msgstr ""
 
@@ -231,7 +231,7 @@ msgstr ""
 msgid "Phone Number Required"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:45 Blacklist.class.php:18 Blacklist.class.php:109
+#: Api/Gql/Blacklist.php:70 Blacklist.class.php:18 Blacklist.class.php:109
 msgid "Remove a number from the blacklist"
 msgstr "Ta bort ett nummer från svartlistan"
 
@@ -263,7 +263,7 @@ msgstr ""
 msgid "Sucessfully imported all entries"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:86
+#: Api/Gql/Blacklist.php:111
 msgid "The ID"
 msgstr ""
 
@@ -275,7 +275,7 @@ msgstr ""
 msgid "The number as it appears in the callerid display"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:149
+#: Api/Gql/Blacklist.php:180
 msgid "The number to block"
 msgstr ""
 
@@ -291,7 +291,7 @@ msgstr ""
 msgid "This module is used to manage a system wide list of blocked callers"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:75 Api/Gql/Blacklist.php:130
+#: Api/Gql/Blacklist.php:100 Api/Gql/Blacklist.php:161
 msgid "Used to manage a system wide list of blocked callers"
 msgstr ""
 

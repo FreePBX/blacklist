@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-29 04:23+0000\n"
+"POT-Creation-Date: 2022-04-06 04:59+0000\n"
 "PO-Revision-Date: 2017-03-08 21:01+0200\n"
 "Last-Translator: Kingvoice <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Actions"
 msgstr "Ações"
 
-#: Api/Gql/Blacklist.php:19
+#: Api/Gql/Blacklist.php:19 Api/Gql/Blacklist.php:45
 msgid "Add a new number to the blacklist"
 msgstr ""
 
@@ -99,7 +99,7 @@ msgstr "Módulo de Lista Negra"
 msgid "Blacklist Number"
 msgstr "Número da Lista Negra"
 
-#: Api/Gql/Blacklist.php:97 Api/Gql/Blacklist.php:109
+#: Api/Gql/Blacklist.php:122 Api/Gql/Blacklist.php:134
 msgid "Blacklist Settings"
 msgstr ""
 
@@ -133,7 +133,7 @@ msgstr "Registro de Chamadas"
 msgid "Cannot connect to Asterisk Manager, is Asterisk running?"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:114
+#: Api/Gql/Blacklist.php:139
 msgid "Catch Unknown/Blocked Caller ID"
 msgstr ""
 
@@ -165,7 +165,7 @@ msgstr "Descrição"
 msgid "Description of number blacklisted"
 msgstr "Descrição do número na lista negra"
 
-#: Api/Gql/Blacklist.php:153
+#: Api/Gql/Blacklist.php:184
 msgid "Description of the blocked number"
 msgstr ""
 
@@ -173,7 +173,7 @@ msgstr ""
 msgid "Destination for BlackListed Calls"
 msgstr "Destino das Chamadas na Lista Negra"
 
-#: Api/Gql/Blacklist.php:121
+#: Api/Gql/Blacklist.php:146
 msgid "Destination for blacklisted calls"
 msgstr ""
 
@@ -226,7 +226,7 @@ msgstr "Número do Telefone"
 msgid "Phone Number Required"
 msgstr "Necessário o Número de Telefone"
 
-#: Api/Gql/Blacklist.php:45 Blacklist.class.php:18 Blacklist.class.php:109
+#: Api/Gql/Blacklist.php:70 Blacklist.class.php:18 Blacklist.class.php:109
 msgid "Remove a number from the blacklist"
 msgstr "Remover um número da lista negra"
 
@@ -258,7 +258,7 @@ msgstr "Enviar"
 msgid "Sucessfully imported all entries"
 msgstr "Todos os elementos importados com sucesso"
 
-#: Api/Gql/Blacklist.php:86
+#: Api/Gql/Blacklist.php:111
 msgid "The ID"
 msgstr ""
 
@@ -270,7 +270,7 @@ msgstr "O arquivo precisa estar em formato CSV!"
 msgid "The number as it appears in the callerid display"
 msgstr "O número tal como aparece no visor de ID de chamadas"
 
-#: Api/Gql/Blacklist.php:149
+#: Api/Gql/Blacklist.php:180
 msgid "The number to block"
 msgstr ""
 
@@ -288,7 +288,7 @@ msgstr ""
 "Este módulo é utilizado para gerenciar uma lista de usuários chamadores "
 "bloqueados em todo o sistema"
 
-#: Api/Gql/Blacklist.php:75 Api/Gql/Blacklist.php:130
+#: Api/Gql/Blacklist.php:100 Api/Gql/Blacklist.php:161
 msgid "Used to manage a system wide list of blocked callers"
 msgstr ""
 

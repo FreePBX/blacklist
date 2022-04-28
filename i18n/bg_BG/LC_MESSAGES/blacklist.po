@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-06 04:59+0000\n"
+"POT-Creation-Date: 2022-04-28 15:58+0000\n"
 "PO-Revision-Date: 2018-07-03 13:27+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/blacklist/bg/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: views/blgrid.php:11
+#: views/blgrid.php:27
 msgid "Actions"
 msgstr "Действия"
 
@@ -29,20 +29,20 @@ msgstr "Действия"
 msgid "Add a new number to the blacklist"
 msgstr ""
 
-#: views/addnumber.php:7
+#: views/modal_addnumber.php:7
 msgid "Add or replace entry"
 msgstr "Добави или замени въведен номер"
 
-#: assets/js/blacklist.js:58
+#: assets/js/blacklist.js:69
 #, perl-format
 msgid "Added %s to the blacklist"
 msgstr ""
 
-#: assets/js/blacklist.js:40
+#: assets/js/blacklist.js:51
 msgid "Adding..."
 msgstr "Добавяне..."
 
-#: Blacklist.class.php:21
+#: Blacklist.class.php:25
 msgid ""
 "Adds a number to the Blacklist Module.  All calls from that number to the "
 "system will receive a disconnect recording.  Manage these in the Blacklist "
@@ -51,14 +51,14 @@ msgstr ""
 "Добавя номер към Черния Списък.  На всички обаждания от този номер към "
 "системата ще отговори съобщение за прекъсване."
 
-#: Blacklist.class.php:102
+#: Blacklist.class.php:139
 msgid ""
 "Adds a number to the Blacklist Module. All calls from that number to the "
 "system will receive a disconnect recording. Manage these in the Blacklist "
 "module."
 msgstr ""
 
-#: Blacklist.class.php:23
+#: Blacklist.class.php:27
 msgid ""
 "Adds the last caller to the Blacklist Module.  All calls from that number to "
 "the system will receive a disconnect recording."
@@ -66,31 +66,26 @@ msgstr ""
 "Добавя последния обадил се номер към Черния Списък.  На всички обаждания от "
 "този номер към системата ще отговори съобщение за прекъсване."
 
-#: Blacklist.class.php:117
+#: Blacklist.class.php:154
 msgid ""
 "Adds the last caller to the Blacklist Module. All calls from that number to "
 "the system will receive a disconnect recording."
 msgstr ""
 
-#: blacklist.i18n.php:6
-msgid "Admin"
-msgstr "Админ"
-
-#: assets/js/blacklist.js:138
+#: assets/js/blacklist.js:142
 msgid "Are you sure to delete the selected records?"
 msgstr ""
 
-#: assets/js/blacklist.js:72
+#: assets/js/blacklist.js:83
 #, perl-format
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:20 Blacklist.class.php:543 blacklist.i18n.php:4
-#: blacklist.i18n.php:10 views/general.php:24
+#: Blacklist.class.php:24 Blacklist.class.php:580 views/general.php:14
 msgid "Blacklist"
 msgstr "Черен Списък"
 
-#: views/general.php:12
+#: views/general.php:2
 msgid "Blacklist Module"
 msgstr "Черен Списък"
 
@@ -102,33 +97,33 @@ msgstr "Номер в Черен Списък"
 msgid "Blacklist Settings"
 msgstr ""
 
-#: Blacklist.class.php:17 Blacklist.class.php:101
+#: Blacklist.class.php:21 Blacklist.class.php:138
 msgid "Blacklist a number"
 msgstr "Въведи номер в Черен Списък"
 
-#: Blacklist.class.php:19 Blacklist.class.php:116
+#: Blacklist.class.php:23 Blacklist.class.php:153
 msgid "Blacklist the last caller"
 msgstr "Въведи последния обадил се в Черен Списък"
 
-#: views/general.php:56
+#: views/general.php:46
 msgid "Block Unknown/Blocked Caller ID"
 msgstr "Блокирай Неразпознат/Блокиран Caller ID"
 
-#: views/general.php:46
+#: views/general.php:36
 msgid "Bulk Handler"
 msgstr "Обработка Наведнъж"
 
-#: views/addnumber.php:75
+#: views/modal_calllog.php:24
 msgid "Call Date/Time"
 msgstr "Дата/Час на Обаждане"
 
-#: views/addnumber.php:69
+#: views/modal_calllog.php:7
 msgid "Call Log"
 msgstr "Лог на Обажданията"
 
-#: Blacklist.class.php:450 Blacklist.class.php:463 Blacklist.class.php:477
-#: Blacklist.class.php:495 Blacklist.class.php:507 Blacklist.class.php:524
-#: Blacklist.class.php:536
+#: Blacklist.class.php:487 Blacklist.class.php:500 Blacklist.class.php:514
+#: Blacklist.class.php:532 Blacklist.class.php:544 Blacklist.class.php:561
+#: Blacklist.class.php:573
 msgid "Cannot connect to Asterisk Manager, is Asterisk running?"
 msgstr ""
 
@@ -136,19 +131,19 @@ msgstr ""
 msgid "Catch Unknown/Blocked Caller ID"
 msgstr ""
 
-#: views/general.php:71
+#: views/general.php:61
 msgid "Check here to catch Unknown/Blocked Caller ID"
 msgstr "Маркирайте за да улавяте Неразпознат/Блокиран Caller ID"
 
-#: views/general.php:95
+#: views/general.php:85
 msgid "Choose where blacklisted calls go"
 msgstr "Изберете накъде да се насочват въведените в черния списък обаждания"
 
-#: views/addnumber.php:57
+#: views/modal_addnumber.php:57
 msgid "Close"
 msgstr "Затвори"
 
-#: Blacklist.class.php:171
+#: Blacklist.class.php:208
 msgid "Could not find file after upload"
 msgstr "Не мога да намеря файла след качването"
 
@@ -156,11 +151,15 @@ msgstr "Не мога да намеря файла след качването"
 msgid "Delete Selected"
 msgstr "Изтрий Избраните"
 
-#: Blacklist.class.php:559 views/addnumber.php:40 views/blgrid.php:10
+#: Blacklist.class.php:596 views/blgrid.php:24 views/modal_addnumber.php:40
 msgid "Description"
 msgstr "Описание"
 
-#: Blacklist.class.php:560
+#: assets/js/blacklist.js:46
+msgid "Description not allowed, reserved character!"
+msgstr ""
+
+#: Blacklist.class.php:597
 msgid "Description of number blacklisted"
 msgstr "Описание на номер от черния списък"
 
@@ -168,7 +167,7 @@ msgstr "Описание на номер от черния списък"
 msgid "Description of the blocked number"
 msgstr ""
 
-#: views/general.php:83
+#: views/general.php:73
 msgid "Destination for BlackListed Calls"
 msgstr "Направление за Обаждания от Черния Списък"
 
@@ -176,84 +175,96 @@ msgstr "Направление за Обаждания от Черния Спи�
 msgid "Destination for blacklisted calls"
 msgstr ""
 
-#: assets/js/blacklist.js:56
+#: assets/js/blacklist.js:67
 msgid "Entry Updated"
 msgstr "Въвеждането е Обновено"
 
-#: views/general.php:29
+#: views/general.php:19
 msgid "Import/Export"
 msgstr "Внасяне/Изнасяне"
 
-#: Blacklist.class.php:544
+#: Blacklist.class.php:581
 msgid "Import/Export Caller Blacklist"
 msgstr "Внасяне/Изнасяне на Черен Списък с Обаждащи се"
 
-#: views/general.php:63 assets/js/blacklist.js:73 assets/js/blacklist.js:139
+#: views/blgrid.php:26
+msgid "Incoming Calls"
+msgstr ""
+
+#: views/blgrid.php:25
+msgid "Last Call"
+msgstr ""
+
+#: Blacklist.class.php:120
+msgid "Never"
+msgstr ""
+
+#: views/general.php:53 assets/js/blacklist.js:84 assets/js/blacklist.js:143
 msgid "No"
 msgstr "Не"
 
-#: Blacklist.class.php:190
+#: Blacklist.class.php:227
 msgid "No Entries to export"
 msgstr "Няма Въвеждания за изнасяне"
 
-#: views/blgrid.php:9
+#: views/blgrid.php:23
 msgid "Number"
 msgstr "Номер"
 
-#: assets/js/blacklist.js:85
+#: assets/js/blacklist.js:96
 #, perl-format
 msgid "Number %s removed from the blacklist"
 msgstr ""
 
-#: views/addnumber.php:18
+#: views/modal_addnumber.php:18
 msgid "Number/CallerID"
 msgstr "Номер/CallerID"
 
-#: assets/js/blacklist.js:35
+#: assets/js/blacklist.js:42
 msgid "Number/CallerID cannot be blank"
 msgstr "Номер/CallerID не може да е празно"
 
-#: Blacklist.class.php:62
+#: Blacklist.class.php:66
 msgid "Numbers Deleted"
 msgstr "Изтрити Номера"
 
-#: Blacklist.class.php:554
+#: Blacklist.class.php:591
 msgid "Phone Number"
 msgstr "Телефонен Номер"
 
-#: Blacklist.class.php:578
+#: Blacklist.class.php:615
 msgid "Phone Number Required"
 msgstr "Необходим е Телефонен Номер"
 
-#: Api/Gql/Blacklist.php:70 Blacklist.class.php:18 Blacklist.class.php:109
+#: Api/Gql/Blacklist.php:70 Blacklist.class.php:22 Blacklist.class.php:146
 msgid "Remove a number from the blacklist"
 msgstr "Извади номер от Черен Списък"
 
-#: Blacklist.class.php:22 Blacklist.class.php:110
+#: Blacklist.class.php:26 Blacklist.class.php:147
 msgid "Removes a number from the Blacklist Module"
 msgstr "Премахва номер от Черния Списък"
 
-#: Blacklist.class.php:405
+#: Blacklist.class.php:442
 msgid "Reset"
 msgstr "Изчисти"
 
-#: assets/js/blacklist.js:53
+#: assets/js/blacklist.js:64
 msgid "Save Changes"
 msgstr "Запиши Промените"
 
-#: views/addnumber.php:58
+#: views/modal_addnumber.php:58
 msgid "Save changes"
 msgstr "Запиши Промените"
 
-#: views/general.php:34
+#: views/general.php:24
 msgid "Settings"
 msgstr "Настройки"
 
-#: Blacklist.class.php:411
+#: Blacklist.class.php:448
 msgid "Submit"
 msgstr "Приеми"
 
-#: Blacklist.class.php:169
+#: Blacklist.class.php:206
 msgid "Sucessfully imported all entries"
 msgstr "Всички въвеждания са внесени успешно"
 
@@ -261,11 +272,11 @@ msgstr "Всички въвеждания са внесени успешно"
 msgid "The ID"
 msgstr ""
 
-#: Blacklist.class.php:174
+#: Blacklist.class.php:211
 msgid "The file must be in CSV format!"
 msgstr "Файлът трябва да е в CSV формат!"
 
-#: Blacklist.class.php:555
+#: Blacklist.class.php:592
 msgid "The number as it appears in the callerid display"
 msgstr "Номерът, както се появява на callerid дисплея"
 
@@ -273,27 +284,29 @@ msgstr "Номерът, както се появява на callerid диспл�
 msgid "The number to block"
 msgstr ""
 
-#: Blacklist.class.php:149
+#: Blacklist.class.php:186
 msgid "There was an error uploading the file"
 msgstr "Грешка при качване на файл"
 
-#: views/general.php:44
+#: views/general.php:34
 msgid "This functionality is now part of the Bulk Handler Module"
 msgstr "Тази функционалност сега е част от модула за Обработка Наведнъж"
-
-#: blacklist.i18n.php:8
-msgid "This module is used to manage a system wide list of blocked callers"
-msgstr ""
-"Този модул се използва за управление на списък с блокирани обаждания в "
-"цялата система"
 
 #: Api/Gql/Blacklist.php:100 Api/Gql/Blacklist.php:161
 msgid "Used to manage a system wide list of blocked callers"
 msgstr ""
 
-#: views/general.php:61 assets/js/blacklist.js:73 assets/js/blacklist.js:139
+#: views/general.php:51 assets/js/blacklist.js:84 assets/js/blacklist.js:143
 msgid "Yes"
 msgstr "Да"
+
+#~ msgid "Admin"
+#~ msgstr "Админ"
+
+#~ msgid "This module is used to manage a system wide list of blocked callers"
+#~ msgstr ""
+#~ "Този модул се използва за управление на списък с блокирани обаждания в "
+#~ "цялата система"
 
 #~ msgid "Added %s to the blacklist."
 #~ msgstr "%s е добавен в черния списък."

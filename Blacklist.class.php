@@ -5,7 +5,11 @@ namespace FreePBX\modules;
 //	Copyright 2014 Schmooze Com Inc.
 //  Copyright 2018 Sangoma Technologies, Inc
 
-class Blacklist implements \BMO {
+use BMO;
+use FreePBX_Helpers;
+
+class Blacklist  extends FreePBX_Helpers implements BMO {
+
 	public function __construct($freepbx = null){
 		if ($freepbx == null) {
 			throw new \RuntimeException('Not given a FreePBX Object');
@@ -68,29 +72,62 @@ class Blacklist implements \BMO {
 			case 'calllog':
 				$mod_cdr = $this->FreePBX->Cdr;
 				$number = $request['number'];
-				$sql = sprintf('SELECT DISTINCT calldate FROM %s WHERE src = ?', $mod_cdr->getDbTable());
+				$sql = sprintf('
+				SELECT T3.calldate FROM (
+					SELECT DISTINCT(T1.linkedid), T2.calldate FROM %1$s T1
+					LEFT JOIN (
+						SELECT calldate, linkedid, sequence FROM %1$s GROUP BY linkedid ASC, sequence ASC
+					) T2 ON T1.linkedid = T2.linkedid AND T1.sequence = T2.sequence
+					WHERE T1.src = ?
+					GROUP BY T1.linkedid DESC
+					ORDER BY T1.sequence ASC
+				) T3
+				ORDER BY T3.calldate DESC', $mod_cdr->getDbTable());
 				$stmt = $mod_cdr->getCdrDbHandle()->prepare($sql);
 				$stmt->execute(array($number));
 				$ret = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 				return $ret;
 			break;
 			case 'getJSON':
-			switch($request['jdata']){
-				case 'grid':
-					$ret = array();
-					$blacklist = $this->getBlacklist();
-					foreach($blacklist as $item){
-						$number = $item['number'];
-						$description = $item['description'];
-						if($number == 'dest' || $number == 'blocked'){
-							continue;
-						}else{
-							$ret[] = array('number' => $number, 'description' => $description);
+				switch($request['jdata'])
+				{
+					case 'grid':
+						$ret = array();
+						$blacklist = $this->getBlacklist();
+
+						$a_numbers = array();
+						foreach($blacklist as $item)
+						{
+							array_push($a_numbers, $item['number']);
 						}
-					}
-				return $ret;
-				break;
-			}
+						$info_nums = $this->getCountCallIn($a_numbers);
+
+						foreach($blacklist as $item)
+						{
+							$number = $item['number'];
+							if (in_array($number, array('dest', 'blocked'))) {
+								continue;
+							}
+
+							//if it is 1, do not return anything since it is used for blank description.
+							$description = $item['description'] != 1 ? $item['description'] : '';
+							$count 		 = $info_nums[$number]['count'];
+							$last_date 	 = $info_nums[$number]['last_date'];
+							$ret[] = array(
+								'number' => $number,
+								'description' => $description,
+								'count' => $count,
+								'last_date' => $count == 0 ? _("Never") : $last_date,
+							);
+						}
+						return $ret;
+					break;
+					case 'count':
+						$number = $request['number'];
+						$count = $this->getCountCallIn($number);
+						return array('status' => true, 'count' => $count);
+					break;
+				}
 			break;
 		}
 	}
@@ -597,4 +634,56 @@ class Blacklist implements \BMO {
 		return $data;
 	}
 
+	/**
+	 * Gets the number of calls from the specified number
+	 * @param string $number number of which we want to know the number of incoming calls
+	 * @return int number of incoming calls recorded
+	 */
+	public function getCountCallIn($number) {
+		$return_data = 0;
+		if (! empty( is_array($number) ? $number : trim($number)))
+		{
+			$mod_cdr = $this->FreePBX->Cdr;
+			$mod_cdr_db = $mod_cdr->getCdrDbHandle();
+
+			$return_array = array();
+			$number_process = is_array($number) ? $number : array($number);
+			foreach ($number_process as $num) {
+				$return_array[$num] = array(
+					'count' => 0,
+					'last_date' => '',
+				);
+			}
+			
+			$place_holders = implode(',', array_fill(0, count($number_process), '?'));
+			$number_process = array_map( function($value) { return (string)$value; }, $number_process );
+			$sql = sprintf('
+			SELECT DISTINCT(T1.src) as src, T2.ncount, T3.calldate FROM %1$s T1
+			LEFT JOIN (
+				SELECT COUNT(DISTINCT linkedid) AS ncount, src FROM %1$s GROUP BY src
+			) T2 ON T1.src = T2.src
+			LEFT JOIN (
+				SELECT MAX(calldate) AS calldate, src FROM %1$s GROUP BY src
+			) T3 ON T1.src = T3.src
+			WHERE T1.src IN (%2$s)
+			GROUP BY T1.src
+			', $mod_cdr->getDbTable(), $place_holders);
+
+			$stmt = $mod_cdr_db->prepare($sql);
+			if ($stmt->execute($number_process))
+			{
+				$res = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+				foreach ($res as $row)
+				{
+					$return_array[$row['src']] = array(
+						'count' => $row['ncount'],
+						'last_date' => $row['calldate'],
+					);
+				}
+			}
+			
+			$return_data = is_array($number) ? $return_array : $return_array[$number]['count'];
+		}
+		return $return_data;
+	}
 }

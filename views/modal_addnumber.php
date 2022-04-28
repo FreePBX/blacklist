@@ -1,10 +1,10 @@
 <!--Add number Modal -->
-<div class="modal fade" id="addNumber" tabindex="-1" role="dialog" aria-labelledby="addNumber" aria-hidden="true">
+<div class="modal fade" id="addNumber" tabindex="-1" role="dialog" aria-labelledby="addNumberTitle" aria-hidden="true">
     <div class="modal-dialog display">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title" id="addNumber"><?php echo _("Add or replace entry") ?></h4>
+				<h4 class="modal-title" id="addNumberTitle"><?php echo _("Add or replace entry") ?></h4>
 			</div>
 			<div class="modal-body">
 				<input type="hidden" id="oldval" value=""/>
@@ -56,26 +56,6 @@
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _("Close")?></button>
 				<button type="button" class="btn btn-primary" id="submitnumber"><?php echo _("Save changes")?></button>
-			</div>
-		</div>
-	</div>
-</div>
-<!--report Modal -->
-<div class="modal fade" id="numreport" tabindex="-1" role="dialog" aria-labelledby="numreport" aria-hidden="true">
-    <div class="modal-dialog display">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title" id="addNumber"><?php echo _("Call Log") ?></h4>
-			</div>
-			<div class="modal-body">
-        <table id="blReport">
-          <thead>
-            <tr>
-              <th data-field="calldate"><?php echo _("Call Date/Time")?></th>
-            </tr>
-          </thead>
-        </table>
 			</div>
 		</div>
 	</div>

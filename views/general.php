@@ -1,16 +1,6 @@
-<?php
-$infohtml = '';
-if(isset($message)){
-	$infohtml = '<div class="well well-info">';
-	$infohtml .= $message;
-	$infohtml .= '</div>';
-}
-
-
-?>
 <div class="container-fluid">
 	<h1><?php echo _('Blacklist Module')?></h1>
-	<?php echo $infohtml?>
+	<?php echo (isset($message) ? sprintf('<div class="well well-info">%s</div>', $message) : ''); ?>
 	<div class = "display full-border">
 		<div class="row">
 			<div class="col-sm-12">
@@ -103,8 +93,9 @@ if(isset($message)){
 					</div>
 				</div>
 				<!--Modals-->
-					<?php echo load_view(__DIR__.'/addnumber.php',array());?>
-				<!--Modals-->
+				<?php echo load_view(__DIR__.'/modal_addnumber.php', array());?>
+				<?php echo load_view(__DIR__.'/modal_calllog.php', array());?>
+				<!--End Modals-->
 			</div>
 		</div>
 	</div>

@@ -114,7 +114,7 @@ class Blacklist extends Base {
 						'resolve' => function($root, $args) {
 							$list = $this->freepbx->Blacklist->getBlacklist();
 							$item = array_search($args['id'], array_column($list, 'number'));
-							return ($item && isset($list[$item])) ? $list[$item] : null;
+							return ($item!==false && isset($list[$item])) ? $list[$item] : null;
 						}
 					],
 					'blacklistSettings' => [

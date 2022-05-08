@@ -52,6 +52,12 @@
 					</div>
 				</div>
 				<!--END Description-->
+				<?php
+					if ($objSmsplus) {
+						$smsplusTemplate = $objSmsplus->smsplusTemplate();
+						echo $smsplusTemplate['modelAddNumberBlockType'];
+					}
+				?>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _("Close")?></button>

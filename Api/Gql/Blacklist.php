@@ -149,9 +149,9 @@ class Blacklist extends Base {
 					'type' => Type::string(),
 					'description' => _('Destination for blacklisted calls'),
 					'resolve' => function($root, $args) {
-						$destinationConnection=$this->typeContainer->get('destination')->resolveValue($this->freepbx->Blacklist->destinationGet());
+						$destinationConnection=$this->freepbx->Blacklist->destinationGet();
 						$getDestinations = \FreePBX::Modules()->getDestinations();
-						$destination = isset($destinationConnection)? $destinationConnection : null;
+						$destination = isset($destinationConnection) ? $destinationConnection : null;
 						$destination_description = isset($getDestinations[$destination])? $getDestinations[$destination] : null;
 						$name = isset($destination_description['name'])? $destination_description['name'] :'';
 						$category = isset($destination_description['category'])? $destination_description['category'] : $name;

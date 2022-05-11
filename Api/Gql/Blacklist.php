@@ -60,6 +60,10 @@ class Blacklist extends Base {
 							]
 						],
 						'mutateAndGetPayload' => function ($input) {
+							$validator = $this->inputvalidator($input);
+							if ($validator['status']) {
+								return ['blockUnknown' => false,'destination' => $validator['message']];
+							}
 							$this->freepbx->Blacklist->blockunknownSet($input['blockUnknown']);
 							$this->freepbx->Blacklist->destinationSet($input['destination']);
 							return ['blockUnknown' => $input['blockUnknown'],'destination'=>$input['destination']];
@@ -209,5 +213,29 @@ class Blacklist extends Base {
 				]
 			];
 		});
+	}
+
+	private function inputvalidator($input) {
+		$validator = array();
+		$validator['status'] = false;
+		$validator['message'] = _("Please provide the valid `destination` value, for example extension (100) :`from-did-direct,100,1`");
+		$destination = isset($input['destination'])? explode(',',$input['destination']) :'';
+		$getDestinations = \FreePBX::Modules()->getDestinations();
+		$destination_description = isset($getDestinations[trim($input['destination'])])? $getDestinations[trim($input['destination'])] : null;
+		$name = isset($destination_description['name'])? $destination_description['name'] :'';
+		$category = isset($destination_description['category'])? $destination_description['category'] : $name;
+		$valuefrom_db = isset($destination_description['description'])? $category.':'.$destination_description['description']:null;
+		if (is_array($destination) && count($destination) >=3) {
+			if (trim($destination[0])=='' || trim($destination[1])=='' || trim($destination[2])=='') {
+				$validator['status'] = true;
+			}
+			if(trim($valuefrom_db) =='') {
+				$validator['status'] = true;
+				$validator['message'] = _("Input variable destination does not exists in this system, Please provide the valid `destination`");
+			}
+		} else {
+			$validator['status'] = true;
+		}
+		return $validator;
 	}
 }

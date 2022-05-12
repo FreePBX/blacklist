@@ -3,8 +3,8 @@
     <div class="modal-dialog display">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				<h4 class="modal-title" id="addNumberTitle"><?php echo _("Add or replace entry") ?></h4>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			</div>
 			<div class="modal-body">
 				<input type="hidden" id="oldval" value=""/>
@@ -12,8 +12,8 @@
 				<div class="element-container">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="row">
-								<div class="form-group">
+							<div class="">
+								<div class="form-group row">
 									<div class="col-md-3">
 										<label class="control-label" for="number"><?php echo _("Number/CallerID")?></label>
 									</div>
@@ -34,8 +34,8 @@
 				<div class="element-container">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="row">
-								<div class="form-group">
+							<div class="">
+								<div class="form-group row">
 									<div class="col-md-3">
 										<label class="control-label" for="description"><?php echo _("Description")?></label>
 									</div>

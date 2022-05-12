@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-06 04:59+0000\n"
+"POT-Creation-Date: 2022-05-12 06:15+0000\n"
 "PO-Revision-Date: 2021-11-28 21:21+0100\n"
 "Last-Translator: Javier Pastor <jpastor@cerebelum.net>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -99,7 +99,7 @@ msgstr "Modulo Lista Negra"
 msgid "Blacklist Number"
 msgstr "Número Lista Negra"
 
-#: Api/Gql/Blacklist.php:122 Api/Gql/Blacklist.php:134
+#: Api/Gql/Blacklist.php:126 Api/Gql/Blacklist.php:138
 msgid "Blacklist Settings"
 msgstr "Ajustes de Lista Negra"
 
@@ -133,7 +133,7 @@ msgstr "Registro de Llamadas"
 msgid "Cannot connect to Asterisk Manager, is Asterisk running?"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:139
+#: Api/Gql/Blacklist.php:143
 #, fuzzy
 msgid "Catch Unknown/Blocked Caller ID"
 msgstr "Bloquear Desconocido/Bloqueado identificador de llamadas"
@@ -166,7 +166,7 @@ msgstr "Descripcion"
 msgid "Description of number blacklisted"
 msgstr "Descripción de numero en Lista Negra"
 
-#: Api/Gql/Blacklist.php:184
+#: Api/Gql/Blacklist.php:188
 #, fuzzy
 msgid "Description of the blocked number"
 msgstr "Descripción de numero en Lista Negra"
@@ -175,7 +175,7 @@ msgstr "Descripción de numero en Lista Negra"
 msgid "Destination for BlackListed Calls"
 msgstr "Destino para llamadas Lista Negra"
 
-#: Api/Gql/Blacklist.php:146
+#: Api/Gql/Blacklist.php:150
 #, fuzzy
 msgid "Destination for blacklisted calls"
 msgstr "Destino para llamadas Lista Negra"
@@ -191,6 +191,12 @@ msgstr "Importar/Exportar"
 #: Blacklist.class.php:544
 msgid "Import/Export Caller Blacklist"
 msgstr "Importar/Exportar lista negra de llamantes"
+
+#: Api/Gql/Blacklist.php:234
+msgid ""
+"Input variable destination does not exists in this system, Please provide "
+"the valid `destination`"
+msgstr ""
 
 #: views/general.php:63 assets/js/blacklist.js:73 assets/js/blacklist.js:139
 msgid "No"
@@ -229,7 +235,13 @@ msgstr "Numero Teléfono"
 msgid "Phone Number Required"
 msgstr "Numero Teléfono Requerido"
 
-#: Api/Gql/Blacklist.php:70 Blacklist.class.php:18 Blacklist.class.php:109
+#: Api/Gql/Blacklist.php:221
+msgid ""
+"Please provide the valid `destination` value, for example extension (100) :"
+"`from-did-direct,100,1`"
+msgstr ""
+
+#: Api/Gql/Blacklist.php:74 Blacklist.class.php:18 Blacklist.class.php:109
 msgid "Remove a number from the blacklist"
 msgstr "Eliminar un número de la lista negra"
 
@@ -261,7 +273,7 @@ msgstr "Enviar"
 msgid "Sucessfully imported all entries"
 msgstr "Se importaron todas las entradas satisfactoriamente"
 
-#: Api/Gql/Blacklist.php:111
+#: Api/Gql/Blacklist.php:115
 msgid "The ID"
 msgstr ""
 
@@ -273,7 +285,7 @@ msgstr "El archivo debe estar en formato CSV!"
 msgid "The number as it appears in the callerid display"
 msgstr "EL numero tal cual aparece en el despliegue de ID de LLamada"
 
-#: Api/Gql/Blacklist.php:180
+#: Api/Gql/Blacklist.php:184
 msgid "The number to block"
 msgstr ""
 
@@ -289,7 +301,7 @@ msgstr "Esta funcionalidad forma parte ahora del Manejador a Granel"
 msgid "This module is used to manage a system wide list of blocked callers"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:100 Api/Gql/Blacklist.php:161
+#: Api/Gql/Blacklist.php:104 Api/Gql/Blacklist.php:165
 #, fuzzy
 msgid "Used to manage a system wide list of blocked callers"
 msgstr ""

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-28 15:58+0000\n"
+"POT-Creation-Date: 2022-05-12 06:15+0000\n"
 "PO-Revision-Date: 2017-07-20 10:28+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -29,7 +29,7 @@ msgstr "Các thao tác"
 msgid "Add a new number to the blacklist"
 msgstr ""
 
-#: views/modal_addnumber.php:7
+#: views/modal_addnumber.php:6
 msgid "Add or replace entry"
 msgstr "Thêm hoặc thay thế mục nhập"
 
@@ -94,7 +94,7 @@ msgstr "Mô đun Danh sách đen"
 msgid "Blacklist Number"
 msgstr "Số Danh sách đen"
 
-#: Api/Gql/Blacklist.php:122 Api/Gql/Blacklist.php:134
+#: Api/Gql/Blacklist.php:126 Api/Gql/Blacklist.php:138
 msgid "Blacklist Settings"
 msgstr ""
 
@@ -118,7 +118,7 @@ msgstr "Bộ quản lý tổng hơp- Bulk Handler"
 msgid "Call Date/Time"
 msgstr "Thời gian/ Ngày của cuộc gọi"
 
-#: views/modal_calllog.php:7
+#: views/modal_calllog.php:6
 msgid "Call Log"
 msgstr "Nhật ký cuộc gọi"
 
@@ -128,7 +128,7 @@ msgstr "Nhật ký cuộc gọi"
 msgid "Cannot connect to Asterisk Manager, is Asterisk running?"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:139
+#: Api/Gql/Blacklist.php:143
 msgid "Catch Unknown/Blocked Caller ID"
 msgstr ""
 
@@ -164,7 +164,7 @@ msgstr ""
 msgid "Description of number blacklisted"
 msgstr "Mô tả của số thuộc danh sách đen"
 
-#: Api/Gql/Blacklist.php:184
+#: Api/Gql/Blacklist.php:188
 msgid "Description of the blocked number"
 msgstr ""
 
@@ -172,7 +172,7 @@ msgstr ""
 msgid "Destination for BlackListed Calls"
 msgstr "Điểm đến của các cuộc gọi thuộc danh sách đen"
 
-#: Api/Gql/Blacklist.php:146
+#: Api/Gql/Blacklist.php:150
 msgid "Destination for blacklisted calls"
 msgstr ""
 
@@ -190,6 +190,12 @@ msgstr "NHập/ Xuất Danh sách đen người gọi"
 
 #: views/blgrid.php:26
 msgid "Incoming Calls"
+msgstr ""
+
+#: Api/Gql/Blacklist.php:234
+msgid ""
+"Input variable destination does not exists in this system, Please provide "
+"the valid `destination`"
 msgstr ""
 
 #: views/blgrid.php:25
@@ -237,7 +243,13 @@ msgstr "Số điện thoại"
 msgid "Phone Number Required"
 msgstr "Số điện thoại yêu cầu"
 
-#: Api/Gql/Blacklist.php:70 Blacklist.class.php:22 Blacklist.class.php:146
+#: Api/Gql/Blacklist.php:221
+msgid ""
+"Please provide the valid `destination` value, for example extension (100) :"
+"`from-did-direct,100,1`"
+msgstr ""
+
+#: Api/Gql/Blacklist.php:74 Blacklist.class.php:22 Blacklist.class.php:146
 msgid "Remove a number from the blacklist"
 msgstr "Xóa một số khỏi danh sách đen"
 
@@ -269,7 +281,7 @@ msgstr "Gửi đi"
 msgid "Sucessfully imported all entries"
 msgstr "Xuất tất cả mục nhập thành công"
 
-#: Api/Gql/Blacklist.php:111
+#: Api/Gql/Blacklist.php:115
 msgid "The ID"
 msgstr ""
 
@@ -281,7 +293,7 @@ msgstr "Tệp phải ở dạng CSV!"
 msgid "The number as it appears in the callerid display"
 msgstr "số điện thoại như xuất hiện trong màn hình ID người gọi"
 
-#: Api/Gql/Blacklist.php:180
+#: Api/Gql/Blacklist.php:184
 msgid "The number to block"
 msgstr ""
 
@@ -295,7 +307,7 @@ msgstr ""
 "Chức năng này hiện tại là một phần của Mô đun Bulk Handler ( Bộ quản lý tổng "
 "hợp)"
 
-#: Api/Gql/Blacklist.php:100 Api/Gql/Blacklist.php:161
+#: Api/Gql/Blacklist.php:104 Api/Gql/Blacklist.php:165
 msgid "Used to manage a system wide list of blocked callers"
 msgstr ""
 

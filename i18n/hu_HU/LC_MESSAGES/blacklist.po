@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-28 15:58+0000\n"
+"POT-Creation-Date: 2022-05-12 06:15+0000\n"
 "PO-Revision-Date: 2008-02-06 20:54+0100\n"
 "Last-Translator: Lónyai Gergely <alephlg@gmail.com>\n"
 "Language-Team: Magyar <support@freepbx.hu>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Add a new number to the blacklist"
 msgstr ""
 
-#: views/modal_addnumber.php:7
+#: views/modal_addnumber.php:6
 msgid "Add or replace entry"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Blacklist Number"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:122 Api/Gql/Blacklist.php:134
+#: Api/Gql/Blacklist.php:126 Api/Gql/Blacklist.php:138
 msgid "Blacklist Settings"
 msgstr ""
 
@@ -106,7 +106,7 @@ msgstr ""
 msgid "Call Date/Time"
 msgstr ""
 
-#: views/modal_calllog.php:7
+#: views/modal_calllog.php:6
 msgid "Call Log"
 msgstr ""
 
@@ -116,7 +116,7 @@ msgstr ""
 msgid "Cannot connect to Asterisk Manager, is Asterisk running?"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:139
+#: Api/Gql/Blacklist.php:143
 msgid "Catch Unknown/Blocked Caller ID"
 msgstr ""
 
@@ -152,7 +152,7 @@ msgstr ""
 msgid "Description of number blacklisted"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:184
+#: Api/Gql/Blacklist.php:188
 msgid "Description of the blocked number"
 msgstr ""
 
@@ -160,7 +160,7 @@ msgstr ""
 msgid "Destination for BlackListed Calls"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:146
+#: Api/Gql/Blacklist.php:150
 msgid "Destination for blacklisted calls"
 msgstr ""
 
@@ -178,6 +178,12 @@ msgstr ""
 
 #: views/blgrid.php:26
 msgid "Incoming Calls"
+msgstr ""
+
+#: Api/Gql/Blacklist.php:234
+msgid ""
+"Input variable destination does not exists in this system, Please provide "
+"the valid `destination`"
 msgstr ""
 
 #: views/blgrid.php:25
@@ -225,7 +231,13 @@ msgstr ""
 msgid "Phone Number Required"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:70 Blacklist.class.php:22 Blacklist.class.php:146
+#: Api/Gql/Blacklist.php:221
+msgid ""
+"Please provide the valid `destination` value, for example extension (100) :"
+"`from-did-direct,100,1`"
+msgstr ""
+
+#: Api/Gql/Blacklist.php:74 Blacklist.class.php:22 Blacklist.class.php:146
 msgid "Remove a number from the blacklist"
 msgstr ""
 
@@ -257,7 +269,7 @@ msgstr ""
 msgid "Sucessfully imported all entries"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:111
+#: Api/Gql/Blacklist.php:115
 msgid "The ID"
 msgstr ""
 
@@ -269,7 +281,7 @@ msgstr ""
 msgid "The number as it appears in the callerid display"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:180
+#: Api/Gql/Blacklist.php:184
 msgid "The number to block"
 msgstr ""
 
@@ -281,7 +293,7 @@ msgstr ""
 msgid "This functionality is now part of the Bulk Handler Module"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:100 Api/Gql/Blacklist.php:161
+#: Api/Gql/Blacklist.php:104 Api/Gql/Blacklist.php:165
 msgid "Used to manage a system wide list of blocked callers"
 msgstr ""
 

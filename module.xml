@@ -2,7 +2,7 @@
 	<rawname>blacklist</rawname>
 	<repo>standard</repo>
 	<name>Blacklist</name>
-	<version>16.0.11</version>
+	<version>16.0.12</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -13,6 +13,7 @@
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*16.0.12* FREEI-4793 
 		*16.0.11* FREEI-4665 
 		*16.0.10* FREEPBX-23360 
 		*16.0.9* FREEI-4665 Fixed blacklist bugs and added new api to set blacklist settings 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-12 06:15+0000\n"
+"POT-Creation-Date: 2022-05-23 10:34+0000\n"
 "PO-Revision-Date: 2018-02-16 19:35+0200\n"
 "Last-Translator: Nils <Nils@heckenkamp.info>\n"
 "Language-Team: German <http://weblate.freepbx.org/projects/freepbx/blacklist/"
@@ -29,7 +29,7 @@ msgstr "Aktionen"
 msgid "Add a new number to the blacklist"
 msgstr ""
 
-#: views/modal_addnumber.php:6
+#: views/modal_addnumber.php:7
 msgid "Add or replace entry"
 msgstr "Eintrag hinzufügen oder ersetzen"
 
@@ -117,7 +117,7 @@ msgstr "Bulk-Handler"
 msgid "Call Date/Time"
 msgstr "Anruf Datum/Uhrzeit"
 
-#: views/modal_calllog.php:6
+#: views/modal_calllog.php:7
 msgid "Call Log"
 msgstr "Anrufliste"
 

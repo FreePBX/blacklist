@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-12 06:15+0000\n"
+"POT-Creation-Date: 2022-05-23 10:34+0000\n"
 "PO-Revision-Date: 2015-10-16 13:57+0200\n"
 "Last-Translator: james <zhulizhong@gmail.com>\n"
 "Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
@@ -30,7 +30,7 @@ msgstr "命令"
 msgid "Add a new number to the blacklist"
 msgstr ""
 
-#: views/modal_addnumber.php:6
+#: views/modal_addnumber.php:7
 msgid "Add or replace entry"
 msgstr "添加或取代项目"
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Call Date/Time"
 msgstr "呼叫 日期/时间"
 
-#: views/modal_calllog.php:6
+#: views/modal_calllog.php:7
 msgid "Call Log"
 msgstr "呼叫日志"
 

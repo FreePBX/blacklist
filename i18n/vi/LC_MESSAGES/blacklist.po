@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-12 06:15+0000\n"
+"POT-Creation-Date: 2022-05-23 10:34+0000\n"
 "PO-Revision-Date: 2017-07-20 10:28+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -29,7 +29,7 @@ msgstr "Các thao tác"
 msgid "Add a new number to the blacklist"
 msgstr ""
 
-#: views/modal_addnumber.php:6
+#: views/modal_addnumber.php:7
 msgid "Add or replace entry"
 msgstr "Thêm hoặc thay thế mục nhập"
 
@@ -118,7 +118,7 @@ msgstr "Bộ quản lý tổng hơp- Bulk Handler"
 msgid "Call Date/Time"
 msgstr "Thời gian/ Ngày của cuộc gọi"
 
-#: views/modal_calllog.php:6
+#: views/modal_calllog.php:7
 msgid "Call Log"
 msgstr "Nhật ký cuộc gọi"
 

@@ -8,19 +8,19 @@
 						<form class="fpbx-submit" name="frm_blacklist" action="" method="post" role="form">
 							<form autocomplete="off" name="edit" action="" method="post" onsubmit="return edit_onsubmit();">
 							<input type="hidden" name="action" value="settings">
-							<ul class="nav nav-tabs pb-0" role="tablist">
-								<li role="presentation" data-name="blacklist" >
-									<a href="#blacklist" aria-controls="blacklist" role="tab" class="nav-link active" data-toggle="tab">
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" data-name="blacklist" class="active">
+									<a href="#blacklist" aria-controls="blacklist" role="tab" data-toggle="tab">
 										<?php echo _("Blacklist")?>
 									</a>
 								</li>
 								<li role="presentation" data-name="importexport" class="change-tab">
-									<a href="#importexport" aria-controls="importexport" role="tab" class="nav-link" data-toggle="tab">
+									<a href="#importexport" aria-controls="importexport" role="tab" data-toggle="tab">
 										<?php echo _("Import/Export")?>
 									</a>
 								</li>
 								<li role="presentation" data-name="settings" class="change-tab">
-									<a href="#settings" aria-controls="settings" role="tab" class="nav-link" data-toggle="tab">
+									<a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
 										<?php echo _("Settings")?>
 									</a>
 								</li>
@@ -40,8 +40,8 @@
 										<div class="element-container">
 											<div class="row">
 												<div class="col-md-12">
-													<div class="">
-														<div class="form-group row">
+													<div class="row">
+														<div class="form-group">
 															<div class="col-md-4">
 																<b><?php echo _("Block Unknown/Blocked Caller ID") ?></b>
 																<i class="fa fa-question-circle fpbx-help-icon" data-for="blocked"></i>
@@ -67,8 +67,8 @@
 										<div class="element-container">
 											<div class="row">
 												<div class="col-md-12">
-													<div class="">
-														<div class="form-group row">
+													<div class="row">
+														<div class="form-group">
 															<div class="col-md-4">
 																<label class="control-label" for="goto0"><?php echo _("Destination for BlackListed Calls") ?></label>
 																<i class="fa fa-question-circle fpbx-help-icon" data-for="goto0"></i>

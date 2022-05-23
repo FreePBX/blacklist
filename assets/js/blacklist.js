@@ -17,21 +17,21 @@ $(document).on('show.bs.tab', 'a[data-toggle="tab"]', function (e) {
     var clicked = $(this).attr('href');
     switch(clicked){
 		case '#settings':
-			$('#action-bar').removeClass('d-none');
-			$('#Submit').removeClass('d-none');
-			$('#Reset').removeClass('d-none');
+			$('#action-bar').removeClass('hidden');
+			$('#Submit').removeClass('hidden');
+			$('#Reset').removeClass('hidden');
 		break;
 		case '#importexport':
-			$('#action-bar').removeClass('d-none');
-			$('#Submit').addClass('d-none');
-			$('#Reset').addClass('d-none');
+			$('#action-bar').removeClass('hidden');
+			$('#Submit').addClass('hidden');
+			$('#Reset').addClass('hidden');
 		break;
 		default:
-			$('#action-bar').addClass('d-none');
+			$('#action-bar').addClass('hidden');
 		break;
 	}
 });
-$('#action-bar').addClass('d-none');
+$('#action-bar').addClass('hidden');
 
 $('#submitnumber').on('click', function() {
 	var num = $('#number').val();
@@ -120,9 +120,9 @@ $('#action-toggle-all').on("change", function() {
 
 $('input[id^="actonthis"],#action-toggle-all').change(function() {
 	if($('input[id^="actonthis"]').is(":checked")) {
-		$("#trashchecked").removeClass("d-none");
+		$("#trashchecked").removeClass("hidden");
 	} else {
-		$("#trashchecked").addClass("d-none");
+		$("#trashchecked").addClass("hidden");
 	}
 
 });
@@ -157,7 +157,7 @@ $("#blkDelete").on("click", function(e) {
 		
 				//Reset ui elements
 				//hide the action element in botnav
-				$("#delchecked").addClass("d-none");
+				$("#delchecked").addClass("hidden");
 				//no boxes should be checked but if they are uncheck em.
 				$('input[name="btSelectItem"]:checked').each(function() {
 					$(this).prop('checked', false);

@@ -438,12 +438,12 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 				'reset' => array(
 					'name' => 'reset',
 					'id' => 'Reset',
-					'class' => 'd-none',
+					'class' => 'hidden',
 					'value' => _('Reset'),
 				),
 				'submit' => array(
 					'name' => 'submit',
-					'class' => 'd-none',
+					'class' => 'hidden',
 					'id' => 'Submit',
 					'value' => _('Submit'),
 				),

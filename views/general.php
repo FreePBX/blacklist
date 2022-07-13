@@ -37,7 +37,7 @@ if(isset($message)){
 							</ul>
 								<div class="tab-content display">
 									<div role="tabpanel" id="blacklist" class="tab-pane active">
-										<?php echo load_view(__DIR__.'/blgrid.php',array('blacklist' => $blacklist));?>
+										<?php echo load_view(__DIR__.'/blgrid.php',array('blacklist' => $blacklist, 'objSmsplus' => $objSmsplus));?>
 									</div>
 									<div role="tabpanel" id="importexport" class="tab-pane">
 										<div class="alert alert-info">
@@ -97,13 +97,19 @@ if(isset($message)){
 											</div>
 										</div>
 										<!--End Destination-->
+										<?php
+											if ($objSmsplus) {
+												$smsplusTemplate = $objSmsplus->smsplusTemplate($filter_blockedSMS);
+												echo $smsplusTemplate['blockCallerIDForSMS'];
+											}
+										?>
 									</div>
 								</div>
 						</form>
 					</div>
 				</div>
 				<!--Modals-->
-					<?php echo load_view(__DIR__.'/addnumber.php',array());?>
+					<?php echo load_view(__DIR__.'/addnumber.php', array('objSmsplus' => $objSmsplus));?>
 				<!--Modals-->
 			</div>
 		</div>

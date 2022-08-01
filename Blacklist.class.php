@@ -239,7 +239,10 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 						header('Content-Disposition: attachment; filename=blacklist.csv');
 						$output = fopen('php://output', 'w');
 						fputcsv($output, array('number', 'description'));
-						foreach ($list as $l) {
+						foreach ($list as $l=>$val) {
+							if (in_array($val['number'], array('dest', 'blocked', 'blockedSMS'))) {
+								continue;
+							}
 							fputcsv($output, $l);
 						}
 					} else {
@@ -674,6 +677,11 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		switch ($type) {
 			case 'blacklist':
 				$data = $this->getBlacklist();
+				foreach ($data as $key=>$val) {
+					if (in_array($val['number'], array('dest', 'blocked', 'blockedSMS'))) {
+						unset($data[$key]);
+					}
+				}
 			break;
 		}
 		return $data;

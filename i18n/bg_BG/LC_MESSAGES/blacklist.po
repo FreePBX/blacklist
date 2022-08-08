@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-01 07:32+0000\n"
+"POT-Creation-Date: 2022-08-08 08:24+0000\n"
 "PO-Revision-Date: 2018-07-03 13:27+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/blacklist/bg/>\n"
@@ -85,7 +85,7 @@ msgstr ""
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:27 Blacklist.class.php:620 blacklist.i18n.php:4
+#: Blacklist.class.php:27 Blacklist.class.php:623 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:14
 msgid "Blacklist"
 msgstr "Черен Списък"
@@ -126,9 +126,9 @@ msgstr "Дата/Час на Обаждане"
 msgid "Call Log"
 msgstr "Лог на Обажданията"
 
-#: Blacklist.class.php:518 Blacklist.class.php:540 Blacklist.class.php:554
-#: Blacklist.class.php:572 Blacklist.class.php:584 Blacklist.class.php:601
-#: Blacklist.class.php:613
+#: Blacklist.class.php:521 Blacklist.class.php:543 Blacklist.class.php:557
+#: Blacklist.class.php:575 Blacklist.class.php:587 Blacklist.class.php:604
+#: Blacklist.class.php:616
 msgid "Cannot connect to Asterisk Manager, is Asterisk running?"
 msgstr ""
 
@@ -156,7 +156,7 @@ msgstr "Не мога да намеря файла след качването"
 msgid "Delete Selected"
 msgstr "Изтрий Избраните"
 
-#: Blacklist.class.php:636 views/blgrid.php:24 views/modal_addnumber.php:40
+#: Blacklist.class.php:639 views/blgrid.php:24 views/modal_addnumber.php:40
 msgid "Description"
 msgstr "Описание"
 
@@ -164,7 +164,7 @@ msgstr "Описание"
 msgid "Description not allowed, reserved character!"
 msgstr ""
 
-#: Blacklist.class.php:637
+#: Blacklist.class.php:640
 msgid "Description of number blacklisted"
 msgstr "Описание на номер от черния списък"
 
@@ -188,7 +188,7 @@ msgstr "Въвеждането е Обновено"
 msgid "Import/Export"
 msgstr "Внасяне/Изнасяне"
 
-#: Blacklist.class.php:621
+#: Blacklist.class.php:624
 msgid "Import/Export Caller Blacklist"
 msgstr "Внасяне/Изнасяне на Черен Списък с Обаждащи се"
 
@@ -214,7 +214,7 @@ msgstr ""
 msgid "No"
 msgstr "Не"
 
-#: Blacklist.class.php:247
+#: Blacklist.class.php:250
 msgid "No Entries to export"
 msgstr "Няма Въвеждания за изнасяне"
 
@@ -239,11 +239,11 @@ msgstr "Номер/CallerID не може да е празно"
 msgid "Numbers Deleted"
 msgstr "Изтрити Номера"
 
-#: Blacklist.class.php:631
+#: Blacklist.class.php:634
 msgid "Phone Number"
 msgstr "Телефонен Номер"
 
-#: Blacklist.class.php:655
+#: Blacklist.class.php:658
 msgid "Phone Number Required"
 msgstr "Необходим е Телефонен Номер"
 
@@ -261,7 +261,7 @@ msgstr "Извади номер от Черен Списък"
 msgid "Removes a number from the Blacklist Module"
 msgstr "Премахва номер от Черния Списък"
 
-#: Blacklist.class.php:473
+#: Blacklist.class.php:476
 msgid "Reset"
 msgstr "Изчисти"
 
@@ -277,7 +277,7 @@ msgstr "Запиши Промените"
 msgid "Settings"
 msgstr "Настройки"
 
-#: Blacklist.class.php:479
+#: Blacklist.class.php:482
 msgid "Submit"
 msgstr "Приеми"
 
@@ -293,7 +293,7 @@ msgstr ""
 msgid "The file must be in CSV format!"
 msgstr "Файлът трябва да е в CSV формат!"
 
-#: Blacklist.class.php:632
+#: Blacklist.class.php:635
 msgid "The number as it appears in the callerid display"
 msgstr "Номерът, както се появява на callerid дисплея"
 

@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-01 07:32+0000\n"
+"POT-Creation-Date: 2022-08-08 08:24+0000\n"
 "PO-Revision-Date: 2014-02-19 04:47+0200\n"
 "Last-Translator: Kenichi Fukaumi <k.fukaumi@qloog.com>\n"
 "Language-Team: Japanese <http://example.com/projects/freepbx/blacklist/ja/>\n"
@@ -108,7 +108,7 @@ msgstr ""
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:27 Blacklist.class.php:620 blacklist.i18n.php:4
+#: Blacklist.class.php:27 Blacklist.class.php:623 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:14
 msgid "Blacklist"
 msgstr "ブラックリスト"
@@ -149,9 +149,9 @@ msgstr ""
 msgid "Call Log"
 msgstr ""
 
-#: Blacklist.class.php:518 Blacklist.class.php:540 Blacklist.class.php:554
-#: Blacklist.class.php:572 Blacklist.class.php:584 Blacklist.class.php:601
-#: Blacklist.class.php:613
+#: Blacklist.class.php:521 Blacklist.class.php:543 Blacklist.class.php:557
+#: Blacklist.class.php:575 Blacklist.class.php:587 Blacklist.class.php:604
+#: Blacklist.class.php:616
 msgid "Cannot connect to Asterisk Manager, is Asterisk running?"
 msgstr ""
 
@@ -180,7 +180,7 @@ msgstr ""
 msgid "Delete Selected"
 msgstr ""
 
-#: Blacklist.class.php:636 views/blgrid.php:24 views/modal_addnumber.php:40
+#: Blacklist.class.php:639 views/blgrid.php:24 views/modal_addnumber.php:40
 msgid "Description"
 msgstr "説明"
 
@@ -188,7 +188,7 @@ msgstr "説明"
 msgid "Description not allowed, reserved character!"
 msgstr ""
 
-#: Blacklist.class.php:637
+#: Blacklist.class.php:640
 msgid "Description of number blacklisted"
 msgstr ""
 
@@ -212,7 +212,7 @@ msgstr ""
 msgid "Import/Export"
 msgstr ""
 
-#: Blacklist.class.php:621
+#: Blacklist.class.php:624
 msgid "Import/Export Caller Blacklist"
 msgstr ""
 
@@ -238,7 +238,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Blacklist.class.php:247
+#: Blacklist.class.php:250
 msgid "No Entries to export"
 msgstr ""
 
@@ -263,11 +263,11 @@ msgstr ""
 msgid "Numbers Deleted"
 msgstr ""
 
-#: Blacklist.class.php:631
+#: Blacklist.class.php:634
 msgid "Phone Number"
 msgstr ""
 
-#: Blacklist.class.php:655
+#: Blacklist.class.php:658
 msgid "Phone Number Required"
 msgstr ""
 
@@ -285,7 +285,7 @@ msgstr "ブラックリストから番号を削除"
 msgid "Removes a number from the Blacklist Module"
 msgstr ""
 
-#: Blacklist.class.php:473
+#: Blacklist.class.php:476
 msgid "Reset"
 msgstr ""
 
@@ -301,7 +301,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: Blacklist.class.php:479
+#: Blacklist.class.php:482
 msgid "Submit"
 msgstr ""
 
@@ -317,7 +317,7 @@ msgstr ""
 msgid "The file must be in CSV format!"
 msgstr ""
 
-#: Blacklist.class.php:632
+#: Blacklist.class.php:635
 msgid "The number as it appears in the callerid display"
 msgstr ""
 

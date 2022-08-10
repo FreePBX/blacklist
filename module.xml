@@ -2,7 +2,7 @@
 	<rawname>blacklist</rawname>
 	<repo>standard</repo>
 	<name>Blacklist</name>
-	<version>15.0.2.20</version>
+	<version>15.0.3</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -13,6 +13,7 @@
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*15.0.3* FREEI-3783 Blocklist for inbound SMS/MMS 
 		*15.0.2.20* FREEI-4665 and FREEI-4838 - Fixing GQL APis 
 		*15.0.2.19* FREEI-4665 
 		*15.0.2.18* FREEI-4665 Fixed blacklist bugs and added new api to set blacklist settings 

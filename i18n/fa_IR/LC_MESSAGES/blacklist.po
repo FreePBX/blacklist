@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-12 06:15+0000\n"
+"POT-Creation-Date: 2022-08-10 09:33+0000\n"
 "PO-Revision-Date: 2016-06-22 09:27+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: views/blgrid.php:11
+#: views/blgrid.php:17
 msgid "Actions"
 msgstr "عملیات"
 
@@ -33,16 +33,16 @@ msgstr ""
 msgid "Add or replace entry"
 msgstr "افزودن یا جایگزینی ورودی"
 
-#: assets/js/blacklist.js:58
+#: assets/js/blacklist.js:74
 #, perl-format
 msgid "Added %s to the blacklist"
 msgstr ""
 
-#: assets/js/blacklist.js:40
+#: assets/js/blacklist.js:55
 msgid "Adding..."
 msgstr "در حال اضافه شدن..."
 
-#: Blacklist.class.php:21
+#: Blacklist.class.php:24
 msgid ""
 "Adds a number to the Blacklist Module.  All calls from that number to the "
 "system will receive a disconnect recording.  Manage these in the Blacklist "
@@ -51,14 +51,14 @@ msgstr ""
 "یک شماره به لیست سیاه اضافه نمایید. تمام تماس ها از این شماره به سیستم قطع "
 "خواهند شد که در این ماژول قابل مدیریت هستند."
 
-#: Blacklist.class.php:102
+#: Blacklist.class.php:119
 msgid ""
 "Adds a number to the Blacklist Module. All calls from that number to the "
 "system will receive a disconnect recording. Manage these in the Blacklist "
 "module."
 msgstr ""
 
-#: Blacklist.class.php:23
+#: Blacklist.class.php:26
 msgid ""
 "Adds the last caller to the Blacklist Module.  All calls from that number to "
 "the system will receive a disconnect recording."
@@ -66,7 +66,7 @@ msgstr ""
 "افزودن آخرین تماس گیرنده به لیست سیاه. تمامی تماس ها از این شماره به سیستم "
 "قطع خواهند شد."
 
-#: Blacklist.class.php:117
+#: Blacklist.class.php:134
 msgid ""
 "Adds the last caller to the Blacklist Module. All calls from that number to "
 "the system will receive a disconnect recording."
@@ -76,16 +76,16 @@ msgstr ""
 msgid "Admin"
 msgstr "مدیر"
 
-#: assets/js/blacklist.js:138
+#: assets/js/blacklist.js:150
 msgid "Are you sure to delete the selected records?"
 msgstr ""
 
-#: assets/js/blacklist.js:72
+#: assets/js/blacklist.js:88
 #, perl-format
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:20 Blacklist.class.php:543 blacklist.i18n.php:4
+#: Blacklist.class.php:23 Blacklist.class.php:587 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:24
 msgid "Blacklist"
 msgstr "لیست سیاه"
@@ -102,11 +102,11 @@ msgstr "شماره لیست سیاه"
 msgid "Blacklist Settings"
 msgstr ""
 
-#: Blacklist.class.php:17 Blacklist.class.php:101
+#: Blacklist.class.php:20 Blacklist.class.php:118
 msgid "Blacklist a number"
 msgstr "تعداد لیست سیاه"
 
-#: Blacklist.class.php:19 Blacklist.class.php:116
+#: Blacklist.class.php:22 Blacklist.class.php:133
 msgid "Blacklist the last caller"
 msgstr "آخرین تماس گیرنده لیست سیاه"
 
@@ -118,17 +118,17 @@ msgstr "ناشناس مسدود شده/شناسه تماس گیرنده مسدو
 msgid "Bulk Handler"
 msgstr "کنترل کننده دسته ای"
 
-#: views/addnumber.php:75
+#: views/addnumber.php:97
 msgid "Call Date/Time"
 msgstr "تاریخ/ساعت تماس"
 
-#: views/addnumber.php:69
+#: views/addnumber.php:80
 msgid "Call Log"
 msgstr "لاگ تماس"
 
-#: Blacklist.class.php:450 Blacklist.class.php:463 Blacklist.class.php:477
-#: Blacklist.class.php:495 Blacklist.class.php:507 Blacklist.class.php:524
-#: Blacklist.class.php:536
+#: Blacklist.class.php:486 Blacklist.class.php:507 Blacklist.class.php:521
+#: Blacklist.class.php:539 Blacklist.class.php:551 Blacklist.class.php:568
+#: Blacklist.class.php:580
 msgid "Cannot connect to Asterisk Manager, is Asterisk running?"
 msgstr ""
 
@@ -144,11 +144,11 @@ msgstr "برای دیدن شناسه تماس گیرنده مسدود شده/ن�
 msgid "Choose where blacklisted calls go"
 msgstr "تعیین نمایید تماس های لیست سیاه به چه مقصدی هدایت شوند"
 
-#: views/addnumber.php:57
+#: views/addnumber.php:63
 msgid "Close"
 msgstr "بستن"
 
-#: Blacklist.class.php:171
+#: Blacklist.class.php:192
 msgid "Could not find file after upload"
 msgstr "فایل بعد از بارگذاری یافت نشد"
 
@@ -156,11 +156,11 @@ msgstr "فایل بعد از بارگذاری یافت نشد"
 msgid "Delete Selected"
 msgstr "حذف مورد انتخاب شده"
 
-#: Blacklist.class.php:559 views/addnumber.php:40 views/blgrid.php:10
+#: Blacklist.class.php:603 views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
 msgstr "توضیحات"
 
-#: Blacklist.class.php:560
+#: Blacklist.class.php:604
 msgid "Description of number blacklisted"
 msgstr "مقصد تماس های لیست سیاه"
 
@@ -176,7 +176,7 @@ msgstr "مقصد تماس های لیست سیاه"
 msgid "Destination for blacklisted calls"
 msgstr ""
 
-#: assets/js/blacklist.js:56
+#: assets/js/blacklist.js:72
 msgid "Entry Updated"
 msgstr "ورودی بروز رسانی شده"
 
@@ -184,7 +184,7 @@ msgstr "ورودی بروز رسانی شده"
 msgid "Import/Export"
 msgstr "ورود/خروج"
 
-#: Blacklist.class.php:544
+#: Blacklist.class.php:588
 msgid "Import/Export Caller Blacklist"
 msgstr "ورود/خروج تماس گیرنده لیست سیاه"
 
@@ -194,11 +194,11 @@ msgid ""
 "the valid `destination`"
 msgstr ""
 
-#: views/general.php:63 assets/js/blacklist.js:73 assets/js/blacklist.js:139
+#: views/general.php:63 assets/js/blacklist.js:89 assets/js/blacklist.js:151
 msgid "No"
 msgstr "خیر"
 
-#: Blacklist.class.php:190
+#: Blacklist.class.php:214
 msgid "No Entries to export"
 msgstr "موردی برای خروجی گرفتن وجود ندارد"
 
@@ -206,7 +206,7 @@ msgstr "موردی برای خروجی گرفتن وجود ندارد"
 msgid "Number"
 msgstr "شماره"
 
-#: assets/js/blacklist.js:85
+#: assets/js/blacklist.js:101
 #, perl-format
 msgid "Number %s removed from the blacklist"
 msgstr ""
@@ -215,19 +215,19 @@ msgstr ""
 msgid "Number/CallerID"
 msgstr "شماره/شناسه تماس گیرنده"
 
-#: assets/js/blacklist.js:35
+#: assets/js/blacklist.js:50
 msgid "Number/CallerID cannot be blank"
 msgstr "شماره/تلفن تماس گیرنده نمیتواند خالی باشد"
 
-#: Blacklist.class.php:62
+#: Blacklist.class.php:66
 msgid "Numbers Deleted"
 msgstr "شماره ها حذف شدند"
 
-#: Blacklist.class.php:554
+#: Blacklist.class.php:598
 msgid "Phone Number"
 msgstr "شماره تلفن"
 
-#: Blacklist.class.php:578
+#: Blacklist.class.php:622
 msgid "Phone Number Required"
 msgstr "شماره تلفن ضروری است"
 
@@ -237,23 +237,23 @@ msgid ""
 "`from-did-direct,100,1`"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:74 Blacklist.class.php:18 Blacklist.class.php:109
+#: Api/Gql/Blacklist.php:74 Blacklist.class.php:21 Blacklist.class.php:126
 msgid "Remove a number from the blacklist"
 msgstr "خروج شماره از لیست سیاه"
 
-#: Blacklist.class.php:22 Blacklist.class.php:110
+#: Blacklist.class.php:25 Blacklist.class.php:127
 msgid "Removes a number from the Blacklist Module"
 msgstr "حذف شماره از لیست سیاه"
 
-#: Blacklist.class.php:405
+#: Blacklist.class.php:441
 msgid "Reset"
 msgstr "بازنشانی"
 
-#: assets/js/blacklist.js:53
+#: assets/js/blacklist.js:69
 msgid "Save Changes"
 msgstr "ذخیره تغییرات"
 
-#: views/addnumber.php:58
+#: views/addnumber.php:64
 msgid "Save changes"
 msgstr "ذخیره تغییرات"
 
@@ -261,11 +261,11 @@ msgstr "ذخیره تغییرات"
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: Blacklist.class.php:411
+#: Blacklist.class.php:447
 msgid "Submit"
 msgstr "ثبت"
 
-#: Blacklist.class.php:169
+#: Blacklist.class.php:190
 msgid "Sucessfully imported all entries"
 msgstr "تمام موارد با موفقیت وارد شدند"
 
@@ -273,11 +273,11 @@ msgstr "تمام موارد با موفقیت وارد شدند"
 msgid "The ID"
 msgstr ""
 
-#: Blacklist.class.php:174
+#: Blacklist.class.php:195
 msgid "The file must be in CSV format!"
 msgstr "فایل باید با فرمت CSV باشد!"
 
-#: Blacklist.class.php:555
+#: Blacklist.class.php:599
 msgid "The number as it appears in the callerid display"
 msgstr "شماره ای که به عنوان شناسه تماس گیرنده نمایش داده می شود"
 
@@ -285,7 +285,7 @@ msgstr "شماره ای که به عنوان شناسه تماس گیرنده ن
 msgid "The number to block"
 msgstr ""
 
-#: Blacklist.class.php:149
+#: Blacklist.class.php:170
 msgid "There was an error uploading the file"
 msgstr "در بارگذاری فایل خطا رخ داده است"
 
@@ -301,7 +301,7 @@ msgstr "این ماژول به منظور مدیریت تماس گیرندگان
 msgid "Used to manage a system wide list of blocked callers"
 msgstr ""
 
-#: views/general.php:61 assets/js/blacklist.js:73 assets/js/blacklist.js:139
+#: views/general.php:61 assets/js/blacklist.js:89 assets/js/blacklist.js:151
 msgid "Yes"
 msgstr "بله"
 

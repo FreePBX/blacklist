@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-12 06:15+0000\n"
+"POT-Creation-Date: 2022-08-10 09:33+0000\n"
 "PO-Revision-Date: 2017-07-20 10:28+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: views/blgrid.php:11
+#: views/blgrid.php:17
 msgid "Actions"
 msgstr "Các thao tác"
 
@@ -33,16 +33,16 @@ msgstr ""
 msgid "Add or replace entry"
 msgstr "Thêm hoặc thay thế mục nhập"
 
-#: assets/js/blacklist.js:58
+#: assets/js/blacklist.js:74
 #, perl-format
 msgid "Added %s to the blacklist"
 msgstr ""
 
-#: assets/js/blacklist.js:40
+#: assets/js/blacklist.js:55
 msgid "Adding..."
 msgstr "Đang thêm..."
 
-#: Blacklist.class.php:21
+#: Blacklist.class.php:24
 msgid ""
 "Adds a number to the Blacklist Module.  All calls from that number to the "
 "system will receive a disconnect recording.  Manage these in the Blacklist "
@@ -52,14 +52,14 @@ msgstr ""
 "hệ thống sẽ nhận một bản ghi ngắt kết nối. Quản lý chúng trong mô đun Danh "
 "sách đen."
 
-#: Blacklist.class.php:102
+#: Blacklist.class.php:119
 msgid ""
 "Adds a number to the Blacklist Module. All calls from that number to the "
 "system will receive a disconnect recording. Manage these in the Blacklist "
 "module."
 msgstr ""
 
-#: Blacklist.class.php:23
+#: Blacklist.class.php:26
 msgid ""
 "Adds the last caller to the Blacklist Module.  All calls from that number to "
 "the system will receive a disconnect recording."
@@ -67,7 +67,7 @@ msgstr ""
 "Thêm người gọi cuối cùng vào Mô đun Danh sách đen. Tất cả các cuộc gọi từ số "
 "đó đến hệ thống sẽ nhận được một bản ghi ngắt kết nối."
 
-#: Blacklist.class.php:117
+#: Blacklist.class.php:134
 msgid ""
 "Adds the last caller to the Blacklist Module. All calls from that number to "
 "the system will receive a disconnect recording."
@@ -77,16 +77,16 @@ msgstr ""
 msgid "Admin"
 msgstr "Quản trị viên"
 
-#: assets/js/blacklist.js:138
+#: assets/js/blacklist.js:150
 msgid "Are you sure to delete the selected records?"
 msgstr ""
 
-#: assets/js/blacklist.js:72
+#: assets/js/blacklist.js:88
 #, perl-format
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:20 Blacklist.class.php:543 blacklist.i18n.php:4
+#: Blacklist.class.php:23 Blacklist.class.php:587 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:24
 msgid "Blacklist"
 msgstr "Danh sách đen"
@@ -103,11 +103,11 @@ msgstr "Số Danh sách đen"
 msgid "Blacklist Settings"
 msgstr ""
 
-#: Blacklist.class.php:17 Blacklist.class.php:101
+#: Blacklist.class.php:20 Blacklist.class.php:118
 msgid "Blacklist a number"
 msgstr "Ghi một số vào danh sách đen"
 
-#: Blacklist.class.php:19 Blacklist.class.php:116
+#: Blacklist.class.php:22 Blacklist.class.php:133
 msgid "Blacklist the last caller"
 msgstr "Ghi người gọi cuối vào danh sách đen"
 
@@ -119,17 +119,17 @@ msgstr "Khóa ID của người gọi không biết/ bị khóa"
 msgid "Bulk Handler"
 msgstr "Bộ quản lý tổng hơp- Bulk Handler"
 
-#: views/addnumber.php:75
+#: views/addnumber.php:97
 msgid "Call Date/Time"
 msgstr "Thời gian/ Ngày của cuộc gọi"
 
-#: views/addnumber.php:69
+#: views/addnumber.php:80
 msgid "Call Log"
 msgstr "Nhật ký cuộc gọi"
 
-#: Blacklist.class.php:450 Blacklist.class.php:463 Blacklist.class.php:477
-#: Blacklist.class.php:495 Blacklist.class.php:507 Blacklist.class.php:524
-#: Blacklist.class.php:536
+#: Blacklist.class.php:486 Blacklist.class.php:507 Blacklist.class.php:521
+#: Blacklist.class.php:539 Blacklist.class.php:551 Blacklist.class.php:568
+#: Blacklist.class.php:580
 msgid "Cannot connect to Asterisk Manager, is Asterisk running?"
 msgstr ""
 
@@ -145,11 +145,11 @@ msgstr "Đánh dấu check ở đây để biết ID người gọi không biế
 msgid "Choose where blacklisted calls go"
 msgstr "Chọn nơi các cuộc gọi đã bị liệt vào danh sách đen đến"
 
-#: views/addnumber.php:57
+#: views/addnumber.php:63
 msgid "Close"
 msgstr "Đóng"
 
-#: Blacklist.class.php:171
+#: Blacklist.class.php:192
 msgid "Could not find file after upload"
 msgstr "Không tìm thấy tệp sau khi tải"
 
@@ -157,11 +157,11 @@ msgstr "Không tìm thấy tệp sau khi tải"
 msgid "Delete Selected"
 msgstr "Xóa những gì đã chọn"
 
-#: Blacklist.class.php:559 views/addnumber.php:40 views/blgrid.php:10
+#: Blacklist.class.php:603 views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
 msgstr "Mô tả"
 
-#: Blacklist.class.php:560
+#: Blacklist.class.php:604
 msgid "Description of number blacklisted"
 msgstr "Mô tả của số thuộc danh sách đen"
 
@@ -177,7 +177,7 @@ msgstr "Điểm đến của các cuộc gọi thuộc danh sách đen"
 msgid "Destination for blacklisted calls"
 msgstr ""
 
-#: assets/js/blacklist.js:56
+#: assets/js/blacklist.js:72
 msgid "Entry Updated"
 msgstr "Mục nhập đã được cập nhật"
 
@@ -185,7 +185,7 @@ msgstr "Mục nhập đã được cập nhật"
 msgid "Import/Export"
 msgstr "Nhập/ Xuất"
 
-#: Blacklist.class.php:544
+#: Blacklist.class.php:588
 msgid "Import/Export Caller Blacklist"
 msgstr "NHập/ Xuất Danh sách đen người gọi"
 
@@ -195,11 +195,11 @@ msgid ""
 "the valid `destination`"
 msgstr ""
 
-#: views/general.php:63 assets/js/blacklist.js:73 assets/js/blacklist.js:139
+#: views/general.php:63 assets/js/blacklist.js:89 assets/js/blacklist.js:151
 msgid "No"
 msgstr "Không"
 
-#: Blacklist.class.php:190
+#: Blacklist.class.php:214
 msgid "No Entries to export"
 msgstr "Không có mục nhập nào xuất ra"
 
@@ -207,7 +207,7 @@ msgstr "Không có mục nhập nào xuất ra"
 msgid "Number"
 msgstr "Số điện thoại"
 
-#: assets/js/blacklist.js:85
+#: assets/js/blacklist.js:101
 #, perl-format
 msgid "Number %s removed from the blacklist"
 msgstr ""
@@ -216,19 +216,19 @@ msgstr ""
 msgid "Number/CallerID"
 msgstr "Số điện thoại/ ID người gọi"
 
-#: assets/js/blacklist.js:35
+#: assets/js/blacklist.js:50
 msgid "Number/CallerID cannot be blank"
 msgstr "Số điện thoại/ ID người gọi không thể để trống"
 
-#: Blacklist.class.php:62
+#: Blacklist.class.php:66
 msgid "Numbers Deleted"
 msgstr "Các số điện thoại đã bị xóa"
 
-#: Blacklist.class.php:554
+#: Blacklist.class.php:598
 msgid "Phone Number"
 msgstr "Số điện thoại"
 
-#: Blacklist.class.php:578
+#: Blacklist.class.php:622
 msgid "Phone Number Required"
 msgstr "Số điện thoại yêu cầu"
 
@@ -238,23 +238,23 @@ msgid ""
 "`from-did-direct,100,1`"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:74 Blacklist.class.php:18 Blacklist.class.php:109
+#: Api/Gql/Blacklist.php:74 Blacklist.class.php:21 Blacklist.class.php:126
 msgid "Remove a number from the blacklist"
 msgstr "Xóa một số khỏi danh sách đen"
 
-#: Blacklist.class.php:22 Blacklist.class.php:110
+#: Blacklist.class.php:25 Blacklist.class.php:127
 msgid "Removes a number from the Blacklist Module"
 msgstr "Xóa một số khỏi Mô đun danh sách đen"
 
-#: Blacklist.class.php:405
+#: Blacklist.class.php:441
 msgid "Reset"
 msgstr "Cài đặt lại"
 
-#: assets/js/blacklist.js:53
+#: assets/js/blacklist.js:69
 msgid "Save Changes"
 msgstr "Lưu các thay đổi"
 
-#: views/addnumber.php:58
+#: views/addnumber.php:64
 msgid "Save changes"
 msgstr "Lưu các thay đổi"
 
@@ -262,11 +262,11 @@ msgstr "Lưu các thay đổi"
 msgid "Settings"
 msgstr "Các cài đặt"
 
-#: Blacklist.class.php:411
+#: Blacklist.class.php:447
 msgid "Submit"
 msgstr "Gửi đi"
 
-#: Blacklist.class.php:169
+#: Blacklist.class.php:190
 msgid "Sucessfully imported all entries"
 msgstr "Xuất tất cả mục nhập thành công"
 
@@ -274,11 +274,11 @@ msgstr "Xuất tất cả mục nhập thành công"
 msgid "The ID"
 msgstr ""
 
-#: Blacklist.class.php:174
+#: Blacklist.class.php:195
 msgid "The file must be in CSV format!"
 msgstr "Tệp phải ở dạng CSV!"
 
-#: Blacklist.class.php:555
+#: Blacklist.class.php:599
 msgid "The number as it appears in the callerid display"
 msgstr "số điện thoại như xuất hiện trong màn hình ID người gọi"
 
@@ -286,7 +286,7 @@ msgstr "số điện thoại như xuất hiện trong màn hình ID người g�
 msgid "The number to block"
 msgstr ""
 
-#: Blacklist.class.php:149
+#: Blacklist.class.php:170
 msgid "There was an error uploading the file"
 msgstr "Đã xảy ra lỗi khi đang tải tệp lên"
 
@@ -306,7 +306,7 @@ msgstr ""
 msgid "Used to manage a system wide list of blocked callers"
 msgstr ""
 
-#: views/general.php:61 assets/js/blacklist.js:73 assets/js/blacklist.js:139
+#: views/general.php:61 assets/js/blacklist.js:89 assets/js/blacklist.js:151
 msgid "Yes"
 msgstr "Có"
 

@@ -1,10 +1,24 @@
 $('#addNumber').on('show.bs.modal', function (e) {
 	var number = $(e.relatedTarget).data('number');
 	var description = $(e.relatedTarget).data('description');
+	var blockedType = $(e.relatedTarget).data('blockedtype');
 	$("#number").val(number);
 	$("#oldval").val(number);
 	$("#description").val(description);
+	if(typeof blockedType === 'undefined') {
+		var id = (checkidExits('blockedtype_Both')) ? document.getElementById('blockedtype_Both').checked = true : '';
+	} else {
+		var id = (checkidExits('blockedtype_Both')) ? document.getElementById('blockedtype_'+blockedType).checked = true : '';
+	}
 });
+function checkidExits (id) {
+	var idExits = document.getElementById(id);
+	if(idExits){
+		return true;
+	} else{
+		return false;
+	}
+}
 $(".destdropdown ").after("<br />");
 $(document).on('show.bs.tab', 'a[data-toggle="tab"]', function (e) {
     var clicked = $(this).attr('href');
@@ -30,6 +44,7 @@ $('#submitnumber').on('click', function() {
 	var num = $('#number').val();
 	var desc = $('#description').val();
 	var oldv = $('#oldval').val();
+	var blockType = $('input[name="blockedType"]:checked').val();
 	$this = this;
 	if(num === ''){
 		warnInvalid($('#number'), _('Number/CallerID cannot be blank'));
@@ -45,7 +60,8 @@ $('#submitnumber').on('click', function() {
 		action		: "add",
 		oldval		: oldv,
 		number		: num,
-		description	: desc
+		description	: desc,
+		blockType       : blockType
 	};
 	$.post(window.FreePBX.ajaxurl, post_data, function(data)
 	{
@@ -93,15 +109,11 @@ $(document).on('click', '[id^="del"]', function() {
 
 $(document).on('click', '[id^="report"]', function() {
 	var num = $(this).data('number');
-	var post_data = {
-		module	: 'blacklist',
-		command	: 'calllog',
-		number	: num,
-	};
-	$.post(window.FreePBX.ajaxurl, post_data, function(data)
-	{
-		$("#blReport").bootstrapTable({});
-		$('#blReport').bootstrapTable('load', data);
+	$("#blReport").bootstrapTable('refresh', {
+		url: window.FreePBX.ajaxurl + "?module=blacklist&command=calllog&number=" + num ,
+	});
+	$("#smsReport").bootstrapTable('refresh', {
+		url: window.FreePBX.ajaxurl + "?module=blacklist&command=smslog&number=" + num ,
 	});
 	$("#numreport").modal("show");
 });

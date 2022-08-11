@@ -88,6 +88,11 @@ class Blacklist implements \BMO {
 				case 'grid':
 					$ret = array();
 					$blacklist = $this->getBlacklist();
+					$a_numbers = array();
+					foreach($blacklist as $item) {
+						array_push($a_numbers, $item['number']);
+					}
+					$info_nums = $this->getCountCallIn($a_numbers);
 					foreach($blacklist as $item){
 						$number = $item['number'];
 						$description = $item['description'];
@@ -102,7 +107,9 @@ class Blacklist implements \BMO {
 						if (in_array($number, array('dest', 'blocked', 'blockedSMS'))) {
 							continue;
 						} else {
-							$ret[] = array('number' => $number, 'description' => $description, 'blockedType' => $blockType);
+							$count 		 = $info_nums[$number]['count'];
+							$last_date 	 = $info_nums[$number]['last_date'];
+							$ret[] = array('number' => $number, 'description' => $description, 'blockedType' => $blockType, 'count' => $count, 'last_date' => $count == 0 ? _("Never") : $last_date);
 						}
 					}
 				return $ret;
@@ -649,6 +656,56 @@ class Blacklist implements \BMO {
 			break;
 		}
 		return $data;
+	}
+
+	/**
+	 * Gets the number of calls from the specified number
+	 * @param string $number number of which we want to know the number of incoming calls
+	 * @return int number of incoming calls recorded
+	 */
+	public function getCountCallIn($number) {
+		$return_data = 0;
+		if (! empty( is_array($number) ? $number : trim($number))) {
+			$mod_cdr = $this->FreePBX->Cdr;
+			$mod_cdr_db = $mod_cdr->getCdrDbHandle();
+
+			$return_array = array();
+			$number_process = is_array($number) ? $number : array($number);
+			foreach ($number_process as $num) {
+				$return_array[$num] = array(
+					'count' => 0,
+					'last_date' => '',
+				);
+			}
+			$place_holders = implode(',', array_fill(0, count($number_process), '?'));
+			$number_process = array_map( function($value) { return (string)$value; }, $number_process );
+			$sql = sprintf('
+			SELECT DISTINCT(T1.src) as src, T2.ncount, T3.calldate FROM %1$s T1
+			LEFT JOIN (
+				SELECT COUNT(DISTINCT linkedid) AS ncount, src FROM %1$s GROUP BY src
+			) T2 ON T1.src = T2.src
+			LEFT JOIN (
+				SELECT MAX(calldate) AS calldate, src FROM %1$s GROUP BY src
+			) T3 ON T1.src = T3.src
+			WHERE T1.src IN (%2$s)
+			GROUP BY T1.src
+			', $mod_cdr->getDbTable(), $place_holders);
+
+			$stmt = $mod_cdr_db->prepare($sql);
+			if ($stmt->execute($number_process))
+			{
+				$res = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+				foreach ($res as $row)
+				{
+					$return_array[$row['src']] = array(
+						'count' => $row['ncount'],
+						'last_date' => $row['calldate'],
+					);
+				}
+			}
+			$return_data = is_array($number) ? $return_array : $return_array[$number]['count'];
+		}
+		return $return_data;
 	}
 
 }

@@ -14,6 +14,8 @@
 				echo $smsplusTemplate['dashBlockType'];
 			}
 		?>
+	    <th data-field="last_date" data-formatter="lastDateFormatter"><?php echo _("Last Call")?></th>
+	    <th data-field="count"><?php echo _("Incoming Calls")?></th>
             <th data-formatter="linkFormatter"><?php echo _("Actions")?></th>
         </tr>
     </thead>
@@ -38,5 +40,9 @@
 		}else{
 			return row['description'];
 		}
+	}
+	function lastDateFormatter (value, row, idx) {
+		if (row.count === 0) { return value; }
+		return moment(value).tz(timezone).format(datetimeformat) + " - " + moment(value).tz(timezone).fromNow();
 	}
 </script>

@@ -99,7 +99,7 @@ class Blacklist implements \BMO {
 								$description = $getNumberDetails['description'];
 							}
 						}
-						if (in_array($number, array('dest', 'blocked', 'blockedSMS'))) {
+						if (in_array($number, array('dest', 'blocked'))) {
 							continue;
 						} else {
 							$ret[] = array('number' => $number, 'description' => $description, 'blockedType' => $blockType);
@@ -160,10 +160,6 @@ class Blacklist implements \BMO {
 				case 'settings':
 					$this->destinationSet($destination);
 					$this->blockunknownSet($request['blocked']);
-					if ($this->objSmsplus) {
-						$this->objSmsplus->blockUnknownSmsSet($request['blockedSMS']);
-						needreload();
-					}
 				break;
 				case 'import':
 					if ($_FILES['file']['error'] > 0) {
@@ -204,7 +200,7 @@ class Blacklist implements \BMO {
 						$output = fopen('php://output', 'w');
 						fputcsv($output, array('number', 'description'));
 						foreach ($list as $l=>$val) {
-							if (in_array($val['number'], array('dest', 'blocked', 'blockedSMS'))) {
+							if (in_array($val['number'], array('dest', 'blocked'))) {
 								continue;
 							}
 							fputcsv($output, $l);
@@ -494,7 +490,7 @@ class Blacklist implements \BMO {
 	public function numberAdd($post){
 		if ($this->astman->connected()) {
 			$blockType =null;
-			if (in_array($post['number'], array('dest', 'blocked', 'blockedSMS'))) {
+			if (in_array($post['number'], array('dest', 'blocked'))) {
 				unset($post['blockType']);
 			} else {
 				if ($this->objSmsplus) {
@@ -590,6 +586,7 @@ class Blacklist implements \BMO {
 		);
 	}
 	public function bulkhandlerGetHeaders($type) {
+		$descriptionText = ($this->objSmsplus) ? _("Description header consists of (description/blocktype i.e Call, Sms, Both) of numbers blacklisted like Charlie/Call") : _("Description of number blacklisted");
 		switch($type){
 			case 'blacklist':
 				$headers = array();
@@ -601,7 +598,7 @@ class Blacklist implements \BMO {
 				$headers['description'] = array(
 					'required' => false,
 					'identifier' => _("Description"),
-					'description' => _("Description of number blacklisted")
+					'description' => $descriptionText
 				);
 			break;
 		}
@@ -642,7 +639,7 @@ class Blacklist implements \BMO {
 			case 'blacklist':
 				$data = $this->getBlacklist();
 				foreach ($data as $key=>$val) {
-					if (in_array($val['number'], array('dest', 'blocked', 'blockedSMS'))) {
+					if (in_array($val['number'], array('dest', 'blocked'))) {
 						unset($data[$key]);
 					}
 				}

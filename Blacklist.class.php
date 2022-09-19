@@ -10,6 +10,7 @@ use FreePBX_Helpers;
 
 class Blacklist  extends FreePBX_Helpers implements BMO {
 	private $objSmsplus = false;
+	private $blacklistSettings = array();
 	public function __construct($freepbx = null){
 		if ($freepbx == null) {
 			throw new \RuntimeException('Not given a FreePBX Object');
@@ -29,6 +30,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 			_('Removes a number from the Blacklist Module');
 			_('Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.');
 		}
+		$this->blacklistSettings = array('dest', 'blocked');
 	}
 	public function ajaxRequest($req, &$setting){
 		switch ($req) {
@@ -113,7 +115,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 						foreach($blacklist as $item)
 						{
 							$number = $item['number'];
-							if (in_array($number, array('dest', 'blocked', 'blockedSMS'))) {
+							if (in_array($number, $this->blacklistSettings)) {
 								continue;
 							}
 							//if it is 1, do not return anything since it is used for blank description.
@@ -196,10 +198,6 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 				case 'settings':
 					$this->destinationSet($destination);
 					$this->blockunknownSet($request['blocked']);
-					if ($this->objSmsplus) {
-						$this->objSmsplus->blockUnknownSmsSet($request['blockedSMS']);
-						needreload();
-					}
 				break;
 				case 'import':
 					if ($_FILES['file']['error'] > 0) {
@@ -240,7 +238,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 						$output = fopen('php://output', 'w');
 						fputcsv($output, array('number', 'description'));
 						foreach ($list as $l=>$val) {
-							if (in_array($val['number'], array('dest', 'blocked', 'blockedSMS'))) {
+							if (in_array($val['number'], $this->blacklistSettings)) {
 								continue;
 							}
 							fputcsv($output, $l);
@@ -530,7 +528,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 	public function numberAdd($post){
 		if ($this->astman->connected()) {
 			$blockType =null;
-			if (in_array($post['number'], array('dest', 'blocked', 'blockedSMS'))) {
+			if (in_array($post['number'], $this->blacklistSettings)) {
 				unset($post['blockType']);
 			} else {
 				if ($this->objSmsplus) {
@@ -678,7 +676,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 			case 'blacklist':
 				$data = $this->getBlacklist();
 				foreach ($data as $key=>$val) {
-					if (in_array($val['number'], array('dest', 'blocked', 'blockedSMS'))) {
+					if (in_array($val['number'], $this->blacklistSettings)) {
 						unset($data[$key]);
 					}
 				}

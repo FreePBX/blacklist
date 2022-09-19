@@ -7,6 +7,7 @@ namespace FreePBX\modules;
 
 class Blacklist implements \BMO {
 	private $objSmsplus = null;
+	private $blacklistSettings = array();
 	public function __construct($freepbx = null){
 		if ($freepbx == null) {
 			throw new \RuntimeException('Not given a FreePBX Object');
@@ -25,6 +26,7 @@ class Blacklist implements \BMO {
 			_('Removes a number from the Blacklist Module');
 			_('Adds the last caller to the Blacklist Module.  All calls from that number to the system will receive a disconnect recording.');
 		}
+		$this->blacklistSettings = array('dest', 'blocked');
 	}
 	public function ajaxRequest($req, &$setting){
 		switch ($req) {
@@ -99,7 +101,7 @@ class Blacklist implements \BMO {
 								$description = $getNumberDetails['description'];
 							}
 						}
-						if (in_array($number, array('dest', 'blocked'))) {
+						if (in_array($number, $this->blacklistSettings)) {
 							continue;
 						} else {
 							$ret[] = array('number' => $number, 'description' => $description, 'blockedType' => $blockType);
@@ -200,7 +202,7 @@ class Blacklist implements \BMO {
 						$output = fopen('php://output', 'w');
 						fputcsv($output, array('number', 'description'));
 						foreach ($list as $l=>$val) {
-							if (in_array($val['number'], array('dest', 'blocked'))) {
+							if (in_array($val['number'], $this->blacklistSettings)) {
 								continue;
 							}
 							fputcsv($output, $l);
@@ -490,7 +492,7 @@ class Blacklist implements \BMO {
 	public function numberAdd($post){
 		if ($this->astman->connected()) {
 			$blockType =null;
-			if (in_array($post['number'], array('dest', 'blocked'))) {
+			if (in_array($post['number'], $this->blacklistSettings)) {
 				unset($post['blockType']);
 			} else {
 				if ($this->objSmsplus) {
@@ -639,7 +641,7 @@ class Blacklist implements \BMO {
 			case 'blacklist':
 				$data = $this->getBlacklist();
 				foreach ($data as $key=>$val) {
-					if (in_array($val['number'], array('dest', 'blocked'))) {
+					if (in_array($val['number'], $this->blacklistSettings)) {
 						unset($data[$key]);
 					}
 				}

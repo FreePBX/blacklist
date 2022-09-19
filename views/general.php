@@ -87,12 +87,6 @@
 											</div>
 										</div>
 										<!--End Destination-->
-									 	<?php
-											if ($objSmsplus) {
-												$smsplusTemplate = $objSmsplus->smsplusTemplate($filter_blockedSMS);
-												echo $smsplusTemplate['blockCallerIDForSMS'];
-											}
-										?>
 									</div>
 								</div>
 						</form>

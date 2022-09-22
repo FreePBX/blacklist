@@ -22,6 +22,12 @@
 			<th data-checkbox="true" data-formatter="cbFormatter"></th>
 			<th data-field="number" data-sortable="true" data-width="300"><?php echo _("Number")?></th>
 			<th data-field="description" data-formatter="descFormatter"><?php echo _("Description")?></th>
+			<?php
+				if ($objSmsplus) {
+					$smsplusTemplate = $objSmsplus->smsplusTemplate();
+					echo $smsplusTemplate['dashBlockType'];
+				}
+			?>
 			<th data-field="last_date" data-sortable="true" data-formatter="lastDateFormatter" data-width="320"><?php echo _("Last Call")?></th>
 			<th data-field="count" data-sortable="true" data-width="200"><?php echo _("Incoming Calls")?></th>
 			<th data-formatter="linkFormatter" data-width="120" data-align="center"><?php echo _("Actions")?></th>

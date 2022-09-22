@@ -3,8 +3,8 @@
     <div class="modal-dialog display modal-dialog-centered modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title" id="numReportTitle"><?php echo _("Call Log") ?></h4>
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="numReportTitle"><?php echo _("Call Log") ?></h4>
 			</div>
 			<div class="modal-body">
 				<table id="blReport"

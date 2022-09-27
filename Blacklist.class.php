@@ -130,12 +130,17 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 									$description = ($getNumberDetails['description'] != 1) ? $getNumberDetails['description'] : '';
 								}
 							}
+							if ($blockType == 'Sms') {
+								$count = $last_date = _('N/A');
+							} else {
+								$last_date = $count == 0 ? _("Never") : $last_date;
+							}
 							$ret[] = array(
 								'number' => $number,
 								'description' => $description,
 								'blockedType' => $blockType,
 								'count' => $count,
-								'last_date' => $count == 0 ? _("Never") : $last_date,
+								'last_date' => $last_date,
 							);
 						}
 						return $ret;

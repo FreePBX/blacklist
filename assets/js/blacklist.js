@@ -208,6 +208,9 @@ function descFormatter(value,row){
 	}
 }
 function lastDateFormatter (value, row, idx) {
+	if (row.blockedType == 'Sms') {
+		return value;
+	}
 	if (row.count === 0) {
 		return value;
 	}

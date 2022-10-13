@@ -274,7 +274,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		$id = 'app-blacklist';
 		$c = 's';
 		$ext->addInclude('from-internal-additional', $id); // Add the include from from-internal
-		$ext->add($id, $c, '', new \ext_macro('user-callerid'));
+		$ext->add($id, $c, '', new \ext_gosub('1','s','sub-user-callerid'));
 		$id = 'app-blacklist-check';
 		// LookupBlackList doesn't seem to match empty astdb entry for "blacklist/", so we
 		// need to check for the setting and if set, send to the blacklisted area
@@ -300,13 +300,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		$ext->add($id, $c, '', new \ext_gotoif('$["${returnhere}"="1"]', 'returnto'));
 		$ext->add($id, $c, '', new \ext_gotoif('${LEN(${BLDEST})}', '${BLDEST}', 'app-blackhole,zapateller,1'));
 		$ext->add($id, $c, 'returnto', new \ext_return());
-		/*
-		$ext->add($id, $c, '', new \ext_wait(1));
-		$ext->add($id, $c, '', new \ext_zapateller(''));
-		$ext->add($id, $c, '', new \ext_playback('ss-noservice'));
-		$ext->add($id, $c, '', new \ext_hangup(''));
-		$modulename = 'blacklist';
-		*/
+
 		//Dialplan for add
 		if(!empty($addfc)){
 			$ext->add('app-blacklist', $addfc, '', new \ext_goto('1', 's', 'app-blacklist-add'));
@@ -314,7 +308,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		$id = 'app-blacklist-add';
 		$c = 's';
 		$ext->add($id, $c, '', new \ext_answer());
-		$ext->add($id, $c, '', new \ext_macro('user-callerid'));
+		$ext->add($id, $c, '', new \ext_gosub('1','s','sub-user-callerid'));
 		$ext->add($id, $c, '', new \ext_wait(1));
 		$ext->add($id, $c, '', new \ext_set('NumLoops', 0));
 		$ext->add($id, $c, 'start', new \ext_digittimeout(5));
@@ -370,7 +364,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		$id = 'app-blacklist-remove';
 		$c = 's';
 		$ext->add($id, $c, '', new \ext_answer());
-		$ext->add($id, $c, '', new \ext_macro('user-callerid'));
+		$ext->add($id, $c, '', new \ext_gosub('1','s','sub-user-callerid'));
 		$ext->add($id, $c, '', new \ext_set('NumLoops', 0));
         $ext->add($id, $c, '', new \ext_wait(1));
 		$ext->add($id, $c, 'start', new \ext_digittimeout(5));
@@ -421,7 +415,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		$id = 'app-blacklist-last';
 		$c = 's';
 		$ext->add($id, $c, '', new \ext_answer());
-		$ext->add($id, $c, '', new \ext_macro('user-callerid'));
+		$ext->add($id, $c, '', new \ext_gosub('1','s','sub-user-callerid'));
 		$ext->add($id, $c, '', new \ext_wait(1));
 		$ext->add($id, $c, '', new \ext_setvar('lastcaller', '${DB(CALLTRACE/${AMPUSER})}'));
 		$ext->add($id, $c, '', new \ext_gotoif('$[ $[ "${lastcaller}" = "" ] | $[ "${lastcaller}" = "unknown" ] ]', 'noinfo'));
@@ -520,7 +514,6 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		}
 	}
 
-
 	/**
 	 * Add Number
 	 * @param  array $post Array of blacklist params
@@ -614,6 +607,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 			throw new \RuntimeException(_('Cannot connect to Asterisk Manager, is Asterisk running?'));
 		}
 	}
+
 	//BulkHandler hooks
 	public function bulkhandlerGetTypes() {
 		return array(
@@ -623,6 +617,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 			)
 		);
 	}
+
 	public function bulkhandlerGetHeaders($type) {
 		switch($type){
 			case 'blacklist':
@@ -641,6 +636,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		}
 		return $headers;
 	}
+
 	public function bulkhandlerImport($type, $rawData, $replaceExisting = true) {
 		$blistnums = array();
 		if(!$replaceExisting){
@@ -670,6 +666,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		}
 		return array('status' => true);
 	}
+	
 	public function bulkhandlerExport($type) {
 		$data = NULL;
 		switch ($type) {

@@ -1,4 +1,5 @@
 <?php
+
 namespace FreePBX\modules;
 // vim: set ai ts=4 sw=4 ft=php expandtab:
 //	License for all code of this FreePBX module can be found in the license file inside the module directory
@@ -8,10 +9,12 @@ namespace FreePBX\modules;
 use BMO;
 use FreePBX_Helpers;
 
-class Blacklist  extends FreePBX_Helpers implements BMO {
+class Blacklist  extends FreePBX_Helpers implements BMO
+{
 	private $objSmsplus = false;
 	private $blacklistSettings = array();
-	public function __construct($freepbx = null){
+	public function __construct($freepbx = null)
+	{
 		if ($freepbx == null) {
 			throw new \RuntimeException('Not given a FreePBX Object');
 		}
@@ -32,7 +35,8 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		}
 		$this->blacklistSettings = array('dest', 'blocked');
 	}
-	public function ajaxRequest($req, &$setting){
+	public function ajaxRequest($req, &$setting)
+	{
 		switch ($req) {
 			case 'add':
 			case 'edit':
@@ -41,40 +45,41 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 			case 'getJSON':
 			case 'calllog':
 			case 'smslog':
-			return true;
-			break;
+				return true;
+				break;
 		}
 		return false;
 	}
 
-	public function ajaxHandler(){
+	public function ajaxHandler()
+	{
 
 		$request = $_REQUEST;
-		if(!empty($_REQUEST['oldval']) && $_REQUEST['command'] == 'add' ){
+		if (!empty($_REQUEST['oldval']) && $_REQUEST['command'] == 'add') {
 			$_REQUEST['command'] = 'edit';
 		}
 		switch ($_REQUEST['command']) {
 			case 'add':
 				$this->numberAdd($request);
 				return array('status' => true);
-			break;
+				break;
 			case 'edit':
 				$this->numberDel($request['oldval']);
 				$this->numberAdd($request);
 				return array('status' => true);
-			break;
+				break;
 			case 'bulkdelete':
-				$numbers = isset($_REQUEST['numbers'])?$_REQUEST['numbers']:array();
+				$numbers = isset($_REQUEST['numbers']) ? $_REQUEST['numbers'] : array();
 				$numbers = json_decode($numbers, true);
 				foreach ($numbers as $number) {
 					$this->numberDel($number);
 				}
 				return array('status' => 'true', 'message' => _("Numbers Deleted"));
-			break;
+				break;
 			case 'del':
 				$ret = $this->numberDel($request['number']);
 				return array('status' => $ret);
-			break;
+				break;
 			case 'calllog':
 				$mod_cdr = $this->FreePBX->Cdr;
 				$number = $request['number'];
@@ -93,34 +98,29 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 				$stmt->execute(array($number));
 				$ret = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 				return $ret;
-			break;
 			case 'smslog':
 				if ($this->objSmsplus) {
 					return $this->objSmsplus->getBlocklistedSMS($request['number']);
 				}
-			break;
 			case 'getJSON':
-				switch($request['jdata'])
-				{
+				switch ($request['jdata']) {
 					case 'grid':
 						$ret = array();
 						$blacklist = $this->getBlacklist();
 
 						$a_numbers = array();
-						foreach($blacklist as $item)
-						{
+						foreach ($blacklist as $item) {
 							array_push($a_numbers, $item['number']);
 						}
 						$info_nums = $this->getCountCallIn($a_numbers);
-						foreach($blacklist as $item)
-						{
+						foreach ($blacklist as $item) {
 							$number = $item['number'];
 							if (in_array($number, $this->blacklistSettings)) {
 								continue;
 							}
 							//if it is 1, do not return anything since it is used for blank description.
 							$description = $item['description'] != 1 ? $item['description'] : '';
-							$blockType=null;
+							$blockType = null;
 							$count 		 = $info_nums[$number]['count'];
 							$last_date 	 = $info_nums[$number]['last_date'];
 							if ($this->objSmsplus) {
@@ -144,19 +144,18 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 							);
 						}
 						return $ret;
-					break;
 					case 'count':
 						$number = $request['number'];
 						$count = $this->getCountCallIn($number);
 						return array('status' => true, 'count' => $count);
-					break;
 				}
-			break;
+				break;
 		}
 	}
 
 	//BMO Methods
-	public function install() {
+	public function install()
+	{
 		$fcc = new \featurecode('blacklist', 'blacklist_add');
 		$fcc->setDescription(_('Blacklist a number'));
 		$fcc->setHelpText(_('Adds a number to the Blacklist Module. All calls from that number to the system will receive a disconnect recording. Manage these in the Blacklist module.'));
@@ -178,20 +177,43 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		$fcc->setDefault('*32');
 		$fcc->update();
 		unset($fcc);
+
+		// Add advanced setting to disable lookup for grid
+		$set['value'] = false;
+		$set['defaultval'] = &$set['value'];
+		$set['options'] = '';
+		$set['readonly'] = 0;
+		$set['hidden'] = 0;
+		$set['level'] = 0;
+		$set['module'] = 'blacklist';
+		$set['category'] = 'Log Display';
+		$set['emptyok'] = 0;
+		$set['name'] = 'Disable call count in to main grid';
+		$set['description'] = "Loading call counts on machines with large call logs can be slow. This setting will disable the call count in the main grid.";
+		$set['type'] = CONF_TYPE_BOOL;
+		$this->FreePBX->Config->define_conf_setting('BLACKLIST_DISABLE_GRID_COUNT', $set);
 	}
-	public function uninstall(){}
 
-	public function backup(){}
+	public function uninstall()
+	{
+	}
 
-	public function restore($backup){}
+	public function backup()
+	{
+	}
 
-	public function doConfigPageInit($page) {
+	public function restore($backup)
+	{
+	}
+
+	public function doConfigPageInit($page)
+	{
 		$dispnum = 'blacklist';
 		$astver = $this->FreePBX->Config->get('ASTVERSION');
 		$request = $_REQUEST;
 
 		if (isset($request['goto0'])) {
-			$destination = $request[$request['goto0'].'0'];
+			$destination = $request[$request['goto0'] . '0'];
 		}
 		isset($request['action']) ? $action = $request['action'] : $action = '';
 		isset($request['oldval']) ? $action = 'edit' : $action;
@@ -203,13 +225,13 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 				case 'settings':
 					$this->destinationSet($destination);
 					$this->blockunknownSet($request['blocked']);
-				break;
+					break;
 				case 'import':
 					if ($_FILES['file']['error'] > 0) {
-						echo '<div class="alert alert-danger" role="alert">'._('There was an error uploading the file').'</div>';
+						echo '<div class="alert alert-danger" role="alert">' . _('There was an error uploading the file') . '</div>';
 					} else {
 						if (pathinfo($_FILES['blacklistfile']['name'], PATHINFO_EXTENSION) == 'csv') {
-							$path = sys_get_temp_dir().'/'.$_FILES['blacklistfile']['name'];
+							$path = sys_get_temp_dir() . '/' . $_FILES['blacklistfile']['name'];
 							move_uploaded_file($_FILES['blacklistfile']['tmp_name'], $path);
 							if (file_exists($path)) {
 								ini_set('auto_detect_line_endings', true);
@@ -226,15 +248,15 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 									));
 								}
 								unlink($path);
-								echo '<div class="alert alert-success" role="alert">'._('Sucessfully imported all entries').'</div>';
+								echo '<div class="alert alert-success" role="alert">' . _('Sucessfully imported all entries') . '</div>';
 							} else {
-								echo '<div class="alert alert-danger" role="alert">'._('Could not find file after upload').'</div>';
+								echo '<div class="alert alert-danger" role="alert">' . _('Could not find file after upload') . '</div>';
 							}
 						} else {
-							echo '<div class="alert alert-danger" role="alert">'._('The file must be in CSV format!').'</div>';
+							echo '<div class="alert alert-danger" role="alert">' . _('The file must be in CSV format!') . '</div>';
 						}
 					}
-				break;
+					break;
 				case 'export':
 					$list = $this->getBlacklist();
 					if (!empty($list)) {
@@ -242,7 +264,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 						header('Content-Disposition: attachment; filename=blacklist.csv');
 						$output = fopen('php://output', 'w');
 						fputcsv($output, array('number', 'description'));
-						foreach ($list as $l=>$val) {
+						foreach ($list as $l => $val) {
 							if (in_array($val['number'], $this->blacklistSettings)) {
 								continue;
 							}
@@ -253,16 +275,18 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 						echo _('No Entries to export');
 					}
 					die();
-				break;
+					break;
 			}
 		}
 	}
 
-	public function myDialplanHooks(){
+	public function myDialplanHooks()
+	{
 		return 400;
 	}
 
-	public function doDialplanHook(&$ext, $engine, $priority) {
+	public function doDialplanHook(&$ext, $engine, $priority)
+	{
 		$modulename = 'blacklist';
 		//Add
 		$fcc = new \featurecode($modulename, 'blacklist_add');
@@ -313,7 +337,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		$modulename = 'blacklist';
 		*/
 		//Dialplan for add
-		if(!empty($addfc)){
+		if (!empty($addfc)) {
 			$ext->add('app-blacklist', $addfc, '', new \ext_goto('1', 's', 'app-blacklist-add'));
 		}
 		$id = 'app-blacklist-add';
@@ -328,18 +352,18 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		$ext->add($id, $c, '', new \ext_saydigits('${blacknr}'));
 		// i18n - Some languages need this is a different format. If we don't
 		// know about the language, assume english
-		$ext->add($id, $c, '', new \ext_gosubif('$[${DIALPLAN_EXISTS('.$id.',${CHANNEL(language)})}]', $id.',${CHANNEL(language)},1', $id.',en,1'));
+		$ext->add($id, $c, '', new \ext_gosubif('$[${DIALPLAN_EXISTS(' . $id . ',${CHANNEL(language)})}]', $id . ',${CHANNEL(language)},1', $id . ',en,1'));
 		// en - default
 		$ext->add($id, 'en', '', new \ext_digittimeout(1));
-		$ext->add($id, 'en', '', new \ext_read('confirm','if-correct-press&digits/1&to-enter-a-diff-number&press&digits/2'));
+		$ext->add($id, 'en', '', new \ext_read('confirm', 'if-correct-press&digits/1&to-enter-a-diff-number&press&digits/2'));
 		$ext->add($id, 'en', '', new \ext_return());
 		// ja
 		$ext->add($id, 'ja', '', new \ext_digittimeout(1));
 		$ext->add($id, 'ja', '', new \ext_read('if-correct-press&digits/1&pleasepress'));
 		$ext->add($id, 'ja', '', new \ext_return());
 
-		$ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "1" ]','app-blacklist-add,1,1'));
-		$ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "2" ]','app-blacklist-add,2,1'));
+		$ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "1" ]', 'app-blacklist-add,1,1'));
+		$ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "2" ]', 'app-blacklist-add,2,1'));
 		$ext->add($id, $c, '', new \ext_goto('app-blacklist-add-invalid,s,1'));
 
 		$c = '1';
@@ -353,11 +377,11 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		$ext->add($id, $c, '', new \ext_wait(1));
 		$ext->add($id, $c, '', new \ext_hangup());
 
-        $c = '2';
-        $ext->add($id, $c, '', new \ext_set('NumLoops', '$[${NumLoops} + 1]'));
-        $ext->add($id, $c, '', new \ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-add,s,start'));
-        $ext->add($id, $c, '', new \ext_playback('sorry-youre-having-problems&goodbye'));
-        $ext->add($id, $c, '', new \ext_hangup());
+		$c = '2';
+		$ext->add($id, $c, '', new \ext_set('NumLoops', '$[${NumLoops} + 1]'));
+		$ext->add($id, $c, '', new \ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-add,s,start'));
+		$ext->add($id, $c, '', new \ext_playback('sorry-youre-having-problems&goodbye'));
+		$ext->add($id, $c, '', new \ext_hangup());
 
 
 		$id = 'app-blacklist-add-invalid';
@@ -369,7 +393,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		$ext->add($id, $c, '', new \ext_hangup());
 
 		//Del
-		if(!empty($delfc)){
+		if (!empty($delfc)) {
 			$ext->add('app-blacklist', $delfc, '', new \ext_goto('1', 's', 'app-blacklist-remove'));
 		}
 		$id = 'app-blacklist-remove';
@@ -377,26 +401,26 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		$ext->add($id, $c, '', new \ext_answer());
 		$ext->add($id, $c, '', new \ext_macro('user-callerid'));
 		$ext->add($id, $c, '', new \ext_set('NumLoops', 0));
-        $ext->add($id, $c, '', new \ext_wait(1));
+		$ext->add($id, $c, '', new \ext_wait(1));
 		$ext->add($id, $c, 'start', new \ext_digittimeout(5));
 		$ext->add($id, $c, '', new \ext_responsetimeout(10));
 		$ext->add($id, $c, '', new \ext_read('blacknr', 'entr-num-rmv-blklist&vm-then-pound'));
 		$ext->add($id, $c, '', new \ext_saydigits('${blacknr}'));
 		// i18n - Some languages need this is a different format. If we don't
 		// know about the language, assume english
-		$ext->add($id, $c, '', new \ext_gosubif('$[${DIALPLAN_EXISTS('.$id.',${CHANNEL(language)})}]', $id.',${CHANNEL(language)},1', $id.',en,1'));
+		$ext->add($id, $c, '', new \ext_gosubif('$[${DIALPLAN_EXISTS(' . $id . ',${CHANNEL(language)})}]', $id . ',${CHANNEL(language)},1', $id . ',en,1'));
 		// en - default
 		$ext->add($id, 'en', '', new \ext_digittimeout(1));
-		$ext->add($id, 'en', '', new \ext_read('confirm','if-correct-press&digits/1&to-enter-a-diff-number&press&digits/2'));
+		$ext->add($id, 'en', '', new \ext_read('confirm', 'if-correct-press&digits/1&to-enter-a-diff-number&press&digits/2'));
 		$ext->add($id, 'en', '', new \ext_return());
 		// ja
 		$ext->add($id, 'ja', '', new \ext_digittimeout(1));
-		$ext->add($id, 'ja', '', new \ext_read('confirm','if-correct-press&digits/1&pleasepress'));
+		$ext->add($id, 'ja', '', new \ext_read('confirm', 'if-correct-press&digits/1&pleasepress'));
 		$ext->add($id, 'ja', '', new \ext_return());
 
-		$ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "1" ]','app-blacklist-remove,1,1'));
-	    $ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "2" ]','app-blacklist-remove,2,1'));
-	    $ext->add($id, $c, '', new \ext_goto('app-blacklist-add-invalid,s,1'));
+		$ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "1" ]', 'app-blacklist-remove,1,1'));
+		$ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "2" ]', 'app-blacklist-remove,2,1'));
+		$ext->add($id, $c, '', new \ext_goto('app-blacklist-add-invalid,s,1'));
 
 		$c = '1';
 		$ext->add($id, $c, '', new \ext_dbdel('blacklist/${blacknr}'));
@@ -404,23 +428,23 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		$ext->add($id, $c, '', new \ext_wait(1));
 		$ext->add($id, $c, '', new \ext_hangup());
 
-        $c = '2';
-        $ext->add($id, $c, '', new \ext_set('NumLoops', '$[${NumLoops} + 1]'));
-        $ext->add($id, $c, '', new \ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-remove,s,start'));
-        $ext->add($id, $c, '', new \ext_playback('goodbye'));
-        $ext->add($id, $c, '', new \ext_hangup());
+		$c = '2';
+		$ext->add($id, $c, '', new \ext_set('NumLoops', '$[${NumLoops} + 1]'));
+		$ext->add($id, $c, '', new \ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-remove,s,start'));
+		$ext->add($id, $c, '', new \ext_playback('goodbye'));
+		$ext->add($id, $c, '', new \ext_hangup());
 
 
-        $id = 'app-blacklist-remove-invalid';
-        $c = 's';
-        $ext->add($id, $c, '', new \ext_set('NumLoops', '$[${NumLoops} + 1]'));
-        $ext->add($id, $c, '', new \ext_playback('pm-invalid-option'));
-        $ext->add($id, $c, '', new \ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-remove,s,start'));
-        $ext->add($id, $c, '', new \ext_playback('sorry-youre-having-problems&goodbye'));
-        $ext->add($id, $c, '', new \ext_hangup());
+		$id = 'app-blacklist-remove-invalid';
+		$c = 's';
+		$ext->add($id, $c, '', new \ext_set('NumLoops', '$[${NumLoops} + 1]'));
+		$ext->add($id, $c, '', new \ext_playback('pm-invalid-option'));
+		$ext->add($id, $c, '', new \ext_gotoif('$[${NumLoops} < 3]', 'app-blacklist-remove,s,start'));
+		$ext->add($id, $c, '', new \ext_playback('sorry-youre-having-problems&goodbye'));
+		$ext->add($id, $c, '', new \ext_hangup());
 
-        //Last
-		if(!empty($lastfc)){
+		//Last
+		if (!empty($lastfc)) {
 			$ext->add('app-blacklist', $lastfc, '', new \ext_goto('1', 's', 'app-blacklist-last'));
 		}
 		$id = 'app-blacklist-last';
@@ -436,15 +460,15 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		$ext->add($id, $c, '', new \ext_setvar('TIMEOUT(response)', '7'));
 		// i18n - Some languages need this is a different format. If we don't
 		// know about the language, assume english
-		$ext->add($id, $c, '', new \ext_gosubif('$[${DIALPLAN_EXISTS('.$id.',${CHANNEL(language)})}]', $id.',${CHANNEL(language)},1', $id.',en,1'));
+		$ext->add($id, $c, '', new \ext_gosubif('$[${DIALPLAN_EXISTS(' . $id . ',${CHANNEL(language)})}]', $id . ',${CHANNEL(language)},1', $id . ',en,1'));
 		// en - default
-		$ext->add($id, 'en', '', new \ext_read('confirm','if-correct-press&digits/1'));
+		$ext->add($id, 'en', '', new \ext_read('confirm', 'if-correct-press&digits/1'));
 		$ext->add($id, 'en', '', new \ext_return());
 		// ja
-		$ext->add($id, 'ja', '', new \ext_read('confirm','if-correct-press&digits/1&pleasepress'));
+		$ext->add($id, 'ja', '', new \ext_read('confirm', 'if-correct-press&digits/1&pleasepress'));
 		$ext->add($id, 'ja', '', new \ext_return());
 
-		$ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "1" ]','app-blacklist-last,1,1'));
+		$ext->add($id, $c, '', new \ext_gotoif('$[ "${confirm}" = "1" ]', 'app-blacklist-last,1,1'));
 		$ext->add($id, $c, '', new \ext_goto('end'));
 		$ext->add($id, $c, 'noinfo', new \ext_playback('unidentified-no-callback'));
 		$ext->add($id, $c, '', new \ext_hangup());
@@ -467,43 +491,45 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		$ext->add($id, 'i', '', new \ext_hangup());
 	}
 
-	public function getActionBar($request) {
+	public function getActionBar($request)
+	{
 		$buttons = array();
 		switch ($request['display']) {
 			case 'blacklist':
-			$buttons = array(
-				'reset' => array(
-					'name' => 'reset',
-					'id' => 'Reset',
-					'class' => 'hidden',
-					'value' => _('Reset'),
-				),
-				'submit' => array(
-					'name' => 'submit',
-					'class' => 'hidden',
-					'id' => 'Submit',
-					'value' => _('Submit'),
-				),
-			);
+				$buttons = array(
+					'reset' => array(
+						'name' => 'reset',
+						'id' => 'Reset',
+						'class' => 'hidden',
+						'value' => _('Reset'),
+					),
+					'submit' => array(
+						'name' => 'submit',
+						'class' => 'hidden',
+						'id' => 'Submit',
+						'value' => _('Submit'),
+					),
+				);
 
-			return $buttons;
-			break;
+				return $buttons;
+				break;
 		}
 	}
 
 	//Blacklist Methods
-	public function showPage() {
+	public function showPage()
+	{
 		$blacklistitems = $this->getBlacklist();
 		$destination = $this->destinationGet();
 		$filter_blocked = $this->blockunknownGet() == 1 ? true : false;
-		$view = isset($_REQUEST['view'])?$_REQUEST['view']:'';
+		$view = isset($_REQUEST['view']) ? $_REQUEST['view'] : '';
 		switch ($view) {
 			case 'grid':
-			return load_view(__DIR__.'/views/blgrid.php', array('blacklist' => $blacklistitems, 'objSmsplus' => $this->objSmsplus));
-			break;
+				return load_view(__DIR__ . '/views/blgrid.php', array('blacklist' => $blacklistitems, 'objSmsplus' => $this->objSmsplus));
+				break;
 			default:
-			return load_view(__DIR__.'/views/general.php', array('blacklist' => $blacklistitems, 'destination' => $destination, 'filter_blocked' => $filter_blocked, 'objSmsplus' => $this->objSmsplus));
-			break;
+				return load_view(__DIR__ . '/views/general.php', array('blacklist' => $blacklistitems, 'destination' => $destination, 'filter_blocked' => $filter_blocked, 'objSmsplus' => $this->objSmsplus));
+				break;
 		}
 	}
 
@@ -511,7 +537,8 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 	 * Get lists
 	 * @return array Black listed numbers
 	 */
-	public function getBlacklist() {
+	public function getBlacklist()
+	{
 		if ($this->astman->connected()) {
 			$list = $this->astman->database_show('blacklist');
 			$blacklisted = array();
@@ -530,9 +557,10 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 	 * Add Number
 	 * @param  array $post Array of blacklist params
 	 */
-	public function numberAdd($post){
+	public function numberAdd($post)
+	{
 		if ($this->astman->connected()) {
-			$blockType =null;
+			$blockType = null;
 			if (in_array($post['number'], $this->blacklistSettings)) {
 				unset($post['blockType']);
 			} else {
@@ -540,7 +568,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 					$blockType = (!empty($post['blockType'])) ? '/' . $post['blockType'] : '/Call';
 				}
 			}
-			$post['description'] = $post['description'] == '' ? $post['description'] = '1'. $blockType : $post['description'] . $blockType;
+			$post['description'] = $post['description'] == '' ? $post['description'] = '1' . $blockType : $post['description'] . $blockType;
 			$this->astman->database_put('blacklist', $post['number'], htmlentities($post['description'], ENT_COMPAT | ENT_HTML401, "UTF-8"));
 		} else {
 			throw new \RuntimeException(_('Cannot connect to Asterisk Manager, is Asterisk running?'));
@@ -553,9 +581,10 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 	 * @param  string $number Number to delete
 	 * @return boolean         Status of deletion
 	 */
-	public function numberDel($number){
+	public function numberDel($number)
+	{
 		if ($this->astman->connected()) {
-			return($this->astman->database_del('blacklist', $number));
+			return ($this->astman->database_del('blacklist', $number));
 		} else {
 			throw new \RuntimeException(_('Cannot connect to Asterisk Manager, is Asterisk running?'));
 		}
@@ -566,7 +595,8 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 	 * @param  string $dest Destination
 	 * @return boolean       Status of set
 	 */
-	public function destinationSet($dest) {
+	public function destinationSet($dest)
+	{
 		if ($this->astman->connected()) {
 			$this->astman->database_del('blacklist', 'dest');
 			if (!empty($dest)) {
@@ -583,7 +613,8 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 	 * Get the destination
 	 * @return string The destination
 	 */
-	public function destinationGet(){
+	public function destinationGet()
+	{
 		if ($this->astman->connected()) {
 			return $this->astman->database_get('blacklist', 'dest');
 		} else {
@@ -595,7 +626,8 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 	 * Whether to block unknown calls
 	 * @param  boolean $blocked True to block, false otherwise
 	 */
-	public function blockunknownSet($blocked){
+	public function blockunknownSet($blocked)
+	{
 		if ($this->astman->connected()) {
 			// Remove filtering for blocked/unknown cid
 			$this->astman->database_del('blacklist', 'blocked');
@@ -612,7 +644,8 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 	 * Get status of unknown blocking
 	 * @return string 1 if blocked, 0 otherwise
 	 */
-	public function blockunknownGet(){
+	public function blockunknownGet()
+	{
 		if ($this->astman->connected()) {
 			return $this->astman->database_get('blacklist', 'blocked');
 		} else {
@@ -620,7 +653,8 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 		}
 	}
 	//BulkHandler hooks
-	public function bulkhandlerGetTypes() {
+	public function bulkhandlerGetTypes()
+	{
 		return array(
 			'blacklist' => array(
 				'name' => _('Blacklist'),
@@ -628,8 +662,9 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 			)
 		);
 	}
-	public function bulkhandlerGetHeaders($type) {
-		switch($type){
+	public function bulkhandlerGetHeaders($type)
+	{
+		switch ($type) {
 			case 'blacklist':
 				$headers = array();
 				$headers['number'] = array(
@@ -642,50 +677,52 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 					'identifier' => _("Description"),
 					'description' => _("Description of number blacklisted")
 				);
-			break;
+				break;
 		}
 		return $headers;
 	}
-	public function bulkhandlerImport($type, $rawData, $replaceExisting = true) {
+	public function bulkhandlerImport($type, $rawData, $replaceExisting = true)
+	{
 		$blistnums = array();
-		if(!$replaceExisting){
+		if (!$replaceExisting) {
 			$blist = $this->getBlacklist();
 			foreach ($blist as $value) {
 				$blistnums[] = $value['number'];
 			}
 		}
-		switch($type){
+		switch ($type) {
 			case 'blacklist':
-				foreach($rawData as $data){
-					if(empty($data['number'])){
-						return array('status' => false, 'message'=> _('Phone Number Required'));
+				foreach ($rawData as $data) {
+					if (empty($data['number'])) {
+						return array('status' => false, 'message' => _('Phone Number Required'));
 					}
 					//Skip existing numbers. Array is only populated if replace is false.
-					if(in_array($data['number'], $blistnums)){
+					if (in_array($data['number'], $blistnums)) {
 						continue;
 					}
 					if ($this->objSmsplus) {
-						$descblockedtype = explode('/',$data['description']);
+						$descblockedtype = explode('/', $data['description']);
 						$data['blockType'] = (in_array(end($descblockedtype), array('Call', 'Sms', 'Both'))) ? end($descblockedtype) : 'Call';
-						$data['description'] = str_replace('/' . $data['blockType'],'',$data['description']);
+						$data['description'] = str_replace('/' . $data['blockType'], '', $data['description']);
 					}
 					$this->numberAdd($data);
 				}
-			break;
+				break;
 		}
 		return array('status' => true);
 	}
-	public function bulkhandlerExport($type) {
+	public function bulkhandlerExport($type)
+	{
 		$data = NULL;
 		switch ($type) {
 			case 'blacklist':
 				$data = $this->getBlacklist();
-				foreach ($data as $key=>$val) {
+				foreach ($data as $key => $val) {
 					if (in_array($val['number'], $this->blacklistSettings)) {
 						unset($data[$key]);
 					}
 				}
-			break;
+				break;
 		}
 		return $data;
 	}
@@ -695,24 +732,31 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 	 * @param string $number number of which we want to know the number of incoming calls
 	 * @return int number of incoming calls recorded
 	 */
-	public function getCountCallIn($number) {
+	public function getCountCallIn($number)
+	{
 		$return_data = 0;
-		if (! empty( is_array($number) ? $number : trim($number)))
-		{
+		if (!empty(is_array($number) ? $number : trim($number))) {
 			$mod_cdr = $this->FreePBX->Cdr;
 			$mod_cdr_db = $mod_cdr->getCdrDbHandle();
-
+			$call_count_disabled = $this->FreePBX->Config->get('BLACKLIST_DISABLE_GRID_COUNT');
 			$return_array = array();
 			$number_process = is_array($number) ? $number : array($number);
 			foreach ($number_process as $num) {
 				$return_array[$num] = array(
-					'count' => 0,
+					'count' => $call_count_disabled ? _('Disabled') : 0,
 					'last_date' => '',
 				);
 			}
-			
+
+			// If this lookup is disabled return early
+			if ($call_count_disabled) {
+				return is_array($number) ? $return_array : $return_array[$number]['count'];
+			}
+
 			$place_holders = implode(',', array_fill(0, count($number_process), '?'));
-			$number_process = array_map( function($value) { return (string)$value; }, $number_process );
+			$number_process = array_map(function ($value) {
+				return (string)$value;
+			}, $number_process);
 			$sql = sprintf('
 			SELECT DISTINCT(T1.src) as src, T2.ncount, T3.calldate FROM %1$s T1
 			LEFT JOIN (
@@ -726,18 +770,16 @@ class Blacklist  extends FreePBX_Helpers implements BMO {
 			', $mod_cdr->getDbTable(), $place_holders);
 
 			$stmt = $mod_cdr_db->prepare($sql);
-			if ($stmt->execute($number_process))
-			{
+			if ($stmt->execute($number_process)) {
 				$res = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-				foreach ($res as $row)
-				{
+				foreach ($res as $row) {
 					$return_array[$row['src']] = array(
 						'count' => $row['ncount'],
 						'last_date' => $row['calldate'],
 					);
 				}
 			}
-			
+
 			$return_data = is_array($number) ? $return_array : $return_array[$number]['count'];
 		}
 		return $return_data;

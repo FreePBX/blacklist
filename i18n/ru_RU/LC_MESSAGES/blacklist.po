@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-29 15:46+0530\n"
+"POT-Creation-Date: 2022-10-27 05:15+0000\n"
 "PO-Revision-Date: 2022-04-11 13:02+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.0.1\n"
 
 #: views/blgrid.php:11
@@ -63,7 +63,7 @@ msgstr "Алминистратор"
 msgid "Are you sure you want to delete this item?"
 msgstr "Вы уверены, что хотите удалить этот элемент?"
 
-#: Blacklist.class.php:20 Blacklist.class.php:543 blacklist.i18n.php:4
+#: Blacklist.class.php:20 Blacklist.class.php:547 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:24
 msgid "Blacklist"
 msgstr "Черный список"
@@ -120,11 +120,11 @@ msgstr "После загрузки файл не найден"
 msgid "Delete Selected"
 msgstr "Удалить выбранный"
 
-#: Blacklist.class.php:553 views/addnumber.php:40 views/blgrid.php:10
+#: Blacklist.class.php:557 views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
 msgstr "Описание"
 
-#: Blacklist.class.php:553
+#: Blacklist.class.php:557
 msgid "Description of number blacklisted"
 msgstr "Описание номера, внесенного в черный список"
 
@@ -140,7 +140,7 @@ msgstr "Запись обновлена"
 msgid "Import/Export"
 msgstr "Импорт/Экспорт"
 
-#: Blacklist.class.php:544
+#: Blacklist.class.php:548
 msgid "Import/Export Caller Blacklist"
 msgstr "Импорт/Экспорт абонентов черного списка"
 
@@ -168,11 +168,11 @@ msgstr "Номер/CallerID не может быть пустым"
 msgid "Numbers Deleted"
 msgstr "Номера удалены"
 
-#: Blacklist.class.php:552
+#: Blacklist.class.php:556
 msgid "Phone Number"
 msgstr "Номер телефона"
 
-#: Blacklist.class.php:570
+#: Blacklist.class.php:574
 msgid "Phone Number Required"
 msgstr "Требуется номер телефона"
 
@@ -184,7 +184,7 @@ msgstr "Удалить номер из черного списка"
 msgid "Removes a number from the Blacklist Module"
 msgstr "Удаляет номер из модуля черного списка"
 
-#: Blacklist.class.php:405
+#: Blacklist.class.php:409
 msgid "Reset"
 msgstr "Сброс"
 
@@ -200,7 +200,7 @@ msgstr "Сохранить изменения"
 msgid "Settings"
 msgstr "Настройки"
 
-#: Blacklist.class.php:411
+#: Blacklist.class.php:415
 msgid "Submit"
 msgstr "Применить"
 
@@ -212,7 +212,7 @@ msgstr "Все записи успешно импортированы"
 msgid "The file must be in CSV format!"
 msgstr "Файл должен быть в формате CSV!"
 
-#: Blacklist.class.php:552
+#: Blacklist.class.php:556
 msgid "The number as it appears in the callerid display"
 msgstr "Номер в том виде, в каком он отображается в виде CallerID"
 

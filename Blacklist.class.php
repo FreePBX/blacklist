@@ -246,8 +246,12 @@ class Blacklist implements \BMO {
 		// don't generate the dialplan if they are not using the function
 		//
 		if ($this->astman->database_get('blacklist', 'blocked') == '1') {
-			$ext->add($id, $c, '', new \ext_gotoif('$["${CALLERID(number)}" = "Unknown"]', 'check-blocked'));
-			$ext->add($id, $c, '', new \ext_gotoif('$["${CALLERID(number)}" = "Unavailable"]', 'check-blocked'));
+			$ext->add($id, $c, '', new \ext_gotoif('$["${TOLOWER(${CALLERID(number)})}" = "unknown"]', 'check-blocked'));
+			$ext->add($id, $c, '', new \ext_gotoif('$["${TOLOWER(${CALLERID(number)})}" = "unavailable"]', 'check-blocked'));
+          	$ext->add($id, $c, '', new \ext_gotoif('$["${TOLOWER(${CALLERID(number)})}" = "anonymous"]', 'check-blocked'));
+          	$ext->add($id, $c, '', new \ext_gotoif('$["${TOLOWER(${CALLERID(number)})}" = "private"]', 'check-blocked'));
+          	$ext->add($id, $c, '', new \ext_gotoif('$["${TOLOWER(${CALLERID(number)})}" = "restricted"]', 'check-blocked'));
+          	$ext->add($id, $c, '', new \ext_gotoif('$["${TOLOWER(${CALLERID(number)})}" = "blocked"]', 'check-blocked'));
 			$ext->add($id, $c, '', new \ext_gotoif('$["foo${CALLERID(number)}" = "foo"]', 'check-blocked', 'check'));
 			$ext->add($id, $c, 'check-blocked', new \ext_gotoif('$["${DB(blacklist/blocked)}" = "1"]', 'blacklisted'));
 		}

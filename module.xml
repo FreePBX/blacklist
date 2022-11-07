@@ -2,7 +2,7 @@
 	<rawname>blacklist</rawname>
 	<repo>standard</repo>
 	<name>Blacklist</name>
-	<version>16.0.16</version>
+	<version>16.0.17</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -13,6 +13,7 @@
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*16.0.17* FREEPBX-23789 Removed case sensitive check. 
 		*16.0.16* FREEPBX-23776 Add advanced feature to disable call count 
 		*16.0.15* FREEPBX-23637 
 		*16.0.14* Packaging of ver 16.0.14

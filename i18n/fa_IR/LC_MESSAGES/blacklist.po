@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-10 09:33+0000\n"
+"POT-Creation-Date: 2022-11-07 04:15+0000\n"
 "PO-Revision-Date: 2016-06-22 09:27+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Adding..."
 msgstr "در حال اضافه شدن..."
 
-#: Blacklist.class.php:24
+#: Blacklist.class.php:25
 msgid ""
 "Adds a number to the Blacklist Module.  All calls from that number to the "
 "system will receive a disconnect recording.  Manage these in the Blacklist "
@@ -51,14 +51,14 @@ msgstr ""
 "یک شماره به لیست سیاه اضافه نمایید. تمام تماس ها از این شماره به سیستم قطع "
 "خواهند شد که در این ماژول قابل مدیریت هستند."
 
-#: Blacklist.class.php:119
+#: Blacklist.class.php:121
 msgid ""
 "Adds a number to the Blacklist Module. All calls from that number to the "
 "system will receive a disconnect recording. Manage these in the Blacklist "
 "module."
 msgstr ""
 
-#: Blacklist.class.php:26
+#: Blacklist.class.php:27
 msgid ""
 "Adds the last caller to the Blacklist Module.  All calls from that number to "
 "the system will receive a disconnect recording."
@@ -66,7 +66,7 @@ msgstr ""
 "افزودن آخرین تماس گیرنده به لیست سیاه. تمامی تماس ها از این شماره به سیستم "
 "قطع خواهند شد."
 
-#: Blacklist.class.php:134
+#: Blacklist.class.php:136
 msgid ""
 "Adds the last caller to the Blacklist Module. All calls from that number to "
 "the system will receive a disconnect recording."
@@ -85,7 +85,7 @@ msgstr ""
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:23 Blacklist.class.php:587 blacklist.i18n.php:4
+#: Blacklist.class.php:24 Blacklist.class.php:589 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:24
 msgid "Blacklist"
 msgstr "لیست سیاه"
@@ -102,11 +102,11 @@ msgstr "شماره لیست سیاه"
 msgid "Blacklist Settings"
 msgstr ""
 
-#: Blacklist.class.php:20 Blacklist.class.php:118
+#: Blacklist.class.php:21 Blacklist.class.php:120
 msgid "Blacklist a number"
 msgstr "تعداد لیست سیاه"
 
-#: Blacklist.class.php:22 Blacklist.class.php:133
+#: Blacklist.class.php:23 Blacklist.class.php:135
 msgid "Blacklist the last caller"
 msgstr "آخرین تماس گیرنده لیست سیاه"
 
@@ -126,9 +126,9 @@ msgstr "تاریخ/ساعت تماس"
 msgid "Call Log"
 msgstr "لاگ تماس"
 
-#: Blacklist.class.php:486 Blacklist.class.php:507 Blacklist.class.php:521
-#: Blacklist.class.php:539 Blacklist.class.php:551 Blacklist.class.php:568
-#: Blacklist.class.php:580
+#: Blacklist.class.php:488 Blacklist.class.php:509 Blacklist.class.php:523
+#: Blacklist.class.php:541 Blacklist.class.php:553 Blacklist.class.php:570
+#: Blacklist.class.php:582
 msgid "Cannot connect to Asterisk Manager, is Asterisk running?"
 msgstr ""
 
@@ -148,7 +148,7 @@ msgstr "تعیین نمایید تماس های لیست سیاه به چه مق
 msgid "Close"
 msgstr "بستن"
 
-#: Blacklist.class.php:192
+#: Blacklist.class.php:190
 msgid "Could not find file after upload"
 msgstr "فایل بعد از بارگذاری یافت نشد"
 
@@ -156,11 +156,17 @@ msgstr "فایل بعد از بارگذاری یافت نشد"
 msgid "Delete Selected"
 msgstr "حذف مورد انتخاب شده"
 
-#: Blacklist.class.php:603 views/addnumber.php:40 views/blgrid.php:10
+#: Blacklist.class.php:606 views/addnumber.php:40 views/blgrid.php:10
 msgid "Description"
 msgstr "توضیحات"
 
-#: Blacklist.class.php:604
+#: Blacklist.class.php:595
+msgid ""
+"Description header consists of (description/blocktype i.e Call, Sms, Both) "
+"of numbers blacklisted like Charlie/Call"
+msgstr ""
+
+#: Blacklist.class.php:595
 msgid "Description of number blacklisted"
 msgstr "مقصد تماس های لیست سیاه"
 
@@ -184,7 +190,7 @@ msgstr "ورودی بروز رسانی شده"
 msgid "Import/Export"
 msgstr "ورود/خروج"
 
-#: Blacklist.class.php:588
+#: Blacklist.class.php:590
 msgid "Import/Export Caller Blacklist"
 msgstr "ورود/خروج تماس گیرنده لیست سیاه"
 
@@ -198,7 +204,7 @@ msgstr ""
 msgid "No"
 msgstr "خیر"
 
-#: Blacklist.class.php:214
+#: Blacklist.class.php:212
 msgid "No Entries to export"
 msgstr "موردی برای خروجی گرفتن وجود ندارد"
 
@@ -219,15 +225,15 @@ msgstr "شماره/شناسه تماس گیرنده"
 msgid "Number/CallerID cannot be blank"
 msgstr "شماره/تلفن تماس گیرنده نمیتواند خالی باشد"
 
-#: Blacklist.class.php:66
+#: Blacklist.class.php:68
 msgid "Numbers Deleted"
 msgstr "شماره ها حذف شدند"
 
-#: Blacklist.class.php:598
+#: Blacklist.class.php:601
 msgid "Phone Number"
 msgstr "شماره تلفن"
 
-#: Blacklist.class.php:622
+#: Blacklist.class.php:625
 msgid "Phone Number Required"
 msgstr "شماره تلفن ضروری است"
 
@@ -237,15 +243,15 @@ msgid ""
 "`from-did-direct,100,1`"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:74 Blacklist.class.php:21 Blacklist.class.php:126
+#: Api/Gql/Blacklist.php:74 Blacklist.class.php:22 Blacklist.class.php:128
 msgid "Remove a number from the blacklist"
 msgstr "خروج شماره از لیست سیاه"
 
-#: Blacklist.class.php:25 Blacklist.class.php:127
+#: Blacklist.class.php:26 Blacklist.class.php:129
 msgid "Removes a number from the Blacklist Module"
 msgstr "حذف شماره از لیست سیاه"
 
-#: Blacklist.class.php:441
+#: Blacklist.class.php:443
 msgid "Reset"
 msgstr "بازنشانی"
 
@@ -261,11 +267,11 @@ msgstr "ذخیره تغییرات"
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: Blacklist.class.php:447
+#: Blacklist.class.php:449
 msgid "Submit"
 msgstr "ثبت"
 
-#: Blacklist.class.php:190
+#: Blacklist.class.php:188
 msgid "Sucessfully imported all entries"
 msgstr "تمام موارد با موفقیت وارد شدند"
 
@@ -273,11 +279,11 @@ msgstr "تمام موارد با موفقیت وارد شدند"
 msgid "The ID"
 msgstr ""
 
-#: Blacklist.class.php:195
+#: Blacklist.class.php:193
 msgid "The file must be in CSV format!"
 msgstr "فایل باید با فرمت CSV باشد!"
 
-#: Blacklist.class.php:599
+#: Blacklist.class.php:602
 msgid "The number as it appears in the callerid display"
 msgstr "شماره ای که به عنوان شناسه تماس گیرنده نمایش داده می شود"
 
@@ -285,7 +291,7 @@ msgstr "شماره ای که به عنوان شناسه تماس گیرنده ن
 msgid "The number to block"
 msgstr ""
 
-#: Blacklist.class.php:170
+#: Blacklist.class.php:168
 msgid "There was an error uploading the file"
 msgstr "در بارگذاری فایل خطا رخ داده است"
 

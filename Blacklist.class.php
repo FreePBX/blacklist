@@ -626,6 +626,19 @@ class Blacklist  extends FreePBX_Helpers implements BMO
 		}
 	}
 
+	public function destinations_check($dest=true)
+	{
+		$destlist = array();
+		if (is_array($dest) && empty($dest)) { return $destlist; }
+
+		$destlist[] = array(
+			'dest' 		  => $this->destinationGet(),
+			'description' => _("Black List: Calls Go"),
+			'edit_url' 	  => "config.php?display=blacklist#settings",
+		);
+		return $destlist;
+	}
+
 	/**
 	 * Whether to block unknown calls
 	 * @param  boolean $blocked True to block, false otherwise

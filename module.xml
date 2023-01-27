@@ -38,6 +38,9 @@
 			<method callingMethod="import" class="Blacklist" namespace="FreePBX\modules">bulkhandlerImport</method>
 			<method callingMethod="export" class="Blacklist" namespace="FreePBX\modules">bulkhandlerExport</method>
 		</bulkhandler>
+		<framework class="Destinations" namespace="FreePBX">
+      		<method callingMethod="getModuleCheckDestinations" class="Blacklist" namespace="FreePBX\modules">destinations_check</method>
+		</framework>
 	</hooks>
 	<depends>
 		<module>core ge 16.0.56.24</module>

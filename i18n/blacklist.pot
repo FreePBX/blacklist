@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for blacklist
-# Copyright (C) 2008-2022 Sangoma Technologies, Inc.
+# Copyright (C) 2008-2023 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-07 04:16+0000\n"
+"POT-Creation-Date: 2023-02-07 01:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,8 +79,12 @@ msgstr ""
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
+#: Blacklist.class.php:636
+msgid "Black List: Calls Go"
+msgstr ""
+
 #: Blacklist.class.php:31
-#: Blacklist.class.php:664
+#: Blacklist.class.php:677
 #: blacklist.i18n.php:4
 #: blacklist.i18n.php:10
 #: views/general.php:14
@@ -131,8 +135,8 @@ msgstr ""
 #: Blacklist.class.php:593
 #: Blacklist.class.php:612
 #: Blacklist.class.php:625
-#: Blacklist.class.php:643
 #: Blacklist.class.php:656
+#: Blacklist.class.php:669
 msgid "Cannot connect to Asterisk Manager, is Asterisk running?"
 msgstr ""
 
@@ -160,7 +164,7 @@ msgstr ""
 msgid "Delete Selected"
 msgstr ""
 
-#: Blacklist.class.php:681
+#: Blacklist.class.php:694
 #: views/blgrid.php:24
 #: views/modal_addnumber.php:40
 msgid "Description"
@@ -170,7 +174,7 @@ msgstr ""
 msgid "Description not allowed, reserved character!"
 msgstr ""
 
-#: Blacklist.class.php:682
+#: Blacklist.class.php:695
 msgid "Description of number blacklisted"
 msgstr ""
 
@@ -186,7 +190,7 @@ msgstr ""
 msgid "Destination for blacklisted calls"
 msgstr ""
 
-#: Blacklist.class.php:750
+#: Blacklist.class.php:763
 msgid "Disabled"
 msgstr ""
 
@@ -198,7 +202,7 @@ msgstr ""
 msgid "Import/Export"
 msgstr ""
 
-#: Blacklist.class.php:665
+#: Blacklist.class.php:678
 msgid "Import/Export Caller Blacklist"
 msgstr ""
 
@@ -255,11 +259,11 @@ msgstr ""
 msgid "Numbers Deleted"
 msgstr ""
 
-#: Blacklist.class.php:676
+#: Blacklist.class.php:689
 msgid "Phone Number"
 msgstr ""
 
-#: Blacklist.class.php:701
+#: Blacklist.class.php:714
 msgid "Phone Number Required"
 msgstr ""
 
@@ -312,7 +316,7 @@ msgstr ""
 msgid "The file must be in CSV format!"
 msgstr ""
 
-#: Blacklist.class.php:677
+#: Blacklist.class.php:690
 msgid "The number as it appears in the callerid display"
 msgstr ""
 

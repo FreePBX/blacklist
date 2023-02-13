@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-07 01:12+0000\n"
+"POT-Creation-Date: 2023-02-13 10:26+0000\n"
 "PO-Revision-Date: 2017-12-01 18:37+0200\n"
 "Last-Translator: CATTAN Jérémie <jeremie@famillecattan.com>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/blacklist/"
@@ -95,10 +95,6 @@ msgstr ""
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:636
-msgid "Black List: Calls Go"
-msgstr ""
-
 #: Blacklist.class.php:31 Blacklist.class.php:677 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:14
 msgid "Blacklist"
@@ -123,6 +119,10 @@ msgstr "Ajouter un numéro dans la liste noire"
 #: Blacklist.class.php:30 Blacklist.class.php:175
 msgid "Blacklist the last caller"
 msgstr "Ajouter dans la liste noire le dernier appelant"
+
+#: Blacklist.class.php:636
+msgid "Blacklist: Destination for BlackListed Calls"
+msgstr ""
 
 #: views/general.php:46
 msgid "Block Unknown/Blocked Caller ID"

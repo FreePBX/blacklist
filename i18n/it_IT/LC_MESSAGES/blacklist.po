@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-07 01:12+0000\n"
+"POT-Creation-Date: 2023-02-13 10:26+0000\n"
 "PO-Revision-Date: 2018-07-03 13:27+0000\n"
 "Last-Translator: Maurizio Longhitano <mlonghitano@teampower.it>\n"
 "Language-Team: Italian <http://*/projects/freepbx/blacklist/it/>\n"
@@ -85,10 +85,6 @@ msgstr ""
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:636
-msgid "Black List: Calls Go"
-msgstr ""
-
 #: Blacklist.class.php:31 Blacklist.class.php:677 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:14
 msgid "Blacklist"
@@ -113,6 +109,10 @@ msgstr "Mette in  Blacklist un numero"
 #: Blacklist.class.php:30 Blacklist.class.php:175
 msgid "Blacklist the last caller"
 msgstr "Mette in Blacklist l'ultimo chiamante"
+
+#: Blacklist.class.php:636
+msgid "Blacklist: Destination for BlackListed Calls"
+msgstr ""
 
 #: views/general.php:46
 msgid "Block Unknown/Blocked Caller ID"

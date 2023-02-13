@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-07 01:12+0000\n"
+"POT-Creation-Date: 2023-02-13 10:26+0000\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -76,10 +76,6 @@ msgstr ""
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:636
-msgid "Black List: Calls Go"
-msgstr ""
-
 #: Blacklist.class.php:31 Blacklist.class.php:677 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:14
 msgid "Blacklist"
@@ -104,6 +100,10 @@ msgstr "Внести номер в черный список"
 #: Blacklist.class.php:30 Blacklist.class.php:175
 msgid "Blacklist the last caller"
 msgstr "Внести в черный список номер последнего позвонившего"
+
+#: Blacklist.class.php:636
+msgid "Blacklist: Destination for BlackListed Calls"
+msgstr ""
 
 #: views/general.php:46
 msgid "Block Unknown/Blocked Caller ID"

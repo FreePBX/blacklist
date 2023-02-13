@@ -633,7 +633,7 @@ class Blacklist  extends FreePBX_Helpers implements BMO
 
 		$destlist[] = array(
 			'dest' 		  => $this->destinationGet(),
-			'description' => _("Black List: Calls Go"),
+			'description' => _("Blacklist: Destination for BlackListed Calls"),
 			'edit_url' 	  => "config.php?display=blacklist#settings",
 		);
 		return $destlist;

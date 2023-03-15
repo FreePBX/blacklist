@@ -2,7 +2,7 @@
 	<rawname>blacklist</rawname>
 	<repo>standard</repo>
 	<name>Blacklist</name>
-	<version>16.0.19</version>
+	<version>16.0.20</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -13,6 +13,7 @@
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
+		*16.0.20* FREEI-5724 Optmized sql queries 
 		*16.0.19* Packaging of ver 16.0.19
 		*16.0.18* FREEPBX-23990 
 		*16.0.17* FREEPBX-23789 Removed case sensitive check. 

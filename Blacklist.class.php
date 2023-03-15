@@ -84,16 +84,11 @@ class Blacklist  extends FreePBX_Helpers implements BMO
 				$mod_cdr = $this->FreePBX->Cdr;
 				$number = $request['number'];
 				$sql = sprintf('
-				SELECT T3.calldate FROM (
-					SELECT DISTINCT(T1.linkedid), T2.calldate FROM %1$s T1
-					LEFT JOIN (
-						SELECT calldate, linkedid, sequence FROM %1$s GROUP BY linkedid ASC, sequence ASC
-					) T2 ON T1.linkedid = T2.linkedid AND T1.sequence = T2.sequence
-					WHERE T1.src = ?
-					GROUP BY T1.linkedid DESC
-					ORDER BY T1.sequence ASC
-				) T3
-				ORDER BY T3.calldate DESC', $mod_cdr->getDbTable());
+				SELECT calldate
+				FROM %1$s
+				WHERE src = ?
+				GROUP BY linkedid DESC
+				ORDER BY sequence ASC, calldate DESC', $mod_cdr->getDbTable());
 				$stmt = $mod_cdr->getCdrDbHandle()->prepare($sql);
 				$stmt->execute(array($number));
 				$ret = $stmt->fetchAll(\PDO::FETCH_ASSOC);
@@ -775,15 +770,15 @@ class Blacklist  extends FreePBX_Helpers implements BMO
 				return (string)$value;
 			}, $number_process);
 			$sql = sprintf('
-			SELECT DISTINCT(T1.src) as src, T2.ncount, T3.calldate FROM %1$s T1
-			LEFT JOIN (
-				SELECT COUNT(DISTINCT linkedid) AS ncount, src FROM %1$s GROUP BY src
-			) T2 ON T1.src = T2.src
-			LEFT JOIN (
-				SELECT MAX(calldate) AS calldate, src FROM %1$s GROUP BY src
-			) T3 ON T1.src = T3.src
-			WHERE T1.src IN (%2$s)
-			GROUP BY T1.src
+			SELECT DISTINCT
+				src, 
+				COUNT(DISTINCT linkedid) AS ncount, 
+				MAX(calldate) as calldate
+			FROM
+				%1$s 
+			WHERE
+				src IN (%2$s)
+			GROUP BY src
 			', $mod_cdr->getDbTable(), $place_holders);
 
 			$stmt = $mod_cdr_db->prepare($sql);

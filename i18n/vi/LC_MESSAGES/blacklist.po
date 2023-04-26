@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-07 04:16+0000\n"
+"POT-Creation-Date: 2023-03-15 09:44+0000\n"
 "PO-Revision-Date: 2017-07-20 10:28+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -52,7 +52,7 @@ msgstr ""
 "hệ thống sẽ nhận một bản ghi ngắt kết nối. Quản lý chúng trong mô đun Danh "
 "sách đen."
 
-#: Blacklist.class.php:161
+#: Blacklist.class.php:156
 msgid ""
 "Adds a number to the Blacklist Module. All calls from that number to the "
 "system will receive a disconnect recording. Manage these in the Blacklist "
@@ -67,7 +67,7 @@ msgstr ""
 "Thêm người gọi cuối cùng vào Mô đun Danh sách đen. Tất cả các cuộc gọi từ số "
 "đó đến hệ thống sẽ nhận được một bản ghi ngắt kết nối."
 
-#: Blacklist.class.php:176
+#: Blacklist.class.php:171
 msgid ""
 "Adds the last caller to the Blacklist Module. All calls from that number to "
 "the system will receive a disconnect recording."
@@ -86,7 +86,7 @@ msgstr ""
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:31 Blacklist.class.php:664 blacklist.i18n.php:4
+#: Blacklist.class.php:31 Blacklist.class.php:672 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:14
 msgid "Blacklist"
 msgstr "Danh sách đen"
@@ -103,13 +103,17 @@ msgstr "Số Danh sách đen"
 msgid "Blacklist Settings"
 msgstr ""
 
-#: Blacklist.class.php:28 Blacklist.class.php:160
+#: Blacklist.class.php:28 Blacklist.class.php:155
 msgid "Blacklist a number"
 msgstr "Ghi một số vào danh sách đen"
 
-#: Blacklist.class.php:30 Blacklist.class.php:175
+#: Blacklist.class.php:30 Blacklist.class.php:170
 msgid "Blacklist the last caller"
 msgstr "Ghi người gọi cuối vào danh sách đen"
+
+#: Blacklist.class.php:631
+msgid "Blacklist: Destination for BlackListed Calls"
+msgstr ""
 
 #: views/general.php:46
 msgid "Block Unknown/Blocked Caller ID"
@@ -127,9 +131,9 @@ msgstr "Thời gian/ Ngày của cuộc gọi"
 msgid "Call Log"
 msgstr "Nhật ký cuộc gọi"
 
-#: Blacklist.class.php:555 Blacklist.class.php:578 Blacklist.class.php:593
-#: Blacklist.class.php:612 Blacklist.class.php:625 Blacklist.class.php:643
-#: Blacklist.class.php:656
+#: Blacklist.class.php:550 Blacklist.class.php:573 Blacklist.class.php:588
+#: Blacklist.class.php:607 Blacklist.class.php:620 Blacklist.class.php:651
+#: Blacklist.class.php:664
 msgid "Cannot connect to Asterisk Manager, is Asterisk running?"
 msgstr ""
 
@@ -149,7 +153,7 @@ msgstr "Chọn nơi các cuộc gọi đã bị liệt vào danh sách đen đ�
 msgid "Close"
 msgstr "Đóng"
 
-#: Blacklist.class.php:253
+#: Blacklist.class.php:248
 msgid "Could not find file after upload"
 msgstr "Không tìm thấy tệp sau khi tải"
 
@@ -157,7 +161,7 @@ msgstr "Không tìm thấy tệp sau khi tải"
 msgid "Delete Selected"
 msgstr "Xóa những gì đã chọn"
 
-#: Blacklist.class.php:681 views/blgrid.php:24 views/modal_addnumber.php:40
+#: Blacklist.class.php:689 views/blgrid.php:24 views/modal_addnumber.php:40
 msgid "Description"
 msgstr "Mô tả"
 
@@ -165,7 +169,7 @@ msgstr "Mô tả"
 msgid "Description not allowed, reserved character!"
 msgstr ""
 
-#: Blacklist.class.php:682
+#: Blacklist.class.php:690
 msgid "Description of number blacklisted"
 msgstr "Mô tả của số thuộc danh sách đen"
 
@@ -181,7 +185,7 @@ msgstr "Điểm đến của các cuộc gọi thuộc danh sách đen"
 msgid "Destination for blacklisted calls"
 msgstr ""
 
-#: Blacklist.class.php:750
+#: Blacklist.class.php:758
 msgid "Disabled"
 msgstr ""
 
@@ -193,7 +197,7 @@ msgstr "Mục nhập đã được cập nhật"
 msgid "Import/Export"
 msgstr "Nhập/ Xuất"
 
-#: Blacklist.class.php:665
+#: Blacklist.class.php:673
 msgid "Import/Export Caller Blacklist"
 msgstr "NHập/ Xuất Danh sách đen người gọi"
 
@@ -211,11 +215,11 @@ msgstr ""
 msgid "Last Call"
 msgstr ""
 
-#: Blacklist.class.php:134
+#: Blacklist.class.php:129
 msgid "N/A"
 msgstr ""
 
-#: Blacklist.class.php:136
+#: Blacklist.class.php:131
 msgid "Never"
 msgstr ""
 
@@ -223,7 +227,7 @@ msgstr ""
 msgid "No"
 msgstr "Không"
 
-#: Blacklist.class.php:275
+#: Blacklist.class.php:270
 msgid "No Entries to export"
 msgstr "Không có mục nhập nào xuất ra"
 
@@ -248,11 +252,11 @@ msgstr "Số điện thoại/ ID người gọi không thể để trống"
 msgid "Numbers Deleted"
 msgstr "Các số điện thoại đã bị xóa"
 
-#: Blacklist.class.php:676
+#: Blacklist.class.php:684
 msgid "Phone Number"
 msgstr "Số điện thoại"
 
-#: Blacklist.class.php:701
+#: Blacklist.class.php:709
 msgid "Phone Number Required"
 msgstr "Số điện thoại yêu cầu"
 
@@ -262,15 +266,15 @@ msgid ""
 "`from-did-direct,100,1`"
 msgstr ""
 
-#: Api/Gql/Blacklist.php:74 Blacklist.class.php:29 Blacklist.class.php:168
+#: Api/Gql/Blacklist.php:74 Blacklist.class.php:29 Blacklist.class.php:163
 msgid "Remove a number from the blacklist"
 msgstr "Xóa một số khỏi danh sách đen"
 
-#: Blacklist.class.php:33 Blacklist.class.php:169
+#: Blacklist.class.php:33 Blacklist.class.php:164
 msgid "Removes a number from the Blacklist Module"
 msgstr "Xóa một số khỏi Mô đun danh sách đen"
 
-#: Blacklist.class.php:508
+#: Blacklist.class.php:503
 msgid "Reset"
 msgstr "Cài đặt lại"
 
@@ -286,11 +290,11 @@ msgstr "Lưu các thay đổi"
 msgid "Settings"
 msgstr "Các cài đặt"
 
-#: Blacklist.class.php:514
+#: Blacklist.class.php:509
 msgid "Submit"
 msgstr "Gửi đi"
 
-#: Blacklist.class.php:251
+#: Blacklist.class.php:246
 msgid "Sucessfully imported all entries"
 msgstr "Xuất tất cả mục nhập thành công"
 
@@ -298,11 +302,11 @@ msgstr "Xuất tất cả mục nhập thành công"
 msgid "The ID"
 msgstr ""
 
-#: Blacklist.class.php:256
+#: Blacklist.class.php:251
 msgid "The file must be in CSV format!"
 msgstr "Tệp phải ở dạng CSV!"
 
-#: Blacklist.class.php:677
+#: Blacklist.class.php:685
 msgid "The number as it appears in the callerid display"
 msgstr "số điện thoại như xuất hiện trong màn hình ID người gọi"
 
@@ -310,7 +314,7 @@ msgstr "số điện thoại như xuất hiện trong màn hình ID người g�
 msgid "The number to block"
 msgstr ""
 
-#: Blacklist.class.php:231
+#: Blacklist.class.php:226
 msgid "There was an error uploading the file"
 msgstr "Đã xảy ra lỗi khi đang tải tệp lên"
 

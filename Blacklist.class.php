@@ -676,9 +676,9 @@ class Blacklist  extends FreePBX_Helpers implements BMO
 	}
 	public function bulkhandlerGetHeaders($type)
 	{
+		$headers = array();
 		switch ($type) {
 			case 'blacklist':
-				$headers = array();
 				$headers['number'] = array(
 					'required' => true,
 					'identifier' => _("Phone Number"),

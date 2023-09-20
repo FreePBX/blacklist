@@ -188,7 +188,7 @@ class Blacklist extends FreePBX_Helpers implements BMO {
 		$request = $_REQUEST;
 
 		if (isset($request['goto0'])) {
-			$destination = $request[$request['goto0'] . '0'];
+			$destination = $request[$request['goto0'] . '0'] ?? '';
 		}
 		isset($request['action']) ? $action = $request['action'] : $action = '';
 		isset($request['oldval']) ? $action = 'edit' : $action;

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-15 09:44+0000\n"
+"POT-Creation-Date: 2023-10-30 05:53+0000\n"
 "PO-Revision-Date: 2018-07-03 13:27+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/blacklist/bg/>\n"
@@ -85,7 +85,7 @@ msgstr ""
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:31 Blacklist.class.php:672 blacklist.i18n.php:4
+#: Blacklist.class.php:31 Blacklist.class.php:675 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:14
 msgid "Blacklist"
 msgstr "Черен Списък"
@@ -110,7 +110,7 @@ msgstr "Въведи номер в Черен Списък"
 msgid "Blacklist the last caller"
 msgstr "Въведи последния обадил се в Черен Списък"
 
-#: Blacklist.class.php:631
+#: Blacklist.class.php:634
 msgid "Blacklist: Destination for BlackListed Calls"
 msgstr ""
 
@@ -130,9 +130,9 @@ msgstr "Дата/Час на Обаждане"
 msgid "Call Log"
 msgstr "Лог на Обажданията"
 
-#: Blacklist.class.php:550 Blacklist.class.php:573 Blacklist.class.php:588
-#: Blacklist.class.php:607 Blacklist.class.php:620 Blacklist.class.php:651
-#: Blacklist.class.php:664
+#: Blacklist.class.php:553 Blacklist.class.php:576 Blacklist.class.php:591
+#: Blacklist.class.php:610 Blacklist.class.php:623 Blacklist.class.php:654
+#: Blacklist.class.php:667
 msgid "Cannot connect to Asterisk Manager, is Asterisk running?"
 msgstr ""
 
@@ -152,7 +152,7 @@ msgstr "Изберете накъде да се насочват въведен�
 msgid "Close"
 msgstr "Затвори"
 
-#: Blacklist.class.php:248
+#: Blacklist.class.php:251
 msgid "Could not find file after upload"
 msgstr "Не мога да намеря файла след качването"
 
@@ -160,7 +160,7 @@ msgstr "Не мога да намеря файла след качването"
 msgid "Delete Selected"
 msgstr "Изтрий Избраните"
 
-#: Blacklist.class.php:689 views/blgrid.php:24 views/modal_addnumber.php:40
+#: Blacklist.class.php:692 views/blgrid.php:24 views/modal_addnumber.php:40
 msgid "Description"
 msgstr "Описание"
 
@@ -168,7 +168,7 @@ msgstr "Описание"
 msgid "Description not allowed, reserved character!"
 msgstr ""
 
-#: Blacklist.class.php:690
+#: Blacklist.class.php:693
 msgid "Description of number blacklisted"
 msgstr "Описание на номер от черния списък"
 
@@ -184,7 +184,7 @@ msgstr "Направление за Обаждания от Черния Спи�
 msgid "Destination for blacklisted calls"
 msgstr ""
 
-#: Blacklist.class.php:758
+#: Blacklist.class.php:761
 msgid "Disabled"
 msgstr ""
 
@@ -196,7 +196,7 @@ msgstr "Въвеждането е Обновено"
 msgid "Import/Export"
 msgstr "Внасяне/Изнасяне"
 
-#: Blacklist.class.php:673
+#: Blacklist.class.php:676
 msgid "Import/Export Caller Blacklist"
 msgstr "Внасяне/Изнасяне на Черен Списък с Обаждащи се"
 
@@ -226,7 +226,7 @@ msgstr ""
 msgid "No"
 msgstr "Не"
 
-#: Blacklist.class.php:270
+#: Blacklist.class.php:273
 msgid "No Entries to export"
 msgstr "Няма Въвеждания за изнасяне"
 
@@ -251,11 +251,11 @@ msgstr "Номер/CallerID не може да е празно"
 msgid "Numbers Deleted"
 msgstr "Изтрити Номера"
 
-#: Blacklist.class.php:684
+#: Blacklist.class.php:687
 msgid "Phone Number"
 msgstr "Телефонен Номер"
 
-#: Blacklist.class.php:709
+#: Blacklist.class.php:712
 msgid "Phone Number Required"
 msgstr "Необходим е Телефонен Номер"
 
@@ -273,7 +273,7 @@ msgstr "Извади номер от Черен Списък"
 msgid "Removes a number from the Blacklist Module"
 msgstr "Премахва номер от Черния Списък"
 
-#: Blacklist.class.php:503
+#: Blacklist.class.php:506
 msgid "Reset"
 msgstr "Изчисти"
 
@@ -289,11 +289,11 @@ msgstr "Запиши Промените"
 msgid "Settings"
 msgstr "Настройки"
 
-#: Blacklist.class.php:509
+#: Blacklist.class.php:512
 msgid "Submit"
 msgstr "Приеми"
 
-#: Blacklist.class.php:246
+#: Blacklist.class.php:249
 msgid "Sucessfully imported all entries"
 msgstr "Всички въвеждания са внесени успешно"
 
@@ -301,11 +301,11 @@ msgstr "Всички въвеждания са внесени успешно"
 msgid "The ID"
 msgstr ""
 
-#: Blacklist.class.php:251
+#: Blacklist.class.php:254
 msgid "The file must be in CSV format!"
 msgstr "Файлът трябва да е в CSV формат!"
 
-#: Blacklist.class.php:685
+#: Blacklist.class.php:688
 msgid "The number as it appears in the callerid display"
 msgstr "Номерът, както се появява на callerid дисплея"
 
@@ -313,7 +313,7 @@ msgstr "Номерът, както се появява на callerid диспл�
 msgid "The number to block"
 msgstr ""
 
-#: Blacklist.class.php:226
+#: Blacklist.class.php:229
 msgid "There was an error uploading the file"
 msgstr "Грешка при качване на файл"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-15 09:44+0000\n"
+"POT-Creation-Date: 2023-10-30 05:53+0000\n"
 "PO-Revision-Date: 2015-10-16 13:57+0200\n"
 "Last-Translator: james <zhulizhong@gmail.com>\n"
 "Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
@@ -85,7 +85,7 @@ msgstr ""
 msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
-#: Blacklist.class.php:31 Blacklist.class.php:672 blacklist.i18n.php:4
+#: Blacklist.class.php:31 Blacklist.class.php:675 blacklist.i18n.php:4
 #: blacklist.i18n.php:10 views/general.php:14
 msgid "Blacklist"
 msgstr "黑名单"
@@ -110,7 +110,7 @@ msgstr "屏蔽一个号码"
 msgid "Blacklist the last caller"
 msgstr "屏蔽最近通话的主叫"
 
-#: Blacklist.class.php:631
+#: Blacklist.class.php:634
 msgid "Blacklist: Destination for BlackListed Calls"
 msgstr ""
 
@@ -130,9 +130,9 @@ msgstr "呼叫 日期/时间"
 msgid "Call Log"
 msgstr "呼叫日志"
 
-#: Blacklist.class.php:550 Blacklist.class.php:573 Blacklist.class.php:588
-#: Blacklist.class.php:607 Blacklist.class.php:620 Blacklist.class.php:651
-#: Blacklist.class.php:664
+#: Blacklist.class.php:553 Blacklist.class.php:576 Blacklist.class.php:591
+#: Blacklist.class.php:610 Blacklist.class.php:623 Blacklist.class.php:654
+#: Blacklist.class.php:667
 msgid "Cannot connect to Asterisk Manager, is Asterisk running?"
 msgstr ""
 
@@ -152,7 +152,7 @@ msgstr "选择黑名单呼叫目的地"
 msgid "Close"
 msgstr "关闭"
 
-#: Blacklist.class.php:248
+#: Blacklist.class.php:251
 msgid "Could not find file after upload"
 msgstr "上传后找不到此文件"
 
@@ -160,7 +160,7 @@ msgstr "上传后找不到此文件"
 msgid "Delete Selected"
 msgstr "删除已选项"
 
-#: Blacklist.class.php:689 views/blgrid.php:24 views/modal_addnumber.php:40
+#: Blacklist.class.php:692 views/blgrid.php:24 views/modal_addnumber.php:40
 msgid "Description"
 msgstr "描述"
 
@@ -168,7 +168,7 @@ msgstr "描述"
 msgid "Description not allowed, reserved character!"
 msgstr ""
 
-#: Blacklist.class.php:690
+#: Blacklist.class.php:693
 msgid "Description of number blacklisted"
 msgstr ""
 
@@ -184,7 +184,7 @@ msgstr "黑名单呼叫目的地"
 msgid "Destination for blacklisted calls"
 msgstr ""
 
-#: Blacklist.class.php:758
+#: Blacklist.class.php:761
 msgid "Disabled"
 msgstr ""
 
@@ -196,7 +196,7 @@ msgstr ""
 msgid "Import/Export"
 msgstr "导入/导出"
 
-#: Blacklist.class.php:673
+#: Blacklist.class.php:676
 msgid "Import/Export Caller Blacklist"
 msgstr ""
 
@@ -226,7 +226,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Blacklist.class.php:270
+#: Blacklist.class.php:273
 msgid "No Entries to export"
 msgstr "无导出项"
 
@@ -251,11 +251,11 @@ msgstr ""
 msgid "Numbers Deleted"
 msgstr ""
 
-#: Blacklist.class.php:684
+#: Blacklist.class.php:687
 msgid "Phone Number"
 msgstr ""
 
-#: Blacklist.class.php:709
+#: Blacklist.class.php:712
 msgid "Phone Number Required"
 msgstr ""
 
@@ -273,7 +273,7 @@ msgstr "从黑名单内移除一个号码"
 msgid "Removes a number from the Blacklist Module"
 msgstr "从黑名单中移除一个号码"
 
-#: Blacklist.class.php:503
+#: Blacklist.class.php:506
 msgid "Reset"
 msgstr "重新设置"
 
@@ -289,11 +289,11 @@ msgstr "保存修改"
 msgid "Settings"
 msgstr "设置"
 
-#: Blacklist.class.php:509
+#: Blacklist.class.php:512
 msgid "Submit"
 msgstr "提交"
 
-#: Blacklist.class.php:246
+#: Blacklist.class.php:249
 msgid "Sucessfully imported all entries"
 msgstr "成功导入所有项"
 
@@ -301,11 +301,11 @@ msgstr "成功导入所有项"
 msgid "The ID"
 msgstr ""
 
-#: Blacklist.class.php:251
+#: Blacklist.class.php:254
 msgid "The file must be in CSV format!"
 msgstr "文件必须是CSV格式！"
 
-#: Blacklist.class.php:685
+#: Blacklist.class.php:688
 msgid "The number as it appears in the callerid display"
 msgstr ""
 
@@ -313,7 +313,7 @@ msgstr ""
 msgid "The number to block"
 msgstr ""
 
-#: Blacklist.class.php:226
+#: Blacklist.class.php:229
 msgid "There was an error uploading the file"
 msgstr "上传文件发生错误"
 

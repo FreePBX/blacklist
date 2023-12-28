@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-16 10:41+0000\n"
+"POT-Creation-Date: 2023-12-28 02:48-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,7 @@ msgid "Are you sure you want to delete the number %s?"
 msgstr ""
 
 #: Blacklist.class.php:30
-#: Blacklist.class.php:630
+#: Blacklist.class.php:633
 #: blacklist.i18n.php:4
 #: blacklist.i18n.php:10
 #: views/general.php:16
@@ -110,7 +110,7 @@ msgstr ""
 msgid "Blacklist the last caller"
 msgstr ""
 
-#: Blacklist.class.php:594
+#: Blacklist.class.php:597
 msgid "Blacklist: Destination for BlackListed Calls"
 msgstr ""
 
@@ -130,13 +130,13 @@ msgstr ""
 msgid "Call Log"
 msgstr ""
 
-#: Blacklist.class.php:512
-#: Blacklist.class.php:536
-#: Blacklist.class.php:551
-#: Blacklist.class.php:571
-#: Blacklist.class.php:584
-#: Blacklist.class.php:612
-#: Blacklist.class.php:625
+#: Blacklist.class.php:515
+#: Blacklist.class.php:539
+#: Blacklist.class.php:554
+#: Blacklist.class.php:574
+#: Blacklist.class.php:587
+#: Blacklist.class.php:615
+#: Blacklist.class.php:628
 msgid "Cannot connect to Asterisk Manager, is Asterisk running?"
 msgstr ""
 
@@ -156,7 +156,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: Blacklist.class.php:226
+#: Blacklist.class.php:229
 msgid "Could not find file after upload"
 msgstr ""
 
@@ -164,7 +164,7 @@ msgstr ""
 msgid "Delete Selected"
 msgstr ""
 
-#: Blacklist.class.php:637
+#: Blacklist.class.php:640
 #: views/blgrid.php:24
 #: views/modal_addnumber.php:40
 msgid "Description"
@@ -174,7 +174,7 @@ msgstr ""
 msgid "Description not allowed, reserved character!"
 msgstr ""
 
-#: Blacklist.class.php:637
+#: Blacklist.class.php:640
 msgid "Description of number blacklisted"
 msgstr ""
 
@@ -190,7 +190,11 @@ msgstr ""
 msgid "Destination for blacklisted calls"
 msgstr ""
 
-#: Blacklist.class.php:700
+#: blacklist.i18n.php:12
+msgid "Disable call count in to main grid"
+msgstr ""
+
+#: Blacklist.class.php:703
 msgid "Disabled"
 msgstr ""
 
@@ -202,7 +206,7 @@ msgstr ""
 msgid "Import/Export"
 msgstr ""
 
-#: Blacklist.class.php:630
+#: Blacklist.class.php:633
 msgid "Import/Export Caller Blacklist"
 msgstr ""
 
@@ -220,6 +224,16 @@ msgstr ""
 msgid "Last Call"
 msgstr ""
 
+#: blacklist.i18n.php:16
+msgid ""
+"Loading call counts on machines with large call logs can be slow. This "
+"setting will disable the call count in the main grid."
+msgstr ""
+
+#: blacklist.i18n.php:14
+msgid "Log Display"
+msgstr ""
+
 #: Blacklist.class.php:118
 msgid "N/A"
 msgstr ""
@@ -234,7 +248,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Blacklist.class.php:250
+#: Blacklist.class.php:253
 msgid "No Entries to export"
 msgstr ""
 
@@ -259,11 +273,11 @@ msgstr ""
 msgid "Numbers Deleted"
 msgstr ""
 
-#: Blacklist.class.php:636
+#: Blacklist.class.php:639
 msgid "Phone Number"
 msgstr ""
 
-#: Blacklist.class.php:654
+#: Blacklist.class.php:657
 msgid "Phone Number Required"
 msgstr ""
 
@@ -284,7 +298,7 @@ msgstr ""
 msgid "Removes a number from the Blacklist Module"
 msgstr ""
 
-#: Blacklist.class.php:478
+#: Blacklist.class.php:481
 msgid "Reset"
 msgstr ""
 
@@ -300,11 +314,11 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: Blacklist.class.php:478
+#: Blacklist.class.php:481
 msgid "Submit"
 msgstr ""
 
-#: Blacklist.class.php:223
+#: Blacklist.class.php:226
 msgid "Sucessfully imported all entries"
 msgstr ""
 
@@ -312,11 +326,11 @@ msgstr ""
 msgid "The ID"
 msgstr ""
 
-#: Blacklist.class.php:230
+#: Blacklist.class.php:233
 msgid "The file must be in CSV format!"
 msgstr ""
 
-#: Blacklist.class.php:636
+#: Blacklist.class.php:639
 msgid "The number as it appears in the callerid display"
 msgstr ""
 
@@ -324,7 +338,7 @@ msgstr ""
 msgid "The number to block"
 msgstr ""
 
-#: Blacklist.class.php:206
+#: Blacklist.class.php:209
 msgid "There was an error uploading the file"
 msgstr ""
 

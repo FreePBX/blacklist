@@ -171,9 +171,9 @@ class Blacklist extends FreePBX_Helpers implements BMO {
 		$set['description'] = "Loading call counts on machines with large call logs can be slow. This setting will disable the call count in the main grid.";
 		$set['type']        = CONF_TYPE_BOOL;
 		$this->FreePBX->Config->define_conf_setting('BLACKLIST_DISABLE_GRID_COUNT', $set);
-		if (empty($this->destinationGet())) {
-            $this->destinationSet('app-blackhole,hangup,1');
-        }
+		if ($this->astman->connected() && empty($this->destinationGet())) {
+			$this->destinationSet('app-blackhole,hangup,1');
+		}
 	}
 
 	public function uninstall() {

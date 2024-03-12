@@ -2,18 +2,18 @@
 	<rawname>blacklist</rawname>
 	<repo>standard</repo>
 	<name>Blacklist</name>
-	<version>17.0.1.1</version>
+	<version>17.0.1.2</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<category>Admin</category>
 	<description>This module is used to manage a system wide list of blocked callers</description>
-	<more-info>https://wiki.freepbx.org/display/F2/Blacklist+Module</more-info>
+	<more-info>https://sangomakb.atlassian.net/wiki/spaces/PG/pages/20775031/Blacklist+Module</more-info>
 	<menuitems>
 		<blacklist needsenginedb="yes">Blacklist</blacklist>
 	</menuitems>
 	<changelog>
-		*17.0.1.1* 17.0.1.1
+		*17.0.1.2* 17.0.1.2
 		*17.0.1alpha* 17.0.1 alpha release
 	</changelog>
 	<hooks>

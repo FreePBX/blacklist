@@ -195,7 +195,7 @@ function cbFormatter(val,row,i){
 }
 
 function linkFormatter(value,row,idx){
-	var html = sprintf('<a href="#" data-toggle="modal" data-target="#addNumber" data-number="%(number)s" data-blockedtype="%(blockedType)s" data-description="%(description)s"><i class="fa fa-pencil"></i></a>', row);
+	var html = sprintf('<a href="#" data-toggle="modal" data-target="#addNumber" data-bs-toggle="modal" data-bs-target="#addNumber" data-number="%(number)s" data-blockedtype="%(blockedType)s" data-description="%(description)s"><i class="fa fa-pencil"></i></a>', row);
 	html += sprintf('&nbsp;<a href="#" id="del%(args[0].number)s" data-idx="%(args[1])s" data-number="%(args[0].number)s" ><i class="fa fa-trash"></i></a>', {args: [row, idx]});
 	html += sprintf('&nbsp;<a href="#" id="report%(number)s" data-number="%(number)s"><i class="fa fa-area-chart"></i></a>', row);
 	return html;

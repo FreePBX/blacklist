@@ -12,17 +12,17 @@
 							<input type="hidden" name="action" value="settings">
 							<ul class="nav nav-tabs" role="tablist">
 								<li role="presentation" data-name="blacklist" class="active">
-									<a href="#blacklist" aria-controls="blacklist" role="tab" data-toggle="tab">
+									<a href="#blacklist" aria-controls="blacklist" role="tab" data-toggle="tab" data-bs-toggle="tab">
 										<?php echo _("Blacklist") ?>
 									</a>
 								</li>
 								<li role="presentation" data-name="importexport" class="change-tab">
-									<a href="#importexport" aria-controls="importexport" role="tab" data-toggle="tab">
+									<a href="#importexport" aria-controls="importexport" role="tab" data-toggle="tab" data-bs-toggle="tab">
 										<?php echo _("Import/Export") ?>
 									</a>
 								</li>
 								<li role="presentation" data-name="settings" class="change-tab">
-									<a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
+									<a href="#settings" aria-controls="settings" role="tab" data-toggle="tab" data-bs-toggle="tab">
 										<?php echo _("Settings") ?>
 									</a>
 								</li>

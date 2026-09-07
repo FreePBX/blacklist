@@ -25,9 +25,9 @@ class Restore Extends Base\RestoreBase{
 		$this->restoreLegacyFeatureCodes($pdo);
 	}
 	public function deleteOldData(){
-		$this->astman = $this->FreePBX->astman;
-		if ($this->astman->connected()) {
-			$this->astman->database_deltree('blacklist');
+		$astman = $this->FreePBX->astman;
+		if ($astman->connected()) {
+			$astman->database_deltree('blacklist');
 		}
 	}
 }

@@ -11,6 +11,8 @@ use BMO;
 use FreePBX_Helpers;
 
 class Blacklist extends FreePBX_Helpers implements BMO {
+	private $FreePBX;
+	private $astman;
 	private $objSmsplus = false;
 	private array $blacklistSettings = [];
 	public function __construct($freepbx = null) {
@@ -189,6 +191,7 @@ class Blacklist extends FreePBX_Helpers implements BMO {
 		$dispnum = 'blacklist';
 		$astver  = $this->FreePBX->Config->get('ASTVERSION');
 		$request = $_REQUEST;
+		$destination = '';
 
 		if (isset($request['goto0'])) {
 			$destination = $request[$request['goto0'] . '0'] ?? '';
@@ -213,7 +216,6 @@ class Blacklist extends FreePBX_Helpers implements BMO {
 							$path = sys_get_temp_dir() . '/' . $_FILES['blacklistfile']['name'];
 							move_uploaded_file($_FILES['blacklistfile']['tmp_name'], $path);
 							if (file_exists($path)) {
-								ini_set('auto_detect_line_endings', true);
 								$handle = fopen($path, 'r');
 								set_time_limit(0);
 								while (($data = fgetcsv($handle)) !== false) {
@@ -523,7 +525,7 @@ class Blacklist extends FreePBX_Helpers implements BMO {
 	 */
 	public function numberAdd($post) {
 		if ($this->astman->connected()) {
-			$blockType = null;
+			$blockType = '';
 			if (in_array($post['number'], $this->blacklistSettings)) {
 				unset($post['blockType']);
 			}

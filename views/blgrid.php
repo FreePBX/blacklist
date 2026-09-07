@@ -1,6 +1,6 @@
 <div id="toolbar-all">
 	<button id="blkDelete" class="btn btn-danger"><?php echo _("Delete Selected")?></button>
-	<a href="#" class="btn btn-default" data-toggle="modal" data-target="#addNumber"><i class="fa fa-plus"></i>&nbsp;&nbsp;<?php echo _("Blacklist Number")?></a>
+	<a href="#" class="btn btn-default" data-toggle="modal" data-target="#addNumber" data-bs-toggle="modal" data-bs-target="#addNumber"><i class="fa fa-plus"></i>&nbsp;&nbsp;<?php echo _("Blacklist Number")?></a>
 </div>
 <table 
 	id="blGrid"

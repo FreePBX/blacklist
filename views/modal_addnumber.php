@@ -3,7 +3,7 @@
     <div class="modal-dialog display">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<button type="button" class="close" data-dismiss="modal" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
 				<h4 class="modal-title" id="addNumberTitle"><?php echo _("Add or replace entry") ?></h4>
 			</div>
 			<div class="modal-body">
@@ -60,7 +60,7 @@
 				?>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _("Close")?></button>
+				<button type="button" class="btn btn-default" data-dismiss="modal" data-bs-dismiss="modal"><?php echo _("Close")?></button>
 				<button type="button" class="btn btn-primary" id="submitnumber"><?php echo _("Save changes")?></button>
 			</div>
 		</div>
